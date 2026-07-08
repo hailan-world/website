@@ -3,39 +3,40 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { PageHero } from "@/components/layout/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
+import { defaultLocale, isLocale } from "@/lib/i18n";
 import { site } from "@/lib/site";
+import { getDictionary } from "../dictionaries";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Talk to HAILAN's export team about distribution, OEM programs or project supply. We respond within one business day.",
-};
+interface ContactPageProps {
+  params: Promise<{ lang: string }>;
+}
 
-const expectations = [
-  {
-    step: "01",
-    title: "Response within 24 hours",
-    text: "A named export manager — not an autoresponder — replies within one business day.",
-  },
-  {
-    step: "02",
-    title: "Specifications & pricing",
-    text: "You receive technical data, indicative pricing and honest lead times for your market.",
-  },
-  {
-    step: "03",
-    title: "Samples on their way",
-    text: "Standard samples dispatch within days; custom sampling runs 7–10 days from approved artwork.",
-  },
-];
+export async function generateMetadata({
+  params,
+}: ContactPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+  return {
+    title: dict.contactPage.meta.title,
+    description: dict.contactPage.meta.description,
+  };
+}
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: ContactPageProps) {
+  const { lang } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+  const t = dict.contactPage;
+
+  const productNames = Object.values(dict.productLines).map((line) => line.name);
+
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Let's talk about your program."
-        lede="Distribution, private label, project supply or a single technical question — the fastest way to evaluate HAILAN is to start a conversation."
+        eyebrow={t.hero.eyebrow}
+        title={t.hero.title}
+        lede={t.hero.lede}
       />
 
       <section className="py-24 md:py-32">
@@ -44,7 +45,7 @@ export default function ContactPage() {
             {/* Contact details */}
             <Reveal className="lg:col-span-5">
               <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                Global inquiries
+                {t.inquiries}
               </h2>
               <a
                 href={`mailto:${site.email}`}
@@ -60,7 +61,7 @@ export default function ContactPage() {
               </a>
 
               <h2 className="mt-12 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                Headquarters & factory
+                {t.hq}
               </h2>
               <address className="mt-5 text-[15px] not-italic leading-relaxed text-mist-600">
                 {site.legalName}
@@ -71,20 +72,20 @@ export default function ContactPage() {
                 ))}
               </address>
               <p className="mt-4 text-[13px] leading-relaxed text-mist-500">
-                Office hours: Monday – Friday, 08:30 – 18:00 (GMT+8).
+                {t.hours}
                 <br />
-                Factory visits and audits welcome by appointment.
+                {t.visits}
               </p>
 
               <div className="mt-12 border-t border-ink-950/10 pt-10">
                 <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                  What happens next
+                  {t.nextTitle}
                 </h2>
                 <ol className="mt-6 space-y-6">
-                  {expectations.map((item) => (
-                    <li key={item.step} className="flex gap-5">
+                  {t.expectations.map((item, i) => (
+                    <li key={item.title} className="flex gap-5">
                       <span className="font-mono text-[11px] tracking-[0.2em] text-azure-600">
-                        {item.step}
+                        {String(i + 1).padStart(2, "0")}
                       </span>
                       <div>
                         <h3 className="text-[15px] font-medium text-ink-950">
@@ -104,14 +105,13 @@ export default function ContactPage() {
             <Reveal delay={0.12} className="lg:col-span-7">
               <div className="rounded-2xl border border-ink-950/10 bg-mist-50 p-7 md:p-10">
                 <h2 className="text-xl font-medium tracking-[-0.01em] text-ink-950">
-                  Send an inquiry
+                  {t.form.heading}
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-mist-600">
-                  The more you tell us about your market and volumes, the more
-                  precise our first reply can be.
+                  {t.form.intro}
                 </p>
                 <div className="mt-8">
-                  <ContactForm />
+                  <ContactForm t={t.form} productNames={productNames} />
                 </div>
               </div>
             </Reveal>

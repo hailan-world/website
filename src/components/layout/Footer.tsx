@@ -1,19 +1,20 @@
-import Link from "next/link";
+import { Link } from "@/components/i18n/Link";
 import { Logo } from "@/components/graphics/Logo";
 import { Container } from "@/components/ui/Container";
+import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { products } from "@/data/products";
 import { certifications, site } from "@/lib/site";
 
 const companyLinks = [
-  { label: "About", href: "/about" },
-  { label: "Manufacturing", href: "/manufacturing" },
-  { label: "Quality", href: "/quality" },
-  { label: "OEM / ODM", href: "/oem-odm" },
-  { label: "News", href: "/news" },
-  { label: "Contact", href: "/contact" },
-];
+  { href: "/about", key: "about" },
+  { href: "/manufacturing", key: "manufacturing" },
+  { href: "/quality", key: "quality" },
+  { href: "/oem-odm", key: "oemOdm" },
+  { href: "/news", key: "news" },
+  { href: "/contact", key: "contact" },
+] as const;
 
-export function Footer() {
+export function Footer({ dict }: { dict: Dictionary }) {
   return (
     <footer className="relative overflow-hidden bg-ink-950 text-white">
       <div className="pointer-events-none absolute inset-0 bg-grain opacity-[0.35]" aria-hidden="true" />
@@ -24,9 +25,7 @@ export function Footer() {
               <Logo on="dark" />
             </Link>
             <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-ink-300">
-              {site.legalName} — a global manufacturer of decorative building
-              materials, supplying partners in more than 60 countries from a
-              120,000 m² production campus.
+              {dict.footer.tagline}
             </p>
             <ul className="mt-8 flex max-w-sm flex-wrap gap-2" aria-label="Certifications">
               {certifications.slice(0, 5).map((c) => (
@@ -40,9 +39,9 @@ export function Footer() {
             </ul>
           </div>
 
-          <nav aria-label="Products">
+          <nav aria-label={dict.footer.products}>
             <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-ink-400">
-              Products
+              {dict.footer.products}
             </h2>
             <ul className="mt-6 space-y-3.5">
               {products.map((p) => (
@@ -51,7 +50,7 @@ export function Footer() {
                     href={`/products/${p.slug}`}
                     className="text-[15px] text-ink-200 transition-colors hover:text-white"
                   >
-                    {p.name}
+                    {dict.productLines[p.slug]?.name ?? p.name}
                   </Link>
                 </li>
               ))}
@@ -60,15 +59,15 @@ export function Footer() {
                   href="/products"
                   className="text-[15px] text-ink-200 transition-colors hover:text-white"
                 >
-                  All products
+                  {dict.common.allProducts}
                 </Link>
               </li>
             </ul>
           </nav>
 
-          <nav aria-label="Company">
+          <nav aria-label={dict.footer.company}>
             <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-ink-400">
-              Company
+              {dict.footer.company}
             </h2>
             <ul className="mt-6 space-y-3.5">
               {companyLinks.map((l) => (
@@ -77,7 +76,7 @@ export function Footer() {
                     href={l.href}
                     className="text-[15px] text-ink-200 transition-colors hover:text-white"
                   >
-                    {l.label}
+                    {dict.nav[l.key]}
                   </Link>
                 </li>
               ))}
@@ -86,7 +85,7 @@ export function Footer() {
 
           <div>
             <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-ink-400">
-              Headquarters
+              {dict.footer.headquarters}
             </h2>
             <address className="mt-6 text-[15px] not-italic leading-relaxed text-ink-200">
               {site.address.map((line) => (
@@ -112,10 +111,10 @@ export function Footer() {
 
         <div className="flex flex-col gap-3 border-t border-white/10 py-8 text-[13px] text-ink-400 md:flex-row md:items-center md:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.legalName} All rights reserved.
+            © {new Date().getFullYear()} {site.legalName} {dict.footer.rights}
           </p>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em]">
-            Engineered in Huzhou · Delivered worldwide
+            {dict.footer.signoff}
           </p>
         </div>
       </Container>

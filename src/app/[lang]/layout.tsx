@@ -1,0 +1,120 @@
+import type { Metadata, Viewport } from "next";
+import { IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import {
+  defaultLocale,
+  isLocale,
+  locales,
+  localeHtmlLang,
+  localeDir,
+  localeOg,
+} from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
+import { site } from "@/lib/site";
+import { getDictionary } from "./dictionaries";
+import "../globals.css";
+
+const instrument = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument",
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
+  display: "swap",
+});
+
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale: Locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+
+  const title = dict.siteMeta.title;
+  const description = dict.siteMeta.description;
+
+  const languages: Record<string, string> = { "x-default": `/${defaultLocale}` };
+  for (const l of locales) languages[localeHtmlLang[l]] = `/${l}`;
+
+  return {
+    metadataBase: new URL(site.url),
+    title: {
+      default: title,
+      template: `%s — ${site.name}`,
+    },
+    description,
+    keywords: [
+      "LVT flooring manufacturer",
+      "PET wall coverings",
+      "PET carpet tiles",
+      "acoustic panels",
+      "OEM flooring",
+      "decorative building materials",
+    ],
+    alternates: {
+      canonical: `/${locale}`,
+      languages,
+    },
+    openGraph: {
+      type: "website",
+      siteName: site.name,
+      title,
+      description,
+      url: `/${locale}`,
+      locale: localeOg[locale],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
+
+export const viewport: Viewport = {
+  themeColor: "#070c17",
+};
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const locale: Locale = isLocale(lang) ? lang : defaultLocale;
+
+  const dict = await getDictionary(locale);
+
+  return (
+    <html
+      lang={localeHtmlLang[locale]}
+      dir={localeDir[locale]}
+      className={`${instrument.variable} ${plexMono.variable}`}
+    >
+      <body className="font-sans">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink-950 focus:px-5 focus:py-3 focus:text-sm focus:text-white"
+        >
+          {dict.common.skipToContent}
+        </a>
+        <Header dict={dict} lang={locale} />
+        <main id="main">{children}</main>
+        <Footer dict={dict} />
+      </body>
+    </html>
+  );
+}

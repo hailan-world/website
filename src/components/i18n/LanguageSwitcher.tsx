@@ -1,0 +1,165 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import NextLink from "next/link";
+import { usePathname } from "next/navigation";
+import {
+  locales,
+  localeNames,
+  localeShortNames,
+  isLocale,
+  defaultLocale,
+} from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
+
+/** Swap the leading /{locale} segment of the current path for `target`. */
+function pathForLocale(pathname: string, target: Locale): string {
+  const segments = pathname.split("/");
+  if (isLocale(segments[1])) {
+    segments[1] = target;
+  } else {
+    segments.splice(1, 0, target);
+  }
+  return segments.join("/") || `/${target}`;
+}
+
+function persist(target: Locale) {
+  document.cookie = `NEXT_LOCALE=${target}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+}
+
+function GlobeIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <circle cx="8" cy="8" r="6.2" stroke="currentColor" strokeWidth="1.2" />
+      <ellipse cx="8" cy="8" rx="2.8" ry="6.2" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M2 8h12M2.8 5h10.4M2.8 11h10.4" stroke="currentColor" strokeWidth="1.2" />
+    </svg>
+  );
+}
+
+export function LanguageSwitcher({
+  current,
+  label,
+  variant = "inline",
+}: {
+  current: Locale;
+  label: string;
+  variant?: "inline" | "stacked";
+}) {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  const active = isLocale(pathname.split("/")[1])
+    ? (pathname.split("/")[1] as Locale)
+    : (current ?? defaultLocale);
+
+  // Close the menu on outside click or Escape.
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
+  if (variant === "stacked") {
+    return (
+      <div role="group" aria-label={label}>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-400">
+          {label}
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2.5">
+          {locales.map((locale) => {
+            const isActive = locale === active;
+            return (
+              <NextLink
+                key={locale}
+                href={pathForLocale(pathname, locale)}
+                hrefLang={locale}
+                lang={locale}
+                aria-current={isActive ? "true" : undefined}
+                onClick={() => persist(locale)}
+                className={cn(
+                  "rounded-full border px-4 py-1.5 text-sm transition-colors duration-300",
+                  isActive
+                    ? "border-azure-300 text-azure-300"
+                    : "border-white/15 text-ink-200 hover:border-white/50 hover:text-white",
+                )}
+              >
+                {localeNames[locale]}
+              </NextLink>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div ref={rootRef} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-label={label}
+        className={cn(
+          "flex h-10 items-center gap-2 rounded-full border px-3.5 font-mono text-[12px] uppercase tracking-[0.08em] transition-colors duration-300",
+          open
+            ? "border-white/50 text-white"
+            : "border-white/20 text-ink-200 hover:border-white/50 hover:text-white",
+        )}
+      >
+        <GlobeIcon />
+        {localeShortNames[active]}
+      </button>
+
+      {open && (
+        <div className="absolute end-0 top-12 z-50 min-w-40 overflow-hidden rounded-2xl border border-white/10 bg-ink-900/95 py-2 shadow-2xl shadow-black/40 backdrop-blur-xl">
+          {locales.map((locale) => {
+            const isActive = locale === active;
+            return (
+              <NextLink
+                key={locale}
+                href={pathForLocale(pathname, locale)}
+                hrefLang={locale}
+                lang={locale}
+                aria-current={isActive ? "true" : undefined}
+                onClick={() => {
+                  persist(locale);
+                  setOpen(false);
+                }}
+                className={cn(
+                  "flex items-center justify-between gap-6 px-5 py-2.5 text-sm transition-colors duration-200",
+                  isActive
+                    ? "text-azure-300"
+                    : "text-ink-200 hover:bg-white/5 hover:text-white",
+                )}
+              >
+                {localeNames[locale]}
+                {isActive && (
+                  <span
+                    className="h-1.5 w-1.5 rounded-full bg-azure-300"
+                    aria-hidden="true"
+                  />
+                )}
+              </NextLink>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}

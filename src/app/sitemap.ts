@@ -1,10 +1,20 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/data/news";
 import { products } from "@/data/products";
+import { locales, localeHtmlLang } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
+/** hreflang alternates for one path, e.g. "/products". */
+function alternatesFor(path: string) {
+  const languages: Record<string, string> = {};
+  for (const locale of locales) {
+    languages[localeHtmlLang[locale]] = `${site.url}/${locale}${path}`;
+  }
+  return { languages };
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes: MetadataRoute.Sitemap = [
+  const staticPaths = [
     "",
     "/about",
     "/products",
@@ -13,24 +23,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/oem-odm",
     "/news",
     "/contact",
-  ].map((path) => ({
-    url: `${site.url}${path}`,
-    changeFrequency: path === "/news" ? "weekly" : "monthly",
-    priority: path === "" ? 1 : 0.8,
+  ];
+  const productPaths = products.map((p) => `/products/${p.slug}`);
+  const articleEntries = articles.map((a) => ({
+    path: `/news/${a.slug}`,
+    lastModified: new Date(`${a.date}T00:00:00Z`),
   }));
 
-  const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
-    url: `${site.url}/products/${product.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.9,
-  }));
+  const entries: MetadataRoute.Sitemap = [];
 
-  const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
-    url: `${site.url}/news/${article.slug}`,
-    lastModified: new Date(`${article.date}T00:00:00Z`),
-    changeFrequency: "yearly",
-    priority: 0.6,
-  }));
+  for (const locale of locales) {
+    for (const path of staticPaths) {
+      entries.push({
+        url: `${site.url}/${locale}${path}`,
+        changeFrequency: path === "/news" ? "weekly" : "monthly",
+        priority: path === "" ? 1 : 0.8,
+        alternates: alternatesFor(path),
+      });
+    }
+    for (const path of productPaths) {
+      entries.push({
+        url: `${site.url}/${locale}${path}`,
+        changeFrequency: "monthly",
+        priority: 0.9,
+        alternates: alternatesFor(path),
+      });
+    }
+    for (const { path, lastModified } of articleEntries) {
+      entries.push({
+        url: `${site.url}/${locale}${path}`,
+        lastModified,
+        changeFrequency: "yearly",
+        priority: 0.6,
+        alternates: alternatesFor(path),
+      });
+    }
+  }
 
-  return [...staticRoutes, ...productRoutes, ...articleRoutes];
+  return entries;
 }

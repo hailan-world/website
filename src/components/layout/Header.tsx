@@ -1,21 +1,39 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
+import { Link } from "@/components/i18n/Link";
+import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import { Logo } from "@/components/graphics/Logo";
 import { Container } from "@/components/ui/Container";
-import { nav, site } from "@/lib/site";
+import type { Dictionary } from "@/app/[lang]/dictionaries";
+import type { Locale } from "@/lib/i18n";
+import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-const links = nav.filter((item) => item.href !== "/contact");
+const navItems = [
+  { href: "/about", key: "about" },
+  { href: "/products", key: "products" },
+  { href: "/manufacturing", key: "manufacturing" },
+  { href: "/quality", key: "quality" },
+  { href: "/oem-odm", key: "oemOdm" },
+  { href: "/news", key: "news" },
+  { href: "/contact", key: "contact" },
+] as const;
 
-export function Header() {
+/** Strip the leading /{locale} segment so links can be matched by path. */
+function stripLocale(pathname: string): string {
+  const rest = pathname.split("/").slice(2).join("/");
+  return `/${rest}`;
+}
+
+export function Header({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const reduce = useReducedMotion();
+  const path = stripLocale(pathname);
 
   // Close the mobile menu when navigation changes the route.
   const [lastPathname, setLastPathname] = useState(pathname);
@@ -37,6 +55,8 @@ export function Header() {
       document.documentElement.style.overflow = "";
     };
   }, [open]);
+
+  const links = navItems.filter((item) => item.href !== "/contact");
 
   return (
     <>
@@ -61,7 +81,7 @@ export function Header() {
             <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
               {links.map((item) => {
                 const active =
-                  pathname === item.href || pathname.startsWith(`${item.href}/`);
+                  path === item.href || path.startsWith(`${item.href}/`);
                 return (
                   <Link
                     key={item.href}
@@ -72,15 +92,16 @@ export function Header() {
                       active ? "text-white" : "text-ink-200 hover:text-white",
                     )}
                   >
-                    {item.label}
+                    {dict.nav[item.key]}
                   </Link>
                 );
               })}
+              <LanguageSwitcher current={lang} label={dict.common.languageLabel} />
               <Link
                 href="/contact"
                 className="inline-flex h-10 items-center rounded-full bg-white px-5 text-sm font-medium text-ink-950 transition-colors duration-300 hover:bg-azure-100"
               >
-                Contact
+                {dict.nav.contact}
               </Link>
             </nav>
 
@@ -134,9 +155,9 @@ export function Header() {
         <div className="pointer-events-none absolute inset-0 bg-grid-dark" aria-hidden="true" />
         <Container className="relative flex min-h-full flex-col pb-10 pt-28">
           <nav aria-label="Mobile" className="flex flex-col">
-            {nav.map((item, i) => {
+            {navItems.map((item, i) => {
               const active =
-                pathname === item.href || pathname.startsWith(`${item.href}/`);
+                path === item.href || path.startsWith(`${item.href}/`);
               return (
                 <motion.div
                   key={item.href}
@@ -172,7 +193,7 @@ export function Header() {
                     <span className="font-mono text-[11px] tracking-[0.2em] text-ink-400">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    {item.label}
+                    {dict.nav[item.key]}
                   </Link>
                 </motion.div>
               );
@@ -193,8 +214,15 @@ export function Header() {
             }
             className="mt-auto pt-14"
           >
+            <div className="mb-8">
+              <LanguageSwitcher
+                current={lang}
+                label={dict.common.languageLabel}
+                variant="stacked"
+              />
+            </div>
             <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-400">
-              Global inquiries
+              {dict.footer.globalInquiries}
             </p>
             <a
               href={`mailto:${site.email}`}
