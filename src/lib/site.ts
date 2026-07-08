@@ -4,7 +4,7 @@ export const site = {
   tagline: "Global decorative building materials manufacturer",
   description:
     "HAILAN designs and manufactures LVT flooring, PET wall coverings and PET carpet coverings for importers, distributors and brands in more than 60 countries.",
-  url: "https://www.hailan-materials.com",
+  url: "https://hailanworld.com",
   email: "sales@hailan-materials.com",
   phone: "+86 572 8266 000",
   address: [
