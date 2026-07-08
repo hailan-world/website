@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Menlo,
+    monospace;
+}
+
+@theme {
+  /* Paper & light neutrals */
+  --color-paper: #fcfcfd;
+  --color-mist-50: #f5f6f8;
+  --color-mist-100: #eceef2;
+  --color-mist-200: #dfe3ea;
+  --color-mist-300: #c9cfda;
+  --color-mist-400: #9aa3b2;
+  --color-mist-500: #6f7a8c;
+  --color-mist-600: #4e586c;
+  --color-mist-700: #3a4356;
+
+  /* Ink — deep navy scale (dark surfaces + text on light) */
+  --color-ink-100: #dbe1ee;
+  --color-ink-200: #b7c0d4;
+  --color-ink-300: #93a0bc;
+  --color-ink-400: #6a7793;
+  --color-ink-500: #4a5570;
+  --color-ink-600: #333d55;
+  --color-ink-700: #222b40;
+  --color-ink-800: #161d30;
+  --color-ink-900: #0c1322;
+  --color-ink-950: #070c17;
+
+  /* Azure — the HAILAN blue accent */
+  --color-azure-100: #dbe6ff;
+  --color-azure-200: #b9ceff;
+  --color-azure-300: #8fadfd;
+  --color-azure-400: #6489f7;
+  --color-azure-500: #3f66ea;
+  --color-azure-600: #2b4fd0;
+  --color-azure-700: #2440a6;
+
+  --ease-swift: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 56s linear infinite;
+  --animate-float-slow: float-slow 10s ease-in-out infinite;
+  --animate-pulse-dot: pulse-dot 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+  @keyframes pulse-dot {
+    0% {
+      transform: scale(1);
+      opacity: 0.85;
+    }
+    70%,
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-azure-600);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-azure-500);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Film-grain overlay — apply to an absolutely positioned, pointer-events-none div */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Fine architectural line grids */
+.bg-grid-dark {
+  background-image: linear-gradient(
+      to right,
+      rgb(255 255 255 / 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 78px 78px;
+}
+
+.bg-grid-light {
+  background-image: linear-gradient(
+      to right,
+      rgb(12 19 34 / 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(12 19 34 / 0.05) 1px, transparent 1px);
+  background-size: 78px 78px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
