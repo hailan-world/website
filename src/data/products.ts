@@ -1,7 +1,12 @@
 export type TextureKind = "lvt" | "wall" | "carpet";
 
+export type ProductSlug =
+  | "lvt-flooring"
+  | "pet-wall-coverings"
+  | "pet-carpet-coverings";
+
 export interface Product {
-  slug: string;
+  slug: ProductSlug;
   name: string;
   category: string;
   headline: string;

@@ -1,22 +1,23 @@
-import Link from "next/link";
+import { Link } from "@/components/i18n/Link";
 import { Reveal } from "@/components/motion/Reveal";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Container } from "@/components/ui/Container";
 import { SectionHead } from "@/components/ui/SectionHead";
+import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { articles } from "@/data/news";
 import { formatDate } from "@/lib/utils";
 
-export function NewsPreview() {
+export function NewsPreview({ dict }: { dict: Dictionary }) {
   return (
     <section className="pt-24 md:pt-36">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHead
-            eyebrow="06 — News"
-            title="What’s moving at HAILAN."
+            eyebrow={dict.newsHome.eyebrow}
+            title={dict.newsHome.title}
           />
           <Reveal delay={0.15} className="hidden pb-2 md:block">
-            <ArrowLink href="/news">All news</ArrowLink>
+            <ArrowLink href="/news">{dict.common.allNews}</ArrowLink>
           </Reveal>
         </div>
 
@@ -42,14 +43,14 @@ export function NewsPreview() {
                   {article.excerpt}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-ink-950 transition-colors group-hover:text-azure-600">
-                  Read article
+                  {dict.common.readArticle}
                   <svg
                     width="13"
                     height="13"
                     viewBox="0 0 16 16"
                     fill="none"
                     aria-hidden="true"
-                    className="transition-transform duration-300 group-hover:translate-x-1"
+                    className="transition-transform duration-300 group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1"
                   >
                     <path
                       d="M2 8h11M9.2 3.5 13.7 8l-4.5 4.5"
@@ -66,7 +67,7 @@ export function NewsPreview() {
         </div>
 
         <Reveal className="mt-12 md:hidden">
-          <ArrowLink href="/news">All news</ArrowLink>
+          <ArrowLink href="/news">{dict.common.allNews}</ArrowLink>
         </Reveal>
       </Container>
     </section>

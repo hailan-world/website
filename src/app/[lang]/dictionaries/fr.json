@@ -1,0 +1,304 @@
+{
+  "siteMeta": {
+    "title": "HAILAN — Fabricant mondial de matériaux de construction décoratifs",
+    "description": "HAILAN conçoit et fabrique des sols LVT, des revêtements muraux PET et des revêtements de sol textiles PET pour importateurs, distributeurs et marques dans plus de 60 pays."
+  },
+  "nav": {
+    "about": "À propos",
+    "products": "Produits",
+    "manufacturing": "Production",
+    "quality": "Qualité",
+    "oemOdm": "OEM / ODM",
+    "news": "Actualités",
+    "contact": "Contact"
+  },
+  "common": {
+    "skipToContent": "Aller au contenu",
+    "allProducts": "Tous les produits",
+    "allNews": "Toutes les actualités",
+    "readArticle": "Lire l’article",
+    "moreAboutHailan": "En savoir plus sur HAILAN",
+    "exploreProducts": "Découvrir les produits",
+    "ourManufacturing": "Notre production",
+    "languageLabel": "Langue"
+  },
+  "productLines": {
+    "lvt-flooring": {
+      "name": "Sols LVT",
+      "category": "Sols résilients",
+      "short": "Lames et dalles vinyle de luxe aux décors haute définition, gaufrage synchronisé et couches d’usure conçues pour les trafics commerciaux intenses.",
+      "chips": ["Dryback · Clic · Pose libre", "Couche d’usure jusqu’à 0,7 mm"]
+    },
+    "pet-wall-coverings": {
+      "name": "Revêtements muraux PET",
+      "category": "Systèmes muraux acoustiques",
+      "short": "Panneaux acoustiques en feutre polyester — panneaux plats, systèmes à tasseaux et formes découpées CNC — avec jusqu’à 60 % de contenu recyclé.",
+      "chips": ["NRC jusqu’à 0,85", "60 % de PET recyclé"]
+    },
+    "pet-carpet-coverings": {
+      "name": "Moquettes PET",
+      "category": "Sols textiles modulaires",
+      "short": "Dalles et lames de moquette touffetées en fil PET teint dans la masse — intrinsèquement antitaches, grand teint et prêtes pour la prescription.",
+      "chips": ["Fil teint dans la masse", "Dalles et lames"]
+    }
+  },
+  "hero": {
+    "kicker": "Hailan New Materials Co., Ltd.",
+    "headlineLine1": "Des surfaces d’ingénierie",
+    "headlineLine2": "pour le monde bâti",
+    "lede": "HAILAN conçoit et fabrique des sols LVT, des revêtements muraux PET et des moquettes PET pour importateurs, distributeurs et marques dans plus de 60 pays — une fabrication de précision guidée par le design.",
+    "badge": "ISO 9001 · FloorScore® · CE — Export vers 60+ pays",
+    "scroll": "Défiler"
+  },
+  "intro": {
+    "eyebrow": "01 — Qui nous sommes",
+    "title": "Un partenaire industriel conçu pour les marques mondiales.",
+    "para1": "HAILAN est un fabricant mondial de matériaux de construction décoratifs basé à Huzhou, en Chine — au cœur de l’un des clusters de production de revêtements de sol les plus denses au monde. Depuis un campus intégré unique, nous développons, produisons et exportons des sols LVT, des revêtements muraux acoustiques PET et des moquettes PET.",
+    "para2": "Nos produits portent aussi souvent le nom de nos partenaires que le nôtre. Pour les importateurs, les chaînes de distribution et les marques de l’habitat sur tous les continents, HAILAN est la force discrète derrière l’étiquette : une qualité stable, des délais honnêtes et une équipe qui traite votre programme comme le sien.",
+    "stats": {
+      "countries": "Pays d’exportation",
+      "facility": "Campus de production",
+      "capacity": "Capacité annuelle",
+      "team": "Spécialistes et ingénieurs"
+    }
+  },
+  "productsHome": {
+    "eyebrow": "02 — Produits",
+    "title": "Trois gammes. Un seul système qualité.",
+    "lede": "Des surfaces sol, mur et textile développées selon un standard unique d’ingénierie et de conformité — pour que nos partenaires composent des programmes d’intérieur complets auprès d’une seule usine."
+  },
+  "manufacturingHome": {
+    "eyebrow": "03 — Excellence industrielle",
+    "title": "La précision à l’échelle industrielle.",
+    "lede": "Un campus intégré transforme polymères et fibres bruts en produits finis, emballés et codés par lot — aucune étape critique n’est externalisée.",
+    "link": "Découvrir notre production",
+    "pillars": [
+      {
+        "title": "Production automatisée",
+        "text": "25 lignes d’extrusion, de calandrage et de touffetage pilotées par MES, avec mesure laser de l’épaisseur en ligne — et non après coup."
+      },
+      {
+        "title": "Contrôle qualité en ligne",
+        "text": "Contrôles dimensionnels, de surface et de couleur à chaque heure de production, enregistrés sous le code de lot qui accompagne chaque carton."
+      },
+      {
+        "title": "R&D et outillage",
+        "text": "Développement de décors en interne, plaques de gaufrage et presse de laboratoire transforment l’idée d’un partenaire en échantillon conforme usine en quelques jours."
+      },
+      {
+        "title": "Capacité OEM",
+        "text": "Un studio d’échantillonnage dédié et des chefs de projet bilingues accompagnent les programmes de marque privée du premier brief au conteneur chargé."
+      }
+    ],
+    "process": [
+      "Préparation des matières",
+      "Extrusion et calandrage",
+      "Contrecollage et pressage",
+      "Polymérisation UV",
+      "Profilage de précision",
+      "Inspection à 100 %"
+    ]
+  },
+  "why": {
+    "eyebrow": "04 — Pourquoi HAILAN",
+    "title": "La capacité derrière des marques et des projets dans le monde entier.",
+    "lede": "Les partenaires changent rarement de fournisseur pour une question de prix. Ils en changent à cause des imprévus. Notre travail : les éliminer.",
+    "reasons": [
+      {
+        "title": "Approvisionnement fiable",
+        "text": "La capacité est planifiée selon les prévisions des partenaires, avec un stock de sécurité sur les programmes en cours. Sur les trois dernières années, 98,6 % des conteneurs sont partis à la date confirmée ou avant.",
+        "proof": "98,6 % d’expéditions à l’heure"
+      },
+      {
+        "title": "Qualité stable",
+        "text": "Un seul système qualité régit chaque ligne. Les produits sont codés par lot, vérifiés en laboratoire et inspectés visuellement — le centième conteneur est identique au premier échantillon approuvé.",
+        "proof": "AQL 2,5 · Traçabilité complète des lots"
+      },
+      {
+        "title": "Expérience mondiale",
+        "text": "Certification, documentation, emballage et logistique sont adaptés à chaque destination — du REACH européen et du marquage CE au FloorScore américain et aux schémas de conformité du Golfe.",
+        "proof": "60+ marchés servis"
+      },
+      {
+        "title": "Équipe professionnelle",
+        "text": "Des chefs de projet et ingénieurs anglophones répondent en heures, pas en jours — et suivent votre programme à travers réassorts, refontes et évolutions de marché.",
+        "proof": "Engagement de réponse sous 24 h"
+      }
+    ]
+  },
+  "markets": {
+    "eyebrow": "05 — Marchés mondiaux",
+    "title": "Expédié depuis un campus. Posé sur six continents.",
+    "lede": "Chez HAILAN, l’export n’est pas un service — c’est le métier. Documentation, plans de chargement et logistique portuaire sont conçus avec le même soin que le produit.",
+    "regions": [
+      { "name": "Europe", "markets": "Pays-Bas · Allemagne · Royaume-Uni · Pologne · Espagne" },
+      { "name": "Amérique du Nord", "markets": "États-Unis · Canada · Mexique" },
+      { "name": "Moyen-Orient", "markets": "É.A.U. · Arabie saoudite · Qatar" },
+      { "name": "Asie-Pacifique", "markets": "Australie · Japon · Corée · Singapour" },
+      { "name": "Amérique latine", "markets": "Brésil · Chili · Colombie" },
+      { "name": "Afrique", "markets": "Nigeria · Égypte · Afrique du Sud" }
+    ],
+    "figures": [
+      { "label": "Pays livrés" },
+      { "label": "Continents équipés" },
+      { "label": "Conteneurs expédiés par an" }
+    ]
+  },
+  "newsHome": {
+    "eyebrow": "06 — Actualités",
+    "title": "Ce qui bouge chez HAILAN."
+  },
+  "cta": {
+    "title": "Construisons ensemble votre prochain produit.",
+    "lede": "Parlez-nous de votre projet, de votre programme ou de votre ambition en marque privée — notre équipe export répond sous un jour ouvré.",
+    "button": "Engager la conversation"
+  },
+  "footer": {
+    "tagline": "Hailan New Materials Co., Ltd. — fabricant mondial de matériaux de construction décoratifs, au service de partenaires dans plus de 60 pays depuis un campus de production de 120 000 m².",
+    "products": "Produits",
+    "company": "Entreprise",
+    "headquarters": "Siège social",
+    "rights": "Tous droits réservés.",
+    "signoff": "Conçu à Huzhou · Livré dans le monde entier",
+    "globalInquiries": "Demandes internationales"
+  },
+  "about": {
+    "meta": {
+      "title": "À propos",
+      "description": "HAILAN — Hailan New Materials Co., Ltd. — est un fabricant mondial de matériaux de construction décoratifs fournissant sols LVT, revêtements muraux PET et moquettes PET à des partenaires dans plus de 60 pays."
+    },
+    "hero": {
+      "eyebrow": "À propos de HAILAN",
+      "title": "Une usine qui pense comme une marque.",
+      "lede": "Hailan New Materials Co., Ltd. conçoit, fabrique et exporte des matériaux de construction décoratifs depuis un campus intégré à Huzhou, en Chine — pour des partenaires qui apposent leur propre nom sur la boîte."
+    },
+    "story": {
+      "eyebrow": "Notre histoire",
+      "title": "Née dans le cluster de sols le plus dense au monde.",
+      "para1": "HAILAN a été fondée en 2008 à Huzhou, dans le Zhejiang — une région qui produit une part remarquable des sols résilients mondiaux. Grandir au sein de ce cluster nous a façonnés : fournisseurs, outilleurs et laboratoires d’essais sont à quelques minutes, et la barre de la compétence industrielle est fixée par des voisins qui exportent vers tous les continents.",
+      "para2": "Dès le départ, nous avons choisi une voie plus étroite et plus profonde que la plupart : moins de catégories de produits, mais conçues rigoureusement, produites sur nos propres lignes et documentées selon les normes du marché de destination le plus exigeant. D’abord les sols LVT, puis les revêtements muraux acoustiques PET, puis les moquettes PET — trois surfaces, un système qualité.",
+      "para3": "Aujourd’hui, nos produits équipent bureaux, hôtels, écoles et logements dans plus de 60 pays — le plus souvent sous les marques de nos partenaires. C’est un choix délibéré. L’ambition de HAILAN : être le fabricant le plus fiable derrière les marques mondiales de matériaux décoratifs, et de plus en plus, une marque que l’on demande par son nom.",
+      "stats": {
+        "founded": "Fondation",
+        "facility": "Campus de production",
+        "lines": "Lignes de production",
+        "team": "Spécialistes et ingénieurs"
+      }
+    },
+    "values": {
+      "eyebrow": "Notre façon de travailler",
+      "title": "Quatre principes gouvernent chaque programme.",
+      "lede": "Ce ne sont pas des affiches murales. Ce sont les règles de fonctionnement que nos partenaires vivent dans chaque devis, chaque échantillon et chaque conteneur.",
+      "items": [
+        {
+          "title": "L’ingénierie d’abord",
+          "text": "Chaque décision produit commence sur la ligne de production, pas dans la brochure. Si une construction ne peut être fabriquée de façon constante à grande échelle, nous ne la vendons pas."
+        },
+        {
+          "title": "Fiabilité radicale",
+          "text": "Nos partenaires planifient saisons, ouvertures de magasins et calendriers de chantiers autour de nos confirmations. Une date confirmée vaut contrat — 98,6 % des conteneurs partent à l’heure."
+        },
+        {
+          "title": "Culture du design",
+          "text": "Nous lisons les mêmes rapports de tendances, visitons les mêmes salons et suivons la même presse d’architecture que nos clients — le développement de décors parle leur langue."
+        },
+        {
+          "title": "Partenariat de long terme",
+          "text": "Nos plus anciens programmes d’export durent depuis plus de dix ans. Nous fixons nos prix, planifions et investissons pour des relations qui se mesurent en années, pas en bons de commande."
+        }
+      ]
+    },
+    "timeline": {
+      "eyebrow": "Étapes clés",
+      "title": "Dix-huit ans de croissance maîtrisée.",
+      "items": [
+        { "year": "2008", "title": "Fondation à Huzhou", "text": "Hailan New Materials naît dans le cluster de sols du Zhejiang et produit des sols résilients pour des projets nationaux." },
+        { "year": "2012", "title": "Premiers programmes d’export", "text": "Les premières lignes dédiées à l’export livrent du LVT aux importateurs européens ; une équipe internationale ventes et documentation est constituée." },
+        { "year": "2016", "title": "SPC et systèmes à clic", "text": "L’investissement dans des lignes d’extrusion et de profilage ajoute les constructions SPC à âme rigide et à clic au portefeuille." },
+        { "year": "2019", "title": "Ligne acoustique PET", "text": "Une ligne d’aiguilletage et de thermoformage lance la production de panneaux muraux acoustiques PET et ouvre le marché de la prescription architecturale." },
+        { "year": "2021", "title": "Extension du campus", "text": "Le campus de Nanxun atteint 120 000 m², regroupant sols, murs et entrepôts sur un site unique." },
+        { "year": "2023", "title": "Lancement des moquettes", "text": "Des lignes de touffetage pour dalles et lames PET teintes dans la masse complètent l’offre intérieure sol et mur." },
+        { "year": "2025", "title": "Studio d’échantillonnage OEM", "text": "Un studio dédié de 1 800 m² ramène les cycles de développement de décors et d’échantillonnage à 7–10 jours pour les partenaires en marque privée." }
+      ]
+    },
+    "compliance": {
+      "eyebrow": "Conformité",
+      "title": "Certifié pour la destination la plus exigeante.",
+      "text": "Chaque gamme est développée selon les exigences réglementaires de l’Union européenne, de l’Amérique du Nord et du Golfe — puis documentée pour que nos partenaires prescrivent, importent et posent sans friction."
+    },
+    "cta": {
+      "title": "Rencontrez l’équipe derrière l’étiquette.",
+      "lede": "Visitez notre campus à Huzhou, retrouvez-nous au prochain salon, ou commencez par une conversation autour de votre programme."
+    }
+  },
+  "productsPage": {
+    "meta": {
+      "title": "Produits",
+      "description": "Sols LVT, revêtements muraux acoustiques PET et moquettes PET — trois gammes conçues sous un même système qualité pour importateurs, distributeurs et marques du monde entier."
+    },
+    "hero": {
+      "eyebrow": "Produits",
+      "title": "Sol. Mur. Textile. Un seul standard.",
+      "lede": "Trois gammes développées dans un même système d’ingénierie et de conformité — pour composer des programmes d’intérieur complets avec une seule usine, un seul contact et un seul calendrier d’expédition."
+    },
+    "explore": "Découvrir",
+    "roadmap": {
+      "eyebrow": "Et demain",
+      "title": "Une catégorie à la fois, conçue rigoureusement.",
+      "text": "La feuille de route de HAILAN dépasse les sols et les surfaces acoustiques pour s’étendre au monde plus large des matériaux de construction décoratifs. Les nouvelles catégories rejoignent le portefeuille comme les trois premières : développées sur nos lignes, validées selon les normes internationales et proposées à nos partenaires seulement lorsque nous pouvons les garantir à grande échelle.",
+      "link": "Développer un produit avec nous"
+    },
+    "cta": {
+      "title": "Besoin de spécifications, de tarifs ou d’échantillons ?",
+      "lede": "Envoyez-nous les exigences de votre projet ou programme — fiches techniques et envoi d’échantillons sous quelques jours.",
+      "button": "Demander des informations produit"
+    }
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Contact",
+      "description": "Échangez avec l’équipe export de HAILAN sur la distribution, les programmes OEM ou l’approvisionnement de projets. Réponse sous un jour ouvré."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Parlons de votre programme.",
+      "lede": "Distribution, marque privée, approvisionnement de projet ou simple question technique — la façon la plus rapide d’évaluer HAILAN est d’engager la conversation."
+    },
+    "inquiries": "Demandes internationales",
+    "hq": "Siège et usine",
+    "hours": "Horaires : lundi – vendredi, 8 h 30 – 18 h 00 (GMT+8).",
+    "visits": "Visites d’usine et audits bienvenus sur rendez-vous.",
+    "nextTitle": "Ce qui se passe ensuite",
+    "expectations": [
+      { "title": "Réponse sous 24 heures", "text": "Un responsable export nommément désigné — pas un répondeur automatique — vous répond sous un jour ouvré." },
+      { "title": "Spécifications et tarifs", "text": "Vous recevez données techniques, prix indicatifs et délais réalistes pour votre marché." },
+      { "title": "Échantillons en route", "text": "Les échantillons standard partent sous quelques jours ; l’échantillonnage sur mesure prend 7–10 jours à partir de la maquette approuvée." }
+    ],
+    "form": {
+      "heading": "Envoyer une demande",
+      "intro": "Plus vous nous en dites sur votre marché et vos volumes, plus notre première réponse sera précise.",
+      "name": "Nom complet",
+      "namePlaceholder": "Marie Dupont",
+      "company": "Société",
+      "companyPlaceholder": "Société SARL",
+      "email": "E-mail professionnel",
+      "emailPlaceholder": "marie@societe.com",
+      "country": "Pays / marché",
+      "countryPlaceholder": "France",
+      "inquiry": "Type de demande",
+      "inquiryTypes": [
+        "Partenariat de distribution",
+        "Programme OEM / marque privée",
+        "Approvisionnement de projet",
+        "Échantillons et documentation",
+        "Autre"
+      ],
+      "productsInterest": "Produits concernés",
+      "message": "Message",
+      "messagePlaceholder": "Parlez-nous de votre marché, de vos volumes, des constructions visées ou de votre projet…",
+      "submit": "Envoyer la demande",
+      "note": "Ouvre votre client de messagerie — ou écrivez-nous directement à",
+      "status": "Le brouillon d’e-mail a été ouvert dans votre client de messagerie."
+    }
+  }
+}

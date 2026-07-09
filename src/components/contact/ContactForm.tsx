@@ -3,16 +3,10 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
-import { products } from "@/data/products";
+import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { site } from "@/lib/site";
 
-const inquiryTypes = [
-  "Distribution partnership",
-  "OEM / private label program",
-  "Commercial project supply",
-  "Samples & documentation",
-  "Other",
-];
+type FormDict = Dictionary["contactPage"]["form"];
 
 const fieldClasses =
   "w-full rounded-xl border border-ink-950/12 bg-white px-4.5 py-3.5 text-[15px] text-ink-950 placeholder:text-mist-400 transition-colors duration-300 focus:border-azure-500 focus:outline-none";
@@ -22,7 +16,13 @@ const fieldClasses =
  * visitor's mail client. Swap handleSubmit for an API route or form service
  * when a backend is available.
  */
-export function ContactForm() {
+export function ContactForm({
+  t,
+  productNames,
+}: {
+  t: FormDict;
+  productNames: string[];
+}) {
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -49,14 +49,14 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate={false}>
+    <form onSubmit={handleSubmit}>
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label
             htmlFor="contact-name"
             className="mb-2 block text-sm font-medium text-ink-950"
           >
-            Full name
+            {t.name}
           </label>
           <input
             id="contact-name"
@@ -64,7 +64,7 @@ export function ContactForm() {
             type="text"
             required
             autoComplete="name"
-            placeholder="Jane Smith"
+            placeholder={t.namePlaceholder}
             className={fieldClasses}
           />
         </div>
@@ -73,7 +73,7 @@ export function ContactForm() {
             htmlFor="contact-company"
             className="mb-2 block text-sm font-medium text-ink-950"
           >
-            Company
+            {t.company}
           </label>
           <input
             id="contact-company"
@@ -81,7 +81,7 @@ export function ContactForm() {
             type="text"
             required
             autoComplete="organization"
-            placeholder="Company Ltd."
+            placeholder={t.companyPlaceholder}
             className={fieldClasses}
           />
         </div>
@@ -90,7 +90,7 @@ export function ContactForm() {
             htmlFor="contact-email"
             className="mb-2 block text-sm font-medium text-ink-950"
           >
-            Work email
+            {t.email}
           </label>
           <input
             id="contact-email"
@@ -98,7 +98,7 @@ export function ContactForm() {
             type="email"
             required
             autoComplete="email"
-            placeholder="jane@company.com"
+            placeholder={t.emailPlaceholder}
             className={fieldClasses}
           />
         </div>
@@ -107,7 +107,7 @@ export function ContactForm() {
             htmlFor="contact-country"
             className="mb-2 block text-sm font-medium text-ink-950"
           >
-            Country / market
+            {t.country}
           </label>
           <input
             id="contact-country"
@@ -115,7 +115,7 @@ export function ContactForm() {
             type="text"
             required
             autoComplete="country-name"
-            placeholder="Netherlands"
+            placeholder={t.countryPlaceholder}
             className={fieldClasses}
           />
         </div>
@@ -124,16 +124,16 @@ export function ContactForm() {
             htmlFor="contact-inquiry"
             className="mb-2 block text-sm font-medium text-ink-950"
           >
-            Inquiry type
+            {t.inquiry}
           </label>
           <select
             id="contact-inquiry"
             name="inquiry"
             required
-            defaultValue={inquiryTypes[0]}
+            defaultValue={t.inquiryTypes[0]}
             className={fieldClasses}
           >
-            {inquiryTypes.map((type) => (
+            {t.inquiryTypes.map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>
@@ -144,21 +144,21 @@ export function ContactForm() {
 
       <fieldset className="mt-6">
         <legend className="mb-3 block text-sm font-medium text-ink-950">
-          Products of interest
+          {t.productsInterest}
         </legend>
         <div className="flex flex-wrap gap-2.5">
-          {products.map((product) => (
+          {productNames.map((name) => (
             <label
-              key={product.slug}
+              key={name}
               className="flex cursor-pointer items-center gap-2.5 rounded-full border border-ink-950/12 px-4 py-2 text-sm text-mist-600 transition-colors duration-300 has-checked:border-azure-600 has-checked:bg-azure-600/5 has-checked:text-ink-950"
             >
               <input
                 type="checkbox"
                 name="products"
-                value={product.name}
+                value={name}
                 className="h-3.5 w-3.5 accent-azure-600"
               />
-              {product.name}
+              {name}
             </label>
           ))}
         </div>
@@ -169,24 +169,24 @@ export function ContactForm() {
           htmlFor="contact-message"
           className="mb-2 block text-sm font-medium text-ink-950"
         >
-          Message
+          {t.message}
         </label>
         <textarea
           id="contact-message"
           name="message"
           required
           rows={5}
-          placeholder="Tell us about your market, volumes, target constructions or project…"
+          placeholder={t.messagePlaceholder}
           className={fieldClasses}
         />
       </div>
 
       <div className="mt-8 flex flex-wrap items-center gap-5">
         <Button type="submit" arrow>
-          Send inquiry
+          {t.submit}
         </Button>
         <p className="text-[13px] leading-relaxed text-mist-500">
-          Opens your email client — or write to us directly at{" "}
+          {t.note}{" "}
           <a
             href={`mailto:${site.email}`}
             className="font-medium text-ink-950 underline decoration-ink-950/25 underline-offset-4 hover:decoration-azure-600"
@@ -197,7 +197,7 @@ export function ContactForm() {
       </div>
 
       <p role="status" aria-live="polite" className="sr-only">
-        {submitted ? "Your email draft has been opened in your mail client." : ""}
+        {submitted ? t.status : ""}
       </p>
     </form>
   );

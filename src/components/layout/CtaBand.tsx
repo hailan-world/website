@@ -1,21 +1,26 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { site } from "@/lib/site";
 import type { ReactNode } from "react";
 
 interface CtaBandProps {
+  dict?: Dictionary;
   title?: ReactNode;
   lede?: ReactNode;
   cta?: string;
 }
 
 /** Pre-footer call to action, framed as an inset dark panel. */
-export function CtaBand({
-  title = "Let’s build your next product together.",
-  lede = "Tell us about your project, program or private-label ambition — our export team responds within one business day.",
-  cta = "Start a conversation",
-}: CtaBandProps) {
+export function CtaBand({ dict, title, lede, cta }: CtaBandProps) {
+  const resolvedTitle =
+    title ?? dict?.cta.title ?? "Let’s build your next product together.";
+  const resolvedLede =
+    lede ??
+    dict?.cta.lede ??
+    "Tell us about your project, program or private-label ambition — our export team responds within one business day.";
+  const resolvedCta = cta ?? dict?.cta.button ?? "Start a conversation";
   return (
     <section className="py-24 md:py-32">
       <Container>
@@ -30,14 +35,14 @@ export function CtaBand({
 
             <div className="relative mx-auto max-w-2xl">
               <h2 className="text-balance text-3xl font-medium leading-[1.1] tracking-[-0.02em] md:text-5xl">
-                {title}
+                {resolvedTitle}
               </h2>
               <p className="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-ink-200">
-                {lede}
+                {resolvedLede}
               </p>
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Button href="/contact" variant="inverted" arrow>
-                  {cta}
+                  {resolvedCta}
                 </Button>
                 <a
                   href={`mailto:${site.email}`}

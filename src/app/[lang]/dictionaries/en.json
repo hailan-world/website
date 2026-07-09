@@ -1,0 +1,304 @@
+{
+  "siteMeta": {
+    "title": "HAILAN — Global Decorative Building Materials Manufacturer",
+    "description": "HAILAN designs and manufactures LVT flooring, PET wall coverings and PET carpet coverings for importers, distributors and brands in more than 60 countries."
+  },
+  "nav": {
+    "about": "About",
+    "products": "Products",
+    "manufacturing": "Manufacturing",
+    "quality": "Quality",
+    "oemOdm": "OEM / ODM",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "allProducts": "All products",
+    "allNews": "All news",
+    "readArticle": "Read article",
+    "moreAboutHailan": "More about HAILAN",
+    "exploreProducts": "Explore Products",
+    "ourManufacturing": "Our Manufacturing",
+    "languageLabel": "Language"
+  },
+  "productLines": {
+    "lvt-flooring": {
+      "name": "LVT Flooring",
+      "category": "Resilient Flooring",
+      "short": "Luxury vinyl tile and plank with high-definition decors, register embossing and wear layers built for demanding commercial traffic.",
+      "chips": ["Dry back · Click · Loose lay", "Wear layer to 0.7 mm"]
+    },
+    "pet-wall-coverings": {
+      "name": "PET Wall Coverings",
+      "category": "Acoustic Wall Systems",
+      "short": "Polyester acoustic felt panels — flat sheets, slat systems and CNC-cut shapes — with up to 60% recycled content.",
+      "chips": ["NRC up to 0.85", "60% recycled PET"]
+    },
+    "pet-carpet-coverings": {
+      "name": "PET Carpet Coverings",
+      "category": "Modular Textile Flooring",
+      "short": "Modular carpet tiles and planks tufted from solution-dyed PET yarn — inherently stain-resistant, colourfast and specification-ready.",
+      "chips": ["Solution-dyed yarn", "Tiles & planks"]
+    }
+  },
+  "hero": {
+    "kicker": "Hailan New Materials Co., Ltd.",
+    "headlineLine1": "Engineered surfaces",
+    "headlineLine2": "for the built world",
+    "lede": "HAILAN designs and manufactures LVT flooring, PET wall coverings and PET carpet coverings for importers, distributors and brands in more than 60 countries — precision manufacturing with a design-first mindset.",
+    "badge": "ISO 9001 · FloorScore® · CE — Exporting to 60+ countries",
+    "scroll": "Scroll"
+  },
+  "intro": {
+    "eyebrow": "01 — Who we are",
+    "title": "A manufacturing partner built for global brands.",
+    "para1": "HAILAN is a global decorative building materials manufacturer headquartered in Huzhou, China — home to one of the world’s densest flooring production clusters. From a single integrated campus, we develop, produce and export LVT flooring, PET acoustic wall coverings and PET carpet coverings.",
+    "para2": "Our products carry other people’s names as often as our own. For importers, retail chains and home-improvement brands on every continent, HAILAN is the quiet capability behind the label: stable quality, honest lead times and a team that treats your program like its own.",
+    "stats": {
+      "countries": "Export countries",
+      "facility": "Production campus",
+      "capacity": "Annual capacity",
+      "team": "Specialists & engineers"
+    }
+  },
+  "productsHome": {
+    "eyebrow": "02 — Products",
+    "title": "Three product lines. One quality system.",
+    "lede": "Floor, wall and textile surfaces developed under a single engineering and compliance standard — so partners can build complete interior programs from one factory."
+  },
+  "manufacturingHome": {
+    "eyebrow": "03 — Manufacturing excellence",
+    "title": "Precision at industrial scale.",
+    "lede": "One integrated campus takes raw polymer and fibre through to finished, packed, batch-coded product — nothing critical is outsourced.",
+    "link": "Inside our manufacturing",
+    "pillars": [
+      {
+        "title": "Automated production",
+        "text": "25 extrusion, calendering and tufting lines run under MES tracking, with laser thickness gauging in-line — not after the fact."
+      },
+      {
+        "title": "In-line quality control",
+        "text": "Dimensional, surface and colour checks every production hour, recorded against the batch code that ships on every carton."
+      },
+      {
+        "title": "R&D and tooling",
+        "text": "In-house decor development, embossing plates and a laboratory press turn a partner’s idea into a factory-exact sample in days."
+      },
+      {
+        "title": "OEM capability",
+        "text": "A dedicated sampling studio and bilingual project managers carry private-label programs from first brief to loaded container."
+      }
+    ],
+    "process": [
+      "Material preparation",
+      "Extrusion & calendering",
+      "Lamination & pressing",
+      "UV curing",
+      "Precision profiling",
+      "100% inspection"
+    ]
+  },
+  "why": {
+    "eyebrow": "04 — Why HAILAN",
+    "title": "The capability behind labels and projects worldwide.",
+    "lede": "Partners rarely switch suppliers over price. They switch over surprises. Our job is to remove them.",
+    "reasons": [
+      {
+        "title": "Reliable supply",
+        "text": "Capacity is planned around partner forecasts, with safety stock held on running programs. Across the last three years, 98.6% of containers shipped on or before the confirmed date.",
+        "proof": "98.6% on-time shipment"
+      },
+      {
+        "title": "Stable quality",
+        "text": "One quality system governs every line. Products are batch-coded, lab-verified and visually inspected — so the hundredth container matches the first sample you approved.",
+        "proof": "AQL 2.5 · Full batch traceability"
+      },
+      {
+        "title": "Global experience",
+        "text": "Certification, documentation, packaging and logistics are tuned to each destination — from EU REACH and CE marking to US FloorScore and Gulf conformity schemes.",
+        "proof": "60+ markets served"
+      },
+      {
+        "title": "Professional team",
+        "text": "English-speaking project managers and engineers answer in hours, not days — and stay with your program through reorders, redesigns and market shifts.",
+        "proof": "24-hour response commitment"
+      }
+    ]
+  },
+  "markets": {
+    "eyebrow": "05 — Global markets",
+    "title": "Shipped from one campus. Installed on six continents.",
+    "lede": "Export is not a department at HAILAN — it is the business. Documentation, load plans and port logistics are engineered with the same care as the product.",
+    "regions": [
+      { "name": "Europe", "markets": "Netherlands · Germany · UK · Poland · Spain" },
+      { "name": "North America", "markets": "United States · Canada · Mexico" },
+      { "name": "Middle East", "markets": "UAE · Saudi Arabia · Qatar" },
+      { "name": "Asia-Pacific", "markets": "Australia · Japan · Korea · Singapore" },
+      { "name": "Latin America", "markets": "Brazil · Chile · Colombia" },
+      { "name": "Africa", "markets": "Nigeria · Egypt · South Africa" }
+    ],
+    "figures": [
+      { "label": "Countries supplied" },
+      { "label": "Continents installed" },
+      { "label": "Containers shipped annually" }
+    ]
+  },
+  "newsHome": {
+    "eyebrow": "06 — News",
+    "title": "What’s moving at HAILAN."
+  },
+  "cta": {
+    "title": "Let’s build your next product together.",
+    "lede": "Tell us about your project, program or private-label ambition — our export team responds within one business day.",
+    "button": "Start a conversation"
+  },
+  "footer": {
+    "tagline": "Hailan New Materials Co., Ltd. — a global manufacturer of decorative building materials, supplying partners in more than 60 countries from a 120,000 m² production campus.",
+    "products": "Products",
+    "company": "Company",
+    "headquarters": "Headquarters",
+    "rights": "All rights reserved.",
+    "signoff": "Engineered in Huzhou · Delivered worldwide",
+    "globalInquiries": "Global inquiries"
+  },
+  "about": {
+    "meta": {
+      "title": "About",
+      "description": "HAILAN — Hailan New Materials Co., Ltd. — is a global decorative building materials manufacturer supplying LVT flooring, PET wall coverings and PET carpet coverings to partners in 60+ countries."
+    },
+    "hero": {
+      "eyebrow": "About HAILAN",
+      "title": "A factory that thinks like a brand.",
+      "lede": "Hailan New Materials Co., Ltd. designs, manufactures and exports decorative building materials from an integrated campus in Huzhou, China — for partners who put their own name on the box."
+    },
+    "story": {
+      "eyebrow": "Our story",
+      "title": "Built in the world’s densest flooring cluster.",
+      "para1": "HAILAN was founded in 2008 in Huzhou, Zhejiang — a region that produces a remarkable share of the world’s resilient flooring. Growing up inside that cluster shaped us: suppliers, toolmakers and testing labs are minutes away, and the bar for manufacturing competence is set by neighbours who export to every continent.",
+      "para2": "From the beginning we chose a narrower, deeper path than most: fewer product categories, engineered properly, produced on our own lines and documented to the standards of the strictest destination market. First LVT flooring, then PET acoustic wall coverings, then PET carpet coverings — three surfaces, one quality system.",
+      "para3": "Today our products are installed in offices, hotels, schools and homes in more than 60 countries — usually under our partners’ brands. That is by design. HAILAN’s ambition is to be the most dependable manufacturer behind the world’s decorative building material brands, and increasingly, a brand worth asking for by name.",
+      "stats": {
+        "founded": "Founded",
+        "facility": "Production campus",
+        "lines": "Production lines",
+        "team": "Specialists & engineers"
+      }
+    },
+    "values": {
+      "eyebrow": "How we work",
+      "title": "Four principles govern every program.",
+      "lede": "They are not wall posters. They are the operating rules our partners experience in every quotation, sample and container.",
+      "items": [
+        {
+          "title": "Engineering first",
+          "text": "Every product decision starts on the production line, not the brochure. If a construction cannot be manufactured consistently at scale, we do not sell it."
+        },
+        {
+          "title": "Radical reliability",
+          "text": "Partners plan seasons, store openings and project schedules around our confirmations. We treat a confirmed date as a contract — 98.6% of containers ship on time."
+        },
+        {
+          "title": "Design fluency",
+          "text": "We read the same trend reports, visit the same fairs and track the same architecture press as our customers — so decor development speaks their language."
+        },
+        {
+          "title": "Long-term partnership",
+          "text": "Our oldest export programs have run for over a decade. We price, plan and invest for relationships measured in years, not purchase orders."
+        }
+      ]
+    },
+    "timeline": {
+      "eyebrow": "Milestones",
+      "title": "Eighteen years of deliberate growth.",
+      "items": [
+        { "year": "2008", "title": "Founded in Huzhou", "text": "Hailan New Materials is established in Zhejiang’s flooring cluster, producing resilient flooring for domestic projects." },
+        { "year": "2012", "title": "First export programs", "text": "The first dedicated export lines ship LVT to European importers; an international sales and documentation team is built." },
+        { "year": "2016", "title": "SPC & click systems", "text": "Investment in extrusion and profiling lines adds rigid-core SPC and click constructions to the flooring portfolio." },
+        { "year": "2019", "title": "PET acoustic line", "text": "A needle-punch and thermoforming line brings PET acoustic wall panels into production, opening the architectural specification market." },
+        { "year": "2021", "title": "Campus expansion", "text": "The Nanxun campus grows to 120,000 m², consolidating flooring, wall and warehouse operations on a single site." },
+        { "year": "2023", "title": "Carpet coverings launch", "text": "Tufting lines for solution-dyed PET carpet tiles and planks complete the floor-and-wall interior offer." },
+        { "year": "2025", "title": "OEM sampling studio", "text": "A dedicated 1,800 m² studio compresses decor development and sampling cycles to 7–10 days for private-label partners." }
+      ]
+    },
+    "compliance": {
+      "eyebrow": "Compliance",
+      "title": "Certified for the strictest destination.",
+      "text": "Every product line is developed against the regulatory requirements of the European Union, North America and the Gulf — then documented so partners can specify, import and install without friction."
+    },
+    "cta": {
+      "title": "Meet the team behind the label.",
+      "lede": "Visit our campus in Huzhou, meet us at the next trade fair, or start with a conversation about your program."
+    }
+  },
+  "productsPage": {
+    "meta": {
+      "title": "Products",
+      "description": "LVT flooring, PET acoustic wall coverings and PET carpet coverings — three product lines engineered under one quality system for importers, distributors and brands worldwide."
+    },
+    "hero": {
+      "eyebrow": "Products",
+      "title": "Floor. Wall. Textile. One standard.",
+      "lede": "Three product lines developed under a single engineering and compliance system — so partners can build complete interior programs from one factory, one contact and one shipping schedule."
+    },
+    "explore": "Explore",
+    "roadmap": {
+      "eyebrow": "Looking ahead",
+      "title": "One category at a time, engineered properly.",
+      "text": "HAILAN’s roadmap extends beyond flooring and acoustic surfaces into the broader world of decorative building materials. New categories join the portfolio the same way the current three did: developed on our own lines, validated against international standards, and offered to partners only when we can guarantee them at scale.",
+      "link": "Develop a product with us"
+    },
+    "cta": {
+      "title": "Need specifications, pricing or samples?",
+      "lede": "Send us your project or program requirements — technical data sheets and sample dispatch within days.",
+      "button": "Request product information"
+    }
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Contact",
+      "description": "Talk to HAILAN’s export team about distribution, OEM programs or project supply. We respond within one business day."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Let’s talk about your program.",
+      "lede": "Distribution, private label, project supply or a single technical question — the fastest way to evaluate HAILAN is to start a conversation."
+    },
+    "inquiries": "Global inquiries",
+    "hq": "Headquarters & factory",
+    "hours": "Office hours: Monday – Friday, 08:30 – 18:00 (GMT+8).",
+    "visits": "Factory visits and audits welcome by appointment.",
+    "nextTitle": "What happens next",
+    "expectations": [
+      { "title": "Response within 24 hours", "text": "A named export manager — not an autoresponder — replies within one business day." },
+      { "title": "Specifications & pricing", "text": "You receive technical data, indicative pricing and honest lead times for your market." },
+      { "title": "Samples on their way", "text": "Standard samples dispatch within days; custom sampling runs 7–10 days from approved artwork." }
+    ],
+    "form": {
+      "heading": "Send an inquiry",
+      "intro": "The more you tell us about your market and volumes, the more precise our first reply can be.",
+      "name": "Full name",
+      "namePlaceholder": "Jane Smith",
+      "company": "Company",
+      "companyPlaceholder": "Company Ltd.",
+      "email": "Work email",
+      "emailPlaceholder": "jane@company.com",
+      "country": "Country / market",
+      "countryPlaceholder": "Netherlands",
+      "inquiry": "Inquiry type",
+      "inquiryTypes": [
+        "Distribution partnership",
+        "OEM / private label program",
+        "Commercial project supply",
+        "Samples & documentation",
+        "Other"
+      ],
+      "productsInterest": "Products of interest",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your market, volumes, target constructions or project…",
+      "submit": "Send inquiry",
+      "note": "Opens your email client — or write to us directly at",
+      "status": "Your email draft has been opened in your mail client."
+    }
+  }
+}

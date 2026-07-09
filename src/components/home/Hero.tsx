@@ -10,10 +10,11 @@ import {
 import { HeroArt } from "@/components/graphics/HeroArt";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import type { Dictionary } from "@/app/[lang]/dictionaries";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-export function Hero() {
+export function Hero({ dict }: { dict: Dictionary }) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -24,9 +25,10 @@ export function Hero() {
   const cueOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
 
   const lines = [
-    <span key="l1">Engineered surfaces</span>,
+    <span key="l1">{dict.hero.headlineLine1}</span>,
     <span key="l2">
-      for the built world<span className="text-azure-400">.</span>
+      {dict.hero.headlineLine2}
+      <span className="text-azure-400">.</span>
     </span>,
   ];
 
@@ -60,7 +62,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
               className="font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-azure-300"
             >
-              Hailan New Materials Co., Ltd.
+              {dict.hero.kicker}
             </motion.p>
 
             <h1 className="mt-7 text-[2.6rem] font-medium leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]">
@@ -84,10 +86,7 @@ export function Hero() {
               transition={{ duration: 0.9, delay: 0.55, ease: EASE }}
               className="mt-7 max-w-xl text-lg leading-relaxed text-ink-200"
             >
-              HAILAN designs and manufactures LVT flooring, PET wall coverings
-              and PET carpet coverings for importers, distributors and brands in
-              more than 60 countries — precision manufacturing with a
-              design-first mindset.
+              {dict.hero.lede}
             </motion.p>
 
             <motion.div
@@ -97,10 +96,10 @@ export function Hero() {
               className="mt-10 flex flex-wrap items-center gap-4"
             >
               <Button href="/products" variant="inverted" arrow>
-                Explore Products
+                {dict.common.exploreProducts}
               </Button>
               <Button href="/manufacturing" variant="outlineDark">
-                Our Manufacturing
+                {dict.common.ourManufacturing}
               </Button>
             </motion.div>
 
@@ -110,7 +109,7 @@ export function Hero() {
               transition={{ duration: 1, delay: 1.05 }}
               className="mt-14 border-t border-white/10 pt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-400"
             >
-              ISO 9001 · FloorScore® · CE — Exporting to 60+ countries
+              {dict.hero.badge}
             </motion.p>
           </div>
 
@@ -132,7 +131,7 @@ export function Hero() {
         aria-hidden="true"
       >
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-400">
-          Scroll
+          {dict.hero.scroll}
         </span>
         <span className="relative block h-10 w-px overflow-hidden bg-white/15">
           <motion.span

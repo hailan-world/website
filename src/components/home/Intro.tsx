@@ -3,43 +3,36 @@ import { Reveal } from "@/components/motion/Reveal";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { stats } from "@/lib/site";
 
-const statItems = [
-  { value: stats.countries, suffix: "+", label: "Export countries" },
-  { value: stats.facility, suffix: " m²", label: "Production campus" },
-  { value: stats.capacity, suffix: "M m²", label: "Annual capacity" },
-  { value: stats.team, suffix: "+", label: "Specialists & engineers" },
-];
+export function Intro({ dict }: { dict: Dictionary }) {
+  const statItems = [
+    { value: stats.countries, suffix: "+", label: dict.intro.stats.countries },
+    { value: stats.facility, suffix: " m²", label: dict.intro.stats.facility },
+    { value: stats.capacity, suffix: "M m²", label: dict.intro.stats.capacity },
+    { value: stats.team, suffix: "+", label: dict.intro.stats.team },
+  ];
 
-export function Intro() {
   return (
     <section className="py-24 md:py-36">
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
-            <Eyebrow>01 — Who we are</Eyebrow>
+            <Eyebrow>{dict.intro.eyebrow}</Eyebrow>
             <h2 className="mt-5 text-balance text-[2rem] font-medium leading-[1.12] tracking-[-0.02em] text-ink-950 md:text-[2.75rem] md:leading-[1.08]">
-              A manufacturing partner built for global brands.
+              {dict.intro.title}
             </h2>
           </Reveal>
           <Reveal delay={0.12} className="lg:col-span-7">
             <p className="text-lg leading-relaxed text-mist-600">
-              HAILAN is a global decorative building materials manufacturer
-              headquartered in Huzhou, China — home to one of the world’s
-              densest flooring production clusters. From a single integrated
-              campus, we develop, produce and export LVT flooring, PET acoustic
-              wall coverings and PET carpet coverings.
+              {dict.intro.para1}
             </p>
             <p className="mt-6 text-lg leading-relaxed text-mist-600">
-              Our products carry other people’s names as often as our own. For
-              importers, retail chains and home-improvement brands on every
-              continent, HAILAN is the quiet capability behind the label:
-              stable quality, honest lead times and a team that treats your
-              program like its own.
+              {dict.intro.para2}
             </p>
             <ArrowLink href="/about" className="mt-9">
-              More about HAILAN
+              {dict.common.moreAboutHailan}
             </ArrowLink>
           </Reveal>
         </div>

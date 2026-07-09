@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/components/i18n/Link";
 import { MaterialTexture } from "@/components/graphics/MaterialTexture";
 import { CtaBand } from "@/components/layout/CtaBand";
 import { PageHero } from "@/components/layout/PageHero";
@@ -9,34 +9,52 @@ import { Chip } from "@/components/ui/Chip";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { products } from "@/data/products";
+import { defaultLocale, isLocale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { getDictionary } from "../dictionaries";
 
-export const metadata: Metadata = {
-  title: "Products",
-  description:
-    "LVT flooring, PET acoustic wall coverings and PET carpet coverings — three product lines engineered under one quality system for importers, distributors and brands worldwide.",
-};
+interface ProductsPageProps {
+  params: Promise<{ lang: string }>;
+}
 
-export default function ProductsPage() {
+export async function generateMetadata({
+  params,
+}: ProductsPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+  return {
+    title: dict.productsPage.meta.title,
+    description: dict.productsPage.meta.description,
+  };
+}
+
+export default async function ProductsPage({ params }: ProductsPageProps) {
+  const { lang } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+  const t = dict.productsPage;
+
   return (
     <>
       <PageHero
-        eyebrow="Products"
-        title="Floor. Wall. Textile. One standard."
-        lede="Three product lines developed under a single engineering and compliance system — so partners can build complete interior programs from one factory, one contact and one shipping schedule."
+        eyebrow={t.hero.eyebrow}
+        title={t.hero.title}
+        lede={t.hero.lede}
       />
 
       <section className="py-24 md:py-32">
         <Container>
           <div className="space-y-24 md:space-y-32">
             {products.map((product, i) => {
+              const line = dict.productLines[product.slug];
               const reversed = i % 2 === 1;
               return (
                 <Reveal key={product.slug}>
                   <article className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
                     <Link
                       href={`/products/${product.slug}`}
-                      aria-label={`${product.name} — view details`}
+                      aria-label={line.name}
                       className={cn(
                         "group relative block aspect-[4/3] overflow-hidden rounded-2xl",
                         reversed && "lg:order-2",
@@ -46,19 +64,19 @@ export default function ProductsPage() {
                         <MaterialTexture kind={product.texture} />
                       </div>
                       <span className="absolute left-4 top-4 rounded-full bg-ink-950/55 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-white/90 backdrop-blur-sm">
-                        {product.category}
+                        {line.category}
                       </span>
                     </Link>
 
                     <div className={cn(reversed && "lg:order-1")}>
                       <Eyebrow>
-                        {String(i + 1).padStart(2, "0")} — {product.category}
+                        {String(i + 1).padStart(2, "0")} — {line.category}
                       </Eyebrow>
                       <h2 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.02em] text-ink-950 md:text-4xl">
-                        {product.name}
+                        {line.name}
                       </h2>
                       <p className="mt-4 text-lg leading-relaxed text-mist-600">
-                        {product.short}
+                        {line.short}
                       </p>
 
                       <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-5 border-t border-ink-950/10 pt-7">
@@ -75,8 +93,8 @@ export default function ProductsPage() {
                       </dl>
 
                       <div className="mt-7 flex flex-wrap gap-2">
-                        {product.formats.map((format) => (
-                          <Chip key={format}>{format}</Chip>
+                        {line.chips.map((chip) => (
+                          <Chip key={chip}>{chip}</Chip>
                         ))}
                       </div>
 
@@ -84,7 +102,7 @@ export default function ProductsPage() {
                         href={`/products/${product.slug}`}
                         className="mt-9"
                       >
-                        Explore {product.name}
+                        {t.explore} {line.name}
                       </ArrowLink>
                     </div>
                   </article>
@@ -100,33 +118,24 @@ export default function ProductsPage() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
-              <Eyebrow>Looking ahead</Eyebrow>
+              <Eyebrow>{t.roadmap.eyebrow}</Eyebrow>
               <h2 className="mt-5 text-balance text-[1.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-ink-950 md:text-[2.25rem]">
-                One category at a time, engineered properly.
+                {t.roadmap.title}
               </h2>
             </Reveal>
             <Reveal delay={0.12} className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-mist-600">
-                HAILAN&apos;s roadmap extends beyond flooring and acoustic
-                surfaces into the broader world of decorative building
-                materials. New categories join the portfolio the same way the
-                current three did: developed on our own lines, validated
-                against international standards, and offered to partners only
-                when we can guarantee them at scale.
+                {t.roadmap.text}
               </p>
               <ArrowLink href="/oem-odm" className="mt-8">
-                Develop a product with us
+                {t.roadmap.link}
               </ArrowLink>
             </Reveal>
           </div>
         </Container>
       </section>
 
-      <CtaBand
-        title="Need specifications, pricing or samples?"
-        lede="Send us your project or program requirements — technical data sheets and sample dispatch within days."
-        cta="Request product information"
-      />
+      <CtaBand title={t.cta.title} lede={t.cta.lede} cta={t.cta.button} />
     </>
   );
 }
