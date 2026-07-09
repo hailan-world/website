@@ -4,9 +4,10 @@ import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import { SectionHead } from "@/components/ui/SectionHead";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
+import { stats } from "@/lib/site";
 
 const figureValues = [
-  { value: 60, suffix: "+" },
+  { value: stats.countries, suffix: "+" },
   { value: 6, suffix: "" },
   { value: 2400, suffix: "+" },
 ];

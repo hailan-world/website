@@ -6,10 +6,10 @@
   "nav": {
     "about": "À propos",
     "products": "Produits",
-    "manufacturing": "Production",
+    "manufacturing": "Usine",
     "quality": "Qualité",
     "oemOdm": "OEM / ODM",
-    "news": "Actualités",
+    "news": "Ressources",
     "contact": "Contact"
   },
   "common": {
@@ -17,6 +17,7 @@
     "allProducts": "Tous les produits",
     "allNews": "Toutes les actualités",
     "readArticle": "Lire l’article",
+    "requestSamples": "Demander des échantillons",
     "moreAboutHailan": "En savoir plus sur HAILAN",
     "exploreProducts": "Découvrir les produits",
     "ourManufacturing": "Notre production",
@@ -43,21 +44,22 @@
     }
   },
   "hero": {
-    "kicker": "Hailan New Materials Co., Ltd.",
-    "headlineLine1": "Des surfaces d’ingénierie",
-    "headlineLine2": "pour le monde bâti",
-    "lede": "HAILAN conçoit et fabrique des sols LVT, des revêtements muraux PET et des moquettes PET pour importateurs, distributeurs et marques dans plus de 60 pays — une fabrication de précision guidée par le design.",
+    "kicker": "Fabricant mondial de matériaux de construction décoratifs",
+    "headlineLine1": "Des surfaces",
+    "headlineLine2": "pour de meilleurs espaces",
+    "lede": "HAILAN conçoit, produit et exporte des sols LVT, des revêtements muraux PET, des moquettes PET et une gamme croissante de matériaux de surface pour partenaires B2B dans le monde entier.",
     "badge": "ISO 9001 · FloorScore® · CE — Export vers 60+ pays",
     "scroll": "Défiler"
   },
   "intro": {
     "eyebrow": "01 — Qui nous sommes",
     "title": "Un partenaire industriel conçu pour les marques mondiales.",
-    "para1": "HAILAN est un fabricant mondial de matériaux de construction décoratifs basé à Huzhou, en Chine — au cœur de l’un des clusters de production de revêtements de sol les plus denses au monde. Depuis un campus intégré unique, nous développons, produisons et exportons des sols LVT, des revêtements muraux acoustiques PET et des moquettes PET.",
+    "para1": "HAILAN est un fabricant mondial de matériaux de construction décoratifs basé à Jinhua, en Chine. Depuis un campus de production intégré dans le Zhejiang, nous développons, produisons et exportons des sols LVT, des revêtements muraux acoustiques PET et des moquettes PET.",
     "para2": "Nos produits portent aussi souvent le nom de nos partenaires que le nôtre. Pour les importateurs, les chaînes de distribution et les marques de l’habitat sur tous les continents, HAILAN est la force discrète derrière l’étiquette : une qualité stable, des délais honnêtes et une équipe qui traite votre programme comme le sien.",
     "stats": {
       "countries": "Pays d’exportation",
       "facility": "Campus de production",
+      "facilityUnit": " m²",
       "capacity": "Capacité annuelle",
       "team": "Spécialistes et ingénieurs"
     }
@@ -149,9 +151,9 @@
     "title": "Ce qui bouge chez HAILAN."
   },
   "cta": {
-    "title": "Construisons ensemble votre prochain produit.",
-    "lede": "Parlez-nous de votre projet, de votre programme ou de votre ambition en marque privée — notre équipe export répond sous un jour ouvré.",
-    "button": "Engager la conversation"
+    "title": "Demandez des échantillons gratuits pour votre prochain programme.",
+    "lede": "Indiquez-nous ce que vous recherchez : type de produit, marché, quantité et spécification cible. Notre équipe export répond sous un jour ouvré.",
+    "button": "Demander des échantillons"
   },
   "footer": {
     "tagline": "Hailan New Materials Co., Ltd. — fabricant mondial de matériaux de construction décoratifs, au service de partenaires dans plus de 60 pays depuis un campus de production de 120 000 m².",
@@ -159,7 +161,7 @@
     "company": "Entreprise",
     "headquarters": "Siège social",
     "rights": "Tous droits réservés.",
-    "signoff": "Conçu à Huzhou · Livré dans le monde entier",
+    "signoff": "Conçu à Jinhua · Livré dans le monde entier",
     "globalInquiries": "Demandes internationales"
   },
   "about": {
@@ -170,12 +172,12 @@
     "hero": {
       "eyebrow": "À propos de HAILAN",
       "title": "Une usine qui pense comme une marque.",
-      "lede": "Hailan New Materials Co., Ltd. conçoit, fabrique et exporte des matériaux de construction décoratifs depuis un campus intégré à Huzhou, en Chine — pour des partenaires qui apposent leur propre nom sur la boîte."
+      "lede": "Hailan New Materials Co., Ltd. conçoit, fabrique et exporte des matériaux de construction décoratifs depuis un campus intégré à Jinhua, en Chine — pour des partenaires qui apposent leur propre nom sur la boîte."
     },
     "story": {
       "eyebrow": "Notre histoire",
-      "title": "Née dans le cluster de sols le plus dense au monde.",
-      "para1": "HAILAN a été fondée en 2008 à Huzhou, dans le Zhejiang — une région qui produit une part remarquable des sols résilients mondiaux. Grandir au sein de ce cluster nous a façonnés : fournisseurs, outilleurs et laboratoires d’essais sont à quelques minutes, et la barre de la compétence industrielle est fixée par des voisins qui exportent vers tous les continents.",
+      "title": "Ancrée dans une base industrielle du Zhejiang.",
+      "para1": "HAILAN a été fondée en 2020 dans le district de Jindong, à Jinhua, dans le Zhejiang. En grandissant depuis une base de production dédiée, nous avons bâti une façon de travailler proche des fournisseurs, des partenaires d’outillage et des ressources d’essai, avec les standards export comme référence pour chaque programme.",
       "para2": "Dès le départ, nous avons choisi une voie plus étroite et plus profonde que la plupart : moins de catégories de produits, mais conçues rigoureusement, produites sur nos propres lignes et documentées selon les normes du marché de destination le plus exigeant. D’abord les sols LVT, puis les revêtements muraux acoustiques PET, puis les moquettes PET — trois surfaces, un système qualité.",
       "para3": "Aujourd’hui, nos produits équipent bureaux, hôtels, écoles et logements dans plus de 60 pays — le plus souvent sous les marques de nos partenaires. C’est un choix délibéré. L’ambition de HAILAN : être le fabricant le plus fiable derrière les marques mondiales de matériaux décoratifs, et de plus en plus, une marque que l’on demande par son nom.",
       "stats": {
@@ -204,21 +206,20 @@
         },
         {
           "title": "Partenariat de long terme",
-          "text": "Nos plus anciens programmes d’export durent depuis plus de dix ans. Nous fixons nos prix, planifions et investissons pour des relations qui se mesurent en années, pas en bons de commande."
+          "text": "Nos programmes récurrents sont pensés comme des partenariats de long terme. Nous fixons nos prix, planifions et investissons pour des relations qui se mesurent en années, pas en bons de commande."
         }
       ]
     },
     "timeline": {
       "eyebrow": "Étapes clés",
-      "title": "Dix-huit ans de croissance maîtrisée.",
+      "title": "Une croissance ciblée depuis 2020.",
       "items": [
-        { "year": "2008", "title": "Fondation à Huzhou", "text": "Hailan New Materials naît dans le cluster de sols du Zhejiang et produit des sols résilients pour des projets nationaux." },
-        { "year": "2012", "title": "Premiers programmes d’export", "text": "Les premières lignes dédiées à l’export livrent du LVT aux importateurs européens ; une équipe internationale ventes et documentation est constituée." },
-        { "year": "2016", "title": "SPC et systèmes à clic", "text": "L’investissement dans des lignes d’extrusion et de profilage ajoute les constructions SPC à âme rigide et à clic au portefeuille." },
-        { "year": "2019", "title": "Ligne acoustique PET", "text": "Une ligne d’aiguilletage et de thermoformage lance la production de panneaux muraux acoustiques PET et ouvre le marché de la prescription architecturale." },
-        { "year": "2021", "title": "Extension du campus", "text": "Le campus de Nanxun atteint 120 000 m², regroupant sols, murs et entrepôts sur un site unique." },
-        { "year": "2023", "title": "Lancement des moquettes", "text": "Des lignes de touffetage pour dalles et lames PET teintes dans la masse complètent l’offre intérieure sol et mur." },
-        { "year": "2025", "title": "Studio d’échantillonnage OEM", "text": "Un studio dédié de 1 800 m² ramène les cycles de développement de décors et d’échantillonnage à 7–10 jours pour les partenaires en marque privée." }
+        { "year": "2020", "title": "Fondation dans le district de Jindong", "text": "Hailan New Materials est fondée dans le district de Jindong, à Jinhua, avec un focus sur la fabrication de matériaux de construction décoratifs." },
+        { "year": "2021", "title": "Campus de production intégré", "text": "Le campus de Jinhua regroupe sols, revêtements muraux et entrepôts sur un site coordonné." },
+        { "year": "2022", "title": "Début des programmes d’export", "text": "Des flux export dédiés sont mis en place pour les importateurs étrangers, avec support ventes internationales et documentation." },
+        { "year": "2023", "title": "Extension du portefeuille", "text": "Les revêtements muraux PET et moquettes PET élargissent l’offre des sols vers les surfaces intérieures." },
+        { "year": "2024", "title": "Process OEM / ODM renforcé", "text": "Échantillons, emballages, documents et passation projet sont standardisés pour les partenaires en marque privée." },
+        { "year": "2025", "title": "Capacité d’échantillonnage renforcée", "text": "Un flux dédié réduit les cycles de développement décors et de validation des échantillons pour les programmes OEM." }
       ]
     },
     "compliance": {
@@ -228,7 +229,7 @@
     },
     "cta": {
       "title": "Rencontrez l’équipe derrière l’étiquette.",
-      "lede": "Visitez notre campus à Huzhou, retrouvez-nous au prochain salon, ou commencez par une conversation autour de votre programme."
+      "lede": "Visitez notre campus à Jinhua, retrouvez-nous au prochain salon, ou commencez par une conversation autour de votre programme."
     }
   },
   "productsPage": {

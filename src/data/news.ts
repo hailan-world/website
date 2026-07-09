@@ -31,7 +31,7 @@ export const articles: Article[] = [
     excerpt:
       "A fourth tufting line and automated backing station came online in March, lifting annual carpet capacity to 4.2 million square metres.",
     body: [
-      "Huzhou — HAILAN commissioned its fourth tufting line in March, together with an automated backing and cutting station, lifting annual carpet capacity by roughly 40% to 4.2 million square metres.",
+      "Jinhua — HAILAN commissioned its fourth tufting line in March, together with an automated backing and cutting station, lifting annual carpet capacity by roughly 40% to 4.2 million square metres.",
       "The line runs 1/10 and 1/12 gauge loop and cut-loop constructions and is dedicated primarily to solution-dyed PET programs, where order volume from workplace and hospitality brands has grown for nine consecutive quarters.",
       "Alongside the tufting expansion, the new backing station applies our lighter PET-composite backing in-line, cutting station-to-station handling and reducing per-tile weight variance to under 3%. The investment shortens standard production lead times for carpet programs by approximately one week.",
       "Capacity from the new line is already allocated for pilot programs entering mass production in Q3 2026. Partners planning 2027 volume are encouraged to lock forecasts with our planning team early.",
@@ -60,7 +60,7 @@ export const articles: Article[] = [
     excerpt:
       "A 1,800 m² studio compresses decor development, pressing and photography into a single building — cutting sampling cycles to 7–10 days.",
     body: [
-      "Huzhou — HAILAN has opened a dedicated 1,800 m² sampling studio at its Nanxun campus, consolidating decor development, small-batch pressing, CNC profiling and product photography into a single facility.",
+      "Jinhua — HAILAN has opened a dedicated 1,800 m² sampling studio at its Jinhua campus, consolidating decor development, small-batch pressing, CNC profiling and product photography into a single facility.",
       "The studio operates its own laboratory press and single-head tufting rig, allowing LVT, wall panel and carpet samples to be produced without interrupting mass-production lines. Standard sampling cycles now run 7–10 days from approved artwork to couriered sample.",
       "For private-label partners, the studio also produces retail-ready sample boards, folders and merchandising displays — matched to each brand’s artwork and shipped alongside first production orders.",
       "The investment reflects a simple observation: programs win or lose at the sampling stage. Giving development its own space, equipment and team removes the bottleneck between a partner’s idea and a factory-exact sample.",

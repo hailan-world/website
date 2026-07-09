@@ -83,7 +83,7 @@ export default function ManufacturingPage() {
       <PageHero
         eyebrow="Manufacturing"
         title="From raw polymer to loaded container. One campus."
-        lede="Nothing critical is outsourced. Extrusion, lamination, tufting, profiling, inspection and packing all happen on one MES-tracked site in Huzhou — which is why the hundredth container matches the first."
+        lede="Nothing critical is outsourced. Extrusion, lamination, tufting, profiling, inspection and packing all happen on one MES-tracked site in Jinhua — which is why the hundredth container matches the first."
       />
 
       {/* Capability stats */}
