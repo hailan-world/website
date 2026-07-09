@@ -9,7 +9,11 @@ import { stats } from "@/lib/site";
 export function Intro({ dict }: { dict: Dictionary }) {
   const statItems = [
     { value: stats.countries, suffix: "+", label: dict.intro.stats.countries },
-    { value: stats.facility, suffix: " m²", label: dict.intro.stats.facility },
+    {
+      value: stats.facility,
+      suffix: dict.intro.stats.facilityUnit ?? " m²",
+      label: dict.intro.stats.facility,
+    },
     { value: stats.capacity, suffix: "M m²", label: dict.intro.stats.capacity },
     { value: stats.team, suffix: "+", label: dict.intro.stats.team },
   ];

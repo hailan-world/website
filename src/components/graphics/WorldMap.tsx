@@ -4,7 +4,7 @@
  */
 
 const hubs: Array<{ x: number; y: number; label?: string }> = [
-  { x: 862, y: 208, label: "HUZHOU HQ" },
+  { x: 862, y: 208, label: "JINHUA HQ" },
   { x: 508, y: 148 }, // Rotterdam
   { x: 140, y: 190 }, // Los Angeles
   { x: 296, y: 172 }, // New York

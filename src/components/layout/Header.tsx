@@ -13,11 +13,10 @@ import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/about", key: "about" },
   { href: "/products", key: "products" },
-  { href: "/manufacturing", key: "manufacturing" },
-  { href: "/quality", key: "quality" },
   { href: "/oem-odm", key: "oemOdm" },
+  { href: "/manufacturing", key: "manufacturing" },
+  { href: "/about", key: "about" },
   { href: "/news", key: "news" },
   { href: "/contact", key: "contact" },
 ] as const;

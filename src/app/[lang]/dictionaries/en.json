@@ -1,15 +1,15 @@
 {
   "siteMeta": {
     "title": "HAILAN — Global Decorative Building Materials Manufacturer",
-    "description": "HAILAN designs and manufactures LVT flooring, PET wall coverings and PET carpet coverings for importers, distributors and brands in more than 60 countries."
+    "description": "HAILAN designs and manufactures LVT flooring, PET wall coverings and PET carpet coverings for importers, distributors and brands in more than 20 countries."
   },
   "nav": {
     "about": "About",
     "products": "Products",
-    "manufacturing": "Manufacturing",
+    "manufacturing": "Factory",
     "quality": "Quality",
     "oemOdm": "OEM / ODM",
-    "news": "News",
+    "news": "Resources",
     "contact": "Contact"
   },
   "common": {
@@ -17,6 +17,7 @@
     "allProducts": "All products",
     "allNews": "All news",
     "readArticle": "Read article",
+    "requestSamples": "Request Samples",
     "moreAboutHailan": "More about HAILAN",
     "exploreProducts": "Explore Products",
     "ourManufacturing": "Our Manufacturing",
@@ -43,23 +44,24 @@
     }
   },
   "hero": {
-    "kicker": "Hailan New Materials Co., Ltd.",
-    "headlineLine1": "Engineered surfaces",
-    "headlineLine2": "for the built world",
-    "lede": "HAILAN designs and manufactures LVT flooring, PET wall coverings and PET carpet coverings for importers, distributors and brands in more than 60 countries — precision manufacturing with a design-first mindset.",
-    "badge": "ISO 9001 · FloorScore® · CE — Exporting to 60+ countries",
+    "kicker": "Global Decorative Building Materials Manufacturer",
+    "headlineLine1": "Surfaces",
+    "headlineLine2": "for better spaces",
+    "lede": "HAILAN designs, produces and exports LVT flooring, PET wall coverings, PET carpet coverings and a growing range of surface materials for B2B partners worldwide.",
+    "badge": "ISO 9001 · FloorScore® · CE — Exporting to 20+ countries",
     "scroll": "Scroll"
   },
   "intro": {
     "eyebrow": "01 — Who we are",
     "title": "A manufacturing partner built for global brands.",
-    "para1": "HAILAN is a global decorative building materials manufacturer headquartered in Huzhou, China — home to one of the world’s densest flooring production clusters. From a single integrated campus, we develop, produce and export LVT flooring, PET acoustic wall coverings and PET carpet coverings.",
+    "para1": "HAILAN is a global decorative building materials manufacturer headquartered in Jinhua, China. From an integrated production campus in Zhejiang, we develop, produce and export LVT flooring, PET acoustic wall coverings and PET carpet coverings.",
     "para2": "Our products carry other people’s names as often as our own. For importers, retail chains and home-improvement brands on every continent, HAILAN is the quiet capability behind the label: stable quality, honest lead times and a team that treats your program like its own.",
     "stats": {
       "countries": "Export countries",
       "facility": "Production campus",
+      "facilityUnit": " m²",
       "capacity": "Annual capacity",
-      "team": "Specialists & engineers"
+      "team": "Employees"
     }
   },
   "productsHome": {
@@ -117,7 +119,7 @@
       {
         "title": "Global experience",
         "text": "Certification, documentation, packaging and logistics are tuned to each destination — from EU REACH and CE marking to US FloorScore and Gulf conformity schemes.",
-        "proof": "60+ markets served"
+        "proof": "20+ markets served"
       },
       {
         "title": "Professional team",
@@ -129,12 +131,12 @@
   "markets": {
     "eyebrow": "05 — Global markets",
     "title": "Shipped from one campus. Installed on six continents.",
-    "lede": "Export is not a department at HAILAN — it is the business. Documentation, load plans and port logistics are engineered with the same care as the product.",
+    "lede": "Export is not a department at HAILAN — it is built into the way we work. Documentation, load plans and port logistics are engineered with the same care as the product.",
     "regions": [
       { "name": "Europe", "markets": "Netherlands · Germany · UK · Poland · Spain" },
       { "name": "North America", "markets": "United States · Canada · Mexico" },
       { "name": "Middle East", "markets": "UAE · Saudi Arabia · Qatar" },
-      { "name": "Asia-Pacific", "markets": "Australia · Japan · Korea · Singapore" },
+      { "name": "Asia-Pacific", "markets": "Australia · Japan · Korea" },
       { "name": "Latin America", "markets": "Brazil · Chile · Colombia" },
       { "name": "Africa", "markets": "Nigeria · Egypt · South Africa" }
     ],
@@ -149,40 +151,40 @@
     "title": "What’s moving at HAILAN."
   },
   "cta": {
-    "title": "Let’s build your next product together.",
-    "lede": "Tell us about your project, program or private-label ambition — our export team responds within one business day.",
-    "button": "Start a conversation"
+    "title": "Request free samples for your next program.",
+    "lede": "Tell us what you are sourcing — product type, market, quantity and target specification. Our export team will reply within one business day.",
+    "button": "Request Samples"
   },
   "footer": {
-    "tagline": "Hailan New Materials Co., Ltd. — a global manufacturer of decorative building materials, supplying partners in more than 60 countries from a 120,000 m² production campus.",
+    "tagline": "Jinhua Hailan New Materials Co., Ltd. — a global manufacturer of decorative building materials, supplying partners in more than 20 countries from an approximately 33,000 m² production campus.",
     "products": "Products",
     "company": "Company",
     "headquarters": "Headquarters",
     "rights": "All rights reserved.",
-    "signoff": "Engineered in Huzhou · Delivered worldwide",
+    "signoff": "Engineered in Jinhua · Delivered worldwide",
     "globalInquiries": "Global inquiries"
   },
   "about": {
     "meta": {
       "title": "About",
-      "description": "HAILAN — Hailan New Materials Co., Ltd. — is a global decorative building materials manufacturer supplying LVT flooring, PET wall coverings and PET carpet coverings to partners in 60+ countries."
+      "description": "HAILAN — Jinhua Hailan New Materials Co., Ltd. — is a global decorative building materials manufacturer supplying LVT flooring, PET wall coverings and PET carpet coverings to partners in 20+ countries."
     },
     "hero": {
       "eyebrow": "About HAILAN",
       "title": "A factory that thinks like a brand.",
-      "lede": "Hailan New Materials Co., Ltd. designs, manufactures and exports decorative building materials from an integrated campus in Huzhou, China — for partners who put their own name on the box."
+      "lede": "Jinhua Hailan New Materials Co., Ltd. designs, manufactures and exports decorative building materials from an integrated campus in Jinhua, China — for partners who put their own name on the box."
     },
     "story": {
       "eyebrow": "Our story",
-      "title": "Built in the world’s densest flooring cluster.",
-      "para1": "HAILAN was founded in 2008 in Huzhou, Zhejiang — a region that produces a remarkable share of the world’s resilient flooring. Growing up inside that cluster shaped us: suppliers, toolmakers and testing labs are minutes away, and the bar for manufacturing competence is set by neighbours who export to every continent.",
+      "title": "Built from a Zhejiang manufacturing base.",
+      "para1": "HAILAN was founded in 2020 in Jindong District, Jinhua, Zhejiang. Growing from a dedicated manufacturing base shaped how we work: close to suppliers, tooling partners and testing resources, with export standards setting the bar for every production program.",
       "para2": "From the beginning we chose a narrower, deeper path than most: fewer product categories, engineered properly, produced on our own lines and documented to the standards of the strictest destination market. First LVT flooring, then PET acoustic wall coverings, then PET carpet coverings — three surfaces, one quality system.",
-      "para3": "Today our products are installed in offices, hotels, schools and homes in more than 60 countries — usually under our partners’ brands. That is by design. HAILAN’s ambition is to be the most dependable manufacturer behind the world’s decorative building material brands, and increasingly, a brand worth asking for by name.",
+      "para3": "Today our products are installed in offices, hotels, schools and homes in more than 20 countries — usually under our partners’ brands. That is by design. HAILAN’s ambition is to be the most dependable manufacturer behind the world’s decorative building material brands, and increasingly, a brand worth asking for by name.",
       "stats": {
         "founded": "Founded",
         "facility": "Production campus",
         "lines": "Production lines",
-        "team": "Specialists & engineers"
+        "team": "Employees"
       }
     },
     "values": {
@@ -204,21 +206,20 @@
         },
         {
           "title": "Long-term partnership",
-          "text": "Our oldest export programs have run for over a decade. We price, plan and invest for relationships measured in years, not purchase orders."
+          "text": "Our repeat programs are planned as long-term partnerships. We price, plan and invest for relationships measured in years, not purchase orders."
         }
       ]
     },
     "timeline": {
       "eyebrow": "Milestones",
-      "title": "Eighteen years of deliberate growth.",
+      "title": "Focused growth since 2020.",
       "items": [
-        { "year": "2008", "title": "Founded in Huzhou", "text": "Hailan New Materials is established in Zhejiang’s flooring cluster, producing resilient flooring for domestic projects." },
-        { "year": "2012", "title": "First export programs", "text": "The first dedicated export lines ship LVT to European importers; an international sales and documentation team is built." },
-        { "year": "2016", "title": "SPC & click systems", "text": "Investment in extrusion and profiling lines adds rigid-core SPC and click constructions to the flooring portfolio." },
-        { "year": "2019", "title": "PET acoustic line", "text": "A needle-punch and thermoforming line brings PET acoustic wall panels into production, opening the architectural specification market." },
-        { "year": "2021", "title": "Campus expansion", "text": "The Nanxun campus grows to 120,000 m², consolidating flooring, wall and warehouse operations on a single site." },
-        { "year": "2023", "title": "Carpet coverings launch", "text": "Tufting lines for solution-dyed PET carpet tiles and planks complete the floor-and-wall interior offer." },
-        { "year": "2025", "title": "OEM sampling studio", "text": "A dedicated 1,800 m² studio compresses decor development and sampling cycles to 7–10 days for private-label partners." }
+        { "year": "2020", "title": "Founded in Jindong District", "text": "Jinhua Hailan New Materials is established in Jindong District, Jinhua, Zhejiang, with a focus on decorative building materials manufacturing." },
+        { "year": "2021", "title": "Integrated production campus", "text": "The Jinhua campus consolidates flooring, wall covering and warehouse operations on one coordinated site." },
+        { "year": "2022", "title": "Export programs begin", "text": "Dedicated export workflows are built for overseas importers, with international sales and documentation support." },
+        { "year": "2023", "title": "Product portfolio expands", "text": "PET wall coverings and PET carpet coverings extend the offer from flooring into broader interior surface materials." },
+        { "year": "2024", "title": "OEM / ODM process upgraded", "text": "Sampling, packaging, documentation and project handoff are standardized for private-label partners." },
+        { "year": "2025", "title": "Sampling capability strengthened", "text": "A dedicated sampling workflow compresses decor development and sample confirmation cycles for OEM programs." }
       ]
     },
     "compliance": {
@@ -228,7 +229,7 @@
     },
     "cta": {
       "title": "Meet the team behind the label.",
-      "lede": "Visit our campus in Huzhou, meet us at the next trade fair, or start with a conversation about your program."
+      "lede": "Visit our campus in Jinhua, meet us at the next trade fair, or start with a conversation about your program."
     }
   },
   "productsPage": {

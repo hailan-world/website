@@ -95,11 +95,11 @@ export function Hero({ dict }: { dict: Dictionary }) {
               transition={{ duration: 0.9, delay: 0.7, ease: EASE }}
               className="mt-10 flex flex-wrap items-center gap-4"
             >
-              <Button href="/products" variant="inverted" arrow>
-                {dict.common.exploreProducts}
+              <Button href="/contact" variant="inverted" arrow>
+                {dict.common.requestSamples}
               </Button>
-              <Button href="/manufacturing" variant="outlineDark">
-                {dict.common.ourManufacturing}
+              <Button href="/products" variant="outlineDark">
+                {dict.common.exploreProducts}
               </Button>
             </motion.div>
 

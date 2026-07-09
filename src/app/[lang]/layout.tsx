@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import {
@@ -14,19 +13,6 @@ import type { Locale } from "@/lib/i18n";
 import { site } from "@/lib/site";
 import { getDictionary } from "./dictionaries";
 import "../globals.css";
-
-const instrument = Instrument_Sans({
-  subsets: ["latin"],
-  variable: "--font-instrument",
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-plex-mono",
-  display: "swap",
-});
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -66,6 +52,13 @@ export async function generateMetadata({
       canonical: `/${locale}`,
       languages,
     },
+    icons: {
+      icon: [
+        { url: "/icon.svg?v=2", type: "image/svg+xml" },
+        { url: "/favicon.ico?v=2", sizes: "any" },
+      ],
+      shortcut: "/favicon.ico?v=2",
+    },
     openGraph: {
       type: "website",
       siteName: site.name,
@@ -102,7 +95,6 @@ export default async function LocaleLayout({
     <html
       lang={localeHtmlLang[locale]}
       dir={localeDir[locale]}
-      className={`${instrument.variable} ${plexMono.variable}`}
     >
       <body className="font-sans">
         <a
