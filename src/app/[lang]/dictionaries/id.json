@@ -1,0 +1,377 @@
+{
+  "siteMeta": {
+    "title": "HAILAN — Produsen Bahan Bangunan Dekoratif Global",
+    "description": "HAILAN merancang dan memproduksi lantai LVT, pelapis dinding PET, dan pelapis karpet PET untuk importir, distributor, dan merek di lebih dari 20 negara."
+  },
+  "nav": {
+    "about": "Tentang Kami",
+    "products": "Produk",
+    "manufacturing": "Pabrik",
+    "quality": "Kualitas",
+    "oemOdm": "OEM / ODM",
+    "news": "Sumber Daya",
+    "contact": "Kontak"
+  },
+  "common": {
+    "skipToContent": "Lewati ke konten",
+    "allProducts": "Semua produk",
+    "allNews": "Semua berita",
+    "readArticle": "Baca artikel",
+    "requestSamples": "Minta Sampel",
+    "moreAboutHailan": "Selengkapnya tentang HAILAN",
+    "exploreProducts": "Jelajahi Produk",
+    "ourManufacturing": "Manufaktur Kami",
+    "languageLabel": "Bahasa"
+  },
+  "productLines": {
+    "lvt-flooring": {
+      "name": "Lantai LVT",
+      "category": "Lantai Resilient",
+      "short": "Ubin dan papan vinil mewah dengan dekor definisi tinggi, emboss terdaftar, dan lapisan aus yang dibangun untuk lalu lintas komersial yang berat.",
+      "chips": [
+        "Dry back · Klik · Loose lay",
+        "Lapisan aus hingga 0,7 mm"
+      ]
+    },
+    "pet-wall-coverings": {
+      "name": "Pelapis Dinding PET",
+      "category": "Sistem Dinding Akustik",
+      "short": "Panel felt akustik poliester — lembaran datar, sistem bilah, dan bentuk potongan CNC — dengan konten daur ulang hingga 60%.",
+      "chips": [
+        "NRC hingga 0,85",
+        "60% PET daur ulang"
+      ]
+    },
+    "pet-carpet-coverings": {
+      "name": "Pelapis Karpet PET",
+      "category": "Lantai Tekstil Modular",
+      "short": "Ubin dan papan karpet modular yang ditaf dari benang PET pewarna larutan — tahan noda secara alami, tahan luntur, dan siap spesifikasi.",
+      "chips": [
+        "Benang pewarna larutan",
+        "Ubin & papan"
+      ]
+    }
+  },
+  "hero": {
+    "kicker": "Produsen Bahan Bangunan Dekoratif Global",
+    "headlineLine1": "Permukaan",
+    "headlineLine2": "untuk ruang yang lebih baik",
+    "lede": "HAILAN merancang, memproduksi, dan mengekspor lantai LVT, pelapis dinding PET, pelapis karpet PET, dan rangkaian bahan permukaan yang terus berkembang untuk mitra B2B di seluruh dunia.",
+    "badge": "ISO 9001 · FloorScore® · CE — Mengekspor ke 20+ negara",
+    "scroll": "Gulir"
+  },
+  "intro": {
+    "eyebrow": "01 — Siapa kami",
+    "title": "Mitra manufaktur yang dibangun untuk merek global.",
+    "para1": "HAILAN adalah produsen bahan bangunan dekoratif global yang berkantor pusat di Jinhua, Tiongkok. Dari kampus produksi terpadu di Zhejiang, kami mengembangkan, memproduksi, dan mengekspor lantai LVT, pelapis dinding akustik PET, dan pelapis karpet PET.",
+    "para2": "Produk kami membawa nama orang lain sesering nama kami sendiri. Bagi importir, jaringan ritel, dan merek perbaikan rumah di setiap benua, HAILAN adalah kemampuan senyap di balik label: kualitas stabil, waktu tunggu yang jujur, dan tim yang memperlakukan program Anda seperti miliknya sendiri.",
+    "stats": {
+      "countries": "Negara ekspor",
+      "facility": "Kampus produksi",
+      "facilityUnit": " m²",
+      "capacity": "Kapasitas tahunan",
+      "team": "Karyawan"
+    }
+  },
+  "productsHome": {
+    "eyebrow": "02 — Produk",
+    "title": "Tiga lini produk. Satu sistem kualitas.",
+    "lede": "Permukaan lantai, dinding, dan tekstil dikembangkan di bawah satu standar rekayasa dan kepatuhan — sehingga mitra dapat membangun program interior lengkap dari satu pabrik."
+  },
+  "manufacturingHome": {
+    "eyebrow": "03 — Keunggulan manufaktur",
+    "title": "Presisi pada skala industri.",
+    "lede": "Satu kampus terpadu membawa polimer dan serat mentah hingga menjadi produk jadi, terkemas, dan berkode batch — tidak ada yang kritis dialihdayakan.",
+    "link": "Di balik manufaktur kami",
+    "pillars": [
+      {
+        "title": "Produksi otomatis",
+        "text": "25 lini ekstrusi, kalendering, dan tufting beroperasi di bawah pelacakan MES, dengan pengukuran ketebalan laser secara in-line — bukan setelahnya."
+      },
+      {
+        "title": "Kontrol kualitas in-line",
+        "text": "Pemeriksaan dimensi, permukaan, dan warna setiap jam produksi, dicatat terhadap kode batch yang dikirim pada setiap karton."
+      },
+      {
+        "title": "R&D dan perkakas",
+        "text": "Pengembangan dekor internal, pelat emboss, dan mesin press laboratorium mengubah ide mitra menjadi sampel setepat pabrik dalam hitungan hari."
+      },
+      {
+        "title": "Kemampuan OEM",
+        "text": "Studio sampling khusus dan manajer proyek dwibahasa membawa program label pribadi dari brief pertama hingga kontainer termuat."
+      }
+    ],
+    "process": [
+      "Persiapan bahan",
+      "Ekstrusi & kalendering",
+      "Laminasi & pengepresan",
+      "Pengawetan UV",
+      "Pemprofilan presisi",
+      "Inspeksi 100%"
+    ]
+  },
+  "why": {
+    "eyebrow": "04 — Mengapa HAILAN",
+    "title": "Kemampuan di balik label dan proyek di seluruh dunia.",
+    "lede": "Mitra jarang berganti pemasok karena harga. Mereka berganti karena kejutan. Tugas kami adalah menghilangkannya.",
+    "reasons": [
+      {
+        "title": "Pasokan yang andal",
+        "text": "Kapasitas direncanakan berdasarkan perkiraan mitra, dengan stok pengaman disimpan pada program yang berjalan. Selama tiga tahun terakhir, 98,6% kontainer dikirim pada atau sebelum tanggal yang dikonfirmasi.",
+        "proof": "98,6% pengiriman tepat waktu"
+      },
+      {
+        "title": "Kualitas yang stabil",
+        "text": "Satu sistem kualitas mengatur setiap lini. Produk diberi kode batch, diverifikasi laboratorium, dan diperiksa secara visual — sehingga kontainer keseratus cocok dengan sampel pertama yang Anda setujui.",
+        "proof": "AQL 2.5 · Keterlacakan batch penuh"
+      },
+      {
+        "title": "Pengalaman global",
+        "text": "Sertifikasi, dokumentasi, pengemasan, dan logistik disetel untuk setiap tujuan — dari REACH UE dan penandaan CE hingga FloorScore AS dan skema kesesuaian Teluk.",
+        "proof": "20+ pasar dilayani"
+      },
+      {
+        "title": "Tim profesional",
+        "text": "Manajer proyek dan insinyur berbahasa Inggris menjawab dalam hitungan jam, bukan hari — dan tetap bersama program Anda melalui pemesanan ulang, desain ulang, dan pergeseran pasar.",
+        "proof": "Komitmen respons 24 jam"
+      }
+    ]
+  },
+  "markets": {
+    "eyebrow": "05 — Pasar global",
+    "title": "Dikirim dari satu kampus. Dipasang di enam benua.",
+    "lede": "Ekspor bukan sebuah departemen di HAILAN — ia terbangun dalam cara kami bekerja. Dokumentasi, rencana muatan, dan logistik pelabuhan dirancang dengan ketelitian yang sama seperti produk.",
+    "regions": [
+      {
+        "name": "Eropa",
+        "markets": "Belanda · Jerman · Inggris · Polandia · Spanyol"
+      },
+      {
+        "name": "Amerika Utara",
+        "markets": "Amerika Serikat · Kanada · Meksiko"
+      },
+      {
+        "name": "Timur Tengah",
+        "markets": "UAE · Arab Saudi · Qatar"
+      },
+      {
+        "name": "Asia-Pasifik",
+        "markets": "Australia · Jepang · Korea"
+      },
+      {
+        "name": "Amerika Latin",
+        "markets": "Brasil · Chili · Kolombia"
+      },
+      {
+        "name": "Afrika",
+        "markets": "Nigeria · Mesir · Afrika Selatan"
+      }
+    ],
+    "figures": [
+      {
+        "label": "Negara dipasok"
+      },
+      {
+        "label": "Benua terpasang"
+      },
+      {
+        "label": "Kontainer dikirim per tahun"
+      }
+    ]
+  },
+  "newsHome": {
+    "eyebrow": "06 — Berita",
+    "title": "Perkembangan terbaru di HAILAN."
+  },
+  "cta": {
+    "title": "Minta sampel gratis untuk program Anda berikutnya.",
+    "lede": "Beri tahu kami apa yang Anda cari — jenis produk, pasar, kuantitas, dan spesifikasi target. Tim ekspor kami akan membalas dalam satu hari kerja.",
+    "button": "Minta Sampel"
+  },
+  "footer": {
+    "tagline": "Jinhua Hailan New Materials Co., Ltd. — produsen global bahan bangunan dekoratif, memasok mitra di lebih dari 20 negara dari kampus produksi sekitar 33.000 m².",
+    "products": "Produk",
+    "company": "Perusahaan",
+    "headquarters": "Kantor Pusat",
+    "address": [
+      "Unit 401, Lantai 4, Blok 3",
+      "No. 777 Jalan Houtian, Kecamatan Xiaoshun",
+      "Distrik Jindong, Jinhua",
+      "Zhejiang 321000, Tiongkok"
+    ],
+    "rights": "Hak cipta dilindungi.",
+    "signoff": "Direkayasa di Jinhua · Dikirim ke seluruh dunia",
+    "globalInquiries": "Pertanyaan global"
+  },
+  "about": {
+    "meta": {
+      "title": "Tentang Kami",
+      "description": "HAILAN — Jinhua Hailan New Materials Co., Ltd. — adalah produsen bahan bangunan dekoratif global yang memasok lantai LVT, pelapis dinding PET, dan pelapis karpet PET kepada mitra di 20+ negara."
+    },
+    "hero": {
+      "eyebrow": "Tentang HAILAN",
+      "title": "Pabrik yang berpikir seperti merek.",
+      "lede": "Jinhua Hailan New Materials Co., Ltd. merancang, memproduksi, dan mengekspor bahan bangunan dekoratif dari kampus terpadu di Jinhua, Tiongkok — untuk mitra yang menaruh nama mereka sendiri pada kotak."
+    },
+    "story": {
+      "eyebrow": "Kisah kami",
+      "title": "Dibangun dari basis manufaktur Zhejiang.",
+      "para1": "HAILAN didirikan pada 2020 di Distrik Jindong, Jinhua, Zhejiang. Tumbuh dari basis manufaktur khusus membentuk cara kami bekerja: dekat dengan pemasok, mitra perkakas, dan sumber daya pengujian, dengan standar ekspor menetapkan tolok ukur bagi setiap program produksi.",
+      "para2": "Sejak awal kami memilih jalur yang lebih sempit dan lebih dalam daripada kebanyakan: lebih sedikit kategori produk, direkayasa dengan benar, diproduksi pada lini kami sendiri, dan didokumentasikan sesuai standar pasar tujuan paling ketat. Pertama lantai LVT, lalu pelapis dinding akustik PET, lalu pelapis karpet PET — tiga permukaan, satu sistem kualitas.",
+      "para3": "Kini produk kami terpasang di kantor, hotel, sekolah, dan rumah di lebih dari 20 negara — biasanya di bawah merek mitra kami. Itu memang disengaja. Ambisi HAILAN adalah menjadi produsen paling tepercaya di balik merek bahan bangunan dekoratif dunia, dan semakin lama, sebuah merek yang layak diminta dengan nama.",
+      "stats": {
+        "founded": "Didirikan",
+        "facility": "Kampus produksi",
+        "lines": "Lini produksi",
+        "team": "Karyawan"
+      }
+    },
+    "values": {
+      "eyebrow": "Cara kami bekerja",
+      "title": "Empat prinsip mengatur setiap program.",
+      "lede": "Ini bukan poster dinding. Ini adalah aturan operasi yang dialami mitra kami dalam setiap penawaran, sampel, dan kontainer.",
+      "items": [
+        {
+          "title": "Rekayasa terlebih dahulu",
+          "text": "Setiap keputusan produk dimulai di lini produksi, bukan brosur. Jika sebuah konstruksi tidak dapat diproduksi secara konsisten pada skala, kami tidak menjualnya."
+        },
+        {
+          "title": "Keandalan radikal",
+          "text": "Mitra merencanakan musim, pembukaan toko, dan jadwal proyek berdasarkan konfirmasi kami. Kami memperlakukan tanggal yang dikonfirmasi sebagai kontrak — 98,6% kontainer dikirim tepat waktu."
+        },
+        {
+          "title": "Kefasihan desain",
+          "text": "Kami membaca laporan tren yang sama, mengunjungi pameran yang sama, dan mengikuti media arsitektur yang sama seperti pelanggan kami — sehingga pengembangan dekor berbicara dalam bahasa mereka."
+        },
+        {
+          "title": "Kemitraan jangka panjang",
+          "text": "Program berulang kami direncanakan sebagai kemitraan jangka panjang. Kami menetapkan harga, merencanakan, dan berinvestasi untuk hubungan yang diukur dalam tahun, bukan pesanan pembelian."
+        }
+      ]
+    },
+    "timeline": {
+      "eyebrow": "Tonggak pencapaian",
+      "title": "Pertumbuhan fokus sejak 2020.",
+      "items": [
+        {
+          "year": "2020",
+          "title": "Didirikan di Distrik Jindong",
+          "text": "Jinhua Hailan New Materials didirikan di Distrik Jindong, Jinhua, Zhejiang, dengan fokus pada manufaktur bahan bangunan dekoratif."
+        },
+        {
+          "year": "2021",
+          "title": "Kampus produksi terpadu",
+          "text": "Kampus Jinhua menyatukan operasi lantai, pelapis dinding, dan gudang di satu lokasi terkoordinasi."
+        },
+        {
+          "year": "2022",
+          "title": "Program ekspor dimulai",
+          "text": "Alur kerja ekspor khusus dibangun untuk importir luar negeri, dengan dukungan penjualan internasional dan dokumentasi."
+        },
+        {
+          "year": "2023",
+          "title": "Portofolio produk berkembang",
+          "text": "Pelapis dinding PET dan pelapis karpet PET memperluas penawaran dari lantai ke bahan permukaan interior yang lebih luas."
+        },
+        {
+          "year": "2024",
+          "title": "Proses OEM / ODM ditingkatkan",
+          "text": "Sampling, pengemasan, dokumentasi, dan serah terima proyek distandarkan untuk mitra label pribadi."
+        },
+        {
+          "year": "2025",
+          "title": "Kemampuan sampling diperkuat",
+          "text": "Alur kerja sampling khusus mempersingkat siklus pengembangan dekor dan konfirmasi sampel untuk program OEM."
+        }
+      ]
+    },
+    "compliance": {
+      "eyebrow": "Kepatuhan",
+      "title": "Bersertifikat untuk tujuan paling ketat.",
+      "text": "Setiap lini produk dikembangkan sesuai persyaratan regulasi Uni Eropa, Amerika Utara, dan Teluk — lalu didokumentasikan agar mitra dapat menentukan spesifikasi, mengimpor, dan memasang tanpa hambatan."
+    },
+    "cta": {
+      "title": "Temui tim di balik label.",
+      "lede": "Kunjungi kampus kami di Jinhua, temui kami di pameran dagang berikutnya, atau mulai dengan percakapan tentang program Anda."
+    }
+  },
+  "productsPage": {
+    "meta": {
+      "title": "Produk",
+      "description": "Lantai LVT, pelapis dinding akustik PET, dan pelapis karpet PET — tiga lini produk yang direkayasa di bawah satu sistem kualitas untuk importir, distributor, dan merek di seluruh dunia."
+    },
+    "hero": {
+      "eyebrow": "Produk",
+      "title": "Lantai. Dinding. Tekstil. Satu standar.",
+      "lede": "Tiga lini produk dikembangkan di bawah satu sistem rekayasa dan kepatuhan — sehingga mitra dapat membangun program interior lengkap dari satu pabrik, satu kontak, dan satu jadwal pengiriman."
+    },
+    "explore": "Jelajahi",
+    "roadmap": {
+      "eyebrow": "Menatap ke depan",
+      "title": "Satu kategori pada satu waktu, direkayasa dengan benar.",
+      "text": "Peta jalan HAILAN meluas melampaui lantai dan permukaan akustik ke dunia bahan bangunan dekoratif yang lebih luas. Kategori baru bergabung ke portofolio dengan cara yang sama seperti tiga yang ada saat ini: dikembangkan pada lini kami sendiri, divalidasi terhadap standar internasional, dan ditawarkan kepada mitra hanya ketika kami dapat menjaminnya pada skala.",
+      "link": "Kembangkan produk bersama kami"
+    },
+    "cta": {
+      "title": "Butuh spesifikasi, harga, atau sampel?",
+      "lede": "Kirimkan kebutuhan proyek atau program Anda — lembar data teknis dan pengiriman sampel dalam hitungan hari.",
+      "button": "Minta informasi produk"
+    }
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Kontak",
+      "description": "Bicaralah dengan tim ekspor HAILAN tentang distribusi, program OEM, atau pasokan proyek. Kami merespons dalam satu hari kerja."
+    },
+    "hero": {
+      "eyebrow": "Kontak",
+      "title": "Mari bicarakan program Anda.",
+      "lede": "Distribusi, label pribadi, pasokan proyek, atau satu pertanyaan teknis — cara tercepat menilai HAILAN adalah memulai percakapan."
+    },
+    "inquiries": "Pertanyaan global",
+    "hq": "Kantor pusat & pabrik",
+    "hours": "Jam kantor: Senin – Jumat, 08.30 – 18.00 (GMT+8).",
+    "visits": "Kunjungan dan audit pabrik disambut dengan perjanjian.",
+    "nextTitle": "Apa yang terjadi selanjutnya",
+    "expectations": [
+      {
+        "title": "Respons dalam 24 jam",
+        "text": "Seorang manajer ekspor yang ditunjuk — bukan penjawab otomatis — membalas dalam satu hari kerja."
+      },
+      {
+        "title": "Spesifikasi & harga",
+        "text": "Anda menerima data teknis, harga indikatif, dan waktu tunggu yang jujur untuk pasar Anda."
+      },
+      {
+        "title": "Sampel dalam perjalanan",
+        "text": "Sampel standar dikirim dalam hitungan hari; sampling khusus memakan 7–10 hari sejak karya seni yang disetujui."
+      }
+    ],
+    "form": {
+      "heading": "Kirim pertanyaan",
+      "intro": "Semakin banyak Anda memberi tahu kami tentang pasar dan volume Anda, semakin tepat balasan pertama kami.",
+      "name": "Nama lengkap",
+      "namePlaceholder": "Budi Santoso",
+      "company": "Perusahaan",
+      "companyPlaceholder": "PT Perusahaan",
+      "email": "Email kerja",
+      "emailPlaceholder": "budi@perusahaan.com",
+      "country": "Negara / pasar",
+      "countryPlaceholder": "Indonesia",
+      "inquiry": "Jenis pertanyaan",
+      "inquiryTypes": [
+        "Kemitraan distribusi",
+        "Program OEM / label pribadi",
+        "Pasokan proyek komersial",
+        "Sampel & dokumentasi",
+        "Lainnya"
+      ],
+      "productsInterest": "Produk yang diminati",
+      "message": "Pesan",
+      "messagePlaceholder": "Ceritakan kepada kami tentang pasar, volume, konstruksi target, atau proyek Anda…",
+      "submit": "Kirim pertanyaan",
+      "note": "Membuka klien email Anda — atau tulis langsung kepada kami di",
+      "status": "Draf email Anda telah dibuka di klien email Anda."
+    }
+  }
+}

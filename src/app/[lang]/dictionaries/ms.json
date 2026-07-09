@@ -1,0 +1,377 @@
+{
+  "siteMeta": {
+    "title": "HAILAN — Pengeluar Bahan Binaan Hiasan Global",
+    "description": "HAILAN mereka bentuk dan mengeluarkan lantai LVT, penutup dinding PET dan penutup karpet PET untuk pengimport, pengedar dan jenama di lebih 20 negara."
+  },
+  "nav": {
+    "about": "Tentang Kami",
+    "products": "Produk",
+    "manufacturing": "Kilang",
+    "quality": "Kualiti",
+    "oemOdm": "OEM / ODM",
+    "news": "Sumber",
+    "contact": "Hubungi"
+  },
+  "common": {
+    "skipToContent": "Langkau ke kandungan",
+    "allProducts": "Semua produk",
+    "allNews": "Semua berita",
+    "readArticle": "Baca artikel",
+    "requestSamples": "Minta Sampel",
+    "moreAboutHailan": "Lanjut tentang HAILAN",
+    "exploreProducts": "Terokai Produk",
+    "ourManufacturing": "Pembuatan Kami",
+    "languageLabel": "Bahasa"
+  },
+  "productLines": {
+    "lvt-flooring": {
+      "name": "Lantai LVT",
+      "category": "Lantai Resilient",
+      "short": "Jubin dan papan vinil mewah dengan hiasan definisi tinggi, embos berdaftar dan lapisan haus yang direka untuk trafik komersial yang mencabar.",
+      "chips": [
+        "Dry back · Klik · Loose lay",
+        "Lapisan haus sehingga 0.7 mm"
+      ]
+    },
+    "pet-wall-coverings": {
+      "name": "Penutup Dinding PET",
+      "category": "Sistem Dinding Akustik",
+      "short": "Panel felt akustik poliester — helaian rata, sistem bilah dan bentuk potongan CNC — dengan sehingga 60% kandungan kitar semula.",
+      "chips": [
+        "NRC sehingga 0.85",
+        "60% PET kitar semula"
+      ]
+    },
+    "pet-carpet-coverings": {
+      "name": "Penutup Karpet PET",
+      "category": "Lantai Tekstil Modular",
+      "short": "Jubin dan papan karpet modular ditaf daripada benang PET pewarna larutan — tahan noda secara semula jadi, kalis luntur dan sedia spesifikasi.",
+      "chips": [
+        "Benang pewarna larutan",
+        "Jubin & papan"
+      ]
+    }
+  },
+  "hero": {
+    "kicker": "Pengeluar Bahan Binaan Hiasan Global",
+    "headlineLine1": "Permukaan",
+    "headlineLine2": "untuk ruang yang lebih baik",
+    "lede": "HAILAN mereka bentuk, mengeluarkan dan mengeksport lantai LVT, penutup dinding PET, penutup karpet PET dan rangkaian bahan permukaan yang semakin berkembang untuk rakan kongsi B2B di seluruh dunia.",
+    "badge": "ISO 9001 · FloorScore® · CE — Mengeksport ke 20+ negara",
+    "scroll": "Tatal"
+  },
+  "intro": {
+    "eyebrow": "01 — Siapa kami",
+    "title": "Rakan pembuatan yang dibina untuk jenama global.",
+    "para1": "HAILAN ialah pengeluar bahan binaan hiasan global yang beribu pejabat di Jinhua, China. Dari kampus pengeluaran bersepadu di Zhejiang, kami membangun, mengeluarkan dan mengeksport lantai LVT, penutup dinding akustik PET dan penutup karpet PET.",
+    "para2": "Produk kami membawa nama orang lain sekerap nama kami sendiri. Bagi pengimport, rangkaian runcit dan jenama penambahbaikan rumah di setiap benua, HAILAN ialah keupayaan senyap di sebalik label: kualiti stabil, masa penghantaran yang jujur dan pasukan yang menganggap program anda seperti milik sendiri.",
+    "stats": {
+      "countries": "Negara eksport",
+      "facility": "Kampus pengeluaran",
+      "facilityUnit": " m²",
+      "capacity": "Kapasiti tahunan",
+      "team": "Pekerja"
+    }
+  },
+  "productsHome": {
+    "eyebrow": "02 — Produk",
+    "title": "Tiga barisan produk. Satu sistem kualiti.",
+    "lede": "Permukaan lantai, dinding dan tekstil dibangunkan di bawah satu piawaian kejuruteraan dan pematuhan — supaya rakan kongsi boleh membina program dalaman yang lengkap dari satu kilang."
+  },
+  "manufacturingHome": {
+    "eyebrow": "03 — Kecemerlangan pembuatan",
+    "title": "Kepersisan pada skala industri.",
+    "lede": "Satu kampus bersepadu membawa polimer dan gentian mentah hingga menjadi produk siap, dibungkus dan berkod kelompok — tiada yang kritikal disumber luar.",
+    "link": "Di sebalik pembuatan kami",
+    "pillars": [
+      {
+        "title": "Pengeluaran automatik",
+        "text": "25 barisan penyemperitan, kalendering dan tafting beroperasi di bawah penjejakan MES, dengan pengukuran ketebalan laser dalam talian — bukan selepas fakta."
+      },
+      {
+        "title": "Kawalan kualiti dalam talian",
+        "text": "Pemeriksaan dimensi, permukaan dan warna setiap jam pengeluaran, direkodkan terhadap kod kelompok yang dihantar pada setiap karton."
+      },
+      {
+        "title": "R&D dan perkakasan",
+        "text": "Pembangunan hiasan dalaman, plat embos dan mesin tekan makmal menukar idea rakan kongsi menjadi sampel setepat kilang dalam masa beberapa hari."
+      },
+      {
+        "title": "Keupayaan OEM",
+        "text": "Studio pensampelan khusus dan pengurus projek dwibahasa membawa program label persendirian dari taklimat pertama hingga kontena dimuatkan."
+      }
+    ],
+    "process": [
+      "Penyediaan bahan",
+      "Penyemperitan & kalendering",
+      "Laminasi & tekanan",
+      "Pengawetan UV",
+      "Pemprofilan persisi",
+      "Pemeriksaan 100%"
+    ]
+  },
+  "why": {
+    "eyebrow": "04 — Mengapa HAILAN",
+    "title": "Keupayaan di sebalik label dan projek di seluruh dunia.",
+    "lede": "Rakan kongsi jarang menukar pembekal kerana harga. Mereka menukar kerana kejutan. Tugas kami ialah menghapuskannya.",
+    "reasons": [
+      {
+        "title": "Bekalan yang boleh dipercayai",
+        "text": "Kapasiti dirancang berdasarkan ramalan rakan kongsi, dengan stok keselamatan disimpan pada program yang sedang berjalan. Dalam tiga tahun lepas, 98.6% kontena dihantar pada atau sebelum tarikh yang disahkan.",
+        "proof": "98.6% penghantaran tepat masa"
+      },
+      {
+        "title": "Kualiti yang stabil",
+        "text": "Satu sistem kualiti mentadbir setiap barisan. Produk berkod kelompok, disahkan makmal dan diperiksa secara visual — supaya kontena keseratus sepadan dengan sampel pertama yang anda luluskan.",
+        "proof": "AQL 2.5 · Kebolehjejakan kelompok penuh"
+      },
+      {
+        "title": "Pengalaman global",
+        "text": "Pensijilan, dokumentasi, pembungkusan dan logistik ditala mengikut setiap destinasi — daripada REACH EU dan penandaan CE hingga FloorScore AS dan skim pematuhan Teluk.",
+        "proof": "20+ pasaran dilayani"
+      },
+      {
+        "title": "Pasukan profesional",
+        "text": "Pengurus projek dan jurutera berbahasa Inggeris menjawab dalam beberapa jam, bukan beberapa hari — dan kekal bersama program anda melalui pesanan semula, reka bentuk semula dan peralihan pasaran.",
+        "proof": "Komitmen respons 24 jam"
+      }
+    ]
+  },
+  "markets": {
+    "eyebrow": "05 — Pasaran global",
+    "title": "Dihantar dari satu kampus. Dipasang di enam benua.",
+    "lede": "Eksport bukan satu jabatan di HAILAN — ia dibina dalam cara kami bekerja. Dokumentasi, pelan muatan dan logistik pelabuhan dijuruterakan dengan penuh teliti seperti produk.",
+    "regions": [
+      {
+        "name": "Eropah",
+        "markets": "Belanda · Jerman · UK · Poland · Sepanyol"
+      },
+      {
+        "name": "Amerika Utara",
+        "markets": "Amerika Syarikat · Kanada · Mexico"
+      },
+      {
+        "name": "Timur Tengah",
+        "markets": "UAE · Arab Saudi · Qatar"
+      },
+      {
+        "name": "Asia-Pasifik",
+        "markets": "Australia · Jepun · Korea"
+      },
+      {
+        "name": "Amerika Latin",
+        "markets": "Brazil · Chile · Colombia"
+      },
+      {
+        "name": "Afrika",
+        "markets": "Nigeria · Mesir · Afrika Selatan"
+      }
+    ],
+    "figures": [
+      {
+        "label": "Negara dibekalkan"
+      },
+      {
+        "label": "Benua dipasang"
+      },
+      {
+        "label": "Kontena dihantar setahun"
+      }
+    ]
+  },
+  "newsHome": {
+    "eyebrow": "06 — Berita",
+    "title": "Perkembangan terkini di HAILAN."
+  },
+  "cta": {
+    "title": "Minta sampel percuma untuk program anda seterusnya.",
+    "lede": "Beritahu kami apa yang anda sumberkan — jenis produk, pasaran, kuantiti dan spesifikasi sasaran. Pasukan eksport kami akan membalas dalam satu hari bekerja.",
+    "button": "Minta Sampel"
+  },
+  "footer": {
+    "tagline": "Jinhua Hailan New Materials Co., Ltd. — pengeluar global bahan binaan hiasan, membekalkan rakan kongsi di lebih 20 negara dari kampus pengeluaran kira-kira 33,000 m².",
+    "products": "Produk",
+    "company": "Syarikat",
+    "headquarters": "Ibu Pejabat",
+    "address": [
+      "Unit 401, Tingkat 4, Blok 3",
+      "No. 777 Jalan Houtian, Pekan Xiaoshun",
+      "Daerah Jindong, Jinhua",
+      "Zhejiang 321000, China"
+    ],
+    "rights": "Hak cipta terpelihara.",
+    "signoff": "Dijuruterakan di Jinhua · Dihantar ke seluruh dunia",
+    "globalInquiries": "Pertanyaan global"
+  },
+  "about": {
+    "meta": {
+      "title": "Tentang Kami",
+      "description": "HAILAN — Jinhua Hailan New Materials Co., Ltd. — ialah pengeluar bahan binaan hiasan global yang membekalkan lantai LVT, penutup dinding PET dan penutup karpet PET kepada rakan kongsi di 20+ negara."
+    },
+    "hero": {
+      "eyebrow": "Tentang HAILAN",
+      "title": "Kilang yang berfikir seperti jenama.",
+      "lede": "Jinhua Hailan New Materials Co., Ltd. mereka bentuk, mengeluarkan dan mengeksport bahan binaan hiasan dari kampus bersepadu di Jinhua, China — untuk rakan kongsi yang meletakkan nama mereka sendiri pada kotak."
+    },
+    "story": {
+      "eyebrow": "Kisah kami",
+      "title": "Dibina daripada asas pembuatan Zhejiang.",
+      "para1": "HAILAN ditubuhkan pada 2020 di Daerah Jindong, Jinhua, Zhejiang. Berkembang daripada asas pembuatan khusus membentuk cara kami bekerja: hampir dengan pembekal, rakan perkakasan dan sumber ujian, dengan piawaian eksport menetapkan ukuran bagi setiap program pengeluaran.",
+      "para2": "Sejak awal kami memilih laluan yang lebih sempit dan lebih mendalam daripada kebanyakan: lebih sedikit kategori produk, dijuruterakan dengan betul, dikeluarkan pada barisan kami sendiri dan didokumentasikan mengikut piawaian pasaran destinasi paling ketat. Mula-mula lantai LVT, kemudian penutup dinding akustik PET, kemudian penutup karpet PET — tiga permukaan, satu sistem kualiti.",
+      "para3": "Hari ini produk kami dipasang di pejabat, hotel, sekolah dan rumah di lebih 20 negara — biasanya di bawah jenama rakan kongsi kami. Itu memang disengajakan. Cita-cita HAILAN adalah menjadi pengeluar paling boleh dipercayai di sebalik jenama bahan binaan hiasan dunia, dan semakin lama, sebuah jenama yang berbaloi diminta dengan nama.",
+      "stats": {
+        "founded": "Ditubuhkan",
+        "facility": "Kampus pengeluaran",
+        "lines": "Barisan pengeluaran",
+        "team": "Pekerja"
+      }
+    },
+    "values": {
+      "eyebrow": "Cara kami bekerja",
+      "title": "Empat prinsip mentadbir setiap program.",
+      "lede": "Ia bukan poster dinding. Ia ialah peraturan operasi yang dialami rakan kongsi kami dalam setiap sebut harga, sampel dan kontena.",
+      "items": [
+        {
+          "title": "Kejuruteraan dahulu",
+          "text": "Setiap keputusan produk bermula pada barisan pengeluaran, bukan brosur. Jika sesuatu binaan tidak dapat dikeluarkan secara konsisten pada skala, kami tidak menjualnya."
+        },
+        {
+          "title": "Kebolehpercayaan radikal",
+          "text": "Rakan kongsi merancang musim, pembukaan kedai dan jadual projek berdasarkan pengesahan kami. Kami menganggap tarikh yang disahkan sebagai kontrak — 98.6% kontena dihantar tepat masa."
+        },
+        {
+          "title": "Kefasihan reka bentuk",
+          "text": "Kami membaca laporan trend yang sama, melawat pameran yang sama dan mengikuti akhbar seni bina yang sama seperti pelanggan kami — supaya pembangunan hiasan bertutur dalam bahasa mereka."
+        },
+        {
+          "title": "Perkongsian jangka panjang",
+          "text": "Program berulang kami dirancang sebagai perkongsian jangka panjang. Kami menetapkan harga, merancang dan melabur untuk hubungan yang diukur dalam tahun, bukan pesanan belian."
+        }
+      ]
+    },
+    "timeline": {
+      "eyebrow": "Pencapaian",
+      "title": "Pertumbuhan fokus sejak 2020.",
+      "items": [
+        {
+          "year": "2020",
+          "title": "Ditubuhkan di Daerah Jindong",
+          "text": "Jinhua Hailan New Materials ditubuhkan di Daerah Jindong, Jinhua, Zhejiang, dengan tumpuan pada pembuatan bahan binaan hiasan."
+        },
+        {
+          "year": "2021",
+          "title": "Kampus pengeluaran bersepadu",
+          "text": "Kampus Jinhua menyatukan operasi lantai, penutup dinding dan gudang di satu tapak yang diselaraskan."
+        },
+        {
+          "year": "2022",
+          "title": "Program eksport bermula",
+          "text": "Aliran kerja eksport khusus dibina untuk pengimport luar negara, dengan sokongan jualan antarabangsa dan dokumentasi."
+        },
+        {
+          "year": "2023",
+          "title": "Portfolio produk berkembang",
+          "text": "Penutup dinding PET dan penutup karpet PET meluaskan tawaran daripada lantai kepada bahan permukaan dalaman yang lebih luas."
+        },
+        {
+          "year": "2024",
+          "title": "Proses OEM / ODM dinaik taraf",
+          "text": "Pensampelan, pembungkusan, dokumentasi dan penyerahan projek diseragamkan untuk rakan kongsi label persendirian."
+        },
+        {
+          "year": "2025",
+          "title": "Keupayaan pensampelan diperkukuh",
+          "text": "Aliran kerja pensampelan khusus memendekkan kitaran pembangunan hiasan dan pengesahan sampel untuk program OEM."
+        }
+      ]
+    },
+    "compliance": {
+      "eyebrow": "Pematuhan",
+      "title": "Disahkan untuk destinasi paling ketat.",
+      "text": "Setiap barisan produk dibangunkan mengikut keperluan kawal selia Kesatuan Eropah, Amerika Utara dan Teluk — kemudian didokumentasikan supaya rakan kongsi boleh menentukan spesifikasi, mengimport dan memasang tanpa halangan."
+    },
+    "cta": {
+      "title": "Temui pasukan di sebalik label.",
+      "lede": "Lawati kampus kami di Jinhua, temui kami di pameran dagangan seterusnya, atau mulakan dengan perbualan tentang program anda."
+    }
+  },
+  "productsPage": {
+    "meta": {
+      "title": "Produk",
+      "description": "Lantai LVT, penutup dinding akustik PET dan penutup karpet PET — tiga barisan produk dijuruterakan di bawah satu sistem kualiti untuk pengimport, pengedar dan jenama di seluruh dunia."
+    },
+    "hero": {
+      "eyebrow": "Produk",
+      "title": "Lantai. Dinding. Tekstil. Satu piawaian.",
+      "lede": "Tiga barisan produk dibangunkan di bawah satu sistem kejuruteraan dan pematuhan — supaya rakan kongsi boleh membina program dalaman lengkap dari satu kilang, satu hubungan dan satu jadual penghantaran."
+    },
+    "explore": "Terokai",
+    "roadmap": {
+      "eyebrow": "Melihat ke hadapan",
+      "title": "Satu kategori pada satu masa, dijuruterakan dengan betul.",
+      "text": "Pelan hala tuju HAILAN meluas melangkaui lantai dan permukaan akustik ke dunia bahan binaan hiasan yang lebih luas. Kategori baharu menyertai portfolio dengan cara yang sama seperti tiga yang sedia ada: dibangunkan pada barisan kami sendiri, disahkan mengikut piawaian antarabangsa, dan ditawarkan kepada rakan kongsi hanya apabila kami boleh menjaminnya pada skala.",
+      "link": "Bangunkan produk bersama kami"
+    },
+    "cta": {
+      "title": "Perlukan spesifikasi, harga atau sampel?",
+      "lede": "Hantarkan keperluan projek atau program anda — helaian data teknikal dan penghantaran sampel dalam masa beberapa hari.",
+      "button": "Minta maklumat produk"
+    }
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Hubungi",
+      "description": "Berbincang dengan pasukan eksport HAILAN tentang pengedaran, program OEM atau bekalan projek. Kami membalas dalam satu hari bekerja."
+    },
+    "hero": {
+      "eyebrow": "Hubungi",
+      "title": "Mari bincangkan program anda.",
+      "lede": "Pengedaran, label persendirian, bekalan projek atau satu soalan teknikal — cara terpantas menilai HAILAN adalah dengan memulakan perbualan."
+    },
+    "inquiries": "Pertanyaan global",
+    "hq": "Ibu pejabat & kilang",
+    "hours": "Waktu pejabat: Isnin – Jumaat, 08:30 – 18:00 (GMT+8).",
+    "visits": "Lawatan dan audit kilang dialu-alukan dengan temu janji.",
+    "nextTitle": "Apa yang berlaku seterusnya",
+    "expectations": [
+      {
+        "title": "Respons dalam 24 jam",
+        "text": "Seorang pengurus eksport yang ditetapkan — bukan penjawab automatik — membalas dalam satu hari bekerja."
+      },
+      {
+        "title": "Spesifikasi & harga",
+        "text": "Anda menerima data teknikal, harga petunjuk dan masa penghantaran yang jujur untuk pasaran anda."
+      },
+      {
+        "title": "Sampel dalam perjalanan",
+        "text": "Sampel standard dihantar dalam masa beberapa hari; pensampelan tersuai mengambil 7–10 hari daripada karya seni yang diluluskan."
+      }
+    ],
+    "form": {
+      "heading": "Hantar pertanyaan",
+      "intro": "Semakin banyak anda beritahu kami tentang pasaran dan jumlah anda, semakin tepat balasan pertama kami.",
+      "name": "Nama penuh",
+      "namePlaceholder": "Ahmad bin Ali",
+      "company": "Syarikat",
+      "companyPlaceholder": "Syarikat Sdn. Bhd.",
+      "email": "E-mel kerja",
+      "emailPlaceholder": "ahmad@syarikat.com",
+      "country": "Negara / pasaran",
+      "countryPlaceholder": "Malaysia",
+      "inquiry": "Jenis pertanyaan",
+      "inquiryTypes": [
+        "Perkongsian pengedaran",
+        "Program OEM / label persendirian",
+        "Bekalan projek komersial",
+        "Sampel & dokumentasi",
+        "Lain-lain"
+      ],
+      "productsInterest": "Produk yang diminati",
+      "message": "Mesej",
+      "messagePlaceholder": "Beritahu kami tentang pasaran, jumlah, binaan sasaran atau projek anda…",
+      "submit": "Hantar pertanyaan",
+      "note": "Membuka klien e-mel anda — atau tulis terus kepada kami di",
+      "status": "Draf e-mel anda telah dibuka dalam klien mel anda."
+    }
+  }
+}
