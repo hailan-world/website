@@ -65,7 +65,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
               </h2>
               <address className="mt-5 text-[15px] not-italic leading-relaxed text-mist-600">
                 {site.legalName}
-                {site.address.map((line) => (
+                {dict.footer.address.map((line) => (
                   <span key={line} className="block">
                     {line}
                   </span>

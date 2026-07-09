@@ -160,6 +160,12 @@
     "products": "المنتجات",
     "company": "الشركة",
     "headquarters": "المقر الرئيسي",
+    "address": [
+      "وحدة 401، الطابق 4، المبنى 3",
+      "شارع Houtian رقم 777، بلدة Xiaoshun",
+      "منطقة Jindong، Jinhua",
+      "مقاطعة Zhejiang 321000، الصين"
+    ],
     "rights": "جميع الحقوق محفوظة.",
     "signoff": "هُندس في جينهوا · يُسلَّم حول العالم",
     "globalInquiries": "استفسارات دولية"

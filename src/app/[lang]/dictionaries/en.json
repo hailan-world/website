@@ -160,6 +160,12 @@
     "products": "Products",
     "company": "Company",
     "headquarters": "Headquarters",
+    "address": [
+      "Unit 401, Floor 4, Block 3",
+      "No. 777 Houtian Street, Xiaoshun Town",
+      "Jindong District, Jinhua",
+      "Zhejiang 321000, China"
+    ],
     "rights": "All rights reserved.",
     "signoff": "Engineered in Jinhua · Delivered worldwide",
     "globalInquiries": "Global inquiries"
