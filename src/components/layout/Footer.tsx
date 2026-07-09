@@ -88,7 +88,7 @@ export function Footer({ dict }: { dict: Dictionary }) {
               {dict.footer.headquarters}
             </h2>
             <address className="mt-6 text-[15px] not-italic leading-relaxed text-ink-200">
-              {site.address.map((line) => (
+              {dict.footer.address.map((line) => (
                 <span key={line} className="block">
                   {line}
                 </span>

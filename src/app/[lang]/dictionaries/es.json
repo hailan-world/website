@@ -160,6 +160,12 @@
     "products": "Productos",
     "company": "Empresa",
     "headquarters": "Sede central",
+    "address": [
+      "Unidad 401, planta 4, edificio 3",
+      "N.º 777 calle Houtian, pueblo de Xiaoshun",
+      "Distrito de Jindong, Jinhua",
+      "Zhejiang 321000, China"
+    ],
     "rights": "Todos los derechos reservados.",
     "signoff": "Diseñado en Jinhua · Entregado en todo el mundo",
     "globalInquiries": "Consultas internacionales"

@@ -160,6 +160,12 @@
     "products": "产品",
     "company": "公司",
     "headquarters": "总部",
+    "address": [
+      "浙江省金华市金东区孝顺镇",
+      "后田街777号3号楼4楼401号",
+      "邮编 321000",
+      "中国"
+    ],
     "rights": "版权所有。",
     "signoff": "金华智造 · 全球交付",
     "globalInquiries": "全球业务咨询"

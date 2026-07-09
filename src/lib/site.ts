@@ -7,12 +7,6 @@ export const site = {
   url: "https://hailanworld.com",
   email: "sales@hailanworld.com",
   phone: "+86 572 8266 000",
-  address: [
-    "Xiaoshunzhen Houtian Street No.777 Block 3, Jindong",
-    "Jinhua",
-    "Zhejiang",
-    "China",
-  ],
   founded: 2020,
 } as const;
 
