@@ -12,7 +12,7 @@ export function ManufacturingBand({ dict }: { dict: Dictionary }) {
   return (
     <section className="relative overflow-hidden bg-ink-950 py-24 text-white md:py-36">
       <div
-        className="pointer-events-none absolute -left-52 top-16 h-[30rem] w-[30rem] rounded-full bg-azure-600/10 blur-[150px]"
+        className="pointer-events-none absolute -left-52 top-16 h-[30rem] w-[30rem] rounded-full bg-azure-600/10 blur-[64px] md:blur-[150px]"
         aria-hidden="true"
       />
       <div className="pointer-events-none absolute inset-0 bg-grain opacity-35" aria-hidden="true" />

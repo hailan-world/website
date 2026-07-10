@@ -79,6 +79,68 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ---- Scroll reveal (JS adds .is-visible when the element enters view) ----
+   Pure CSS + IntersectionObserver replaces framer-motion, so no animation
+   library ships to the client. */
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 28px));
+  transition:
+    opacity 0.9s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+/* Never keep content hidden when motion is reduced or JS is unavailable. */
+@media (prefers-reduced-motion: reduce), (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- Hero entrance — pure CSS so it plays without waiting for hydration ---- */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--rise, 16px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-rise {
+  animation: hero-rise 0.9s var(--ease-out-expo) both;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes hero-line {
+  from {
+    transform: translateY(115%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.hero-line {
+  animation: hero-line 1s var(--ease-out-expo) both;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-16px);
+  }
+  100% {
+    transform: translateY(44px);
+  }
+}
+.scroll-cue {
+  animation: scroll-cue 1.8s ease-in-out infinite;
+}
+
 body {
   background-color: var(--color-paper);
   color: var(--color-ink-900);
@@ -102,6 +164,13 @@ body {
 .bg-grain {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
   background-size: 180px 180px;
+}
+/* The feTurbulence raster is costly on mobile GPUs — drop the subtle grain
+   on small screens where it's barely perceptible anyway. */
+@media (max-width: 768px) {
+  .bg-grain {
+    background-image: none;
+  }
 }
 
 /* Fine architectural line grids */

@@ -129,7 +129,7 @@ export default function OemOdmPage() {
       {/* Services */}
       <section className="relative overflow-hidden bg-ink-950 py-24 text-white md:py-32">
         <div
-          className="pointer-events-none absolute -right-56 top-10 h-[32rem] w-[32rem] rounded-full bg-azure-600/10 blur-[150px]"
+          className="pointer-events-none absolute -right-56 top-10 h-[32rem] w-[32rem] rounded-full bg-azure-600/10 blur-[64px] md:blur-[150px]"
           aria-hidden="true"
         />
         <div className="pointer-events-none absolute inset-0 bg-grain opacity-35" aria-hidden="true" />
