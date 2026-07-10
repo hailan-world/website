@@ -44,7 +44,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <section className="relative overflow-hidden bg-ink-950 text-white">
         <div className="pointer-events-none absolute inset-0 bg-grid-dark" aria-hidden="true" />
         <div
-          className="pointer-events-none absolute -right-40 -top-64 h-[34rem] w-[34rem] rounded-full bg-azure-600/15 blur-[140px]"
+          className="pointer-events-none absolute -right-40 -top-64 h-[34rem] w-[34rem] rounded-full bg-azure-600/15 blur-[64px] md:blur-[140px]"
           aria-hidden="true"
         />
         <div className="pointer-events-none absolute inset-0 bg-grain opacity-40" aria-hidden="true" />
@@ -153,7 +153,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       {/* Features */}
       <section className="relative overflow-hidden bg-ink-950 py-24 text-white md:py-32">
         <div
-          className="pointer-events-none absolute -left-52 top-16 h-[30rem] w-[30rem] rounded-full bg-azure-600/10 blur-[150px]"
+          className="pointer-events-none absolute -left-52 top-16 h-[30rem] w-[30rem] rounded-full bg-azure-600/10 blur-[64px] md:blur-[150px]"
           aria-hidden="true"
         />
         <div className="pointer-events-none absolute inset-0 bg-grain opacity-35" aria-hidden="true" />

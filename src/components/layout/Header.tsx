@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "@/components/i18n/Link";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import { Logo } from "@/components/graphics/Logo";
@@ -31,7 +30,6 @@ export function Header({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const reduce = useReducedMotion();
   const path = stripLocale(pathname);
 
   // Close the mobile menu when navigation changes the route.
@@ -129,26 +127,14 @@ export function Header({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         </Container>
       </header>
 
-      {/* Always mounted; visibility driven by variants so a missed exit
-          animation can never leave an invisible overlay blocking the page. */}
-      <motion.div
+      {/* Always mounted; visibility driven by opacity so a missed transition
+          can never leave an invisible overlay blocking the page. */}
+      <div
         id="mobile-nav"
-        initial={false}
-        animate={open ? "open" : "closed"}
-        variants={{
-          open: {
-            opacity: 1,
-            transition: { duration: reduce ? 0 : 0.35, ease: [0.32, 0.72, 0, 1] },
-          },
-          closed: {
-            opacity: 0,
-            transition: { duration: reduce ? 0 : 0.3, ease: [0.32, 0.72, 0, 1] },
-          },
-        }}
         inert={!open}
         className={cn(
-          "fixed inset-0 z-40 overflow-y-auto bg-ink-950 lg:hidden",
-          !open && "pointer-events-none",
+          "fixed inset-0 z-40 overflow-y-auto bg-ink-950 transition-opacity duration-300 ease-swift lg:hidden",
+          open ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       >
         <div className="pointer-events-none absolute inset-0 bg-grid-dark" aria-hidden="true" />
@@ -158,28 +144,15 @@ export function Header({ dict, lang }: { dict: Dictionary; lang: Locale }) {
               const active =
                 path === item.href || path.startsWith(`${item.href}/`);
               return (
-                <motion.div
+                <div
                   key={item.href}
-                  variants={
-                    reduce
-                      ? undefined
-                      : {
-                          open: {
-                            opacity: 1,
-                            y: 0,
-                            transition: {
-                              duration: 0.5,
-                              delay: 0.06 + i * 0.05,
-                              ease: [0.16, 1, 0.3, 1],
-                            },
-                          },
-                          closed: {
-                            opacity: 0,
-                            y: 18,
-                            transition: { duration: 0.2 },
-                          },
-                        }
-                  }
+                  className={cn(
+                    "transition-all duration-500 ease-out-expo",
+                    open
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-[18px] opacity-0",
+                  )}
+                  style={{ transitionDelay: open ? `${60 + i * 50}ms` : "0ms" }}
                 >
                   <Link
                     href={item.href}
@@ -194,24 +167,17 @@ export function Header({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                     </span>
                     {dict.nav[item.key]}
                   </Link>
-                </motion.div>
+                </div>
               );
             })}
           </nav>
 
-          <motion.div
-            variants={
-              reduce
-                ? undefined
-                : {
-                    open: {
-                      opacity: 1,
-                      transition: { duration: 0.5, delay: 0.4 },
-                    },
-                    closed: { opacity: 0, transition: { duration: 0.2 } },
-                  }
-            }
-            className="mt-auto pt-14"
+          <div
+            className={cn(
+              "mt-auto pt-14 transition-opacity duration-500",
+              open ? "opacity-100" : "opacity-0",
+            )}
+            style={{ transitionDelay: open ? "400ms" : "0ms" }}
           >
             <div className="mb-8">
               <LanguageSwitcher
@@ -235,9 +201,9 @@ export function Header({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             >
               {site.phone}
             </a>
-          </motion.div>
+          </div>
         </Container>
-      </motion.div>
+      </div>
     </>
   );
 }

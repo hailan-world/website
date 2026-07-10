@@ -40,7 +40,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <section className="relative overflow-hidden bg-ink-950 text-white">
         <div className="pointer-events-none absolute inset-0 bg-grid-dark" aria-hidden="true" />
         <div
-          className="pointer-events-none absolute -right-40 -top-64 h-[34rem] w-[34rem] rounded-full bg-azure-600/15 blur-[140px]"
+          className="pointer-events-none absolute -right-40 -top-64 h-[34rem] w-[34rem] rounded-full bg-azure-600/15 blur-[64px] md:blur-[140px]"
           aria-hidden="true"
         />
         <div className="pointer-events-none absolute inset-0 bg-grain opacity-40" aria-hidden="true" />

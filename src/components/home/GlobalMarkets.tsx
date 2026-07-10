@@ -18,7 +18,7 @@ export function GlobalMarkets({ dict }: { dict: Dictionary }) {
   return (
     <section className="relative overflow-hidden bg-ink-950 py-24 text-white md:py-36">
       <div
-        className="pointer-events-none absolute -right-64 top-0 h-[36rem] w-[36rem] rounded-full bg-azure-600/10 blur-[150px]"
+        className="pointer-events-none absolute -right-64 top-0 h-[36rem] w-[36rem] rounded-full bg-azure-600/10 blur-[64px] md:blur-[150px]"
         aria-hidden="true"
       />
       <div className="pointer-events-none absolute inset-0 bg-grain opacity-35" aria-hidden="true" />
