@@ -52,13 +52,13 @@ export function Header() {
           <div className="flex h-16 items-center justify-between md:h-20">
             <Link
               href="/"
-              aria-label="HAILAN — home"
+              aria-label="HAILAN — 首页"
               className="transition-opacity hover:opacity-80"
             >
               <Logo on="dark" />
             </Link>
 
-            <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
+            <nav aria-label="主导航" className="hidden items-center gap-8 lg:flex">
               {links.map((item) => {
                 const active =
                   pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -80,7 +80,7 @@ export function Header() {
                 href="/contact"
                 className="inline-flex h-10 items-center rounded-full bg-white px-5 text-sm font-medium text-ink-950 transition-colors duration-300 hover:bg-azure-100"
               >
-                Contact
+                联系
               </Link>
             </nav>
 
@@ -89,7 +89,7 @@ export function Header() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-controls="mobile-nav"
-              aria-label={open ? "Close menu" : "Open menu"}
+              aria-label={open ? "关闭菜单" : "打开菜单"}
               className="relative flex h-11 w-11 items-center justify-center lg:hidden"
             >
               <span
@@ -133,7 +133,7 @@ export function Header() {
       >
         <div className="pointer-events-none absolute inset-0 bg-grid-dark" aria-hidden="true" />
         <Container className="relative flex min-h-full flex-col pb-10 pt-28">
-          <nav aria-label="Mobile" className="flex flex-col">
+          <nav aria-label="移动端导航" className="flex flex-col">
             {nav.map((item, i) => {
               const active =
                 pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -194,7 +194,7 @@ export function Header() {
             className="mt-auto pt-14"
           >
             <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-400">
-              Global inquiries
+              全球咨询
             </p>
             <a
               href={`mailto:${site.email}`}

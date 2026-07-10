@@ -6,26 +6,26 @@ import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "联系",
   description:
-    "Talk to HAILAN's export team about distribution, OEM programs or project supply. We respond within one business day.",
+    "联系 HAILAN 出口团队，讨论经销、OEM 项目或工程供货。我们将在一个工作日内回复。",
 };
 
 const expectations = [
   {
     step: "01",
-    title: "Response within 24 hours",
-    text: "A named export manager — not an autoresponder — replies within one business day.",
+    title: "24 小时内响应",
+    text: "由明确的出口经理在一个工作日内回复，而不是自动邮件。",
   },
   {
     step: "02",
-    title: "Specifications & pricing",
-    text: "You receive technical data, indicative pricing and honest lead times for your market.",
+    title: "规格与报价",
+    text: "你会收到适合目标市场的技术资料、参考报价和真实交期。",
   },
   {
     step: "03",
-    title: "Samples on their way",
-    text: "Standard samples dispatch within days; custom sampling runs 7–10 days from approved artwork.",
+    title: "样品安排",
+    text: "标准样品数天内寄出；定制打样在稿件确认后 7–10 天完成。",
   },
 ];
 
@@ -33,9 +33,9 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Let's talk about your program."
-        lede="Distribution, private label, project supply or a single technical question — the fastest way to evaluate HAILAN is to start a conversation."
+        eyebrow="联系"
+        title="聊聊你的项目。"
+        lede="无论是经销、自有品牌、工程供货，还是一个具体技术问题，评估 HAILAN 最快的方式就是先开始沟通。"
       />
 
       <section className="py-24 md:py-32">
@@ -44,7 +44,7 @@ export default function ContactPage() {
             {/* Contact details */}
             <Reveal className="lg:col-span-5">
               <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                Global inquiries
+                全球咨询
               </h2>
               <a
                 href={`mailto:${site.email}`}
@@ -60,7 +60,7 @@ export default function ContactPage() {
               </a>
 
               <h2 className="mt-12 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                Headquarters & factory
+                总部与工厂
               </h2>
               <address className="mt-5 text-[15px] not-italic leading-relaxed text-mist-600">
                 {site.legalName}
@@ -71,14 +71,14 @@ export default function ContactPage() {
                 ))}
               </address>
               <p className="mt-4 text-[13px] leading-relaxed text-mist-500">
-                Office hours: Monday – Friday, 08:30 – 18:00 (GMT+8).
+                办公时间：周一至周五，08:30 – 18:00（GMT+8）。
                 <br />
-                Factory visits and audits welcome by appointment.
+                欢迎预约工厂参观与审核。
               </p>
 
               <div className="mt-12 border-t border-ink-950/10 pt-10">
                 <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                  What happens next
+                  接下来会发生什么
                 </h2>
                 <ol className="mt-6 space-y-6">
                   {expectations.map((item) => (
@@ -104,11 +104,10 @@ export default function ContactPage() {
             <Reveal delay={0.12} className="lg:col-span-7">
               <div className="rounded-2xl border border-ink-950/10 bg-mist-50 p-7 md:p-10">
                 <h2 className="text-xl font-medium tracking-[-0.01em] text-ink-950">
-                  Send an inquiry
+                  发送咨询
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-mist-600">
-                  The more you tell us about your market and volumes, the more
-                  precise our first reply can be.
+                  你提供的市场和采购量信息越完整，我们的首次回复就越精准。
                 </p>
                 <div className="mt-8">
                   <ContactForm />

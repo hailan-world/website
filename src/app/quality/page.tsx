@@ -8,63 +8,63 @@ import { SectionHead } from "@/components/ui/SectionHead";
 import { certifications } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Quality",
+  title: "质量体系",
   description:
-    "One quality system governs every HAILAN line: incoming material testing, hourly in-line checks, laboratory verification and full batch traceability from raw material lot to container.",
+    "同一质量体系管理 HAILAN 每条产线：来料测试、每小时在线检查、实验室验证，以及从原料批次到集装箱的完整追溯。",
 };
 
 const gates = [
   {
-    step: "Gate 01",
-    title: "Incoming materials",
-    text: "Every lot of polymer, film, yarn and additive is sampled and tested against purchase specification before release. Non-conforming lots are quarantined and returned — they never reach a line.",
+    step: "关口 01",
+    title: "来料",
+    text: "每批聚合物、薄膜、纱线和助剂在放行前均按采购规格抽样测试。不合格批次会被隔离并退回，不会进入产线。",
   },
   {
-    step: "Gate 02",
-    title: "In-line, every hour",
-    text: "Thickness, dimensions, colour delta-E, gloss and surface quality are measured hourly on every running line and logged against the batch code. Drift triggers correction at the machine, not at final inspection.",
+    step: "关口 02",
+    title: "每小时在线检查",
+    text: "每条运行产线每小时测量厚度、尺寸、色差、光泽和表面质量，并记录到批次码中。偏差会在设备端触发修正，而不是等到最终检验。",
   },
   {
-    step: "Gate 03",
-    title: "Laboratory verification",
-    text: "Our on-site laboratory runs wear, dimensional stability, curl, peel strength, acoustic and colourfastness tests on every production batch — to the same ISO, EN and ASTM methods third-party labs use.",
+    step: "关口 03",
+    title: "实验室验证",
+    text: "现场实验室对每个生产批次进行耐磨、尺寸稳定、翘曲、剥离强度、声学和色牢度测试，采用与第三方实验室相同的 ISO、EN 和 ASTM 方法。",
   },
   {
-    step: "Gate 04",
-    title: "Pre-shipment inspection",
-    text: "Finished goods are inspected to AQL 2.5 before packing, and again at container loading with photographic records. Partners receive inspection data with their shipping documents.",
+    step: "关口 04",
+    title: "出货前检验",
+    text: "成品在包装前按 AQL 2.5 检验，并在装柜时再次检查并拍照记录。合作伙伴会随出货文件收到检验数据。",
   },
 ];
 
 const labTests = [
-  { test: "Abrasion & wear resistance", standard: "EN 660 · ASTM F510" },
-  { test: "Dimensional stability & curl", standard: "ISO 23999 · EN 434" },
-  { test: "Residual indentation", standard: "ISO 24343-1" },
-  { test: "Colour fastness to light", standard: "ISO 105-B02 (xenon-arc)" },
-  { test: "Reaction to fire", standard: "EN 13501-1 · ASTM E648 / E84" },
-  { test: "Sound absorption (PET panels)", standard: "ISO 354 · ASTM C423" },
-  { test: "Impact sound reduction", standard: "ISO 10140-3" },
-  { test: "VOC emissions", standard: "FloorScore® · ISO 16000" },
-  { test: "Slip resistance", standard: "DIN 51130 · EN 13893" },
-  { test: "Peel & bond strength", standard: "EN 431 · ISO 24345" },
+  { test: "耐磨与磨耗", standard: "EN 660 · ASTM F510" },
+  { test: "尺寸稳定与翘曲", standard: "ISO 23999 · EN 434" },
+  { test: "残余压痕", standard: "ISO 24343-1" },
+  { test: "耐光色牢度", standard: "ISO 105-B02（氙弧）" },
+  { test: "燃烧性能", standard: "EN 13501-1 · ASTM E648 / E84" },
+  { test: "吸声性能（PET 板）", standard: "ISO 354 · ASTM C423" },
+  { test: "撞击声降低", standard: "ISO 10140-3" },
+  { test: "VOC 排放", standard: "FloorScore® · ISO 16000" },
+  { test: "防滑性能", standard: "DIN 51130 · EN 13893" },
+  { test: "剥离与粘结强度", standard: "EN 431 · ISO 24345" },
 ];
 
 export default function QualityPage() {
   return (
     <>
       <PageHero
-        eyebrow="Quality"
-        title="The hundredth container must match the first sample."
-        lede="That single sentence is our entire quality philosophy. Everything on this page — the gates, the laboratory, the traceability — exists to make it true, shipment after shipment."
+        eyebrow="质量体系"
+        title="第 100 个集装箱也必须匹配第一块样品。"
+        lede="这句话就是我们的质量哲学。这里的关口、实验室和追溯体系，都是为了让它在每一次出货中成立。"
       />
 
       {/* Four gates */}
       <section className="py-24 md:py-32">
         <Container>
           <SectionHead
-            eyebrow="The system"
-            title="Four gates between raw material and your warehouse."
-            lede="Quality is not a department that inspects at the end. It is a series of gates a product must pass through — and each gate keeps records."
+            eyebrow="体系"
+            title="从原料到你的仓库之间有四道关口。"
+            lede="质量不是最后检验的部门，而是产品必须经过的一系列关口，并且每一道关口都留下记录。"
           />
           <div className="mt-16 grid gap-x-14 gap-y-14 md:grid-cols-2">
             {gates.map((gate, i) => (
@@ -98,15 +98,15 @@ export default function QualityPage() {
             <div className="lg:col-span-5">
               <SectionHead
                 on="dark"
-                eyebrow="On-site laboratory"
-                title="Tested to the methods your market regulates."
-                lede="Our laboratory runs the same ISO, EN and ASTM procedures as the certification bodies — so third-party results never surprise us, or you."
+                eyebrow="现场实验室"
+                title="按你的市场监管方法进行测试。"
+                lede="我们的实验室执行与认证机构相同的 ISO、EN 和 ASTM 流程，因此第三方结果不会让我们，也不会让你意外。"
               />
             </div>
             <Reveal delay={0.15} className="lg:col-span-7">
               <table className="w-full border-collapse text-left">
                 <caption className="sr-only">
-                  Laboratory tests and their reference standards
+                  实验室测试及对应标准
                 </caption>
                 <thead>
                   <tr className="border-b border-white/15">
@@ -114,13 +114,13 @@ export default function QualityPage() {
                       scope="col"
                       className="pb-4 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-ink-400"
                     >
-                      Test
+                      测试
                     </th>
                     <th
                       scope="col"
                       className="pb-4 text-right font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-ink-400"
                     >
-                      Method
+                      方法
                     </th>
                   </tr>
                 </thead>
@@ -146,22 +146,16 @@ export default function QualityPage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <SectionHead
-                eyebrow="Traceability"
-                title="Every carton answers for itself."
+                eyebrow="追溯"
+                title="每一箱产品都能说明自己的来源。"
               />
             </Reveal>
             <Reveal delay={0.12} className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-mist-600">
-                Every carton HAILAN ships carries a batch code that resolves —
-                inside our MES — to the raw material lots, the production line,
-                the shift, the in-line measurements and the laboratory results
-                behind it. If a partner ever raises a claim, we answer with
-                data within 48 hours, not with opinions.
+                HAILAN 发出的每一箱产品都带有批次码，在 MES 中可追溯到背后的原料批次、生产线、班次、在线测量和实验室结果。如果合作伙伴提出索赔，我们会在 48 小时内用数据回应，而不是用意见回应。
               </p>
               <p className="mt-6 text-lg leading-relaxed text-mist-600">
-                The same records feed our continuous improvement loop: claim
-                rates, first-pass yield and colour consistency are reviewed
-                weekly by the same engineers who run the lines.
+                同一套记录也进入持续改进闭环：索赔率、一次合格率和颜色一致性由负责产线的工程师每周复盘。
               </p>
             </Reveal>
           </div>
@@ -172,16 +166,16 @@ export default function QualityPage() {
       <section className="bg-mist-50 py-24 md:py-32">
         <Container>
           <SectionHead
-            eyebrow="Certifications"
-            title="Documentation that clears customs and specifications."
-            lede="Certificates are maintained continuously and shipped as a compliance pack with every program — ready for importers, specifiers and retail chains."
+            eyebrow="认证"
+            title="让清关和规格指定更顺畅的文件体系。"
+            lede="证书持续维护，并作为每个项目的合规文件包随货提供，面向进口商、规格顾问和零售连锁即可使用。"
             align="center"
             className="mx-auto"
           />
           <Reveal className="mt-12">
             <ul
               className="flex flex-wrap justify-center gap-3"
-              aria-label="Certifications and standards"
+              aria-label="认证与标准"
             >
               {certifications.map((c) => (
                 <li key={c}>
@@ -194,9 +188,9 @@ export default function QualityPage() {
       </section>
 
       <CtaBand
-        title="Request our compliance pack."
-        lede="Test reports, certificates and technical data sheets for any product line — organised by destination market, delivered within one business day."
-        cta="Request documentation"
+        title="索取我们的合规文件包。"
+        lede="任一产品线的测试报告、证书和技术数据表均可按目的地市场整理，并在一个工作日内提供。"
+        cta="索取文件"
       />
     </>
   );

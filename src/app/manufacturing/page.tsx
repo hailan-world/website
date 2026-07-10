@@ -9,71 +9,71 @@ import { SectionHead } from "@/components/ui/SectionHead";
 import { stats } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Manufacturing",
+  title: "制造能力",
   description:
-    "Inside HAILAN's 120,000 m² integrated campus: 25 production lines, MES-tracked automation and in-line quality control from raw polymer to batch-coded, export-packed product.",
+    "走进 HAILAN 120,000 m² 一体化园区：25 条生产线、MES 跟踪自动化和在线质量控制，将原料转化为带批次码的出口包装成品。",
 };
 
 const capabilities = [
   {
     value: stats.facility,
     suffix: " m²",
-    label: "Integrated production campus",
+    label: "一体化生产园区",
   },
-  { value: stats.lines, suffix: "", label: "Extrusion, calendering & tufting lines" },
-  { value: stats.capacity, suffix: "M m²", label: "Annual production capacity" },
-  { value: 24, suffix: "/7", label: "MES-monitored operation" },
+  { value: stats.lines, suffix: "", label: "挤出、压延与簇绒产线" },
+  { value: stats.capacity, suffix: "M m²", label: "年产能" },
+  { value: 24, suffix: "/7", label: "MES 监控运行" },
 ];
 
 const processSteps = [
   {
     step: "01",
-    title: "Material preparation",
-    text: "Virgin and certified-recycled polymer, plasticiser, stabiliser and fibre are batched by recipe, with every incoming lot tested against specification before release to production.",
+    title: "材料准备",
+    text: "原生与认证回收聚合物、增塑剂、稳定剂和纤维按配方批量准备，每个来料批次在放行生产前均按规格测试。",
   },
   {
     step: "02",
-    title: "Extrusion & calendering",
-    text: "Twin-screw extruders and four-roll calenders form core and wear layers to tolerance, with in-line laser thickness gauging feeding corrections back to the line in real time.",
+    title: "挤出与压延",
+    text: "双螺杆挤出机和四辊压延机将芯层与耐磨层控制在公差范围内，在线激光测厚实时反馈修正。",
   },
   {
     step: "03",
-    title: "Lamination & pressing",
-    text: "Decor film, wear layer and core are bonded under heat and pressure. Register-embossing plates align surface texture to the printed decor for natural depth.",
+    title: "复合与压制",
+    text: "装饰膜、耐磨层和芯层在热压下结合。同步压纹板让表面纹理与印刷花色匹配，呈现自然深度。",
   },
   {
     step: "04",
-    title: "Surface treatment & UV curing",
-    text: "Polyurethane coatings are applied and UV-cured to the gloss level and scratch resistance each program specifies — matte to satin, verified by gloss meter every hour.",
+    title: "表面处理与 UV 固化",
+    text: "聚氨酯涂层按每个项目要求达到指定光泽和耐刮性能，从哑光到柔光均每小时用光泽仪验证。",
   },
   {
     step: "05",
-    title: "Precision profiling",
-    text: "CNC double-end tenoners cut click profiles, bevels and formats to ±0.15 mm. PET panels move through routing cells for slats, perforations and project geometries.",
+    title: "精密成型",
+    text: "CNC 双端铣将锁扣、倒角和规格控制在 ±0.15 mm。PET 板材通过开槽单元加工格栅、穿孔和项目几何造型。",
   },
   {
     step: "06",
-    title: "Inspection, packing & loading",
-    text: "Every piece passes visual and dimensional inspection before batch-coded cartons are palletised, load-planned and containerised — photographed at every loading stage.",
+    title: "检验、包装与装柜",
+    text: "每件产品在装入带批次码纸箱前完成外观与尺寸检验，随后托盘化、装柜规划并入柜，每个装载阶段均拍照记录。",
   },
 ];
 
 const automation = [
   {
-    title: "MES production tracking",
-    text: "Every order is tracked through the manufacturing execution system from raw material lot to container number — the same data partners see in shipment documentation.",
+    title: "MES 生产跟踪",
+    text: "每个订单从原料批次到集装箱号都通过制造执行系统追踪，相关数据也会进入合作伙伴看到的出货文件。",
   },
   {
-    title: "In-line measurement",
-    text: "Laser thickness gauges, colour spectrophotometers and vision systems measure continuously during production, not on samples after the fact.",
+    title: "在线测量",
+    text: "激光测厚仪、色差仪和视觉系统在生产过程中持续测量，而不是事后只测样品。",
   },
   {
-    title: "Automated handling",
-    text: "Robotic palletising and AGV transfer between lines reduce handling damage and keep surface quality consistent through packing.",
+    title: "自动化搬运",
+    text: "机器人码垛和 AGV 线间转运减少搬运损伤，并让表面质量在包装前保持一致。",
   },
   {
-    title: "Energy & water systems",
-    text: "Rooftop photovoltaics supply 22% of electricity; a closed-loop system on the calendering lines cut process water intake by 17% year over year.",
+    title: "能源与水系统",
+    text: "屋顶光伏供应 22% 的电力；压延线闭环水系统使工艺用水量同比降低 17%。",
   },
 ];
 
@@ -81,9 +81,9 @@ export default function ManufacturingPage() {
   return (
     <>
       <PageHero
-        eyebrow="Manufacturing"
-        title="From raw polymer to loaded container. One campus."
-        lede="Nothing critical is outsourced. Extrusion, lamination, tufting, profiling, inspection and packing all happen on one MES-tracked site in Huzhou — which is why the hundredth container matches the first."
+        eyebrow="制造能力"
+        title="从聚合物原料到装柜出运，一个园区完成。"
+        lede="关键环节不外包。挤出、复合、簇绒、成型、检验和包装都在湖州同一个 MES 跟踪基地完成，这也是第 100 个集装箱仍能匹配第一块样品的原因。"
       />
 
       {/* Capability stats */}
@@ -109,9 +109,9 @@ export default function ManufacturingPage() {
       <section className="bg-mist-50 py-24 md:py-32">
         <Container>
           <SectionHead
-            eyebrow="The line"
-            title="Six stages. Zero handoffs outside our control."
-            lede="Each stage feeds measurement data forward to the next — so problems are corrected at the source, not discovered at inspection."
+            eyebrow="生产线"
+            title="六个阶段，零关键外部交接。"
+            lede="每个阶段都把测量数据传递给下一阶段，让问题在源头修正，而不是到最终检验才被发现。"
           />
           <ol className="mt-16 grid gap-x-10 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
             {processSteps.map((step, i) => (
@@ -145,13 +145,13 @@ export default function ManufacturingPage() {
             <div className="lg:col-span-5">
               <SectionHead
                 on="dark"
-                eyebrow="Automation"
-                title="Machines measure. People decide."
-                lede="Automation at HAILAN is not about removing people — it is about removing variance. Instruments watch every metre of production so our engineers can act on data, not guesswork."
+                eyebrow="自动化"
+                title="机器测量，人员决策。"
+                lede="HAILAN 的自动化不是为了减少人，而是为了减少波动。仪器监控每一米生产，让工程师基于数据行动，而不是凭猜测判断。"
               />
               <Reveal delay={0.2}>
                 <ArrowLink href="/quality" on="dark" className="mt-10">
-                  How we control quality
+                  了解质量控制
                 </ArrowLink>
               </Reveal>
             </div>
@@ -181,25 +181,20 @@ export default function ManufacturingPage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <SectionHead
-                eyebrow="Export logistics"
-                title="Engineered up to the ship's rail."
+                eyebrow="出口物流"
+                title="工程化管理直到货物上船。"
               />
             </Reveal>
             <Reveal delay={0.12} className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-mist-600">
-                Manufacturing excellence means nothing if the container arrives
-                late or damaged. Our logistics team load-plans every shipment
-                for weight limits and mixed-product programs, produces
-                destination-correct export documentation, and photographs each
-                loading stage. Shanghai and Ningbo ports are within three hours
-                of the campus.
+                如果集装箱迟到或货损，制造 excellence 就失去意义。我们的物流团队按重量限制和混装项目为每票货物规划装柜，制作符合目的地要求的出口文件，并记录每个装载阶段。上海港和宁波港距离园区均在三小时车程内。
               </p>
               <ul className="mt-8 grid gap-3 text-[15px] text-mist-600 sm:grid-cols-2">
                 {[
-                  "Container mixing across product lines",
-                  "Road-weight-optimised load plans",
-                  "Destination-specific documentation",
-                  "98.6% on-time shipment record",
+                  "跨产品线混柜",
+                  "按道路限重优化装载计划",
+                  "目的地专属文件",
+                  "98.6% 准时出运记录",
                 ].map((point) => (
                   <li key={point} className="flex items-center gap-3">
                     <span className="h-1.5 w-1.5 shrink-0 rotate-45 bg-azure-600" aria-hidden="true" />
@@ -213,9 +208,9 @@ export default function ManufacturingPage() {
       </section>
 
       <CtaBand
-        title="Audit us. Seriously."
-        lede="The fastest way to trust a factory is to walk it. We host partner audits and factory visits year-round — or start with a live video tour."
-        cta="Arrange a factory visit"
+        title="欢迎审核我们，真的。"
+        lede="信任一家工厂最快的方式就是亲自走一遍。我们全年接待合作伙伴审核和工厂参观，也可以先从实时视频参观开始。"
+        cta="预约工厂参观"
       />
     </>
   );

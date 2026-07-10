@@ -12,9 +12,9 @@ interface CtaBandProps {
 
 /** Pre-footer call to action, framed as an inset dark panel. */
 export function CtaBand({
-  title = "Let’s build your next product together.",
-  lede = "Tell us about your project, program or private-label ambition — our export team responds within one business day.",
-  cta = "Start a conversation",
+  title = "一起开发你的下一个产品。",
+  lede = "告诉我们你的项目、产品计划或自有品牌目标，出口团队将在一个工作日内回复。",
+  cta = "开始沟通",
 }: CtaBandProps) {
   return (
     <section className="py-24 md:py-32">

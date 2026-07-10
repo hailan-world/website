@@ -12,18 +12,18 @@ import { products } from "@/data/products";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Products",
+  title: "产品",
   description:
-    "LVT flooring, PET acoustic wall coverings and PET carpet coverings — three product lines engineered under one quality system for importers, distributors and brands worldwide.",
+    "LVT 地板、PET 声学墙面覆材和 PET 地毯覆材，三条产品线在同一质量体系下为全球进口商、经销商和品牌客户开发。",
 };
 
 export default function ProductsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Products"
-        title="Floor. Wall. Textile. One standard."
-        lede="Three product lines developed under a single engineering and compliance system — so partners can build complete interior programs from one factory, one contact and one shipping schedule."
+        eyebrow="产品"
+        title="地面、墙面、纺织表面，同一标准。"
+        lede="三条产品线在同一工程与合规体系下开发，让合作伙伴通过一家工厂、一个联系人和一套出货计划构建完整室内材料项目。"
       />
 
       <section className="py-24 md:py-32">
@@ -36,7 +36,7 @@ export default function ProductsPage() {
                   <article className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
                     <Link
                       href={`/products/${product.slug}`}
-                      aria-label={`${product.name} — view details`}
+                      aria-label={`${product.name} — 查看详情`}
                       className={cn(
                         "group relative block aspect-[4/3] overflow-hidden rounded-2xl",
                         reversed && "lg:order-2",
@@ -84,7 +84,7 @@ export default function ProductsPage() {
                         href={`/products/${product.slug}`}
                         className="mt-9"
                       >
-                        Explore {product.name}
+                        了解 {product.name}
                       </ArrowLink>
                     </div>
                   </article>
@@ -100,22 +100,17 @@ export default function ProductsPage() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
-              <Eyebrow>Looking ahead</Eyebrow>
+              <Eyebrow>未来方向</Eyebrow>
               <h2 className="mt-5 text-balance text-[1.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-ink-950 md:text-[2.25rem]">
-                One category at a time, engineered properly.
+                一次做好一个品类。
               </h2>
             </Reveal>
             <Reveal delay={0.12} className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-mist-600">
-                HAILAN&apos;s roadmap extends beyond flooring and acoustic
-                surfaces into the broader world of decorative building
-                materials. New categories join the portfolio the same way the
-                current three did: developed on our own lines, validated
-                against international standards, and offered to partners only
-                when we can guarantee them at scale.
+                HAILAN 的路线图将从地材与声学表面延伸到更广阔的装饰建材领域。新类别加入产品组合的方式，会与当前三类产品相同：在自有产线上开发，按国际标准验证，并且只有在我们能够规模化保证之后才提供给合作伙伴。
               </p>
               <ArrowLink href="/oem-odm" className="mt-8">
-                Develop a product with us
+                与我们共同开发产品
               </ArrowLink>
             </Reveal>
           </div>
@@ -123,9 +118,9 @@ export default function ProductsPage() {
       </section>
 
       <CtaBand
-        title="Need specifications, pricing or samples?"
-        lede="Send us your project or program requirements — technical data sheets and sample dispatch within days."
-        cta="Request product information"
+        title="需要规格、报价或样品？"
+        lede="把项目或产品计划需求发给我们，技术资料和样品可在数天内安排。"
+        cta="索取产品资料"
       />
     </>
   );

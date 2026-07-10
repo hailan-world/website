@@ -5,7 +5,7 @@ export function cn(
 }
 
 export function formatDate(iso: string): string {
-  return new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-US", {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString("zh-CN", {
     year: "numeric",
     month: "long",
     day: "numeric",

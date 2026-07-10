@@ -7,9 +7,9 @@ import { SectionHead } from "@/components/ui/SectionHead";
 import { products } from "@/data/products";
 
 const chips: Record<string, [string, string]> = {
-  "lvt-flooring": ["Dry back · Click · Loose lay", "Wear layer to 0.7 mm"],
-  "pet-wall-coverings": ["NRC up to 0.85", "60% recycled PET"],
-  "pet-carpet-coverings": ["Solution-dyed yarn", "Tiles & planks"],
+  "lvt-flooring": ["干背 · 锁扣 · 免胶铺装", "耐磨层最高 0.7 mm"],
+  "pet-wall-coverings": ["NRC 最高 0.85", "最高 60% 回收 PET"],
+  "pet-carpet-coverings": ["原液着色纱线", "方块与长条"],
 };
 
 export function ProductsShowcase() {
@@ -18,12 +18,12 @@ export function ProductsShowcase() {
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHead
-            eyebrow="02 — Products"
-            title="Three product lines. One quality system."
-            lede="Floor, wall and textile surfaces developed under a single engineering and compliance standard — so partners can build complete interior programs from one factory."
+            eyebrow="02 — 产品"
+            title="三条产品线，一个质量体系。"
+            lede="地面、墙面和纺织表面均按同一工程与合规标准开发，让合作伙伴可从一家工厂构建完整室内材料项目。"
           />
           <Reveal delay={0.15} className="hidden pb-2 md:block">
-            <ArrowLink href="/products">All products</ArrowLink>
+            <ArrowLink href="/products">全部产品</ArrowLink>
           </Reveal>
         </div>
 
@@ -77,7 +77,7 @@ export function ProductsShowcase() {
         </div>
 
         <Reveal className="mt-12 md:hidden">
-          <ArrowLink href="/products">All products</ArrowLink>
+          <ArrowLink href="/products">全部产品</ArrowLink>
         </Reveal>
       </Container>
     </section>

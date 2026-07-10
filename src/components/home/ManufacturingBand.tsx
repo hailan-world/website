@@ -6,33 +6,33 @@ import { SectionHead } from "@/components/ui/SectionHead";
 const pillars = [
   {
     n: "A",
-    title: "Automated production",
-    text: "25 extrusion, calendering and tufting lines run under MES tracking, with laser thickness gauging in-line — not after the fact.",
+    title: "自动化生产",
+    text: "25 条挤出、压延和簇绒产线在 MES 系统跟踪下运行，激光厚度在线测量，而不是事后抽检。",
   },
   {
     n: "B",
-    title: "In-line quality control",
-    text: "Dimensional, surface and colour checks every production hour, recorded against the batch code that ships on every carton.",
+    title: "在线质量控制",
+    text: "尺寸、表面和颜色每小时检查一次，并记录到随每箱产品出货的批次码中。",
   },
   {
     n: "C",
-    title: "R&D and tooling",
-    text: "In-house decor development, embossing plates and a laboratory press turn a partner’s idea into a factory-exact sample in days.",
+    title: "研发与模具",
+    text: "内部花色开发、压纹板和实验压机，可在数天内将合作伙伴想法转化为工厂级样品。",
   },
   {
     n: "D",
-    title: "OEM capability",
-    text: "A dedicated sampling studio and bilingual project managers carry private-label programs from first brief to loaded container.",
+    title: "OEM 能力",
+    text: "专属打样工作室和双语项目经理，将自有品牌项目从最初需求推进到装柜出货。",
   },
 ];
 
 const processSteps = [
-  "Material preparation",
-  "Extrusion & calendering",
-  "Lamination & pressing",
-  "UV curing",
-  "Precision profiling",
-  "100% inspection",
+  "材料准备",
+  "挤出与压延",
+  "复合与压制",
+  "UV 固化",
+  "精密成型",
+  "100% 检验",
 ];
 
 export function ManufacturingBand() {
@@ -48,13 +48,13 @@ export function ManufacturingBand() {
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHead
             on="dark"
-            eyebrow="03 — Manufacturing excellence"
-            title="Precision at industrial scale."
-            lede="One integrated campus takes raw polymer and fibre through to finished, packed, batch-coded product — nothing critical is outsourced."
+            eyebrow="03 — 卓越制造"
+            title="工业规模下的精密控制。"
+            lede="一个一体化园区将聚合物和纤维原料转化为完成包装、带批次码的成品，关键环节不外包。"
           />
           <Reveal delay={0.15} className="hidden pb-2 md:block">
             <ArrowLink href="/manufacturing" on="dark">
-              Inside our manufacturing
+              走进制造体系
             </ArrowLink>
           </Reveal>
         </div>
@@ -79,7 +79,7 @@ export function ManufacturingBand() {
 
         <Reveal className="mt-12 md:hidden">
           <ArrowLink href="/manufacturing" on="dark">
-            Inside our manufacturing
+            走进制造体系
           </ArrowLink>
         </Reveal>
       </Container>
@@ -99,7 +99,7 @@ export function ManufacturingBand() {
         </div>
       </div>
       <p className="sr-only">
-        Production process: {processSteps.join(", ")}.
+        生产流程：{processSteps.join("，")}。
       </p>
     </section>
   );

@@ -4,24 +4,24 @@ import { SectionHead } from "@/components/ui/SectionHead";
 
 const reasons = [
   {
-    title: "Reliable supply",
-    text: "Capacity is planned around partner forecasts, with safety stock held on running programs. Across the last three years, 98.6% of containers shipped on or before the confirmed date.",
-    proof: "98.6% on-time shipment",
+    title: "可靠供应",
+    text: "产能围绕合作伙伴预测安排，持续项目保留安全库存。过去三年，98.6% 的集装箱按确认日期或提前出运。",
+    proof: "98.6% 准时出运",
   },
   {
-    title: "Stable quality",
-    text: "One quality system governs every line. Products are batch-coded, lab-verified and visually inspected — so the hundredth container matches the first sample you approved.",
-    proof: "AQL 2.5 · Full batch traceability",
+    title: "稳定质量",
+    text: "同一质量体系覆盖每条产线。产品经过批次编码、实验室验证和外观检验，确保第 100 个集装箱也匹配你批准的第一块样品。",
+    proof: "AQL 2.5 · 完整批次追溯",
   },
   {
-    title: "Global experience",
-    text: "Certification, documentation, packaging and logistics are tuned to each destination — from EU REACH and CE marking to US FloorScore and Gulf conformity schemes.",
-    proof: "60+ markets served",
+    title: "全球经验",
+    text: "认证、文件、包装和物流均按目的地市场调校，从欧盟 REACH 与 CE 标识，到美国 FloorScore 和海湾合规体系。",
+    proof: "服务 60+ 市场",
   },
   {
-    title: "Professional team",
-    text: "English-speaking project managers and engineers answer in hours, not days — and stay with your program through reorders, redesigns and market shifts.",
-    proof: "24-hour response commitment",
+    title: "专业团队",
+    text: "项目经理和工程师以小时为单位响应，而不是让你等待数天，并在复购、重设计和市场变化中持续跟进项目。",
+    proof: "24 小时响应承诺",
   },
 ];
 
@@ -30,9 +30,9 @@ export function WhyHailan() {
     <section className="py-24 md:py-36">
       <Container>
         <SectionHead
-          eyebrow="04 — Why HAILAN"
-          title="The capability behind labels and projects worldwide."
-          lede="Partners rarely switch suppliers over price. They switch over surprises. Our job is to remove them."
+          eyebrow="04 — 为什么选择 HAILAN"
+          title="全球品牌标签与项目背后的制造能力。"
+          lede="合作伙伴很少只因价格更换供应商，真正让人离开的往往是意外。我们的工作就是消除意外。"
         />
 
         <div className="mt-16 grid gap-x-14 gap-y-14 md:grid-cols-2">

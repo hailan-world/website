@@ -7,11 +7,11 @@ import { products } from "@/data/products";
 import { site } from "@/lib/site";
 
 const inquiryTypes = [
-  "Distribution partnership",
-  "OEM / private label program",
-  "Commercial project supply",
-  "Samples & documentation",
-  "Other",
+  "经销合作",
+  "OEM / 自有品牌项目",
+  "商业项目供货",
+  "样品与文件",
+  "其他",
 ];
 
 const fieldClasses =
@@ -29,16 +29,16 @@ export function ContactForm() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
-    const subject = `Inquiry — ${data.get("inquiry")} (${data.get("company")})`;
+    const subject = `咨询 — ${data.get("inquiry")} (${data.get("company")})`;
     const body = [
-      `Name: ${data.get("name")}`,
-      `Company: ${data.get("company")}`,
-      `Country / market: ${data.get("country")}`,
-      `Email: ${data.get("email")}`,
-      `Inquiry type: ${data.get("inquiry")}`,
-      `Products of interest: ${data.getAll("products").join(", ") || "—"}`,
+      `姓名：${data.get("name")}`,
+      `公司：${data.get("company")}`,
+      `国家 / 市场：${data.get("country")}`,
+      `邮箱：${data.get("email")}`,
+      `咨询类型：${data.get("inquiry")}`,
+      `感兴趣的产品：${data.getAll("products").join(", ") || "—"}`,
       "",
-      "Message:",
+      "留言：",
       String(data.get("message")),
     ].join("\n");
 
@@ -56,7 +56,7 @@ export function ContactForm() {
             htmlFor="contact-name"
             className="mb-2 block text-sm font-medium text-ink-950"
           >
-            Full name
+            姓名
           </label>
           <input
             id="contact-name"
@@ -64,7 +64,7 @@ export function ContactForm() {
             type="text"
             required
             autoComplete="name"
-            placeholder="Jane Smith"
+            placeholder="张女士"
             className={fieldClasses}
           />
         </div>
@@ -73,7 +73,7 @@ export function ContactForm() {
             htmlFor="contact-company"
             className="mb-2 block text-sm font-medium text-ink-950"
           >
-            Company
+            公司
           </label>
           <input
             id="contact-company"
@@ -81,7 +81,7 @@ export function ContactForm() {
             type="text"
             required
             autoComplete="organization"
-            placeholder="Company Ltd."
+            placeholder="某某有限公司"
             className={fieldClasses}
           />
         </div>
@@ -90,7 +90,7 @@ export function ContactForm() {
             htmlFor="contact-email"
             className="mb-2 block text-sm font-medium text-ink-950"
           >
-            Work email
+            工作邮箱
           </label>
           <input
             id="contact-email"
@@ -107,7 +107,7 @@ export function ContactForm() {
             htmlFor="contact-country"
             className="mb-2 block text-sm font-medium text-ink-950"
           >
-            Country / market
+            国家 / 市场
           </label>
           <input
             id="contact-country"
@@ -115,7 +115,7 @@ export function ContactForm() {
             type="text"
             required
             autoComplete="country-name"
-            placeholder="Netherlands"
+            placeholder="中国"
             className={fieldClasses}
           />
         </div>
@@ -124,7 +124,7 @@ export function ContactForm() {
             htmlFor="contact-inquiry"
             className="mb-2 block text-sm font-medium text-ink-950"
           >
-            Inquiry type
+            咨询类型
           </label>
           <select
             id="contact-inquiry"
@@ -144,7 +144,7 @@ export function ContactForm() {
 
       <fieldset className="mt-6">
         <legend className="mb-3 block text-sm font-medium text-ink-950">
-          Products of interest
+          感兴趣的产品
         </legend>
         <div className="flex flex-wrap gap-2.5">
           {products.map((product) => (
@@ -169,24 +169,24 @@ export function ContactForm() {
           htmlFor="contact-message"
           className="mb-2 block text-sm font-medium text-ink-950"
         >
-          Message
+          留言
         </label>
         <textarea
           id="contact-message"
           name="message"
           required
           rows={5}
-          placeholder="Tell us about your market, volumes, target constructions or project…"
+          placeholder="请告诉我们你的市场、采购量、目标结构或项目需求…"
           className={fieldClasses}
         />
       </div>
 
       <div className="mt-8 flex flex-wrap items-center gap-5">
         <Button type="submit" arrow>
-          Send inquiry
+          发送咨询
         </Button>
         <p className="text-[13px] leading-relaxed text-mist-500">
-          Opens your email client — or write to us directly at{" "}
+          将打开你的邮件客户端，也可以直接写信至{" "}
           <a
             href={`mailto:${site.email}`}
             className="font-medium text-ink-950 underline decoration-ink-950/25 underline-offset-4 hover:decoration-azure-600"
@@ -197,7 +197,7 @@ export function ContactForm() {
       </div>
 
       <p role="status" aria-live="polite" className="sr-only">
-        {submitted ? "Your email draft has been opened in your mail client." : ""}
+        {submitted ? "邮件草稿已在你的邮件客户端中打开。" : ""}
       </p>
     </form>
   );

@@ -21,29 +21,29 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Global Decorative Building Materials Manufacturer`,
+    default: `${site.name} — 全球装饰建材制造商`,
     template: `%s — ${site.name}`,
   },
   description: site.description,
   keywords: [
-    "LVT flooring manufacturer",
-    "PET wall coverings",
-    "PET carpet tiles",
-    "acoustic panels",
-    "OEM flooring",
-    "decorative building materials",
+    "LVT 地板制造商",
+    "PET 墙面覆材",
+    "PET 地毯方块",
+    "声学板",
+    "OEM 地板",
+    "装饰建材",
   ],
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: `${site.name} — Global Decorative Building Materials Manufacturer`,
+    title: `${site.name} — 全球装饰建材制造商`,
     description: site.description,
     url: "/",
-    locale: "en_US",
+    locale: "zh_CN",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Global Decorative Building Materials Manufacturer`,
+    title: `${site.name} — 全球装饰建材制造商`,
     description: site.description,
   },
 };
@@ -58,13 +58,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${instrument.variable} ${plexMono.variable}`}>
+    <html lang="zh-CN" className={`${instrument.variable} ${plexMono.variable}`}>
       <body className="font-sans">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink-950 focus:px-5 focus:py-3 focus:text-sm focus:text-white"
         >
-          Skip to content
+          跳到主要内容
         </a>
         <Header />
         <main id="main">{children}</main>

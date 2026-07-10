@@ -32,7 +32,7 @@ export function WorldMap({ className }: { className?: string }) {
       viewBox="0 0 1000 520"
       className={className}
       role="img"
-      aria-label="World map showing HAILAN export destinations across six continents"
+      aria-label="展示 HAILAN 出口目的地覆盖六大洲的世界地图"
     >
       <defs>
         <pattern id="wm-dots" width="9" height="9" patternUnits="userSpaceOnUse">

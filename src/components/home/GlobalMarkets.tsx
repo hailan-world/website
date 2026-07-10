@@ -5,18 +5,18 @@ import { Container } from "@/components/ui/Container";
 import { SectionHead } from "@/components/ui/SectionHead";
 
 const regions = [
-  { name: "Europe", markets: "Netherlands · Germany · UK · Poland · Spain" },
-  { name: "North America", markets: "United States · Canada · Mexico" },
-  { name: "Middle East", markets: "UAE · Saudi Arabia · Qatar" },
-  { name: "Asia-Pacific", markets: "Australia · Japan · Korea · Singapore" },
-  { name: "Latin America", markets: "Brazil · Chile · Colombia" },
-  { name: "Africa", markets: "Nigeria · Egypt · South Africa" },
+  { name: "欧洲", markets: "荷兰 · 德国 · 英国 · 波兰 · 西班牙" },
+  { name: "北美", markets: "美国 · 加拿大 · 墨西哥" },
+  { name: "中东", markets: "阿联酋 · 沙特阿拉伯 · 卡塔尔" },
+  { name: "亚太", markets: "澳大利亚 · 日本 · 韩国 · 新加坡" },
+  { name: "拉丁美洲", markets: "巴西 · 智利 · 哥伦比亚" },
+  { name: "非洲", markets: "尼日利亚 · 埃及 · 南非" },
 ];
 
 const figures = [
-  { value: 60, suffix: "+", label: "Countries supplied" },
-  { value: 6, suffix: "", label: "Continents installed" },
-  { value: 2400, suffix: "+", label: "Containers shipped annually" },
+  { value: 60, suffix: "+", label: "供货国家" },
+  { value: 6, suffix: "", label: "覆盖大洲" },
+  { value: 2400, suffix: "+", label: "年出运集装箱" },
 ];
 
 export function GlobalMarkets() {
@@ -31,9 +31,9 @@ export function GlobalMarkets() {
       <Container className="relative">
         <SectionHead
           on="dark"
-          eyebrow="05 — Global markets"
-          title="Shipped from one campus. Installed on six continents."
-          lede="Export is not a department at HAILAN — it is the business. Documentation, load plans and port logistics are engineered with the same care as the product."
+          eyebrow="05 — 全球市场"
+          title="从一个园区发货，安装于六大洲。"
+          lede="出口不是 HAILAN 的一个部门，而是我们的业务本身。文件、装柜计划和港口物流都像产品一样被认真工程化。"
         />
 
         <div className="mt-16 grid items-center gap-14 lg:grid-cols-[1.55fr_1fr]">

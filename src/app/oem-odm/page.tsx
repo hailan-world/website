@@ -8,80 +8,80 @@ import { SectionHead } from "@/components/ui/SectionHead";
 export const metadata: Metadata = {
   title: "OEM / ODM",
   description:
-    "Private-label and custom development programs for flooring and acoustic surfaces: in-house decor development, 7–10 day sampling, retail-ready packaging and full compliance packs.",
+    "面向地材与声学表面的自有品牌和定制开发项目：内部花色开发、7–10 天打样、零售级包装和完整合规文件包。",
 };
 
 const steps = [
   {
     step: "01",
-    title: "Brief & feasibility",
-    text: "Share your market, price position, target constructions and volumes. Within days you receive a feasibility read: what we recommend, what it costs and how fast it ships.",
-    meta: "2–5 days",
+    title: "需求与可行性",
+    text: "分享你的市场、价格定位、目标结构和采购量。数天内你会收到可行性反馈：我们的建议、成本和交付速度。",
+    meta: "2–5 天",
   },
   {
     step: "02",
-    title: "Decor & construction development",
-    text: "Our design studio develops decors, colourways and surface textures to your brand direction — or engineers your existing range for better cost and performance.",
-    meta: "1–2 weeks",
+    title: "花色与结构开发",
+    text: "设计工作室按你的品牌方向开发花色、色系和表面纹理，或对现有系列进行工程优化以提升成本与性能。",
+    meta: "1–2 周",
   },
   {
     step: "03",
-    title: "Sampling",
-    text: "The dedicated sampling studio produces factory-exact samples on laboratory equipment — the construction you approve is the construction that ships.",
-    meta: "7–10 days",
+    title: "打样",
+    text: "专属打样工作室使用实验设备制作工厂级样品。你批准的结构，就是最终出货的结构。",
+    meta: "7–10 天",
   },
   {
     step: "04",
-    title: "Pilot production",
-    text: "A pilot run validates the construction at line speed. You receive pilot samples, full lab results and final packaging proofs before committing to volume.",
-    meta: "2–3 weeks",
+    title: "试生产",
+    text: "试产以产线速度验证结构。正式量产前，你会收到试产样品、完整实验室结果和最终包装确认稿。",
+    meta: "2–3 周",
   },
   {
     step: "05",
-    title: "Mass production",
-    text: "Production is scheduled against your forecast, tracked in MES and inspected at every gate. Standard lead times run 25–35 days from order confirmation.",
-    meta: "25–35 days",
+    title: "量产",
+    text: "生产按你的预测排期，通过 MES 跟踪，并在每道关口检验。标准交期为订单确认后 25–35 天。",
+    meta: "25–35 天",
   },
   {
     step: "06",
-    title: "Logistics & reorders",
-    text: "Load-planned containers, destination-correct documents and photographed loading. Running programs hold safety stock and tooling for fast reorders.",
-    meta: "Ongoing",
+    title: "物流与复购",
+    text: "集装箱按计划装载，文件符合目的地要求，装柜过程拍照记录。持续项目保留安全库存和模具，便于快速复购。",
+    meta: "持续",
   },
 ];
 
 const services = [
   {
-    title: "Private-label manufacturing",
-    text: "Your brand, your packaging, your specifications — produced under our quality system. From carton artwork to display boards, everything ships retail-ready.",
+    title: "自有品牌制造",
+    text: "你的品牌、你的包装、你的规格，在我们的质量体系下生产。从纸箱稿件到展示板，所有内容都按零售级交付。",
   },
   {
-    title: "Custom product development",
-    text: "New constructions, thicknesses, formats and acoustic targets engineered to your market's price point — with our tooling, film library and fibre suppliers behind it.",
+    title: "定制产品开发",
+    text: "新结构、厚度、规格和声学目标均按你的市场价位工程化开发，并由我们的模具、膜库和纤维供应体系支撑。",
   },
   {
-    title: "Decor & colour studio",
-    text: "In-house designers track European and North American interior trends and translate them into wood, stone, textile and abstract decors exclusive to your program.",
+    title: "花色与色彩工作室",
+    text: "内部设计师跟踪欧美室内趋势，并将其转化为专属于你项目的木纹、石纹、织物和抽象花色。",
   },
   {
-    title: "Merchandising & sampling",
-    text: "Sample boards, folders, chain sets and shop displays produced in the same studio as the product — matched to your artwork and shipped with first orders.",
+    title: "展示物料与打样",
+    text: "样板、样册、链卡和门店陈列物料与产品在同一工作室制作，匹配你的品牌稿件并随首批订单发运。",
   },
   {
-    title: "Compliance ownership",
-    text: "We maintain the certificates your market demands — CE, FloorScore®, REACH, fire classification — and ship a complete compliance pack with every program.",
+    title: "合规负责",
+    text: "我们维护你的市场所需证书，包括 CE、FloorScore®、REACH 和防火等级，并为每个项目提供完整合规文件包。",
   },
   {
-    title: "Program management",
-    text: "One English-speaking project manager owns your program from brief to reorder, with a 24-hour response commitment and full visibility into production status.",
+    title: "项目管理",
+    text: "一名项目经理从需求到复购全程负责你的项目，承诺 24 小时响应，并提供完整生产状态可见性。",
   },
 ];
 
 const assurances = [
-  "Your designs and decors remain your property — exclusivity is contractual",
-  "Transparent constructions: full material specifications disclosed",
-  "Pilot approval before any volume commitment",
-  "Safety stock and tooling reserved for running programs",
+  "你的设计和花色归你所有，独家权益写入合同",
+  "结构透明：完整材料规格清晰披露",
+  "任何量产承诺前均先完成试产确认",
+  "持续项目保留安全库存和专用模具",
 ];
 
 export default function OemOdmPage() {
@@ -89,17 +89,17 @@ export default function OemOdmPage() {
     <>
       <PageHero
         eyebrow="OEM / ODM"
-        title="Your brand. Our factory. One accountable partner."
-        lede="Most of what HAILAN produces carries our partners' names. Private-label and custom development are not a side business — they are the business, with a studio, team and process built specifically for it."
+        title="你的品牌，我们的工厂，一个负责到底的伙伴。"
+        lede="HAILAN 生产的大部分产品都带着合作伙伴的名字。自有品牌和定制开发不是副业，而是我们的核心业务，并配有专门的工作室、团队和流程。"
       />
 
       {/* Process */}
       <section className="py-24 md:py-32">
         <Container>
           <SectionHead
-            eyebrow="The program path"
-            title="From first brief to loaded container in six steps."
-            lede="Every step has a named owner, a deliverable and a timeline — so you always know where your program stands."
+            eyebrow="项目路径"
+            title="从初始需求到装柜出货，六步完成。"
+            lede="每一步都有明确负责人、交付物和时间线，让你始终知道项目进展到哪里。"
           />
           <ol className="mt-16 grid gap-x-10 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
             {steps.map((s, i) => (
@@ -136,8 +136,8 @@ export default function OemOdmPage() {
         <Container className="relative">
           <SectionHead
             on="dark"
-            eyebrow="What we take off your plate"
-            title="Everything between your idea and your warehouse."
+            eyebrow="我们替你承担的工作"
+            title="从你的想法到你的仓库之间的一切。"
           />
           <div className="mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => (
@@ -162,15 +162,13 @@ export default function OemOdmPage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <SectionHead
-                eyebrow="Partnership terms"
-                title="Built on protections, not promises."
+                eyebrow="合作条款"
+                title="建立在保护机制上，而不是口头承诺上。"
               />
             </Reveal>
             <Reveal delay={0.12} className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-mist-600">
-                A private-label relationship only works when the brand owner is
-                protected. These commitments are written into every OEM and ODM
-                agreement we sign:
+                自有品牌合作只有在品牌方受到保护时才成立。以下承诺会写入我们签署的每一份 OEM 和 ODM 协议：
               </p>
               <ul className="mt-8 space-y-4">
                 {assurances.map((point) => (
@@ -192,9 +190,9 @@ export default function OemOdmPage() {
       </section>
 
       <CtaBand
-        title="Bring us your next range."
-        lede="A construction target, a competitor sample or just a price point — that's enough to start. Feasibility feedback within days, samples within two weeks."
-        cta="Start an OEM conversation"
+        title="把你的下一个系列交给我们讨论。"
+        lede="一个结构目标、一块竞品样品，甚至只是一个价格点，都足以开始。数天内给出可行性反馈，两周内完成样品。"
+        cta="开启 OEM 沟通"
       />
     </>
   );

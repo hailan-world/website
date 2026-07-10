@@ -9,65 +9,65 @@ import { SectionHead } from "@/components/ui/SectionHead";
 import { certifications, site, stats } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "关于我们",
   description:
-    "HAILAN — Hailan New Materials Co., Ltd. — is a global decorative building materials manufacturer supplying LVT flooring, PET wall coverings and PET carpet coverings to partners in 60+ countries.",
+    "HAILAN 海澜新材料有限公司是一家全球装饰建材制造商，为 60 多个国家的合作伙伴供应 LVT 地板、PET 墙面覆材和 PET 地毯覆材。",
 };
 
 const values = [
   {
-    title: "Engineering first",
-    text: "Every product decision starts on the production line, not the brochure. If a construction cannot be manufactured consistently at scale, we do not sell it.",
+    title: "工程优先",
+    text: "每一个产品决策都从生产线出发，而不是从宣传册出发。如果一种结构无法稳定规模化制造，我们就不会销售。",
   },
   {
-    title: "Radical reliability",
-    text: "Partners plan seasons, store openings and project schedules around our confirmations. We treat a confirmed date as a contract — 98.6% of containers ship on time.",
+    title: "极致可靠",
+    text: "合作伙伴围绕我们的确认安排季节计划、门店开业和项目进度。我们把确认日期视为承诺，98.6% 的集装箱准时出运。",
   },
   {
-    title: "Design fluency",
-    text: "We read the same trend reports, visit the same fairs and track the same architecture press as our customers — so decor development speaks their language.",
+    title: "设计理解力",
+    text: "我们阅读与客户相同的趋势报告，参加相同展会，关注相同建筑媒体，因此花色开发能真正回应他们的市场语言。",
   },
   {
-    title: "Long-term partnership",
-    text: "Our oldest export programs have run for over a decade. We price, plan and invest for relationships measured in years, not purchase orders.",
+    title: "长期合作",
+    text: "我们最早的出口项目已持续超过十年。我们的报价、计划和投资面向多年关系，而不是单张订单。",
   },
 ];
 
 const milestones = [
   {
     year: "2008",
-    title: "Founded in Huzhou",
-    text: "Hailan New Materials is established in Zhejiang's flooring cluster, producing resilient flooring for domestic projects.",
+    title: "创立于湖州",
+    text: "海澜新材料在浙江地材产业集群成立，为国内项目生产弹性地材。",
   },
   {
     year: "2012",
-    title: "First export programs",
-    text: "The first dedicated export lines ship LVT to European importers; an international sales and documentation team is built.",
+    title: "首批出口项目",
+    text: "首批专用出口产线向欧洲进口商供应 LVT，并建立国际销售与文件团队。",
   },
   {
     year: "2016",
-    title: "SPC & click systems",
-    text: "Investment in extrusion and profiling lines adds rigid-core SPC and click constructions to the flooring portfolio.",
+    title: "SPC 与锁扣系统",
+    text: "投资挤出和成型产线，将刚性芯 SPC 与锁扣结构加入地板产品组合。",
   },
   {
     year: "2019",
-    title: "PET acoustic line",
-    text: "A needle-punch and thermoforming line brings PET acoustic wall panels into production, opening the architectural specification market.",
+    title: "PET 声学产线",
+    text: "针刺与热成型产线投产 PET 声学墙板，打开建筑规格市场。",
   },
   {
     year: "2021",
-    title: "Campus expansion",
-    text: "The Nanxun campus grows to 120,000 m², consolidating flooring, wall and warehouse operations on a single site.",
+    title: "园区扩建",
+    text: "南浔园区扩展至 120,000 m²，将地板、墙面和仓储运营整合到同一基地。",
   },
   {
     year: "2023",
-    title: "Carpet coverings launch",
-    text: "Tufting lines for solution-dyed PET carpet tiles and planks complete the floor-and-wall interior offer.",
+    title: "地毯覆材上线",
+    text: "原液着色 PET 地毯方块与长条簇绒线投产，完善地面与墙面室内材料方案。",
   },
   {
     year: "2025",
-    title: "OEM sampling studio",
-    text: "A dedicated 1,800 m² studio compresses decor development and sampling cycles to 7–10 days for private-label partners.",
+    title: "OEM 打样工作室",
+    text: "专属 1,800 m² 工作室将自有品牌伙伴的花色开发和打样周期缩短至 7–10 天。",
   },
 ];
 
@@ -75,9 +75,9 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About HAILAN"
-        title="A factory that thinks like a brand."
-        lede={`${site.legalName} designs, manufactures and exports decorative building materials from an integrated campus in Huzhou, China — for partners who put their own name on the box.`}
+        eyebrow="关于 HAILAN"
+        title="一家像品牌一样思考的工厂。"
+        lede={`${site.legalName} 在中国湖州的一体化园区研发、制造并出口装饰建材，为将自己品牌印在包装上的合作伙伴服务。`}
       />
 
       {/* Story */}
@@ -86,44 +86,29 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <SectionHead
-                eyebrow="Our story"
-                title="Built in the world's densest flooring cluster."
+                eyebrow="我们的故事"
+                title="成长于全球最密集的地材产业集群。"
               />
             </Reveal>
             <Reveal delay={0.12} className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-mist-600">
-                HAILAN was founded in {site.founded} in Huzhou, Zhejiang — a
-                region that produces a remarkable share of the world&apos;s
-                resilient flooring. Growing up inside that cluster shaped us:
-                suppliers, toolmakers and testing labs are minutes away, and the
-                bar for manufacturing competence is set by neighbours who export
-                to every continent.
+                HAILAN 于 {site.founded} 年创立于浙江湖州。这里生产了全球相当比例的弹性地材。在这个产业集群中成长塑造了我们：供应商、模具商和检测实验室近在咫尺，而周边出口全球的同行也持续抬高制造能力的标准。
               </p>
               <p className="mt-6 text-lg leading-relaxed text-mist-600">
-                From the beginning we chose a narrower, deeper path than most:
-                fewer product categories, engineered properly, produced on our
-                own lines and documented to the standards of the strictest
-                destination market. First LVT flooring, then PET acoustic wall
-                coverings, then PET carpet coverings — three surfaces, one
-                quality system.
+                从一开始，我们选择了一条更窄也更深的道路：更少的品类、扎实的工程开发、自有产线制造，并按最严格目的地市场的标准建立文件。先是 LVT 地板，再到 PET 声学墙面覆材，随后是 PET 地毯覆材，三类表面材料共用一个质量体系。
               </p>
               <p className="mt-6 text-lg leading-relaxed text-mist-600">
-                Today our products are installed in offices, hotels, schools and
-                homes in more than {stats.countries} countries — usually under
-                our partners&apos; brands. That is by design. HAILAN&apos;s
-                ambition is to be the most dependable manufacturer behind the
-                world&apos;s decorative building material brands, and
-                increasingly, a brand worth asking for by name.
+                如今，我们的产品安装在 {stats.countries} 多个国家的办公室、酒店、学校和住宅中，通常以合作伙伴的品牌出现。这正是我们的选择。HAILAN 的目标，是成为全球装饰建材品牌背后最可靠的制造商，并逐渐成为值得被点名选择的品牌。
               </p>
             </Reveal>
           </div>
 
           <dl className="mt-20 grid grid-cols-2 gap-x-8 gap-y-12 border-t border-ink-950/10 pt-12 lg:grid-cols-4">
             {[
-              { value: site.founded, label: "Founded", raw: true },
-              { value: stats.facility, suffix: " m²", label: "Production campus" },
-              { value: stats.lines, suffix: "", label: "Production lines" },
-              { value: stats.team, suffix: "+", label: "Specialists & engineers" },
+              { value: site.founded, label: "创立年份", raw: true },
+              { value: stats.facility, suffix: " m²", label: "生产园区" },
+              { value: stats.lines, suffix: "", label: "生产线" },
+              { value: stats.team, suffix: "+", label: "专业人员与工程师" },
             ].map((item, i) => (
               <Reveal key={item.label} delay={i * 0.08}>
                 <dd className="text-4xl font-medium tracking-[-0.02em] text-ink-950 md:text-[2.75rem]">
@@ -147,9 +132,9 @@ export default function AboutPage() {
       <section className="bg-mist-50 py-24 md:py-32">
         <Container>
           <SectionHead
-            eyebrow="How we work"
-            title="Four principles govern every program."
-            lede="They are not wall posters. They are the operating rules our partners experience in every quotation, sample and container."
+            eyebrow="工作方式"
+            title="四项原则管理每一个项目。"
+            lede="它们不是墙上的口号，而是合作伙伴在每次报价、每块样品和每个集装箱中都能感受到的运营规则。"
           />
           <div className="mt-16 grid gap-x-14 gap-y-14 md:grid-cols-2">
             {values.map((value, i) => (
@@ -186,8 +171,8 @@ export default function AboutPage() {
         <Container className="relative">
           <SectionHead
             on="dark"
-            eyebrow="Milestones"
-            title="Eighteen years of deliberate growth."
+            eyebrow="里程碑"
+            title="十八年的稳健成长。"
           />
           <ol className="mt-16">
             {milestones.map((m, i) => (
@@ -215,18 +200,15 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <SectionHead
-                eyebrow="Compliance"
-                title="Certified for the strictest destination."
+                eyebrow="合规"
+                title="为最严格的目的地市场完成认证。"
               />
             </Reveal>
             <Reveal delay={0.12} className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-mist-600">
-                Every product line is developed against the regulatory
-                requirements of the European Union, North America and the Gulf
-                — then documented so partners can specify, import and install
-                without friction.
+                每条产品线都按照欧盟、北美和海湾地区的法规要求开发，并建立完整文件，帮助合作伙伴顺利完成规格指定、进口和安装。
               </p>
-              <ul className="mt-8 flex flex-wrap gap-2.5" aria-label="Certifications">
+              <ul className="mt-8 flex flex-wrap gap-2.5" aria-label="认证">
                 {certifications.map((c) => (
                   <li key={c}>
                     <Chip>{c}</Chip>
@@ -239,8 +221,8 @@ export default function AboutPage() {
       </section>
 
       <CtaBand
-        title="Meet the team behind the label."
-        lede="Visit our campus in Huzhou, meet us at the next trade fair, or start with a conversation about your program."
+        title="认识标签背后的团队。"
+        lede="欢迎来湖州园区参观，在下一场展会见面，或先从一次关于你项目的沟通开始。"
       />
     </>
   );

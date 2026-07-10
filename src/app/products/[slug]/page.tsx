@@ -51,11 +51,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         <Container className="relative pb-16 pt-36 md:pb-20 md:pt-48">
           <Reveal>
-            <nav aria-label="Breadcrumb">
+            <nav aria-label="面包屑">
               <ol className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400">
                 <li>
                   <Link href="/products" className="transition-colors hover:text-white">
-                    Products
+                    产品
                   </Link>
                 </li>
                 <li aria-hidden="true">/</li>
@@ -97,9 +97,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <Container>
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
             <Reveal className="lg:col-span-6">
-              <Eyebrow>Overview</Eyebrow>
+              <Eyebrow>概览</Eyebrow>
               <h2 className="mt-5 text-balance text-[1.9rem] font-medium leading-[1.14] tracking-[-0.02em] text-ink-950 md:text-[2.4rem]">
-                Engineered for programs, not one-off orders.
+                为持续项目而工程化，而不是只为单次订单。
               </h2>
               {product.description.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)} className="mt-6 text-lg leading-relaxed text-mist-600">
@@ -109,7 +109,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
               <div className="mt-10">
                 <h3 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                  Typical applications
+                  典型应用
                 </h3>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {product.applications.map((application) => (
@@ -124,7 +124,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <Reveal delay={0.12} className="lg:col-span-6">
               <div className="rounded-2xl border border-ink-950/10 bg-mist-50 p-8 md:p-10">
                 <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                  Technical snapshot
+                  技术概览
                 </h2>
                 <dl className="mt-6 divide-y divide-ink-950/8">
                   {product.specs.map((spec) => (
@@ -140,9 +140,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   ))}
                 </dl>
                 <p className="mt-6 text-[13px] leading-relaxed text-mist-500">
-                  Indicative program range — constructions are configured to
-                  order. Full technical data sheets and test reports are
-                  available on request.
+                  以上为常用项目范围，具体结构按订单配置。完整技术数据表和测试报告可按需提供。
                 </p>
               </div>
             </Reveal>
@@ -160,8 +158,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <Container className="relative">
           <SectionHead
             on="dark"
-            eyebrow="Why it performs"
-            title="Construction details that survive the spec sheet."
+            eyebrow="性能来源"
+            title="经得起规格书检验的结构细节。"
           />
           <div className="mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2">
             {product.features.map((feature, i) => (
@@ -184,7 +182,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <Reveal className="mt-16 border-t border-white/10 pt-8">
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
               <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-400">
-                Compliance
+                合规
               </span>
               <ul className="flex flex-wrap gap-2">
                 {product.compliance.map((c) => (
@@ -203,11 +201,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-8">
             <SectionHead
-              eyebrow="Complete the program"
-              title="Pairs with the rest of the portfolio."
+              eyebrow="完善项目组合"
+              title="可与其他产品线组合使用。"
             />
             <Reveal delay={0.15} className="hidden pb-2 md:block">
-              <ArrowLink href="/products">All products</ArrowLink>
+              <ArrowLink href="/products">全部产品</ArrowLink>
             </Reveal>
           </div>
 
@@ -239,9 +237,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </section>
 
       <CtaBand
-        title={`Start a ${product.name.toLowerCase()} program.`}
-        lede="Tell us your market, volumes and target constructions — we respond with specifications, pricing and a sampling plan within one business day."
-        cta="Request samples"
+        title={`启动 ${product.name} 项目。`}
+        lede="告诉我们你的市场、采购量和目标结构，我们将在一个工作日内回复规格、报价和打样计划。"
+        cta="索取样品"
       />
     </>
   );

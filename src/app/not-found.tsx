@@ -14,24 +14,23 @@ export default function NotFound() {
 
       <Container className="relative py-32 text-center">
         <p className="font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-azure-300">
-          404 — Page not found
+          404 — 页面未找到
         </p>
         <h1 className="mx-auto mt-6 max-w-2xl text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] md:text-6xl">
-          This surface doesn&apos;t exist. Ours do.
+          这个页面不存在，但我们的材料真实可靠。
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink-200">
-          The page you&apos;re looking for has moved or was never manufactured.
-          Head back to solid ground.
+          你访问的页面可能已移动，或从未创建。回到首页，继续浏览我们的产品与能力。
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button href="/" variant="inverted" arrow>
-            Back to home
+            返回首页
           </Button>
           <Link
             href="/products"
             className="text-[15px] font-medium text-ink-200 transition-colors hover:text-white"
           >
-            Browse products
+            浏览产品
           </Link>
         </div>
       </Container>

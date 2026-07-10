@@ -8,18 +8,18 @@ import { articles } from "@/data/news";
 import { formatDate } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "News",
+  title: "新闻",
   description:
-    "Company updates from HAILAN: trade fairs, capacity expansions, sustainability reporting and product launches.",
+    "HAILAN 公司动态：展会、产能扩展、可持续发展报告和产品发布。",
 };
 
 export default function NewsPage() {
   return (
     <>
       <PageHero
-        eyebrow="News"
-        title="What's moving at HAILAN."
-        lede="Capacity, collections, certifications and the occasional trade-fair marathon — the updates that matter to partners, without the press-release padding."
+        eyebrow="新闻"
+        title="HAILAN 的最新动态。"
+        lede="产能、系列、认证，以及偶尔漫长的展会奔波。这里记录真正与合作伙伴相关的更新，不堆砌新闻稿套话。"
       />
 
       <section className="py-24 md:py-32">
@@ -51,7 +51,7 @@ export default function NewsPage() {
                         {article.excerpt}
                       </p>
                       <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-ink-950 transition-colors group-hover:text-azure-600">
-                        Read article
+                        阅读文章
                         <svg
                           width="13"
                           height="13"

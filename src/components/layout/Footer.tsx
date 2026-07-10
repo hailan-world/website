@@ -5,12 +5,12 @@ import { products } from "@/data/products";
 import { certifications, site } from "@/lib/site";
 
 const companyLinks = [
-  { label: "About", href: "/about" },
-  { label: "Manufacturing", href: "/manufacturing" },
-  { label: "Quality", href: "/quality" },
+  { label: "关于我们", href: "/about" },
+  { label: "制造能力", href: "/manufacturing" },
+  { label: "质量体系", href: "/quality" },
   { label: "OEM / ODM", href: "/oem-odm" },
-  { label: "News", href: "/news" },
-  { label: "Contact", href: "/contact" },
+  { label: "新闻", href: "/news" },
+  { label: "联系", href: "/contact" },
 ];
 
 export function Footer() {
@@ -20,15 +20,14 @@ export function Footer() {
       <Container className="relative">
         <div className="grid gap-14 py-20 md:grid-cols-2 md:py-24 lg:grid-cols-[1.6fr_1fr_1fr_1.2fr]">
           <div>
-            <Link href="/" aria-label="HAILAN — home" className="inline-block">
+            <Link href="/" aria-label="HAILAN — 首页" className="inline-block">
               <Logo on="dark" />
             </Link>
             <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-ink-300">
-              {site.legalName} — a global manufacturer of decorative building
-              materials, supplying partners in more than 60 countries from a
-              120,000 m² production campus.
+              {site.legalName} 是全球装饰建材制造商，从 120,000 m²
+              一体化生产园区为 60 多个国家的合作伙伴稳定供货。
             </p>
-            <ul className="mt-8 flex max-w-sm flex-wrap gap-2" aria-label="Certifications">
+            <ul className="mt-8 flex max-w-sm flex-wrap gap-2" aria-label="认证">
               {certifications.slice(0, 5).map((c) => (
                 <li
                   key={c}
@@ -40,9 +39,9 @@ export function Footer() {
             </ul>
           </div>
 
-          <nav aria-label="Products">
+          <nav aria-label="产品">
             <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-ink-400">
-              Products
+              产品
             </h2>
             <ul className="mt-6 space-y-3.5">
               {products.map((p) => (
@@ -60,15 +59,15 @@ export function Footer() {
                   href="/products"
                   className="text-[15px] text-ink-200 transition-colors hover:text-white"
                 >
-                  All products
+                  全部产品
                 </Link>
               </li>
             </ul>
           </nav>
 
-          <nav aria-label="Company">
+          <nav aria-label="公司">
             <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-ink-400">
-              Company
+              公司
             </h2>
             <ul className="mt-6 space-y-3.5">
               {companyLinks.map((l) => (
@@ -86,7 +85,7 @@ export function Footer() {
 
           <div>
             <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-ink-400">
-              Headquarters
+              总部
             </h2>
             <address className="mt-6 text-[15px] not-italic leading-relaxed text-ink-200">
               {site.address.map((line) => (
@@ -112,10 +111,10 @@ export function Footer() {
 
         <div className="flex flex-col gap-3 border-t border-white/10 py-8 text-[13px] text-ink-400 md:flex-row md:items-center md:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.legalName} All rights reserved.
+            © {new Date().getFullYear()} {site.legalName} 版权所有。
           </p>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em]">
-            Engineered in Huzhou · Delivered worldwide
+            湖州制造 · 交付全球
           </p>
         </div>
       </Container>

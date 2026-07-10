@@ -5,10 +5,10 @@
  */
 
 const layers = [
-  { y: 150, h: 26, label: "UV WEAR LAYER", grad: "hero-l1", stroke: "rgba(143,173,253,0.5)" },
-  { y: 240, h: 34, label: "HD DECOR FILM", grad: "hero-l2", stroke: "rgba(255,255,255,0.25)" },
-  { y: 330, h: 74, label: "RIGID MINERAL CORE", grad: "hero-l3", stroke: "rgba(255,255,255,0.14)" },
-  { y: 462, h: 44, label: "ACOUSTIC BACKING", grad: "hero-l4", stroke: "rgba(255,255,255,0.1)" },
+  { y: 150, h: 26, label: "UV 耐磨层", grad: "hero-l1", stroke: "rgba(143,173,253,0.5)" },
+  { y: 240, h: 34, label: "高清装饰膜", grad: "hero-l2", stroke: "rgba(255,255,255,0.25)" },
+  { y: 330, h: 74, label: "刚性矿物芯层", grad: "hero-l3", stroke: "rgba(255,255,255,0.14)" },
+  { y: 462, h: 44, label: "声学背垫", grad: "hero-l4", stroke: "rgba(255,255,255,0.1)" },
 ];
 
 export function HeroArt({ className }: { className?: string }) {

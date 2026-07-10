@@ -52,7 +52,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 href="/news"
                 className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400 transition-colors hover:text-white"
               >
-                ← All news
+                ← 全部新闻
               </Link>
               <span
                 className="h-1 w-1 rounded-full bg-white/25"
@@ -91,7 +91,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             ))}
             <div className="mt-12 border-t border-ink-950/10 pt-8">
               <ArrowLink href="/contact">
-                Talk to us about this update
+                就这条动态与我们沟通
               </ArrowLink>
             </div>
           </Reveal>
@@ -103,7 +103,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <Container>
             <Reveal>
               <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                More from HAILAN
+                更多 HAILAN 动态
               </h2>
             </Reveal>
             <div className="mt-8 grid gap-8 md:grid-cols-2">

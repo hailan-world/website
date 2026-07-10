@@ -2,7 +2,7 @@ export interface Article {
   slug: string;
   title: string;
   date: string; // ISO yyyy-mm-dd
-  category: "Events" | "Manufacturing" | "Sustainability" | "Company";
+  category: "展会活动" | "制造动态" | "可持续发展" | "公司新闻";
   excerpt: string;
   body: string[];
 }
@@ -11,59 +11,59 @@ export const articles: Article[] = [
   {
     slug: "domotex-asia-2026",
     title:
-      "HAILAN showcases next-generation acoustic wall systems at Domotex Asia 2026",
+      "HAILAN 在 2026 亚洲地材展展示新一代声学墙面系统",
     date: "2026-06-12",
-    category: "Events",
+    category: "展会活动",
     excerpt:
-      "Three new PET slat constructions and a 24 mm high-absorption panel headlined our largest trade fair presence to date in Shanghai.",
+      "三款全新 PET 格栅结构和 24 mm 高吸声板材，成为 HAILAN 迄今规模最大的上海展会亮点。",
     body: [
-      "Shanghai — HAILAN closed its largest trade fair presence to date at Domotex Asia/ChinaFloor 2026, where the company introduced three new PET slat wall constructions and a 24 mm high-absorption acoustic panel developed for open-plan offices and education projects.",
-      "The new constructions pair routed polyester felt with a structural felt substrate, reaching NRC values up to 0.85 in standard ceiling-gap mounting. All three launch colourways were developed with European specifiers and will be stocked for container-mix programs from Q4 2026.",
-      "Visitor interest concentrated on combined programs — partners sourcing LVT, wall panels and carpet tiles under one quality system and one shipping schedule. Over the four fair days our export team held more than 140 scheduled meetings with importers and brands from 38 countries.",
-      "Samples of the full 2026 acoustic collection are available now through our OEM sampling studio. Distribution partners can request the fair briefing pack from their account manager.",
+      "上海 — 在 2026 Domotex Asia/ChinaFloor 亚洲地材展上，HAILAN 完成了迄今规模最大的一次参展。公司发布了三款全新 PET 格栅墙面结构，以及面向开放办公和教育项目开发的 24 mm 高吸声声学板。",
+      "新结构将开槽聚酯毡与结构毡基材复合，在标准吊顶空腔安装条件下 NRC 最高可达 0.85。三款首发色由欧洲规格顾问共同开发，并将自 2026 年第四季度起纳入混柜项目备货。",
+      "到访客户最关注的是组合式项目：在同一质量体系和同一装柜计划下同时采购 LVT、墙板和地毯方块。四天展期内，我们的出口团队与来自 38 个国家的进口商和品牌客户进行了 140 多场预约洽谈。",
+      "完整 2026 声学系列样品现已可通过 OEM 打样工作室申请。经销合作伙伴可向客户经理索取展会简报包。",
     ],
   },
   {
     slug: "pet-carpet-line-expansion",
-    title: "New PET carpet line adds 40% tufting capacity ahead of 2027 demand",
+    title: "全新 PET 地毯产线投产，提前为 2027 年需求提升 40% 簇绒产能",
     date: "2026-03-18",
-    category: "Manufacturing",
+    category: "制造动态",
     excerpt:
-      "A fourth tufting line and automated backing station came online in March, lifting annual carpet capacity to 4.2 million square metres.",
+      "第四条簇绒线和自动化背衬工位于 3 月投产，将地毯年产能提升至 420 万平方米。",
     body: [
-      "Huzhou — HAILAN commissioned its fourth tufting line in March, together with an automated backing and cutting station, lifting annual carpet capacity by roughly 40% to 4.2 million square metres.",
-      "The line runs 1/10 and 1/12 gauge loop and cut-loop constructions and is dedicated primarily to solution-dyed PET programs, where order volume from workplace and hospitality brands has grown for nine consecutive quarters.",
-      "Alongside the tufting expansion, the new backing station applies our lighter PET-composite backing in-line, cutting station-to-station handling and reducing per-tile weight variance to under 3%. The investment shortens standard production lead times for carpet programs by approximately one week.",
-      "Capacity from the new line is already allocated for pilot programs entering mass production in Q3 2026. Partners planning 2027 volume are encouraged to lock forecasts with our planning team early.",
+      "湖州 — HAILAN 于 3 月投产第四条簇绒线，并同步启用自动化背衬与裁切工位，使地毯年产能提升约 40%，达到 420 万平方米。",
+      "该产线可生产 1/10 和 1/12 针距圈绒及割圈绒结构，主要服务原液着色 PET 项目。来自办公和酒店品牌的相关订单量已连续九个季度增长。",
+      "随着簇绒产能扩展，新背衬工位可在线应用更轻的 PET 复合背衬，减少工位间搬运，并将单片重量差异控制在 3% 以内。此次投资将地毯项目标准生产周期缩短约一周。",
+      "新产线产能已分配给计划于 2026 年第三季度进入量产的试点项目。建议规划 2027 年采购量的合作伙伴尽早与计划团队锁定预测。",
     ],
   },
   {
     slug: "sustainability-report-2025",
     title:
-      "2025 Sustainability Report: recycled content reaches 38% across PET lines",
+      "2025 可持续发展报告：PET 系列平均回收含量达到 38%",
     date: "2025-11-06",
-    category: "Sustainability",
+    category: "可持续发展",
     excerpt:
-      "Annual reporting now covers fibre sourcing, factory energy mix and end-of-life programs — with third-party verified recycled content.",
+      "年度报告现已覆盖纤维来源、工厂能源结构和产品生命周期末端项目，并包含第三方验证的回收含量数据。",
     body: [
-      "HAILAN has published its 2025 Sustainability Report, the company’s third annual disclosure covering material sourcing, factory operations and product end-of-life.",
-      "Average verified recycled content across PET wall and carpet lines reached 38% in 2025, up from 31% the previous year, driven by expanded post-consumer bottle-flake supply agreements and the qualification of a second recycled-yarn source.",
-      "On the operations side, rooftop photovoltaics now supply 22% of factory electricity, and a closed-loop water system on the calendering lines reduced process water intake by 17% year over year. All figures are verified by an independent third-party auditor.",
-      "The full report, including FloorScore, REACH and fire-test documentation for every active product line, is available to partners on request — and ships as standard in every OEM compliance pack.",
+      "HAILAN 已发布 2025 可持续发展报告，这是公司第三份年度披露文件，覆盖材料来源、工厂运营和产品生命周期末端管理。",
+      "2025 年，PET 墙面和地毯系列经验证的平均回收含量达到 38%，高于上一年的 31%。增长主要来自消费后瓶片供应协议扩大，以及第二个回收纱线来源完成认证。",
+      "在运营端，屋顶光伏目前供应工厂 22% 的电力；压延线闭环水系统使工艺用水量同比降低 17%。所有数据均由独立第三方审计机构验证。",
+      "完整报告以及每条在产产品线的 FloorScore、REACH 和防火测试文件，可按合作伙伴要求提供，并作为每个 OEM 合规文件包的标准内容随货交付。",
     ],
   },
   {
     slug: "oem-sampling-studio",
-    title: "HAILAN opens dedicated sampling studio for OEM partners",
+    title: "HAILAN 为 OEM 合作伙伴启用专属打样工作室",
     date: "2025-09-24",
-    category: "Company",
+    category: "公司新闻",
     excerpt:
-      "A 1,800 m² studio compresses decor development, pressing and photography into a single building — cutting sampling cycles to 7–10 days.",
+      "这座 1,800 平方米工作室将花色开发、压制和摄影集中在同一建筑内，将打样周期缩短至 7–10 天。",
     body: [
-      "Huzhou — HAILAN has opened a dedicated 1,800 m² sampling studio at its Nanxun campus, consolidating decor development, small-batch pressing, CNC profiling and product photography into a single facility.",
-      "The studio operates its own laboratory press and single-head tufting rig, allowing LVT, wall panel and carpet samples to be produced without interrupting mass-production lines. Standard sampling cycles now run 7–10 days from approved artwork to couriered sample.",
-      "For private-label partners, the studio also produces retail-ready sample boards, folders and merchandising displays — matched to each brand’s artwork and shipped alongside first production orders.",
-      "The investment reflects a simple observation: programs win or lose at the sampling stage. Giving development its own space, equipment and team removes the bottleneck between a partner’s idea and a factory-exact sample.",
+      "湖州 — HAILAN 已在南浔园区启用一座 1,800 平方米专属打样工作室，将花色开发、小批量压制、CNC 成型和产品摄影集中在同一设施内。",
+      "工作室配备独立实验压机和单头簇绒设备，可在不影响量产线的情况下制作 LVT、墙板和地毯样品。标准打样周期现已缩短至从确认稿件到寄出样品 7–10 天。",
+      "面向自有品牌合作伙伴，工作室还可制作零售级样板、样册和陈列物料，并按品牌视觉匹配设计，随首批生产订单一同发运。",
+      "这项投资来自一个简单判断：项目成败常常发生在打样阶段。让开发拥有独立空间、设备和团队，可以消除从合作伙伴想法到工厂级样品之间的瓶颈。",
     ],
   },
 ];

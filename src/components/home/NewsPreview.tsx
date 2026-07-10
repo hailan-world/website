@@ -12,11 +12,11 @@ export function NewsPreview() {
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHead
-            eyebrow="06 — News"
-            title="What’s moving at HAILAN."
+            eyebrow="06 — 新闻"
+            title="HAILAN 的最新动态。"
           />
           <Reveal delay={0.15} className="hidden pb-2 md:block">
-            <ArrowLink href="/news">All news</ArrowLink>
+            <ArrowLink href="/news">全部新闻</ArrowLink>
           </Reveal>
         </div>
 
@@ -42,7 +42,7 @@ export function NewsPreview() {
                   {article.excerpt}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-ink-950 transition-colors group-hover:text-azure-600">
-                  Read article
+                  阅读文章
                   <svg
                     width="13"
                     height="13"
@@ -66,7 +66,7 @@ export function NewsPreview() {
         </div>
 
         <Reveal className="mt-12 md:hidden">
-          <ArrowLink href="/news">All news</ArrowLink>
+          <ArrowLink href="/news">全部新闻</ArrowLink>
         </Reveal>
       </Container>
     </section>

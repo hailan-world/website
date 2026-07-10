@@ -24,9 +24,9 @@ export function Hero() {
   const cueOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
 
   const lines = [
-    <span key="l1">Engineered surfaces</span>,
+    <span key="l1">面向建筑空间的</span>,
     <span key="l2">
-      for the built world<span className="text-azure-400">.</span>
+      工程化表面材料<span className="text-azure-400">。</span>
     </span>,
   ];
 
@@ -60,7 +60,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
               className="font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-azure-300"
             >
-              Hailan New Materials Co., Ltd.
+              海澜新材料有限公司
             </motion.p>
 
             <h1 className="mt-7 text-[2.6rem] font-medium leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]">
@@ -84,10 +84,8 @@ export function Hero() {
               transition={{ duration: 0.9, delay: 0.55, ease: EASE }}
               className="mt-7 max-w-xl text-lg leading-relaxed text-ink-200"
             >
-              HAILAN designs and manufactures LVT flooring, PET wall coverings
-              and PET carpet coverings for importers, distributors and brands in
-              more than 60 countries — precision manufacturing with a
-              design-first mindset.
+              HAILAN 为 60 多个国家的进口商、经销商和品牌客户研发并制造
+              LVT 地板、PET 墙面覆材和 PET 地毯覆材，以精密制造承载设计优先的产品思维。
             </motion.p>
 
             <motion.div
@@ -97,10 +95,10 @@ export function Hero() {
               className="mt-10 flex flex-wrap items-center gap-4"
             >
               <Button href="/products" variant="inverted" arrow>
-                Explore Products
+                浏览产品
               </Button>
               <Button href="/manufacturing" variant="outlineDark">
-                Our Manufacturing
+                制造能力
               </Button>
             </motion.div>
 
@@ -110,7 +108,7 @@ export function Hero() {
               transition={{ duration: 1, delay: 1.05 }}
               className="mt-14 border-t border-white/10 pt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-400"
             >
-              ISO 9001 · FloorScore® · CE — Exporting to 60+ countries
+              ISO 9001 · FloorScore® · CE — 出口 60+ 国家
             </motion.p>
           </div>
 
@@ -132,7 +130,7 @@ export function Hero() {
         aria-hidden="true"
       >
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-400">
-          Scroll
+          滚动
         </span>
         <span className="relative block h-10 w-px overflow-hidden bg-white/15">
           <motion.span
