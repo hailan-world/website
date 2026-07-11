@@ -307,5 +307,277 @@
       "note": "Ouvre votre client de messagerie — ou écrivez-nous directement à",
       "status": "Le brouillon d’e-mail a été ouvert dans votre client de messagerie."
     }
+  },
+  "manufacturingPage": {
+    "meta": {
+      "title": "Fabrication",
+      "description": "Au cœur du site intégré de 120 000 m² de HAILAN : 25 lignes de production, une automatisation suivie par MES et un contrôle qualité en ligne, du polymère brut au produit à code de lot, emballé pour l'export."
+    },
+    "hero": {
+      "eyebrow": "Fabrication",
+      "title": "Du polymère brut au conteneur chargé. Un seul site.",
+      "lede": "Rien d'essentiel n'est sous-traité. Extrusion, contrecollage, tuftage, profilage, contrôle et emballage se déroulent tous sur un même site suivi par MES à Jinhua — c'est pourquoi le centième conteneur est identique au premier."
+    },
+    "capabilities": [
+      "Site de production intégré",
+      "Lignes d'extrusion, de calandrage et de tuftage",
+      "Capacité de production annuelle",
+      "Exploitation supervisée par MES"
+    ],
+    "process": {
+      "eyebrow": "La ligne",
+      "title": "Six étapes. Aucun transfert hors de notre contrôle.",
+      "lede": "Chaque étape transmet ses données de mesure à la suivante — les problèmes sont corrigés à la source, et non découverts au contrôle.",
+      "steps": [
+        {
+          "title": "Préparation des matières",
+          "text": "Polymère vierge et recyclé certifié, plastifiant, stabilisant et fibre sont dosés selon recette, chaque lot entrant étant testé par rapport aux spécifications avant sa mise en production."
+        },
+        {
+          "title": "Extrusion et calandrage",
+          "text": "Des extrudeuses bivis et des calandres à quatre rouleaux forment l'âme et la couche d'usure à la tolérance requise, la mesure laser d'épaisseur en ligne renvoyant les corrections à la ligne en temps réel."
+        },
+        {
+          "title": "Contrecollage et pressage",
+          "text": "Film décor, couche d'usure et âme sont assemblés sous chaleur et pression. Des plaques de gaufrage en registre alignent la texture de surface sur le décor imprimé pour une profondeur naturelle."
+        },
+        {
+          "title": "Traitement de surface et durcissement UV",
+          "text": "Des vernis polyuréthane sont appliqués et durcis aux UV selon le niveau de brillance et la résistance à la rayure spécifiés par chaque programme — du mat au satiné, vérifiés au brillancemètre toutes les heures."
+        },
+        {
+          "title": "Profilage de précision",
+          "text": "Des tenonneuses double bout à CN usinent profils clic, chanfreins et formats à ±0,15 mm. Les panneaux PET passent par des cellules de fraisage pour lames, perforations et géométries de projet."
+        },
+        {
+          "title": "Contrôle, emballage et chargement",
+          "text": "Chaque pièce passe un contrôle visuel et dimensionnel avant que les cartons à code de lot ne soient palettisés, planifiés et empotés — photographiés à chaque étape du chargement."
+        }
+      ]
+    },
+    "automation": {
+      "eyebrow": "Automatisation",
+      "title": "Les machines mesurent. Les hommes décident.",
+      "lede": "Chez HAILAN, l'automatisation ne vise pas à supprimer les personnes, mais à supprimer la variabilité. Les instruments surveillent chaque mètre de production pour que nos ingénieurs agissent sur des données, non sur des suppositions.",
+      "link": "Comment nous maîtrisons la qualité",
+      "items": [
+        {
+          "title": "Suivi de production MES",
+          "text": "Chaque commande est suivie dans le système d'exécution de fabrication, du lot de matière au numéro de conteneur — les mêmes données que les partenaires retrouvent dans la documentation d'expédition."
+        },
+        {
+          "title": "Mesure en ligne",
+          "text": "Jauges laser d'épaisseur, spectrophotomètres de couleur et systèmes de vision mesurent en continu pendant la production, et non sur des échantillons a posteriori."
+        },
+        {
+          "title": "Manutention automatisée",
+          "text": "La palettisation robotisée et le transfert par AGV entre les lignes réduisent les dommages de manutention et maintiennent une qualité de surface constante jusqu'à l'emballage."
+        },
+        {
+          "title": "Énergie et eau",
+          "text": "Le photovoltaïque en toiture fournit 22 % de l'électricité ; un système en boucle fermée sur les lignes de calandrage a réduit la consommation d'eau de process de 17 % d'une année sur l'autre."
+        }
+      ]
+    },
+    "logistics": {
+      "eyebrow": "Logistique export",
+      "title": "Une ingénierie qui va jusqu'au bastingage.",
+      "text": "L'excellence de fabrication ne vaut rien si le conteneur arrive en retard ou endommagé. Notre équipe logistique planifie le chargement de chaque expédition selon les limites de poids et les programmes multi-produits, produit une documentation d'export conforme à la destination et photographie chaque étape du chargement. Les ports de Shanghai et Ningbo sont à moins de trois heures du site.",
+      "points": [
+        "Groupage de conteneurs entre lignes de produits",
+        "Plans de chargement optimisés selon le poids routier",
+        "Documentation spécifique à la destination",
+        "98,6 % d'expéditions à l'heure"
+      ]
+    },
+    "cta": {
+      "title": "Auditez-nous. Vraiment.",
+      "lede": "Le moyen le plus rapide de faire confiance à une usine est de la parcourir. Nous accueillons audits partenaires et visites d'usine toute l'année — ou commencez par une visite vidéo en direct.",
+      "button": "Organiser une visite d'usine"
+    }
+  },
+  "oemOdmPage": {
+    "meta": {
+      "title": "OEM / ODM",
+      "description": "Programmes de marque de distributeur et de développement sur mesure pour sols et surfaces acoustiques : développement de décors en interne, échantillonnage en 7 à 10 jours, emballage prêt pour la vente et dossiers de conformité complets."
+    },
+    "hero": {
+      "eyebrow": "OEM / ODM",
+      "title": "Votre marque. Notre usine. Un partenaire responsable.",
+      "lede": "La majeure partie de ce que produit HAILAN porte le nom de nos partenaires. La marque de distributeur et le développement sur mesure ne sont pas une activité secondaire — c'est notre métier, avec un studio, une équipe et un processus conçus à cet effet."
+    },
+    "process": {
+      "eyebrow": "Le parcours du programme",
+      "title": "Du premier brief au conteneur chargé en six étapes.",
+      "lede": "Chaque étape a un responsable désigné, un livrable et un calendrier — vous savez toujours où en est votre programme.",
+      "steps": [
+        {
+          "title": "Brief et faisabilité",
+          "meta": "2–5 jours",
+          "text": "Partagez votre marché, votre positionnement prix, vos constructions cibles et vos volumes. En quelques jours, vous recevez une analyse de faisabilité : nos recommandations, le coût et le délai d'expédition."
+        },
+        {
+          "title": "Développement décor et construction",
+          "meta": "1–2 semaines",
+          "text": "Notre studio de design développe décors, coloris et textures de surface selon votre direction de marque — ou optimise votre gamme existante pour un meilleur coût et de meilleures performances."
+        },
+        {
+          "title": "Échantillonnage",
+          "meta": "7–10 jours",
+          "text": "Le studio d'échantillonnage dédié produit des échantillons rigoureusement conformes à l'usine sur équipement de laboratoire — la construction que vous approuvez est celle qui sera expédiée."
+        },
+        {
+          "title": "Production pilote",
+          "meta": "2–3 semaines",
+          "text": "Un essai pilote valide la construction à la vitesse de la ligne. Vous recevez échantillons pilotes, résultats de laboratoire complets et bons à tirer d'emballage avant tout engagement de volume."
+        },
+        {
+          "title": "Production en série",
+          "meta": "25–35 jours",
+          "text": "La production est planifiée selon vos prévisions, suivie dans le MES et contrôlée à chaque étape. Les délais standard sont de 25 à 35 jours après confirmation de commande."
+        },
+        {
+          "title": "Logistique et réassorts",
+          "meta": "En continu",
+          "text": "Conteneurs planifiés, documents conformes à la destination et chargement photographié. Les programmes en cours conservent stock de sécurité et outillage pour des réassorts rapides."
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "Ce que nous prenons en charge",
+      "title": "Tout ce qui sépare votre idée de votre entrepôt.",
+      "items": [
+        {
+          "title": "Fabrication en marque de distributeur",
+          "text": "Votre marque, votre emballage, vos spécifications — produits sous notre système qualité. Du graphisme des cartons aux présentoirs, tout est expédié prêt pour la vente."
+        },
+        {
+          "title": "Développement de produits sur mesure",
+          "text": "Nouvelles constructions, épaisseurs, formats et objectifs acoustiques conçus pour le niveau de prix de votre marché — soutenus par notre outillage, notre bibliothèque de films et nos fournisseurs de fibres."
+        },
+        {
+          "title": "Studio décor et couleur",
+          "text": "Nos designers internes suivent les tendances déco européennes et nord-américaines et les traduisent en décors bois, pierre, textile et abstraits exclusifs à votre programme."
+        },
+        {
+          "title": "Merchandising et échantillonnage",
+          "text": "Panneaux d'échantillons, classeurs, jeux de chaîne et présentoirs produits dans le même studio que le produit — assortis à votre graphisme et expédiés avec les premières commandes."
+        },
+        {
+          "title": "Prise en charge de la conformité",
+          "text": "Nous maintenons les certificats exigés par votre marché — CE, FloorScore®, REACH, classement au feu — et livrons un dossier de conformité complet avec chaque programme."
+        },
+        {
+          "title": "Gestion de programme",
+          "text": "Un chef de projet anglophone pilote votre programme du brief au réassort, avec un engagement de réponse sous 24 heures et une visibilité totale sur l'état de la production."
+        }
+      ]
+    },
+    "assurances": {
+      "eyebrow": "Conditions de partenariat",
+      "title": "Fondé sur des protections, pas sur des promesses.",
+      "intro": "Une relation de marque de distributeur ne fonctionne que si le propriétaire de la marque est protégé. Ces engagements figurent dans chaque contrat OEM et ODM que nous signons :",
+      "points": [
+        "Vos créations et décors restent votre propriété — l'exclusivité est contractuelle",
+        "Constructions transparentes : spécifications matières intégralement divulguées",
+        "Validation du pilote avant tout engagement de volume",
+        "Stock de sécurité et outillage réservés aux programmes en cours"
+      ]
+    },
+    "cta": {
+      "title": "Confiez-nous votre prochaine gamme.",
+      "lede": "Un objectif de construction, un échantillon concurrent ou simplement un niveau de prix — cela suffit pour commencer. Retour de faisabilité en quelques jours, échantillons en deux semaines.",
+      "button": "Démarrer un échange OEM"
+    }
+  },
+  "qualityPage": {
+    "meta": {
+      "title": "Qualité",
+      "description": "Un seul système qualité régit chaque ligne HAILAN : contrôle des matières entrantes, vérifications en ligne toutes les heures, validation en laboratoire et traçabilité complète des lots, du lot de matière au conteneur."
+    },
+    "hero": {
+      "eyebrow": "Qualité",
+      "title": "Le centième conteneur doit être identique au premier échantillon.",
+      "lede": "Cette seule phrase résume toute notre philosophie qualité. Tout sur cette page — les points de contrôle, le laboratoire, la traçabilité — existe pour la rendre vraie, expédition après expédition."
+    },
+    "gates": {
+      "eyebrow": "Le système",
+      "title": "Quatre points de contrôle entre la matière première et votre entrepôt.",
+      "lede": "La qualité n'est pas un service qui contrôle à la fin. C'est une série de points de contrôle que le produit doit franchir — et chacun conserve ses relevés.",
+      "gateLabel": "Contrôle",
+      "items": [
+        {
+          "title": "Matières entrantes",
+          "text": "Chaque lot de polymère, film, fil et additif est échantillonné et testé par rapport à la spécification d'achat avant libération. Les lots non conformes sont mis en quarantaine et retournés — ils n'atteignent jamais une ligne."
+        },
+        {
+          "title": "En ligne, toutes les heures",
+          "text": "Épaisseur, dimensions, delta-E de couleur, brillance et qualité de surface sont mesurés toutes les heures sur chaque ligne en marche et consignés avec le code de lot. Toute dérive déclenche une correction à la machine, non au contrôle final."
+        },
+        {
+          "title": "Vérification en laboratoire",
+          "text": "Notre laboratoire intégré réalise des essais d'usure, de stabilité dimensionnelle, de tuilage, de résistance au pelage, acoustiques et de solidité des couleurs sur chaque lot de production — selon les mêmes méthodes ISO, EN et ASTM que les laboratoires tiers."
+        },
+        {
+          "title": "Contrôle avant expédition",
+          "text": "Les produits finis sont contrôlés au niveau AQL 2,5 avant emballage, puis de nouveau au chargement du conteneur avec relevés photographiques. Les partenaires reçoivent les données de contrôle avec leurs documents d'expédition."
+        }
+      ]
+    },
+    "lab": {
+      "eyebrow": "Laboratoire intégré",
+      "title": "Testé selon les méthodes que votre marché réglemente.",
+      "lede": "Notre laboratoire applique les mêmes procédures ISO, EN et ASTM que les organismes de certification — ainsi les résultats tiers ne nous surprennent jamais, ni vous.",
+      "caption": "Essais de laboratoire et normes de référence",
+      "colTest": "Essai",
+      "colMethod": "Méthode",
+      "tests": [
+        "Résistance à l'abrasion et à l'usure",
+        "Stabilité dimensionnelle et tuilage",
+        "Poinçonnement rémanent",
+        "Solidité des couleurs à la lumière",
+        "Réaction au feu",
+        "Absorption acoustique (panneaux PET)",
+        "Réduction des bruits d'impact",
+        "Émissions de COV",
+        "Résistance à la glissance",
+        "Résistance au pelage et au collage"
+      ]
+    },
+    "trace": {
+      "eyebrow": "Traçabilité",
+      "title": "Chaque carton répond de lui-même.",
+      "para1": "Chaque carton expédié par HAILAN porte un code de lot qui renvoie — dans notre MES — aux lots de matière, à la ligne de production, à l'équipe, aux mesures en ligne et aux résultats de laboratoire correspondants. Si un partenaire émet une réclamation, nous répondons par des données sous 48 heures, non par des opinions.",
+      "para2": "Les mêmes relevés alimentent notre boucle d'amélioration continue : taux de réclamation, rendement au premier passage et constance des couleurs sont revus chaque semaine par les ingénieurs qui pilotent les lignes."
+    },
+    "certs": {
+      "eyebrow": "Certifications",
+      "title": "Une documentation qui passe la douane et satisfait les cahiers des charges.",
+      "lede": "Les certificats sont maintenus en continu et livrés sous forme de dossier de conformité avec chaque programme — prêts pour importateurs, prescripteurs et chaînes de distribution."
+    },
+    "cta": {
+      "title": "Demandez notre dossier de conformité.",
+      "lede": "Rapports d'essais, certificats et fiches techniques pour toute ligne de produits — organisés par marché de destination, livrés sous un jour ouvré.",
+      "button": "Demander la documentation"
+    }
+  },
+  "linusPage": {
+    "meta": {
+      "title": "Linus Lin — Développement commercial et marketing",
+      "description": "Contactez Linus Lin, Développement commercial et marketing chez HAILAN."
+    },
+    "hero": {
+      "role": "Développement commercial et marketing"
+    },
+    "getInTouch": "Entrons en contact",
+    "labels": {
+      "email": "E-mail"
+    },
+    "wecomValue": "Scannez pour vous connecter",
+    "wecomNote": "Voir le QR code ci-contre.",
+    "linkedinValue": "Profil bientôt disponible",
+    "companyTagline": "Fabricant mondial de matériaux de construction décoratifs",
+    "wecomHeading": "WeCom",
+    "wecomScan": "Scannez pour vous connecter via WeCom."
   }
 }

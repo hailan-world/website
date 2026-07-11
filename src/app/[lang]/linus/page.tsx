@@ -9,22 +9,40 @@ import {
 import { PageHero } from "@/components/layout/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
+import { defaultLocale, isLocale } from "@/lib/i18n";
 import { site } from "@/lib/site";
+import { getDictionary } from "../dictionaries";
 
 const EMAIL = "linus@hailanworld.com";
 // wa.me expects digits only, country code first.
 const WHATSAPP_NUMBER = "8613566785896";
 const WHATSAPP_LABEL = "+86 135 6678 5896";
 
-export const metadata: Metadata = {
-  title: "Linus Lin — Business Development & Marketing",
-  description: `Contact Linus Lin, Business Development & Marketing at ${site.name}.`,
-};
+interface LinusPageProps {
+  params: Promise<{ lang: string }>;
+}
 
-export default function LinusContactPage() {
+export async function generateMetadata({
+  params,
+}: LinusPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+  return {
+    title: dict.linusPage.meta.title,
+    description: dict.linusPage.meta.description,
+  };
+}
+
+export default async function LinusContactPage({ params }: LinusPageProps) {
+  const { lang } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+  const t = dict.linusPage;
+
   return (
     <>
-      <PageHero eyebrow={site.name} title="Linus Lin" lede="Business Development & Marketing" />
+      <PageHero eyebrow={site.name} title="Linus Lin" lede={t.hero.role} />
 
       <section className="py-24 md:py-32">
         <Container>
@@ -32,12 +50,12 @@ export default function LinusContactPage() {
             {/* Contact channels */}
             <Reveal className="lg:col-span-7">
               <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                Get in touch
+                {t.getInTouch}
               </h2>
               <div className="mt-6 space-y-3">
                 <ContactCard
                   icon={<MailIcon className="h-5 w-5" />}
-                  label="Email"
+                  label={t.labels.email}
                   value={EMAIL}
                   href={`mailto:${EMAIL}`}
                 />
@@ -51,14 +69,14 @@ export default function LinusContactPage() {
                 <ContactCard
                   icon={<QrIcon className="h-5 w-5" />}
                   label="WeCom"
-                  value="Scan to connect"
-                  note="See the QR code opposite."
+                  value={t.wecomValue}
+                  note={t.wecomNote}
                   muted
                 />
                 <ContactCard
                   icon={<LinkedInIcon className="h-5 w-5" />}
                   label="LinkedIn"
-                  value="Profile coming soon"
+                  value={t.linkedinValue}
                   muted
                 />
               </div>
@@ -69,7 +87,7 @@ export default function LinusContactPage() {
                   {site.legalName.replace(" Co., Ltd.", "")}
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-mist-500">
-                  Global Decorative Building Materials Manufacturer
+                  {t.companyTagline}
                 </p>
               </div>
             </Reveal>
@@ -77,7 +95,7 @@ export default function LinusContactPage() {
             {/* QR code */}
             <Reveal delay={0.12} className="lg:col-span-5">
               <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                WeCom
+                {t.wecomHeading}
               </h2>
               <div className="mt-6 rounded-2xl border border-ink-950/10 bg-mist-50 p-7 md:p-10">
                 <div className="mx-auto aspect-square w-full max-w-64 overflow-hidden rounded-xl border border-ink-950/10 bg-white">
@@ -89,7 +107,7 @@ export default function LinusContactPage() {
                   />
                 </div>
                 <p className="mt-6 text-center text-sm leading-relaxed text-mist-500">
-                  Scan to connect via WeCom.
+                  {t.wecomScan}
                 </p>
               </div>
             </Reveal>
