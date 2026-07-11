@@ -373,5 +373,277 @@
       "note": "Membuka klien e-mel anda — atau tulis terus kepada kami di",
       "status": "Draf e-mel anda telah dibuka dalam klien mel anda."
     }
+  },
+  "manufacturingPage": {
+    "meta": {
+      "title": "Pembuatan",
+      "description": "Di dalam kampus bersepadu 120,000 m² HAILAN: 25 barisan pengeluaran, automasi yang dijejak MES dan kawalan kualiti dalam barisan, daripada polimer mentah hingga produk berkod lot yang dibungkus untuk eksport."
+    },
+    "hero": {
+      "eyebrow": "Pembuatan",
+      "title": "Daripada polimer mentah kepada kontena dimuatkan. Satu kampus.",
+      "lede": "Tiada apa yang kritikal disubkontrakkan. Penyemperitan, penglaminatan, penenunan berumbai, pemprofilan, pemeriksaan dan pembungkusan semuanya berlaku di satu tapak yang dijejak MES di Jinhua — sebab itu kontena keseratus sepadan dengan yang pertama."
+    },
+    "capabilities": [
+      "Kampus pengeluaran bersepadu",
+      "Barisan penyemperitan, kalender & penenunan berumbai",
+      "Kapasiti pengeluaran tahunan",
+      "Operasi dipantau MES"
+    ],
+    "process": {
+      "eyebrow": "Barisan",
+      "title": "Enam peringkat. Sifar penyerahan di luar kawalan kami.",
+      "lede": "Setiap peringkat menyalurkan data pengukuran ke peringkat seterusnya — jadi masalah diperbetulkan di puncanya, bukan ditemui semasa pemeriksaan.",
+      "steps": [
+        {
+          "title": "Penyediaan bahan",
+          "text": "Polimer dara dan kitar semula yang disahkan, pemplastik, penstabil dan gentian dikelompokkan mengikut resipi, dengan setiap lot masuk diuji berbanding spesifikasi sebelum dilepaskan ke pengeluaran."
+        },
+        {
+          "title": "Penyemperitan & kalender",
+          "text": "Penyemperit dwiskru dan kalender empat rol membentuk lapisan teras dan haus mengikut toleransi, dengan penolok ketebalan laser dalam barisan menyalurkan pembetulan kembali ke barisan secara masa nyata."
+        },
+        {
+          "title": "Penglaminatan & penekanan",
+          "text": "Filem dekor, lapisan haus dan teras direkatkan di bawah haba dan tekanan. Plat penimbulan seragam menjajarkan tekstur permukaan dengan dekor bercetak untuk kedalaman semula jadi."
+        },
+        {
+          "title": "Rawatan permukaan & pengawetan UV",
+          "text": "Salutan poliuretana disapu dan diawet UV mengikut tahap kilat dan rintangan calar yang ditetapkan setiap program — daripada matte hingga satin, disahkan dengan meter kilat setiap jam."
+        },
+        {
+          "title": "Pemprofilan persis",
+          "text": "Mesin tenon dua hujung CNC memotong profil klik, serong dan format kepada ±0.15 mm. Panel PET melalui sel penghalaan untuk bilah, penebukan dan geometri projek."
+        },
+        {
+          "title": "Pemeriksaan, pembungkusan & pemuatan",
+          "text": "Setiap keping melalui pemeriksaan visual dan dimensi sebelum karton berkod lot dipaletkan, dirancang muatan dan dimasukkan ke kontena — dirakam pada setiap peringkat pemuatan."
+        }
+      ]
+    },
+    "automation": {
+      "eyebrow": "Automasi",
+      "title": "Mesin mengukur. Manusia memutuskan.",
+      "lede": "Automasi di HAILAN bukan tentang menyingkirkan manusia — ia tentang menyingkirkan varians. Instrumen memantau setiap meter pengeluaran supaya jurutera kami bertindak berdasarkan data, bukan tekaan.",
+      "link": "Cara kami mengawal kualiti",
+      "items": [
+        {
+          "title": "Penjejakan pengeluaran MES",
+          "text": "Setiap pesanan dijejak melalui sistem pelaksanaan pembuatan daripada lot bahan mentah hingga nombor kontena — data yang sama yang dilihat rakan kongsi dalam dokumentasi penghantaran."
+        },
+        {
+          "title": "Pengukuran dalam barisan",
+          "text": "Penolok ketebalan laser, spektrofotometer warna dan sistem penglihatan mengukur secara berterusan semasa pengeluaran, bukan pada sampel selepas itu."
+        },
+        {
+          "title": "Pengendalian automatik",
+          "text": "Paletan robotik dan pemindahan AGV antara barisan mengurangkan kerosakan pengendalian dan mengekalkan kualiti permukaan yang konsisten hingga pembungkusan."
+        },
+        {
+          "title": "Sistem tenaga & air",
+          "text": "Fotovolta bumbung membekalkan 22% elektrik; sistem gelung tertutup pada barisan kalender mengurangkan pengambilan air proses sebanyak 17% tahun ke tahun."
+        }
+      ]
+    },
+    "logistics": {
+      "eyebrow": "Logistik eksport",
+      "title": "Direka bentuk sehingga ke rel kapal.",
+      "text": "Kecemerlangan pembuatan tidak bermakna jika kontena tiba lewat atau rosak. Pasukan logistik kami merancang muatan setiap penghantaran untuk had berat dan program pelbagai produk, menghasilkan dokumentasi eksport yang betul mengikut destinasi, dan merakam setiap peringkat pemuatan. Pelabuhan Shanghai dan Ningbo berada dalam tiga jam dari kampus.",
+      "points": [
+        "Percampuran kontena merentas barisan produk",
+        "Pelan muatan dioptimumkan mengikut berat jalan",
+        "Dokumentasi khusus destinasi",
+        "Rekod penghantaran tepat masa 98.6%"
+      ]
+    },
+    "cta": {
+      "title": "Audit kami. Betul-betul.",
+      "lede": "Cara terpantas untuk mempercayai kilang ialah dengan menyusurinya. Kami menganjurkan audit rakan kongsi dan lawatan kilang sepanjang tahun — atau mulakan dengan lawatan video langsung.",
+      "button": "Aturkan lawatan kilang"
+    }
+  },
+  "oemOdmPage": {
+    "meta": {
+      "title": "OEM / ODM",
+      "description": "Program label persendirian dan pembangunan tersuai untuk lantai dan permukaan akustik: pembangunan dekor dalaman, pensampelan 7–10 hari, pembungkusan sedia runcit dan pek pematuhan lengkap."
+    },
+    "hero": {
+      "eyebrow": "OEM / ODM",
+      "title": "Jenama anda. Kilang kami. Satu rakan kongsi yang bertanggungjawab.",
+      "lede": "Kebanyakan apa yang dikeluarkan HAILAN membawa nama rakan kongsi kami. Label persendirian dan pembangunan tersuai bukan perniagaan sampingan — ia perniagaannya, dengan studio, pasukan dan proses yang dibina khas untuknya."
+    },
+    "process": {
+      "eyebrow": "Laluan program",
+      "title": "Daripada taklimat pertama hingga kontena dimuatkan dalam enam langkah.",
+      "lede": "Setiap langkah mempunyai pemilik yang dinamakan, penghantaran dan garis masa — jadi anda sentiasa tahu di mana kedudukan program anda.",
+      "steps": [
+        {
+          "title": "Taklimat & kebolehlaksanaan",
+          "meta": "2–5 hari",
+          "text": "Kongsi pasaran, kedudukan harga, binaan sasaran dan kuantiti anda. Dalam beberapa hari anda menerima bacaan kebolehlaksanaan: apa yang kami syorkan, kosnya dan sepantas mana ia dihantar."
+        },
+        {
+          "title": "Pembangunan dekor & binaan",
+          "meta": "1–2 minggu",
+          "text": "Studio reka bentuk kami membangunkan dekor, olahan warna dan tekstur permukaan mengikut hala tuju jenama anda — atau mereka bentuk semula julat sedia ada anda untuk kos dan prestasi yang lebih baik."
+        },
+        {
+          "title": "Pensampelan",
+          "meta": "7–10 hari",
+          "text": "Studio pensampelan khusus menghasilkan sampel yang tepat seperti kilang menggunakan peralatan makmal — binaan yang anda luluskan ialah binaan yang dihantar."
+        },
+        {
+          "title": "Pengeluaran perintis",
+          "meta": "2–3 minggu",
+          "text": "Larian perintis mengesahkan binaan pada kelajuan barisan. Anda menerima sampel perintis, keputusan makmal lengkap dan bukti pembungkusan akhir sebelum komited kepada kuantiti."
+        },
+        {
+          "title": "Pengeluaran besar-besaran",
+          "meta": "25–35 hari",
+          "text": "Pengeluaran dijadualkan mengikut ramalan anda, dijejak dalam MES dan diperiksa di setiap pintu. Masa penghantaran standard ialah 25–35 hari daripada pengesahan pesanan."
+        },
+        {
+          "title": "Logistik & pesanan semula",
+          "meta": "Berterusan",
+          "text": "Kontena dirancang muatan, dokumen betul mengikut destinasi dan pemuatan dirakam. Program yang beroperasi menyimpan stok keselamatan dan perkakasan untuk pesanan semula yang pantas."
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "Apa yang kami tanggung untuk anda",
+      "title": "Segala-galanya antara idea anda dan gudang anda.",
+      "items": [
+        {
+          "title": "Pembuatan label persendirian",
+          "text": "Jenama anda, pembungkusan anda, spesifikasi anda — dikeluarkan di bawah sistem kualiti kami. Daripada seni karton hingga papan pameran, semuanya dihantar sedia runcit."
+        },
+        {
+          "title": "Pembangunan produk tersuai",
+          "text": "Binaan, ketebalan, format dan sasaran akustik baharu direka bentuk untuk tahap harga pasaran anda — dengan perkakasan, pustaka filem dan pembekal gentian kami di belakangnya."
+        },
+        {
+          "title": "Studio dekor & warna",
+          "text": "Pereka dalaman menjejaki trend hiasan dalaman Eropah dan Amerika Utara dan menterjemahkannya kepada dekor kayu, batu, tekstil dan abstrak eksklusif untuk program anda."
+        },
+        {
+          "title": "Merchandising & pensampelan",
+          "text": "Papan sampel, folder, set rantaian dan pameran kedai dihasilkan di studio yang sama seperti produk — dipadankan dengan seni anda dan dihantar bersama pesanan pertama."
+        },
+        {
+          "title": "Pemilikan pematuhan",
+          "text": "Kami mengekalkan sijil yang dituntut pasaran anda — CE, FloorScore®, REACH, pengelasan kebakaran — dan menghantar pek pematuhan lengkap dengan setiap program."
+        },
+        {
+          "title": "Pengurusan program",
+          "text": "Seorang pengurus projek berbahasa Inggeris menguruskan program anda daripada taklimat hingga pesanan semula, dengan komitmen respons 24 jam dan keterlihatan penuh terhadap status pengeluaran."
+        }
+      ]
+    },
+    "assurances": {
+      "eyebrow": "Terma perkongsian",
+      "title": "Dibina atas perlindungan, bukan janji.",
+      "intro": "Hubungan label persendirian hanya berkesan apabila pemilik jenama dilindungi. Komitmen ini ditulis dalam setiap perjanjian OEM dan ODM yang kami tandatangani:",
+      "points": [
+        "Reka bentuk dan dekor anda kekal hak milik anda — eksklusiviti adalah kontraktual",
+        "Binaan telus: spesifikasi bahan didedahkan sepenuhnya",
+        "Kelulusan perintis sebelum sebarang komitmen kuantiti",
+        "Stok keselamatan dan perkakasan dikhaskan untuk program yang beroperasi"
+      ]
+    },
+    "cta": {
+      "title": "Bawakan julat anda yang seterusnya.",
+      "lede": "Sasaran binaan, sampel pesaing atau sekadar tahap harga — itu sudah cukup untuk bermula. Maklum balas kebolehlaksanaan dalam beberapa hari, sampel dalam dua minggu.",
+      "button": "Mulakan perbualan OEM"
+    }
+  },
+  "qualityPage": {
+    "meta": {
+      "title": "Kualiti",
+      "description": "Satu sistem kualiti menguruskan setiap barisan HAILAN: ujian bahan masuk, pemeriksaan dalam barisan setiap jam, pengesahan makmal dan kebolehjejakan lot penuh daripada lot bahan mentah hingga kontena."
+    },
+    "hero": {
+      "eyebrow": "Kualiti",
+      "title": "Kontena keseratus mesti sepadan dengan sampel pertama.",
+      "lede": "Ayat tunggal itu ialah keseluruhan falsafah kualiti kami. Segala-galanya pada halaman ini — pintu, makmal, kebolehjejakan — wujud untuk menjadikannya benar, penghantaran demi penghantaran."
+    },
+    "gates": {
+      "eyebrow": "Sistem",
+      "title": "Empat pintu antara bahan mentah dan gudang anda.",
+      "lede": "Kualiti bukan jabatan yang memeriksa pada penghujungnya. Ia satu siri pintu yang mesti dilalui produk — dan setiap pintu menyimpan rekod.",
+      "gateLabel": "Pintu",
+      "items": [
+        {
+          "title": "Bahan masuk",
+          "text": "Setiap lot polimer, filem, benang dan bahan tambah disampel dan diuji berbanding spesifikasi belian sebelum dilepaskan. Lot tidak akur dikuarantin dan dipulangkan — ia tidak pernah sampai ke barisan."
+        },
+        {
+          "title": "Dalam barisan, setiap jam",
+          "text": "Ketebalan, dimensi, delta-E warna, kilat dan kualiti permukaan diukur setiap jam pada setiap barisan yang beroperasi dan dilog berbanding kod lot. Sisihan mencetuskan pembetulan di mesin, bukan pada pemeriksaan akhir."
+        },
+        {
+          "title": "Pengesahan makmal",
+          "text": "Makmal di tapak kami menjalankan ujian haus, kestabilan dimensi, ringkuk, kekuatan kupas, akustik dan ketahanan warna pada setiap kelompok pengeluaran — dengan kaedah ISO, EN dan ASTM yang sama seperti makmal pihak ketiga."
+        },
+        {
+          "title": "Pemeriksaan pra-penghantaran",
+          "text": "Barangan siap diperiksa pada AQL 2.5 sebelum pembungkusan, dan sekali lagi semasa pemuatan kontena dengan rekod bergambar. Rakan kongsi menerima data pemeriksaan bersama dokumen penghantaran mereka."
+        }
+      ]
+    },
+    "lab": {
+      "eyebrow": "Makmal di tapak",
+      "title": "Diuji mengikut kaedah yang dikawal selia pasaran anda.",
+      "lede": "Makmal kami menjalankan prosedur ISO, EN dan ASTM yang sama seperti badan pensijilan — jadi keputusan pihak ketiga tidak pernah mengejutkan kami, atau anda.",
+      "caption": "Ujian makmal dan standard rujukannya",
+      "colTest": "Ujian",
+      "colMethod": "Kaedah",
+      "tests": [
+        "Rintangan lelasan & haus",
+        "Kestabilan dimensi & ringkuk",
+        "Lekukan baki",
+        "Ketahanan warna terhadap cahaya",
+        "Tindak balas terhadap api",
+        "Penyerapan bunyi (panel PET)",
+        "Pengurangan bunyi hentaman",
+        "Pelepasan VOC",
+        "Rintangan gelincir",
+        "Kekuatan kupas & ikatan"
+      ]
+    },
+    "trace": {
+      "eyebrow": "Kebolehjejakan",
+      "title": "Setiap karton menjawab bagi dirinya sendiri.",
+      "para1": "Setiap karton yang dihantar HAILAN membawa kod lot yang menyelesaikan — dalam MES kami — kepada lot bahan mentah, barisan pengeluaran, syif, pengukuran dalam barisan dan keputusan makmal di belakangnya. Jika rakan kongsi mengemukakan tuntutan, kami menjawab dengan data dalam 48 jam, bukan dengan pendapat.",
+      "para2": "Rekod yang sama menyuap gelung penambahbaikan berterusan kami: kadar tuntutan, hasil lulus pertama dan ketekalan warna disemak mingguan oleh jurutera yang sama yang mengendalikan barisan."
+    },
+    "certs": {
+      "eyebrow": "Pensijilan",
+      "title": "Dokumentasi yang melepasi kastam dan spesifikasi.",
+      "lede": "Sijil dikekalkan secara berterusan dan dihantar sebagai pek pematuhan dengan setiap program — sedia untuk pengimport, penetap spesifikasi dan rangkaian runcit."
+    },
+    "cta": {
+      "title": "Minta pek pematuhan kami.",
+      "lede": "Laporan ujian, sijil dan helaian data teknikal untuk mana-mana barisan produk — disusun mengikut pasaran destinasi, dihantar dalam satu hari bekerja.",
+      "button": "Minta dokumentasi"
+    }
+  },
+  "linusPage": {
+    "meta": {
+      "title": "Linus Lin — Pembangunan Perniagaan & Pemasaran",
+      "description": "Hubungi Linus Lin, Pembangunan Perniagaan & Pemasaran di HAILAN."
+    },
+    "hero": {
+      "role": "Pembangunan Perniagaan & Pemasaran"
+    },
+    "getInTouch": "Hubungi kami",
+    "labels": {
+      "email": "E-mel"
+    },
+    "wecomValue": "Imbas untuk berhubung",
+    "wecomNote": "Lihat kod QR di sebelah.",
+    "linkedinValue": "Profil akan datang",
+    "companyTagline": "Pengeluar Bahan Binaan Hiasan Global",
+    "wecomHeading": "WeCom",
+    "wecomScan": "Imbas untuk berhubung melalui WeCom."
   }
 }

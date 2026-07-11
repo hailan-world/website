@@ -4,102 +4,52 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import { SectionHead } from "@/components/ui/SectionHead";
+import { defaultLocale, isLocale } from "@/lib/i18n";
+import { getDictionary } from "../dictionaries";
 
-export const metadata: Metadata = {
-  title: "OEM / ODM",
-  description:
-    "Private-label and custom development programs for flooring and acoustic surfaces: in-house decor development, 7–10 day sampling, retail-ready packaging and full compliance packs.",
-};
+interface OemOdmPageProps {
+  params: Promise<{ lang: string }>;
+}
 
-const steps = [
-  {
-    step: "01",
-    title: "Brief & feasibility",
-    text: "Share your market, price position, target constructions and volumes. Within days you receive a feasibility read: what we recommend, what it costs and how fast it ships.",
-    meta: "2–5 days",
-  },
-  {
-    step: "02",
-    title: "Decor & construction development",
-    text: "Our design studio develops decors, colourways and surface textures to your brand direction — or engineers your existing range for better cost and performance.",
-    meta: "1–2 weeks",
-  },
-  {
-    step: "03",
-    title: "Sampling",
-    text: "The dedicated sampling studio produces factory-exact samples on laboratory equipment — the construction you approve is the construction that ships.",
-    meta: "7–10 days",
-  },
-  {
-    step: "04",
-    title: "Pilot production",
-    text: "A pilot run validates the construction at line speed. You receive pilot samples, full lab results and final packaging proofs before committing to volume.",
-    meta: "2–3 weeks",
-  },
-  {
-    step: "05",
-    title: "Mass production",
-    text: "Production is scheduled against your forecast, tracked in MES and inspected at every gate. Standard lead times run 25–35 days from order confirmation.",
-    meta: "25–35 days",
-  },
-  {
-    step: "06",
-    title: "Logistics & reorders",
-    text: "Load-planned containers, destination-correct documents and photographed loading. Running programs hold safety stock and tooling for fast reorders.",
-    meta: "Ongoing",
-  },
-];
+export async function generateMetadata({
+  params,
+}: OemOdmPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+  return {
+    title: dict.oemOdmPage.meta.title,
+    description: dict.oemOdmPage.meta.description,
+  };
+}
 
-const services = [
-  {
-    title: "Private-label manufacturing",
-    text: "Your brand, your packaging, your specifications — produced under our quality system. From carton artwork to display boards, everything ships retail-ready.",
-  },
-  {
-    title: "Custom product development",
-    text: "New constructions, thicknesses, formats and acoustic targets engineered to your market's price point — with our tooling, film library and fibre suppliers behind it.",
-  },
-  {
-    title: "Decor & colour studio",
-    text: "In-house designers track European and North American interior trends and translate them into wood, stone, textile and abstract decors exclusive to your program.",
-  },
-  {
-    title: "Merchandising & sampling",
-    text: "Sample boards, folders, chain sets and shop displays produced in the same studio as the product — matched to your artwork and shipped with first orders.",
-  },
-  {
-    title: "Compliance ownership",
-    text: "We maintain the certificates your market demands — CE, FloorScore®, REACH, fire classification — and ship a complete compliance pack with every program.",
-  },
-  {
-    title: "Program management",
-    text: "One English-speaking project manager owns your program from brief to reorder, with a 24-hour response commitment and full visibility into production status.",
-  },
-];
+export default async function OemOdmPage({ params }: OemOdmPageProps) {
+  const { lang } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+  const t = dict.oemOdmPage;
 
-const assurances = [
-  "Your designs and decors remain your property — exclusivity is contractual",
-  "Transparent constructions: full material specifications disclosed",
-  "Pilot approval before any volume commitment",
-  "Safety stock and tooling reserved for running programs",
-];
+  const steps = t.process.steps.map((s, i) => ({
+    step: String(i + 1).padStart(2, "0"),
+    title: s.title,
+    text: s.text,
+    meta: s.meta,
+  }));
 
-export default function OemOdmPage() {
+  const services = t.services.items;
+  const assurances = t.assurances.points;
+
   return (
     <>
-      <PageHero
-        eyebrow="OEM / ODM"
-        title="Your brand. Our factory. One accountable partner."
-        lede="Most of what HAILAN produces carries our partners' names. Private-label and custom development are not a side business — they are the business, with a studio, team and process built specifically for it."
-      />
+      <PageHero eyebrow={t.hero.eyebrow} title={t.hero.title} lede={t.hero.lede} />
 
       {/* Process */}
       <section className="py-24 md:py-32">
         <Container>
           <SectionHead
-            eyebrow="The program path"
-            title="From first brief to loaded container in six steps."
-            lede="Every step has a named owner, a deliverable and a timeline — so you always know where your program stands."
+            eyebrow={t.process.eyebrow}
+            title={t.process.title}
+            lede={t.process.lede}
           />
           <ol className="mt-16 grid gap-x-10 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
             {steps.map((s, i) => (
@@ -136,8 +86,8 @@ export default function OemOdmPage() {
         <Container className="relative">
           <SectionHead
             on="dark"
-            eyebrow="What we take off your plate"
-            title="Everything between your idea and your warehouse."
+            eyebrow={t.services.eyebrow}
+            title={t.services.title}
           />
           <div className="mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => (
@@ -162,15 +112,13 @@ export default function OemOdmPage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <SectionHead
-                eyebrow="Partnership terms"
-                title="Built on protections, not promises."
+                eyebrow={t.assurances.eyebrow}
+                title={t.assurances.title}
               />
             </Reveal>
             <Reveal delay={0.12} className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-mist-600">
-                A private-label relationship only works when the brand owner is
-                protected. These commitments are written into every OEM and ODM
-                agreement we sign:
+                {t.assurances.intro}
               </p>
               <ul className="mt-8 space-y-4">
                 {assurances.map((point) => (
@@ -191,11 +139,7 @@ export default function OemOdmPage() {
         </Container>
       </section>
 
-      <CtaBand
-        title="Bring us your next range."
-        lede="A construction target, a competitor sample or just a price point — that's enough to start. Feasibility feedback within days, samples within two weeks."
-        cta="Start an OEM conversation"
-      />
+      <CtaBand title={t.cta.title} lede={t.cta.lede} cta={t.cta.button} />
     </>
   );
 }

@@ -6,85 +6,52 @@ import { Reveal } from "@/components/motion/Reveal";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Container } from "@/components/ui/Container";
 import { SectionHead } from "@/components/ui/SectionHead";
+import { defaultLocale, isLocale } from "@/lib/i18n";
 import { stats } from "@/lib/site";
+import { getDictionary } from "../dictionaries";
 
-export const metadata: Metadata = {
-  title: "Manufacturing",
-  description:
-    "Inside HAILAN's 120,000 m² integrated campus: 25 production lines, MES-tracked automation and in-line quality control from raw polymer to batch-coded, export-packed product.",
-};
+interface ManufacturingPageProps {
+  params: Promise<{ lang: string }>;
+}
 
-const capabilities = [
-  {
-    value: stats.facility,
-    suffix: " m²",
-    label: "Integrated production campus",
-  },
-  { value: stats.lines, suffix: "", label: "Extrusion, calendering & tufting lines" },
-  { value: stats.capacity, suffix: "M m²", label: "Annual production capacity" },
-  { value: 24, suffix: "/7", label: "MES-monitored operation" },
-];
+export async function generateMetadata({
+  params,
+}: ManufacturingPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+  return {
+    title: dict.manufacturingPage.meta.title,
+    description: dict.manufacturingPage.meta.description,
+  };
+}
 
-const processSteps = [
-  {
-    step: "01",
-    title: "Material preparation",
-    text: "Virgin and certified-recycled polymer, plasticiser, stabiliser and fibre are batched by recipe, with every incoming lot tested against specification before release to production.",
-  },
-  {
-    step: "02",
-    title: "Extrusion & calendering",
-    text: "Twin-screw extruders and four-roll calenders form core and wear layers to tolerance, with in-line laser thickness gauging feeding corrections back to the line in real time.",
-  },
-  {
-    step: "03",
-    title: "Lamination & pressing",
-    text: "Decor film, wear layer and core are bonded under heat and pressure. Register-embossing plates align surface texture to the printed decor for natural depth.",
-  },
-  {
-    step: "04",
-    title: "Surface treatment & UV curing",
-    text: "Polyurethane coatings are applied and UV-cured to the gloss level and scratch resistance each program specifies — matte to satin, verified by gloss meter every hour.",
-  },
-  {
-    step: "05",
-    title: "Precision profiling",
-    text: "CNC double-end tenoners cut click profiles, bevels and formats to ±0.15 mm. PET panels move through routing cells for slats, perforations and project geometries.",
-  },
-  {
-    step: "06",
-    title: "Inspection, packing & loading",
-    text: "Every piece passes visual and dimensional inspection before batch-coded cartons are palletised, load-planned and containerised — photographed at every loading stage.",
-  },
-];
+export default async function ManufacturingPage({
+  params,
+}: ManufacturingPageProps) {
+  const { lang } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+  const t = dict.manufacturingPage;
 
-const automation = [
-  {
-    title: "MES production tracking",
-    text: "Every order is tracked through the manufacturing execution system from raw material lot to container number — the same data partners see in shipment documentation.",
-  },
-  {
-    title: "In-line measurement",
-    text: "Laser thickness gauges, colour spectrophotometers and vision systems measure continuously during production, not on samples after the fact.",
-  },
-  {
-    title: "Automated handling",
-    text: "Robotic palletising and AGV transfer between lines reduce handling damage and keep surface quality consistent through packing.",
-  },
-  {
-    title: "Energy & water systems",
-    text: "Rooftop photovoltaics supply 22% of electricity; a closed-loop system on the calendering lines cut process water intake by 17% year over year.",
-  },
-];
+  const capabilities = [
+    { value: stats.facility, suffix: " m²", label: t.capabilities[0] },
+    { value: stats.lines, suffix: "", label: t.capabilities[1] },
+    { value: stats.capacity, suffix: "M m²", label: t.capabilities[2] },
+    { value: 24, suffix: "/7", label: t.capabilities[3] },
+  ];
 
-export default function ManufacturingPage() {
+  const processSteps = t.process.steps.map((step, i) => ({
+    step: String(i + 1).padStart(2, "0"),
+    title: step.title,
+    text: step.text,
+  }));
+
+  const automation = t.automation.items;
+
   return (
     <>
-      <PageHero
-        eyebrow="Manufacturing"
-        title="From raw polymer to loaded container. One campus."
-        lede="Nothing critical is outsourced. Extrusion, lamination, tufting, profiling, inspection and packing all happen on one MES-tracked site in Jinhua — which is why the hundredth container matches the first."
-      />
+      <PageHero eyebrow={t.hero.eyebrow} title={t.hero.title} lede={t.hero.lede} />
 
       {/* Capability stats */}
       <section className="py-20 md:py-28">
@@ -109,9 +76,9 @@ export default function ManufacturingPage() {
       <section className="bg-mist-50 py-24 md:py-32">
         <Container>
           <SectionHead
-            eyebrow="The line"
-            title="Six stages. Zero handoffs outside our control."
-            lede="Each stage feeds measurement data forward to the next — so problems are corrected at the source, not discovered at inspection."
+            eyebrow={t.process.eyebrow}
+            title={t.process.title}
+            lede={t.process.lede}
           />
           <ol className="mt-16 grid gap-x-10 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
             {processSteps.map((step, i) => (
@@ -145,13 +112,13 @@ export default function ManufacturingPage() {
             <div className="lg:col-span-5">
               <SectionHead
                 on="dark"
-                eyebrow="Automation"
-                title="Machines measure. People decide."
-                lede="Automation at HAILAN is not about removing people — it is about removing variance. Instruments watch every metre of production so our engineers can act on data, not guesswork."
+                eyebrow={t.automation.eyebrow}
+                title={t.automation.title}
+                lede={t.automation.lede}
               />
               <Reveal delay={0.2}>
                 <ArrowLink href="/quality" on="dark" className="mt-10">
-                  How we control quality
+                  {t.automation.link}
                 </ArrowLink>
               </Reveal>
             </div>
@@ -181,26 +148,16 @@ export default function ManufacturingPage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <SectionHead
-                eyebrow="Export logistics"
-                title="Engineered up to the ship's rail."
+                eyebrow={t.logistics.eyebrow}
+                title={t.logistics.title}
               />
             </Reveal>
             <Reveal delay={0.12} className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-mist-600">
-                Manufacturing excellence means nothing if the container arrives
-                late or damaged. Our logistics team load-plans every shipment
-                for weight limits and mixed-product programs, produces
-                destination-correct export documentation, and photographs each
-                loading stage. Shanghai and Ningbo ports are within three hours
-                of the campus.
+                {t.logistics.text}
               </p>
               <ul className="mt-8 grid gap-3 text-[15px] text-mist-600 sm:grid-cols-2">
-                {[
-                  "Container mixing across product lines",
-                  "Road-weight-optimised load plans",
-                  "Destination-specific documentation",
-                  "98.6% on-time shipment record",
-                ].map((point) => (
+                {t.logistics.points.map((point) => (
                   <li key={point} className="flex items-center gap-3">
                     <span className="h-1.5 w-1.5 shrink-0 rotate-45 bg-azure-600" aria-hidden="true" />
                     {point}
@@ -212,11 +169,7 @@ export default function ManufacturingPage() {
         </Container>
       </section>
 
-      <CtaBand
-        title="Audit us. Seriously."
-        lede="The fastest way to trust a factory is to walk it. We host partner audits and factory visits year-round — or start with a live video tour."
-        cta="Arrange a factory visit"
-      />
+      <CtaBand title={t.cta.title} lede={t.cta.lede} cta={t.cta.button} />
     </>
   );
 }

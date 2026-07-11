@@ -373,5 +373,277 @@
       "note": "Membuka klien email Anda — atau tulis langsung kepada kami di",
       "status": "Draf email Anda telah dibuka di klien email Anda."
     }
+  },
+  "manufacturingPage": {
+    "meta": {
+      "title": "Manufaktur",
+      "description": "Di dalam kampus terintegrasi 120.000 m² HAILAN: 25 lini produksi, otomatisasi yang dilacak MES, dan kontrol kualitas in-line, dari polimer mentah hingga produk berkode batch yang dikemas untuk ekspor."
+    },
+    "hero": {
+      "eyebrow": "Manufaktur",
+      "title": "Dari polimer mentah hingga kontainer termuat. Satu kampus.",
+      "lede": "Tidak ada yang krusial disubkontrakkan. Ekstrusi, laminasi, tufting, pemprofilan, inspeksi, dan pengemasan semuanya berlangsung di satu lokasi yang dilacak MES di Jinhua — itulah sebabnya kontainer keseratus sama dengan yang pertama."
+    },
+    "capabilities": [
+      "Kampus produksi terintegrasi",
+      "Lini ekstrusi, kalender & tufting",
+      "Kapasitas produksi tahunan",
+      "Operasi yang dipantau MES"
+    ],
+    "process": {
+      "eyebrow": "Lini",
+      "title": "Enam tahap. Nol serah terima di luar kendali kami.",
+      "lede": "Setiap tahap meneruskan data pengukuran ke tahap berikutnya — sehingga masalah diperbaiki di sumbernya, bukan ditemukan saat inspeksi.",
+      "steps": [
+        {
+          "title": "Persiapan material",
+          "text": "Polimer murni dan daur ulang bersertifikat, plasticizer, penstabil, dan serat ditakar sesuai resep, dengan setiap lot masuk diuji terhadap spesifikasi sebelum dilepas ke produksi."
+        },
+        {
+          "title": "Ekstrusi & kalendering",
+          "text": "Ekstruder ulir ganda dan kalender empat rol membentuk lapisan inti dan aus sesuai toleransi, dengan pengukur ketebalan laser in-line yang mengumpankan koreksi kembali ke lini secara real-time."
+        },
+        {
+          "title": "Laminasi & pengepresan",
+          "text": "Film dekor, lapisan aus, dan inti direkatkan di bawah panas dan tekanan. Pelat emboss selaras menyelaraskan tekstur permukaan dengan dekor cetak untuk kedalaman alami."
+        },
+        {
+          "title": "Perlakuan permukaan & pengawetan UV",
+          "text": "Pelapis poliuretan diaplikasikan dan diawetkan UV sesuai tingkat kilap dan ketahanan gores yang ditentukan setiap program — dari matte hingga satin, diverifikasi dengan gloss meter setiap jam."
+        },
+        {
+          "title": "Pemprofilan presisi",
+          "text": "Mesin tenon dua ujung CNC memotong profil klik, bevel, dan format hingga ±0,15 mm. Panel PET melewati sel routing untuk bilah, perforasi, dan geometri proyek."
+        },
+        {
+          "title": "Inspeksi, pengemasan & pemuatan",
+          "text": "Setiap keping melewati inspeksi visual dan dimensi sebelum karton berkode batch dipaletkan, direncanakan pemuatannya, dan dimasukkan ke kontainer — difoto pada setiap tahap pemuatan."
+        }
+      ]
+    },
+    "automation": {
+      "eyebrow": "Otomatisasi",
+      "title": "Mesin mengukur. Manusia memutuskan.",
+      "lede": "Otomatisasi di HAILAN bukan tentang menghilangkan orang — melainkan menghilangkan variasi. Instrumen mengawasi setiap meter produksi agar insinyur kami bertindak berdasarkan data, bukan tebakan.",
+      "link": "Cara kami mengontrol kualitas",
+      "items": [
+        {
+          "title": "Pelacakan produksi MES",
+          "text": "Setiap pesanan dilacak melalui sistem eksekusi manufaktur dari lot bahan baku hingga nomor kontainer — data yang sama yang dilihat mitra dalam dokumentasi pengiriman."
+        },
+        {
+          "title": "Pengukuran in-line",
+          "text": "Pengukur ketebalan laser, spektrofotometer warna, dan sistem visi mengukur terus-menerus selama produksi, bukan pada sampel setelahnya."
+        },
+        {
+          "title": "Penanganan otomatis",
+          "text": "Paletisasi robotik dan transfer AGV antarlini mengurangi kerusakan penanganan dan menjaga kualitas permukaan tetap konsisten hingga pengemasan."
+        },
+        {
+          "title": "Sistem energi & air",
+          "text": "Fotovoltaik atap memasok 22% listrik; sistem loop tertutup pada lini kalendering memangkas asupan air proses sebesar 17% dari tahun ke tahun."
+        }
+      ]
+    },
+    "logistics": {
+      "eyebrow": "Logistik ekspor",
+      "title": "Direkayasa hingga ke pagar kapal.",
+      "text": "Keunggulan manufaktur tidak berarti apa-apa jika kontainer tiba terlambat atau rusak. Tim logistik kami merencanakan muatan setiap pengiriman untuk batas berat dan program multi-produk, menghasilkan dokumentasi ekspor yang sesuai tujuan, dan memfoto setiap tahap pemuatan. Pelabuhan Shanghai dan Ningbo berada dalam tiga jam dari kampus.",
+      "points": [
+        "Pencampuran kontainer lintas lini produk",
+        "Rencana muatan yang dioptimalkan sesuai berat jalan",
+        "Dokumentasi khusus tujuan",
+        "Rekam jejak pengiriman tepat waktu 98,6%"
+      ]
+    },
+    "cta": {
+      "title": "Audit kami. Sungguh.",
+      "lede": "Cara tercepat untuk memercayai sebuah pabrik adalah dengan menyusurinya. Kami menyelenggarakan audit mitra dan kunjungan pabrik sepanjang tahun — atau mulai dengan tur video langsung.",
+      "button": "Atur kunjungan pabrik"
+    }
+  },
+  "oemOdmPage": {
+    "meta": {
+      "title": "OEM / ODM",
+      "description": "Program private-label dan pengembangan kustom untuk lantai dan permukaan akustik: pengembangan dekor internal, sampling 7–10 hari, kemasan siap ritel, dan paket kepatuhan lengkap."
+    },
+    "hero": {
+      "eyebrow": "OEM / ODM",
+      "title": "Merek Anda. Pabrik kami. Satu mitra yang bertanggung jawab.",
+      "lede": "Sebagian besar yang diproduksi HAILAN membawa nama mitra kami. Private-label dan pengembangan kustom bukan bisnis sampingan — itulah bisnisnya, dengan studio, tim, dan proses yang dibangun khusus untuk itu."
+    },
+    "process": {
+      "eyebrow": "Jalur program",
+      "title": "Dari brief pertama hingga kontainer termuat dalam enam langkah.",
+      "lede": "Setiap langkah memiliki penanggung jawab, hasil kerja, dan lini masa — sehingga Anda selalu tahu di mana posisi program Anda.",
+      "steps": [
+        {
+          "title": "Brief & kelayakan",
+          "meta": "2–5 hari",
+          "text": "Bagikan pasar, posisi harga, konstruksi target, dan volume Anda. Dalam beberapa hari Anda menerima pembacaan kelayakan: apa yang kami rekomendasikan, biayanya, dan seberapa cepat pengirimannya."
+        },
+        {
+          "title": "Pengembangan dekor & konstruksi",
+          "meta": "1–2 minggu",
+          "text": "Studio desain kami mengembangkan dekor, gradasi warna, dan tekstur permukaan sesuai arah merek Anda — atau merekayasa ulang rangkaian Anda yang ada untuk biaya dan kinerja yang lebih baik."
+        },
+        {
+          "title": "Sampling",
+          "meta": "7–10 hari",
+          "text": "Studio sampling khusus memproduksi sampel yang persis seperti pabrik menggunakan peralatan laboratorium — konstruksi yang Anda setujui adalah konstruksi yang dikirim."
+        },
+        {
+          "title": "Produksi percontohan",
+          "meta": "2–3 minggu",
+          "text": "Uji percontohan memvalidasi konstruksi pada kecepatan lini. Anda menerima sampel percontohan, hasil laboratorium lengkap, dan bukti kemasan akhir sebelum berkomitmen pada volume."
+        },
+        {
+          "title": "Produksi massal",
+          "meta": "25–35 hari",
+          "text": "Produksi dijadwalkan sesuai perkiraan Anda, dilacak dalam MES, dan diinspeksi di setiap gerbang. Waktu tunggu standar berkisar 25–35 hari sejak konfirmasi pesanan."
+        },
+        {
+          "title": "Logistik & pemesanan ulang",
+          "meta": "Berkelanjutan",
+          "text": "Kontainer yang direncanakan muatannya, dokumen yang sesuai tujuan, dan pemuatan yang difoto. Program berjalan menyimpan stok pengaman dan perkakas untuk pemesanan ulang yang cepat."
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "Apa yang kami tangani untuk Anda",
+      "title": "Segala hal antara ide Anda dan gudang Anda.",
+      "items": [
+        {
+          "title": "Manufaktur private-label",
+          "text": "Merek Anda, kemasan Anda, spesifikasi Anda — diproduksi di bawah sistem kualitas kami. Dari desain karton hingga papan pajang, semuanya dikirim siap ritel."
+        },
+        {
+          "title": "Pengembangan produk kustom",
+          "text": "Konstruksi, ketebalan, format, dan target akustik baru direkayasa untuk tingkat harga pasar Anda — dengan perkakas, pustaka film, dan pemasok serat kami di belakangnya."
+        },
+        {
+          "title": "Studio dekor & warna",
+          "text": "Desainer internal mengikuti tren interior Eropa dan Amerika Utara dan menerjemahkannya menjadi dekor kayu, batu, tekstil, dan abstrak yang eksklusif untuk program Anda."
+        },
+        {
+          "title": "Merchandising & sampling",
+          "text": "Papan sampel, folder, set rantai, dan pajangan toko diproduksi di studio yang sama dengan produk — dicocokkan dengan desain Anda dan dikirim bersama pesanan pertama."
+        },
+        {
+          "title": "Kepemilikan kepatuhan",
+          "text": "Kami memelihara sertifikat yang dituntut pasar Anda — CE, FloorScore®, REACH, klasifikasi kebakaran — dan mengirim paket kepatuhan lengkap dengan setiap program."
+        },
+        {
+          "title": "Manajemen program",
+          "text": "Satu manajer proyek berbahasa Inggris menangani program Anda dari brief hingga pemesanan ulang, dengan komitmen respons 24 jam dan visibilitas penuh atas status produksi."
+        }
+      ]
+    },
+    "assurances": {
+      "eyebrow": "Ketentuan kemitraan",
+      "title": "Dibangun atas perlindungan, bukan janji.",
+      "intro": "Hubungan private-label hanya berhasil ketika pemilik merek terlindungi. Komitmen ini tertulis dalam setiap perjanjian OEM dan ODM yang kami tandatangani:",
+      "points": [
+        "Desain dan dekor Anda tetap milik Anda — eksklusivitas bersifat kontraktual",
+        "Konstruksi transparan: spesifikasi material diungkapkan sepenuhnya",
+        "Persetujuan percontohan sebelum komitmen volume apa pun",
+        "Stok pengaman dan perkakas dicadangkan untuk program yang berjalan"
+      ]
+    },
+    "cta": {
+      "title": "Bawakan rangkaian Anda berikutnya.",
+      "lede": "Target konstruksi, sampel pesaing, atau sekadar tingkat harga — itu sudah cukup untuk memulai. Umpan balik kelayakan dalam beberapa hari, sampel dalam dua minggu.",
+      "button": "Mulai percakapan OEM"
+    }
+  },
+  "qualityPage": {
+    "meta": {
+      "title": "Kualitas",
+      "description": "Satu sistem kualitas mengatur setiap lini HAILAN: pengujian bahan masuk, pemeriksaan in-line setiap jam, verifikasi laboratorium, dan ketertelusuran batch penuh dari lot bahan baku hingga kontainer."
+    },
+    "hero": {
+      "eyebrow": "Kualitas",
+      "title": "Kontainer keseratus harus sama dengan sampel pertama.",
+      "lede": "Kalimat tunggal itu adalah seluruh filosofi kualitas kami. Segala hal di halaman ini — gerbang, laboratorium, ketertelusuran — ada untuk mewujudkannya, pengiriman demi pengiriman."
+    },
+    "gates": {
+      "eyebrow": "Sistem",
+      "title": "Empat gerbang antara bahan baku dan gudang Anda.",
+      "lede": "Kualitas bukan departemen yang menginspeksi di akhir. Ia serangkaian gerbang yang harus dilewati produk — dan setiap gerbang menyimpan catatan.",
+      "gateLabel": "Gerbang",
+      "items": [
+        {
+          "title": "Bahan masuk",
+          "text": "Setiap lot polimer, film, benang, dan aditif disampel dan diuji terhadap spesifikasi pembelian sebelum dilepas. Lot yang tidak sesuai dikarantina dan dikembalikan — tidak pernah mencapai lini."
+        },
+        {
+          "title": "In-line, setiap jam",
+          "text": "Ketebalan, dimensi, delta-E warna, kilap, dan kualitas permukaan diukur setiap jam pada setiap lini yang berjalan dan dicatat terhadap kode batch. Penyimpangan memicu koreksi di mesin, bukan pada inspeksi akhir."
+        },
+        {
+          "title": "Verifikasi laboratorium",
+          "text": "Laboratorium di lokasi kami menjalankan uji aus, stabilitas dimensi, curl, kekuatan kupas, akustik, dan ketahanan warna pada setiap batch produksi — dengan metode ISO, EN, dan ASTM yang sama seperti laboratorium pihak ketiga."
+        },
+        {
+          "title": "Inspeksi pra-pengiriman",
+          "text": "Barang jadi diinspeksi pada AQL 2,5 sebelum pengemasan, dan sekali lagi saat pemuatan kontainer dengan catatan foto. Mitra menerima data inspeksi bersama dokumen pengiriman mereka."
+        }
+      ]
+    },
+    "lab": {
+      "eyebrow": "Laboratorium di lokasi",
+      "title": "Diuji sesuai metode yang diatur pasar Anda.",
+      "lede": "Laboratorium kami menjalankan prosedur ISO, EN, dan ASTM yang sama seperti badan sertifikasi — sehingga hasil pihak ketiga tidak pernah mengejutkan kami, atau Anda.",
+      "caption": "Uji laboratorium dan standar rujukannya",
+      "colTest": "Uji",
+      "colMethod": "Metode",
+      "tests": [
+        "Ketahanan abrasi & aus",
+        "Stabilitas dimensi & curl",
+        "Indentasi residual",
+        "Ketahanan warna terhadap cahaya",
+        "Reaksi terhadap api",
+        "Penyerapan suara (panel PET)",
+        "Pengurangan suara benturan",
+        "Emisi VOC",
+        "Ketahanan slip",
+        "Kekuatan kupas & ikatan"
+      ]
+    },
+    "trace": {
+      "eyebrow": "Ketertelusuran",
+      "title": "Setiap karton menjawab untuk dirinya sendiri.",
+      "para1": "Setiap karton yang dikirim HAILAN membawa kode batch yang mengarah — di dalam MES kami — ke lot bahan baku, lini produksi, shift, pengukuran in-line, dan hasil laboratorium di baliknya. Jika mitra mengajukan klaim, kami menjawab dengan data dalam 48 jam, bukan dengan opini.",
+      "para2": "Catatan yang sama menyuplai putaran perbaikan berkelanjutan kami: tingkat klaim, hasil lulus pertama, dan konsistensi warna ditinjau mingguan oleh insinyur yang sama yang menjalankan lini."
+    },
+    "certs": {
+      "eyebrow": "Sertifikasi",
+      "title": "Dokumentasi yang lolos bea cukai dan spesifikasi.",
+      "lede": "Sertifikat dipelihara secara berkelanjutan dan dikirim sebagai paket kepatuhan dengan setiap program — siap untuk importir, penentu spesifikasi, dan jaringan ritel."
+    },
+    "cta": {
+      "title": "Minta paket kepatuhan kami.",
+      "lede": "Laporan uji, sertifikat, dan lembar data teknis untuk lini produk mana pun — disusun berdasarkan pasar tujuan, dikirim dalam satu hari kerja.",
+      "button": "Minta dokumentasi"
+    }
+  },
+  "linusPage": {
+    "meta": {
+      "title": "Linus Lin — Pengembangan Bisnis & Pemasaran",
+      "description": "Hubungi Linus Lin, Pengembangan Bisnis & Pemasaran di HAILAN."
+    },
+    "hero": {
+      "role": "Pengembangan Bisnis & Pemasaran"
+    },
+    "getInTouch": "Hubungi kami",
+    "labels": {
+      "email": "Email"
+    },
+    "wecomValue": "Pindai untuk terhubung",
+    "wecomNote": "Lihat kode QR di sebelah.",
+    "linkedinValue": "Profil segera hadir",
+    "companyTagline": "Produsen Bahan Bangunan Dekoratif Global",
+    "wecomHeading": "WeCom",
+    "wecomScan": "Pindai untuk terhubung melalui WeCom."
   }
 }

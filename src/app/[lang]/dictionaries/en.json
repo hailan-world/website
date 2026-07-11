@@ -307,5 +307,277 @@
       "note": "Opens your email client — or write to us directly at",
       "status": "Your email draft has been opened in your mail client."
     }
+  },
+  "manufacturingPage": {
+    "meta": {
+      "title": "Manufacturing",
+      "description": "Inside HAILAN's 120,000 m² integrated campus: 25 production lines, MES-tracked automation and in-line quality control from raw polymer to batch-coded, export-packed product."
+    },
+    "hero": {
+      "eyebrow": "Manufacturing",
+      "title": "From raw polymer to loaded container. One campus.",
+      "lede": "Nothing critical is outsourced. Extrusion, lamination, tufting, profiling, inspection and packing all happen on one MES-tracked site in Jinhua — which is why the hundredth container matches the first."
+    },
+    "capabilities": [
+      "Integrated production campus",
+      "Extrusion, calendering & tufting lines",
+      "Annual production capacity",
+      "MES-monitored operation"
+    ],
+    "process": {
+      "eyebrow": "The line",
+      "title": "Six stages. Zero handoffs outside our control.",
+      "lede": "Each stage feeds measurement data forward to the next — so problems are corrected at the source, not discovered at inspection.",
+      "steps": [
+        {
+          "title": "Material preparation",
+          "text": "Virgin and certified-recycled polymer, plasticiser, stabiliser and fibre are batched by recipe, with every incoming lot tested against specification before release to production."
+        },
+        {
+          "title": "Extrusion & calendering",
+          "text": "Twin-screw extruders and four-roll calenders form core and wear layers to tolerance, with in-line laser thickness gauging feeding corrections back to the line in real time."
+        },
+        {
+          "title": "Lamination & pressing",
+          "text": "Decor film, wear layer and core are bonded under heat and pressure. Register-embossing plates align surface texture to the printed decor for natural depth."
+        },
+        {
+          "title": "Surface treatment & UV curing",
+          "text": "Polyurethane coatings are applied and UV-cured to the gloss level and scratch resistance each program specifies — matte to satin, verified by gloss meter every hour."
+        },
+        {
+          "title": "Precision profiling",
+          "text": "CNC double-end tenoners cut click profiles, bevels and formats to ±0.15 mm. PET panels move through routing cells for slats, perforations and project geometries."
+        },
+        {
+          "title": "Inspection, packing & loading",
+          "text": "Every piece passes visual and dimensional inspection before batch-coded cartons are palletised, load-planned and containerised — photographed at every loading stage."
+        }
+      ]
+    },
+    "automation": {
+      "eyebrow": "Automation",
+      "title": "Machines measure. People decide.",
+      "lede": "Automation at HAILAN is not about removing people — it is about removing variance. Instruments watch every metre of production so our engineers can act on data, not guesswork.",
+      "link": "How we control quality",
+      "items": [
+        {
+          "title": "MES production tracking",
+          "text": "Every order is tracked through the manufacturing execution system from raw material lot to container number — the same data partners see in shipment documentation."
+        },
+        {
+          "title": "In-line measurement",
+          "text": "Laser thickness gauges, colour spectrophotometers and vision systems measure continuously during production, not on samples after the fact."
+        },
+        {
+          "title": "Automated handling",
+          "text": "Robotic palletising and AGV transfer between lines reduce handling damage and keep surface quality consistent through packing."
+        },
+        {
+          "title": "Energy & water systems",
+          "text": "Rooftop photovoltaics supply 22% of electricity; a closed-loop system on the calendering lines cut process water intake by 17% year over year."
+        }
+      ]
+    },
+    "logistics": {
+      "eyebrow": "Export logistics",
+      "title": "Engineered up to the ship's rail.",
+      "text": "Manufacturing excellence means nothing if the container arrives late or damaged. Our logistics team load-plans every shipment for weight limits and mixed-product programs, produces destination-correct export documentation, and photographs each loading stage. Shanghai and Ningbo ports are within three hours of the campus.",
+      "points": [
+        "Container mixing across product lines",
+        "Road-weight-optimised load plans",
+        "Destination-specific documentation",
+        "98.6% on-time shipment record"
+      ]
+    },
+    "cta": {
+      "title": "Audit us. Seriously.",
+      "lede": "The fastest way to trust a factory is to walk it. We host partner audits and factory visits year-round — or start with a live video tour.",
+      "button": "Arrange a factory visit"
+    }
+  },
+  "oemOdmPage": {
+    "meta": {
+      "title": "OEM / ODM",
+      "description": "Private-label and custom development programs for flooring and acoustic surfaces: in-house decor development, 7–10 day sampling, retail-ready packaging and full compliance packs."
+    },
+    "hero": {
+      "eyebrow": "OEM / ODM",
+      "title": "Your brand. Our factory. One accountable partner.",
+      "lede": "Most of what HAILAN produces carries our partners' names. Private-label and custom development are not a side business — they are the business, with a studio, team and process built specifically for it."
+    },
+    "process": {
+      "eyebrow": "The program path",
+      "title": "From first brief to loaded container in six steps.",
+      "lede": "Every step has a named owner, a deliverable and a timeline — so you always know where your program stands.",
+      "steps": [
+        {
+          "title": "Brief & feasibility",
+          "meta": "2–5 days",
+          "text": "Share your market, price position, target constructions and volumes. Within days you receive a feasibility read: what we recommend, what it costs and how fast it ships."
+        },
+        {
+          "title": "Decor & construction development",
+          "meta": "1–2 weeks",
+          "text": "Our design studio develops decors, colourways and surface textures to your brand direction — or engineers your existing range for better cost and performance."
+        },
+        {
+          "title": "Sampling",
+          "meta": "7–10 days",
+          "text": "The dedicated sampling studio produces factory-exact samples on laboratory equipment — the construction you approve is the construction that ships."
+        },
+        {
+          "title": "Pilot production",
+          "meta": "2–3 weeks",
+          "text": "A pilot run validates the construction at line speed. You receive pilot samples, full lab results and final packaging proofs before committing to volume."
+        },
+        {
+          "title": "Mass production",
+          "meta": "25–35 days",
+          "text": "Production is scheduled against your forecast, tracked in MES and inspected at every gate. Standard lead times run 25–35 days from order confirmation."
+        },
+        {
+          "title": "Logistics & reorders",
+          "meta": "Ongoing",
+          "text": "Load-planned containers, destination-correct documents and photographed loading. Running programs hold safety stock and tooling for fast reorders."
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "What we take off your plate",
+      "title": "Everything between your idea and your warehouse.",
+      "items": [
+        {
+          "title": "Private-label manufacturing",
+          "text": "Your brand, your packaging, your specifications — produced under our quality system. From carton artwork to display boards, everything ships retail-ready."
+        },
+        {
+          "title": "Custom product development",
+          "text": "New constructions, thicknesses, formats and acoustic targets engineered to your market's price point — with our tooling, film library and fibre suppliers behind it."
+        },
+        {
+          "title": "Decor & colour studio",
+          "text": "In-house designers track European and North American interior trends and translate them into wood, stone, textile and abstract decors exclusive to your program."
+        },
+        {
+          "title": "Merchandising & sampling",
+          "text": "Sample boards, folders, chain sets and shop displays produced in the same studio as the product — matched to your artwork and shipped with first orders."
+        },
+        {
+          "title": "Compliance ownership",
+          "text": "We maintain the certificates your market demands — CE, FloorScore®, REACH, fire classification — and ship a complete compliance pack with every program."
+        },
+        {
+          "title": "Program management",
+          "text": "One English-speaking project manager owns your program from brief to reorder, with a 24-hour response commitment and full visibility into production status."
+        }
+      ]
+    },
+    "assurances": {
+      "eyebrow": "Partnership terms",
+      "title": "Built on protections, not promises.",
+      "intro": "A private-label relationship only works when the brand owner is protected. These commitments are written into every OEM and ODM agreement we sign:",
+      "points": [
+        "Your designs and decors remain your property — exclusivity is contractual",
+        "Transparent constructions: full material specifications disclosed",
+        "Pilot approval before any volume commitment",
+        "Safety stock and tooling reserved for running programs"
+      ]
+    },
+    "cta": {
+      "title": "Bring us your next range.",
+      "lede": "A construction target, a competitor sample or just a price point — that's enough to start. Feasibility feedback within days, samples within two weeks.",
+      "button": "Start an OEM conversation"
+    }
+  },
+  "qualityPage": {
+    "meta": {
+      "title": "Quality",
+      "description": "One quality system governs every HAILAN line: incoming material testing, hourly in-line checks, laboratory verification and full batch traceability from raw material lot to container."
+    },
+    "hero": {
+      "eyebrow": "Quality",
+      "title": "The hundredth container must match the first sample.",
+      "lede": "That single sentence is our entire quality philosophy. Everything on this page — the gates, the laboratory, the traceability — exists to make it true, shipment after shipment."
+    },
+    "gates": {
+      "eyebrow": "The system",
+      "title": "Four gates between raw material and your warehouse.",
+      "lede": "Quality is not a department that inspects at the end. It is a series of gates a product must pass through — and each gate keeps records.",
+      "gateLabel": "Gate",
+      "items": [
+        {
+          "title": "Incoming materials",
+          "text": "Every lot of polymer, film, yarn and additive is sampled and tested against purchase specification before release. Non-conforming lots are quarantined and returned — they never reach a line."
+        },
+        {
+          "title": "In-line, every hour",
+          "text": "Thickness, dimensions, colour delta-E, gloss and surface quality are measured hourly on every running line and logged against the batch code. Drift triggers correction at the machine, not at final inspection."
+        },
+        {
+          "title": "Laboratory verification",
+          "text": "Our on-site laboratory runs wear, dimensional stability, curl, peel strength, acoustic and colourfastness tests on every production batch — to the same ISO, EN and ASTM methods third-party labs use."
+        },
+        {
+          "title": "Pre-shipment inspection",
+          "text": "Finished goods are inspected to AQL 2.5 before packing, and again at container loading with photographic records. Partners receive inspection data with their shipping documents."
+        }
+      ]
+    },
+    "lab": {
+      "eyebrow": "On-site laboratory",
+      "title": "Tested to the methods your market regulates.",
+      "lede": "Our laboratory runs the same ISO, EN and ASTM procedures as the certification bodies — so third-party results never surprise us, or you.",
+      "caption": "Laboratory tests and their reference standards",
+      "colTest": "Test",
+      "colMethod": "Method",
+      "tests": [
+        "Abrasion & wear resistance",
+        "Dimensional stability & curl",
+        "Residual indentation",
+        "Colour fastness to light",
+        "Reaction to fire",
+        "Sound absorption (PET panels)",
+        "Impact sound reduction",
+        "VOC emissions",
+        "Slip resistance",
+        "Peel & bond strength"
+      ]
+    },
+    "trace": {
+      "eyebrow": "Traceability",
+      "title": "Every carton answers for itself.",
+      "para1": "Every carton HAILAN ships carries a batch code that resolves — inside our MES — to the raw material lots, the production line, the shift, the in-line measurements and the laboratory results behind it. If a partner ever raises a claim, we answer with data within 48 hours, not with opinions.",
+      "para2": "The same records feed our continuous improvement loop: claim rates, first-pass yield and colour consistency are reviewed weekly by the same engineers who run the lines."
+    },
+    "certs": {
+      "eyebrow": "Certifications",
+      "title": "Documentation that clears customs and specifications.",
+      "lede": "Certificates are maintained continuously and shipped as a compliance pack with every program — ready for importers, specifiers and retail chains."
+    },
+    "cta": {
+      "title": "Request our compliance pack.",
+      "lede": "Test reports, certificates and technical data sheets for any product line — organised by destination market, delivered within one business day.",
+      "button": "Request documentation"
+    }
+  },
+  "linusPage": {
+    "meta": {
+      "title": "Linus Lin — Business Development & Marketing",
+      "description": "Contact Linus Lin, Business Development & Marketing at HAILAN."
+    },
+    "hero": {
+      "role": "Business Development & Marketing"
+    },
+    "getInTouch": "Get in touch",
+    "labels": {
+      "email": "Email"
+    },
+    "wecomValue": "Scan to connect",
+    "wecomNote": "See the QR code opposite.",
+    "linkedinValue": "Profile coming soon",
+    "companyTagline": "Global Decorative Building Materials Manufacturer",
+    "wecomHeading": "WeCom",
+    "wecomScan": "Scan to connect via WeCom."
   }
 }

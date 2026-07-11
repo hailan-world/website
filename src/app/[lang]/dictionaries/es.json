@@ -307,5 +307,277 @@
       "note": "Abre su cliente de correo — o escríbanos directamente a",
       "status": "El borrador de correo se ha abierto en su cliente de correo."
     }
+  },
+  "manufacturingPage": {
+    "meta": {
+      "title": "Fabricación",
+      "description": "Dentro del complejo integrado de 120 000 m² de HAILAN: 25 líneas de producción, automatización con seguimiento MES y control de calidad en línea, desde el polímero en bruto hasta el producto con código de lote y embalaje para exportación."
+    },
+    "hero": {
+      "eyebrow": "Fabricación",
+      "title": "Del polímero en bruto al contenedor cargado. Un solo complejo.",
+      "lede": "Nada crítico se subcontrata. Extrusión, laminación, tufting, perfilado, inspección y embalaje ocurren en un mismo sitio con seguimiento MES en Jinhua — por eso el contenedor número cien es idéntico al primero."
+    },
+    "capabilities": [
+      "Complejo de producción integrado",
+      "Líneas de extrusión, calandrado y tufting",
+      "Capacidad de producción anual",
+      "Operación supervisada por MES"
+    ],
+    "process": {
+      "eyebrow": "La línea",
+      "title": "Seis etapas. Ningún traspaso fuera de nuestro control.",
+      "lede": "Cada etapa transmite sus datos de medición a la siguiente — los problemas se corrigen en el origen, no se descubren en la inspección.",
+      "steps": [
+        {
+          "title": "Preparación de materiales",
+          "text": "El polímero virgen y reciclado certificado, el plastificante, el estabilizante y la fibra se dosifican por receta, y cada lote entrante se prueba frente a la especificación antes de pasar a producción."
+        },
+        {
+          "title": "Extrusión y calandrado",
+          "text": "Extrusoras de doble husillo y calandras de cuatro rodillos conforman el núcleo y la capa de desgaste a la tolerancia requerida, con medición láser de espesor en línea que devuelve las correcciones a la línea en tiempo real."
+        },
+        {
+          "title": "Laminación y prensado",
+          "text": "La lámina decorativa, la capa de desgaste y el núcleo se unen bajo calor y presión. Las placas de gofrado en registro alinean la textura superficial con el decorado impreso para lograr profundidad natural."
+        },
+        {
+          "title": "Tratamiento de superficie y curado UV",
+          "text": "Los recubrimientos de poliuretano se aplican y se curan con UV al nivel de brillo y resistencia al rayado que especifica cada programa — del mate al satinado, verificado con brillómetro cada hora."
+        },
+        {
+          "title": "Perfilado de precisión",
+          "text": "Las escopleadoras de doble extremo CNC mecanizan perfiles clic, biseles y formatos a ±0,15 mm. Los paneles PET pasan por celdas de fresado para lamas, perforaciones y geometrías de proyecto."
+        },
+        {
+          "title": "Inspección, embalaje y carga",
+          "text": "Cada pieza pasa una inspección visual y dimensional antes de que las cajas con código de lote se paleticen, se planifique su carga y se contenericen — fotografiadas en cada etapa de carga."
+        }
+      ]
+    },
+    "automation": {
+      "eyebrow": "Automatización",
+      "title": "Las máquinas miden. Las personas deciden.",
+      "lede": "La automatización en HAILAN no busca eliminar a las personas, sino eliminar la variabilidad. Los instrumentos vigilan cada metro de producción para que nuestros ingenieros actúen con datos, no con conjeturas.",
+      "link": "Cómo controlamos la calidad",
+      "items": [
+        {
+          "title": "Seguimiento de producción MES",
+          "text": "Cada pedido se rastrea en el sistema de ejecución de fabricación, del lote de materia prima al número de contenedor — los mismos datos que los socios ven en la documentación de envío."
+        },
+        {
+          "title": "Medición en línea",
+          "text": "Medidores láser de espesor, espectrofotómetros de color y sistemas de visión miden de forma continua durante la producción, no en muestras a posteriori."
+        },
+        {
+          "title": "Manipulación automatizada",
+          "text": "La paletización robotizada y el transporte por AGV entre líneas reducen los daños de manipulación y mantienen constante la calidad de la superficie hasta el embalaje."
+        },
+        {
+          "title": "Energía y agua",
+          "text": "La fotovoltaica en cubierta suministra el 22 % de la electricidad; un sistema de circuito cerrado en las líneas de calandrado redujo el consumo de agua de proceso un 17 % interanual."
+        }
+      ]
+    },
+    "logistics": {
+      "eyebrow": "Logística de exportación",
+      "title": "Ingeniería hasta la borda del barco.",
+      "text": "La excelencia en fabricación no vale nada si el contenedor llega tarde o dañado. Nuestro equipo de logística planifica la carga de cada envío según los límites de peso y los programas multiproducto, produce documentación de exportación acorde al destino y fotografía cada etapa de carga. Los puertos de Shanghái y Ningbo están a menos de tres horas del complejo.",
+      "points": [
+        "Consolidación de contenedores entre líneas de producto",
+        "Planes de carga optimizados según el peso en carretera",
+        "Documentación específica del destino",
+        "98,6 % de envíos puntuales"
+      ]
+    },
+    "cta": {
+      "title": "Audítenos. En serio.",
+      "lede": "La forma más rápida de confiar en una fábrica es recorrerla. Acogemos auditorías de socios y visitas a fábrica todo el año — o empiece con un recorrido en vídeo en directo.",
+      "button": "Concertar una visita a fábrica"
+    }
+  },
+  "oemOdmPage": {
+    "meta": {
+      "title": "OEM / ODM",
+      "description": "Programas de marca blanca y desarrollo a medida para suelos y superficies acústicas: desarrollo de decorados propio, muestreo en 7–10 días, embalaje listo para la venta y dosieres de conformidad completos."
+    },
+    "hero": {
+      "eyebrow": "OEM / ODM",
+      "title": "Su marca. Nuestra fábrica. Un socio responsable.",
+      "lede": "La mayor parte de lo que produce HAILAN lleva el nombre de nuestros socios. La marca blanca y el desarrollo a medida no son un negocio secundario — son el negocio, con un estudio, un equipo y un proceso creados específicamente para ello."
+    },
+    "process": {
+      "eyebrow": "La ruta del programa",
+      "title": "Del primer briefing al contenedor cargado en seis pasos.",
+      "lede": "Cada paso tiene un responsable asignado, un entregable y un plazo — así siempre sabe en qué punto está su programa.",
+      "steps": [
+        {
+          "title": "Briefing y viabilidad",
+          "meta": "2–5 días",
+          "text": "Comparta su mercado, posicionamiento de precio, construcciones objetivo y volúmenes. En pocos días recibe un análisis de viabilidad: lo que recomendamos, cuánto cuesta y en cuánto se envía."
+        },
+        {
+          "title": "Desarrollo de decorado y construcción",
+          "meta": "1–2 semanas",
+          "text": "Nuestro estudio de diseño desarrolla decorados, gamas de color y texturas de superficie según la dirección de su marca — o rediseña su gama actual para mejorar coste y rendimiento."
+        },
+        {
+          "title": "Muestreo",
+          "meta": "7–10 días",
+          "text": "El estudio de muestreo dedicado produce muestras idénticas a las de fábrica con equipo de laboratorio — la construcción que usted aprueba es la que se envía."
+        },
+        {
+          "title": "Producción piloto",
+          "meta": "2–3 semanas",
+          "text": "Una tirada piloto valida la construcción a velocidad de línea. Recibe muestras piloto, resultados de laboratorio completos y pruebas finales de embalaje antes de comprometer volumen."
+        },
+        {
+          "title": "Producción en serie",
+          "meta": "25–35 días",
+          "text": "La producción se programa según su previsión, se rastrea en el MES y se inspecciona en cada punto de control. Los plazos estándar son de 25 a 35 días desde la confirmación del pedido."
+        },
+        {
+          "title": "Logística y reposiciones",
+          "meta": "Continuo",
+          "text": "Contenedores con carga planificada, documentos acordes al destino y carga fotografiada. Los programas en curso mantienen stock de seguridad y utillaje para reposiciones rápidas."
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "Lo que le quitamos de encima",
+      "title": "Todo lo que hay entre su idea y su almacén.",
+      "items": [
+        {
+          "title": "Fabricación de marca blanca",
+          "text": "Su marca, su embalaje, sus especificaciones — producidos bajo nuestro sistema de calidad. Del arte de las cajas a los expositores, todo se envía listo para la venta."
+        },
+        {
+          "title": "Desarrollo de producto a medida",
+          "text": "Nuevas construcciones, espesores, formatos y objetivos acústicos diseñados para el nivel de precio de su mercado — con nuestro utillaje, biblioteca de láminas y proveedores de fibra detrás."
+        },
+        {
+          "title": "Estudio de decorado y color",
+          "text": "Los diseñadores internos siguen las tendencias de interiorismo de Europa y Norteamérica y las traducen en decorados de madera, piedra, textil y abstractos exclusivos de su programa."
+        },
+        {
+          "title": "Merchandising y muestreo",
+          "text": "Muestrarios, carpetas, juegos de cadena y expositores producidos en el mismo estudio que el producto — a juego con su arte y enviados con los primeros pedidos."
+        },
+        {
+          "title": "Gestión de la conformidad",
+          "text": "Mantenemos los certificados que exige su mercado — CE, FloorScore®, REACH, clasificación al fuego — y enviamos un dosier de conformidad completo con cada programa."
+        },
+        {
+          "title": "Gestión de programa",
+          "text": "Un jefe de proyecto angloparlante lidera su programa del briefing a la reposición, con un compromiso de respuesta de 24 horas y visibilidad total del estado de producción."
+        }
+      ]
+    },
+    "assurances": {
+      "eyebrow": "Términos de colaboración",
+      "title": "Construido sobre protecciones, no sobre promesas.",
+      "intro": "Una relación de marca blanca solo funciona cuando el propietario de la marca está protegido. Estos compromisos se incluyen en cada acuerdo OEM y ODM que firmamos:",
+      "points": [
+        "Sus diseños y decorados siguen siendo de su propiedad — la exclusividad es contractual",
+        "Construcciones transparentes: especificaciones de materiales divulgadas por completo",
+        "Aprobación del piloto antes de cualquier compromiso de volumen",
+        "Stock de seguridad y utillaje reservados para los programas en curso"
+      ]
+    },
+    "cta": {
+      "title": "Tráiganos su próxima gama.",
+      "lede": "Un objetivo de construcción, una muestra de la competencia o simplemente un nivel de precio — basta para empezar. Respuesta de viabilidad en pocos días, muestras en dos semanas.",
+      "button": "Iniciar una conversación OEM"
+    }
+  },
+  "qualityPage": {
+    "meta": {
+      "title": "Calidad",
+      "description": "Un único sistema de calidad rige cada línea de HAILAN: control de materiales entrantes, comprobaciones en línea cada hora, verificación de laboratorio y trazabilidad completa del lote, del lote de materia prima al contenedor."
+    },
+    "hero": {
+      "eyebrow": "Calidad",
+      "title": "El contenedor número cien debe ser idéntico a la primera muestra.",
+      "lede": "Esa sola frase es toda nuestra filosofía de calidad. Todo lo que hay en esta página — los puntos de control, el laboratorio, la trazabilidad — existe para hacerla realidad, envío tras envío."
+    },
+    "gates": {
+      "eyebrow": "El sistema",
+      "title": "Cuatro puntos de control entre la materia prima y su almacén.",
+      "lede": "La calidad no es un departamento que inspecciona al final. Es una serie de puntos de control que el producto debe superar — y cada uno guarda registros.",
+      "gateLabel": "Control",
+      "items": [
+        {
+          "title": "Materiales entrantes",
+          "text": "Cada lote de polímero, lámina, hilo y aditivo se muestrea y se prueba frente a la especificación de compra antes de liberarse. Los lotes no conformes se ponen en cuarentena y se devuelven — nunca llegan a una línea."
+        },
+        {
+          "title": "En línea, cada hora",
+          "text": "El espesor, las dimensiones, el delta-E de color, el brillo y la calidad de superficie se miden cada hora en cada línea en marcha y se registran con el código de lote. Cualquier desviación activa una corrección en la máquina, no en la inspección final."
+        },
+        {
+          "title": "Verificación de laboratorio",
+          "text": "Nuestro laboratorio propio realiza ensayos de desgaste, estabilidad dimensional, alabeo, resistencia al pelado, acústicos y de solidez del color en cada lote de producción — con los mismos métodos ISO, EN y ASTM que usan los laboratorios externos."
+        },
+        {
+          "title": "Inspección previa al envío",
+          "text": "Los productos acabados se inspeccionan a AQL 2,5 antes del embalaje, y de nuevo en la carga del contenedor con registro fotográfico. Los socios reciben los datos de inspección con sus documentos de envío."
+        }
+      ]
+    },
+    "lab": {
+      "eyebrow": "Laboratorio propio",
+      "title": "Ensayado según los métodos que regula su mercado.",
+      "lede": "Nuestro laboratorio aplica los mismos procedimientos ISO, EN y ASTM que los organismos de certificación — por eso los resultados de terceros nunca nos sorprenden, ni a usted.",
+      "caption": "Ensayos de laboratorio y sus normas de referencia",
+      "colTest": "Ensayo",
+      "colMethod": "Método",
+      "tests": [
+        "Resistencia a la abrasión y al desgaste",
+        "Estabilidad dimensional y alabeo",
+        "Indentación residual",
+        "Solidez del color a la luz",
+        "Reacción al fuego",
+        "Absorción acústica (paneles PET)",
+        "Reducción del ruido de impacto",
+        "Emisiones de COV",
+        "Resistencia al deslizamiento",
+        "Resistencia al pelado y al pegado"
+      ]
+    },
+    "trace": {
+      "eyebrow": "Trazabilidad",
+      "title": "Cada caja responde por sí misma.",
+      "para1": "Cada caja que envía HAILAN lleva un código de lote que remite — dentro de nuestro MES — a los lotes de materia prima, la línea de producción, el turno, las mediciones en línea y los resultados de laboratorio que la respaldan. Si un socio presenta una reclamación, respondemos con datos en 48 horas, no con opiniones.",
+      "para2": "Los mismos registros alimentan nuestro ciclo de mejora continua: las tasas de reclamación, el rendimiento a la primera y la constancia del color se revisan semanalmente por los mismos ingenieros que operan las líneas."
+    },
+    "certs": {
+      "eyebrow": "Certificaciones",
+      "title": "Documentación que pasa la aduana y cumple las especificaciones.",
+      "lede": "Los certificados se mantienen de forma continua y se envían como dosier de conformidad con cada programa — listos para importadores, prescriptores y cadenas minoristas."
+    },
+    "cta": {
+      "title": "Solicite nuestro dosier de conformidad.",
+      "lede": "Informes de ensayo, certificados y fichas técnicas de cualquier línea de producto — organizados por mercado de destino, entregados en un día hábil.",
+      "button": "Solicitar documentación"
+    }
+  },
+  "linusPage": {
+    "meta": {
+      "title": "Linus Lin — Desarrollo de negocio y marketing",
+      "description": "Contacte con Linus Lin, Desarrollo de negocio y marketing en HAILAN."
+    },
+    "hero": {
+      "role": "Desarrollo de negocio y marketing"
+    },
+    "getInTouch": "Póngase en contacto",
+    "labels": {
+      "email": "Correo electrónico"
+    },
+    "wecomValue": "Escanee para conectar",
+    "wecomNote": "Vea el código QR al lado.",
+    "linkedinValue": "Perfil próximamente",
+    "companyTagline": "Fabricante mundial de materiales de construcción decorativos",
+    "wecomHeading": "WeCom",
+    "wecomScan": "Escanee para conectar por WeCom."
   }
 }
