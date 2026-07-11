@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import NextLink from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   locales,
   localeNames,
@@ -48,12 +48,22 @@ export function LanguageSwitcher({
   variant?: "inline" | "stacked";
 }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
   const active = isLocale(pathname.split("/")[1])
     ? (pathname.split("/")[1] as Locale)
     : (current ?? defaultLocale);
+
+  // Warm the cache for every other locale before the menu even opens, so the
+  // actual switch is instant. Viewport prefetch only kicks in once the dropdown
+  // links mount (on open) — this gives them a head start on hover/focus.
+  function prefetchAll() {
+    for (const locale of locales) {
+      if (locale !== active) router.prefetch(pathForLocale(pathname, locale));
+    }
+  }
 
   // Close the menu on outside click or Escape.
   useEffect(() => {
@@ -112,6 +122,8 @@ export function LanguageSwitcher({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
+        onPointerEnter={prefetchAll}
+        onFocus={prefetchAll}
         aria-expanded={open}
         aria-haspopup="true"
         aria-label={label}
