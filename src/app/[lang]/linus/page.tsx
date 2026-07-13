@@ -251,6 +251,23 @@ export default async function LinusContactPage({ params }: LinusPageProps) {
                   </p>
                 </div>
               </div>
+
+              <div className="mt-4 flex items-center gap-5 rounded-2xl border border-ink-950/10 bg-white p-5">
+                <Image
+                  src="/images/linus-profile-qr-web.svg"
+                  alt="QR code for this business card page"
+                  width={148}
+                  height={148}
+                  unoptimized
+                  className="h-24 w-24 shrink-0"
+                />
+                <div>
+                  <p className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-mist-500">
+                    {site.name} · QR
+                  </p>
+                  <p className="mt-2 text-sm font-medium text-ink-950">hailanworld.com/linus</p>
+                </div>
+              </div>
             </Reveal>
           </div>
         </Container>
