@@ -204,41 +204,51 @@ export default async function LinusContactPage({ params }: LinusPageProps) {
             </Reveal>
 
             <Reveal delay={0.1} className="lg:col-span-5">
-              <div className="rounded-[1.75rem] border border-ink-950/10 bg-mist-50 p-6 sm:p-8">
-                <div className="flex items-center gap-3">
-                  <QrIcon className="h-5 w-5 text-azure-600" />
-                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-600">
-                    {t.wecomHeading}
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                <div className="rounded-[1.75rem] border border-ink-950/10 bg-mist-50 p-6 sm:p-7">
+                  <div className="flex min-h-5 items-center justify-center gap-3">
+                    <WhatsAppIcon className="h-5 w-5 text-azure-600" />
+                    <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-600">
+                      WhatsApp
+                    </p>
+                  </div>
+                  <div className="relative mx-auto mt-5 aspect-square w-full max-w-[280px] overflow-hidden rounded-2xl bg-white shadow-sm shadow-ink-950/5">
+                    <Image
+                      src="/images/linus-whatsapp-qr-source.jpeg"
+                      alt="Linus — WhatsApp Business QR code"
+                      width={1179}
+                      height={2556}
+                      unoptimized
+                      className="absolute left-1/2 top-1/2 h-auto w-[180%] max-w-none"
+                      style={{ transform: "translate(-50%, -50.2%)" }}
+                    />
+                  </div>
+                  <p className="mt-5 text-center text-sm leading-relaxed text-mist-500">
+                    {WHATSAPP_LABEL}
                   </p>
                 </div>
-                <div className="mt-6 rounded-2xl bg-white p-5 shadow-sm shadow-ink-950/5">
-                  <Image
-                    src="/images/linus-wecom-qr-500px.png"
-                    alt="Linus Lin — WeCom QR code"
-                    width={500}
-                    height={500}
-                    className="mx-auto h-auto w-full max-w-[280px]"
-                  />
-                </div>
-                <p className="mt-5 text-center text-sm leading-relaxed text-mist-500">
-                  {t.wecomScan}
-                </p>
-              </div>
 
-              <div className="mt-4 flex items-center gap-5 rounded-2xl border border-ink-950/10 bg-white p-5">
-                <Image
-                  src="/images/linus-profile-qr-web.svg"
-                  alt="QR code for this business card page"
-                  width={148}
-                  height={148}
-                  unoptimized
-                  className="h-24 w-24 shrink-0"
-                />
-                <div>
-                  <p className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-mist-500">
-                    {site.name} · QR
+                <div className="rounded-[1.75rem] border border-ink-950/10 bg-mist-50 p-6 sm:p-7">
+                  <div className="flex min-h-5 items-center justify-center gap-3">
+                    <QrIcon className="h-5 w-5 text-azure-600" />
+                    <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-600">
+                      {t.wecomHeading}
+                    </p>
+                  </div>
+                  <div className="relative mx-auto mt-5 aspect-square w-full max-w-[280px] overflow-hidden rounded-2xl bg-white shadow-sm shadow-ink-950/5">
+                    <Image
+                      src="/images/linus-wecom-qr-source.jpeg"
+                      alt="Linus Lin — WeCom QR code"
+                      width={1179}
+                      height={2556}
+                      unoptimized
+                      className="absolute left-1/2 top-1/2 h-auto w-[168%] max-w-none"
+                      style={{ transform: "translate(-50.2%, -58.1%)" }}
+                    />
+                  </div>
+                  <p className="mt-5 text-center text-sm leading-relaxed text-mist-500">
+                    {t.wecomScan}
                   </p>
-                  <p className="mt-2 text-sm font-medium text-ink-950">hailanworld.com/linus</p>
                 </div>
               </div>
             </Reveal>
