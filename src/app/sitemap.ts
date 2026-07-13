@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/oem-odm",
     "/news",
     "/contact",
+    "/linus",
   ];
   const productPaths = products.map((p) => `/products/${p.slug}`);
   const articleEntries = articles.map((a) => ({
