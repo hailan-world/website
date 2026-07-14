@@ -25,7 +25,8 @@ function pathForLocale(pathname: string, target: Locale): string {
 }
 
 function persist(target: Locale) {
-  document.cookie = `NEXT_LOCALE=${target}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+  const secure = process.env.NODE_ENV === "production" ? "; secure" : "";
+  document.cookie = `NEXT_LOCALE=${target}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax${secure}`;
 }
 
 function GlobeIcon() {
