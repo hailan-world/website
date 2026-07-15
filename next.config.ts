@@ -17,6 +17,12 @@ const contentSecurityPolicy = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
+  // Pin the workspace root to this project so Turbopack doesn't infer a parent
+  // directory (a stray lockfile in $HOME made it scan the whole home folder,
+  // slowing dev startup, file watching, and HMR).
+  turbopack: {
+    root: __dirname,
+  },
   experimental: {
     sri: {
       algorithm: "sha384",
