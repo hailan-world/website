@@ -17,6 +17,9 @@ const contentSecurityPolicy = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
+  // The in-app browser reaches the local dev server through 127.0.0.1.
+  // Allow that origin to receive development-only HMR resources.
+  allowedDevOrigins: ["127.0.0.1"],
   // Pin the workspace root to this project so Turbopack doesn't infer a parent
   // directory (a stray lockfile in $HOME made it scan the whole home folder,
   // slowing dev startup, file watching, and HMR).
