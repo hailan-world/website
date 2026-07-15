@@ -25,7 +25,8 @@ function pathForLocale(pathname: string, target: Locale): string {
 }
 
 function persist(target: Locale) {
-  document.cookie = `NEXT_LOCALE=${target}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+  const secure = process.env.NODE_ENV === "production" ? "; secure" : "";
+  document.cookie = `NEXT_LOCALE=${target}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax${secure}`;
 }
 
 function GlobeIcon() {
@@ -49,8 +50,9 @@ export function LanguageSwitcher({
 }) {
   const pathname = usePathname();
   const router = useRouter();
-  const [open, setOpen] = useState(false);
+  const [openForPathname, setOpenForPathname] = useState<string | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
+  const open = openForPathname === pathname;
 
   const active = isLocale(pathname.split("/")[1])
     ? (pathname.split("/")[1] as Locale)
@@ -64,7 +66,7 @@ export function LanguageSwitcher({
 
   function selectLocale(locale: Locale) {
     persist(locale);
-    setOpen(false);
+    setOpenForPathname(null);
   }
 
   // Close the menu on outside click or Escape.
@@ -72,11 +74,11 @@ export function LanguageSwitcher({
     if (!open) return;
     const onPointerDown = (e: PointerEvent) => {
       if (rootRef.current && !rootRef.current.contains(e.target as Node)) {
-        setOpen(false);
+        setOpenForPathname(null);
       }
     };
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") setOpenForPathname(null);
     };
     document.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("keydown", onKeyDown);
@@ -125,7 +127,9 @@ export function LanguageSwitcher({
     <div ref={rootRef} className="relative">
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() =>
+          setOpenForPathname((value) => (value === pathname ? null : pathname))
+        }
         aria-expanded={open}
         aria-haspopup="true"
         aria-label={label}
