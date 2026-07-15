@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import NextLink, { useLinkStatus } from "next/link";
+import NextLink from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
   locales,
@@ -38,36 +38,6 @@ function GlobeIcon() {
   );
 }
 
-function Spinner() {
-  return (
-    <svg
-      className="h-3.5 w-3.5 animate-spin"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2.5" opacity="0.25" />
-      <path
-        d="M12 3a9 9 0 0 1 9 9"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-/**
- * Renders a spinner while its parent `<Link>` navigation is in flight.
- * `useLinkStatus` reads the pending state of the nearest ancestor Link, so this
- * gives per-option feedback the moment a locale is clicked — bridging the gap
- * until the new-locale page (a full route + layout re-render) is ready.
- */
-function LinkSpinner() {
-  const { pending } = useLinkStatus();
-  return pending ? <Spinner /> : null;
-}
-
 export function LanguageSwitcher({
   current,
   label,
@@ -86,13 +56,15 @@ export function LanguageSwitcher({
     ? (pathname.split("/")[1] as Locale)
     : (current ?? defaultLocale);
 
-  // Warm the cache for every other locale before the menu even opens, so the
-  // actual switch is instant. Viewport prefetch only kicks in once the dropdown
-  // links mount (on open) — this gives them a head start on hover/focus.
-  function prefetchAll() {
-    for (const locale of locales) {
-      if (locale !== active) router.prefetch(pathForLocale(pathname, locale));
-    }
+  // Prefetch only the option the visitor is considering, rather than every
+  // locale variant of the current page when the menu receives focus.
+  function prefetch(locale: Locale) {
+    if (locale !== active) router.prefetch(pathForLocale(pathname, locale));
+  }
+
+  function selectLocale(locale: Locale) {
+    persist(locale);
+    setOpen(false);
   }
 
   // Close the menu on outside click or Escape.
@@ -114,13 +86,6 @@ export function LanguageSwitcher({
     };
   }, [open]);
 
-  // Close the menu once navigation lands on the new locale. The click handler
-  // deliberately keeps it open so the chosen row can show its loading spinner
-  // while the new-locale page is being fetched.
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   if (variant === "stacked") {
     return (
       <div role="group" aria-label={label}>
@@ -137,7 +102,9 @@ export function LanguageSwitcher({
                 hrefLang={locale}
                 lang={locale}
                 aria-current={isActive ? "true" : undefined}
-                onClick={() => persist(locale)}
+                onClick={() => selectLocale(locale)}
+                onPointerEnter={() => prefetch(locale)}
+                onFocus={() => prefetch(locale)}
                 className={cn(
                   "inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm transition-colors duration-300",
                   isActive
@@ -146,7 +113,6 @@ export function LanguageSwitcher({
                 )}
               >
                 {localeNames[locale]}
-                <LinkSpinner />
               </NextLink>
             );
           })}
@@ -160,8 +126,6 @@ export function LanguageSwitcher({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        onPointerEnter={prefetchAll}
-        onFocus={prefetchAll}
         aria-expanded={open}
         aria-haspopup="true"
         aria-label={label}
@@ -187,7 +151,9 @@ export function LanguageSwitcher({
                 hrefLang={locale}
                 lang={locale}
                 aria-current={isActive ? "true" : undefined}
-                onClick={() => persist(locale)}
+                onClick={() => selectLocale(locale)}
+                onPointerEnter={() => prefetch(locale)}
+                onFocus={() => prefetch(locale)}
                 className={cn(
                   "flex items-center justify-between gap-6 px-5 py-2.5 text-sm transition-colors duration-200",
                   isActive
@@ -196,15 +162,12 @@ export function LanguageSwitcher({
                 )}
               >
                 {localeNames[locale]}
-                <span className="flex h-1.5 items-center">
-                  <LinkSpinner />
-                  {isActive && (
-                    <span
-                      className="h-1.5 w-1.5 rounded-full bg-azure-300"
-                      aria-hidden="true"
-                    />
-                  )}
-                </span>
+                {isActive && (
+                  <span
+                    className="h-1.5 w-1.5 rounded-full bg-azure-300"
+                    aria-hidden="true"
+                  />
+                )}
               </NextLink>
             );
           })}
