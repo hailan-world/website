@@ -1,6 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import {
@@ -108,8 +106,6 @@ export default async function LocaleLayout({
         <Header dict={dict} lang={locale} />
         <main id="main">{children}</main>
         <Footer dict={dict} />
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
