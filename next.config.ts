@@ -4,7 +4,10 @@ const isDevelopment = process.env.NODE_ENV === "development";
 
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self'${isDevelopment ? " 'unsafe-eval'" : ""}`,
+  // App Router streams its initial payload through inline bootstrap scripts.
+  // Blocking them prevents React from hydrating client components, including
+  // the mobile navigation toggle.
+  `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self'",
@@ -25,11 +28,6 @@ const nextConfig: NextConfig = {
   // slowing dev startup, file watching, and HMR).
   turbopack: {
     root: __dirname,
-  },
-  experimental: {
-    sri: {
-      algorithm: "sha384",
-    },
   },
   async headers() {
     return [
