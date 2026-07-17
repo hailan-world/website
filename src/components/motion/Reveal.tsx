@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 interface RevealProps {
@@ -11,50 +9,9 @@ interface RevealProps {
 }
 
 /**
- * Fade-and-rise reveal when the element enters the viewport.
- * Pure CSS transition toggled by a native IntersectionObserver — no
- * animation library, so nothing heavy ships to the client.
+ * A server-rendered layout wrapper. The former scroll animation hid content
+ * until client JavaScript ran, so visibility now takes precedence over motion.
  */
-export function Reveal({ children, className, delay = 0, y = 28 }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    // Reduced motion is handled in CSS (content is forced visible there).
-    // Legacy browsers without IntersectionObserver just show immediately.
-    if (!("IntersectionObserver" in window)) {
-      el.classList.add("is-visible");
-      return;
-    }
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setShown(true);
-          io.disconnect();
-        }
-      },
-      { rootMargin: "0px 0px -80px 0px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={cn("reveal", shown && "is-visible", className)}
-      style={
-        {
-          "--reveal-y": `${y}px`,
-          "--reveal-delay": `${delay}s`,
-        } as CSSProperties
-      }
-    >
-      {children}
-    </div>
-  );
+export function Reveal({ children, className }: RevealProps) {
+  return <div className={cn("reveal", className)}>{children}</div>;
 }

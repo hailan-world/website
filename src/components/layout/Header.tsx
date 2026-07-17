@@ -32,13 +32,6 @@ export function Header({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const pathname = usePathname();
   const path = stripLocale(pathname);
 
-  // Close the mobile menu when navigation changes the route.
-  const [lastPathname, setLastPathname] = useState(pathname);
-  if (pathname !== lastPathname) {
-    setLastPathname(pathname);
-    setOpen(false);
-  }
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
@@ -157,6 +150,7 @@ export function Header({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
+                    onClick={() => setOpen(false)}
                     className={cn(
                       "flex items-baseline gap-4 border-b border-white/10 py-5 text-3xl font-medium tracking-[-0.02em] transition-colors",
                       active ? "text-azure-300" : "text-white hover:text-azure-300",

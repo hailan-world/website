@@ -79,27 +79,12 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ---- Scroll reveal (JS adds .is-visible when the element enters view) ----
-   Pure CSS + IntersectionObserver replaces framer-motion, so no animation
-   library ships to the client. */
+/* ---- Scroll reveal ------------------------------------------------------
+   Content must remain readable even if hydration or IntersectionObserver is
+   unavailable. Motion is an enhancement, never a prerequisite for content. */
 .reveal {
-  opacity: 0;
-  transform: translateY(var(--reveal-y, 28px));
-  transition:
-    opacity 0.9s var(--ease-out-expo),
-    transform 0.9s var(--ease-out-expo);
-  transition-delay: var(--reveal-delay, 0s);
-}
-.reveal.is-visible {
   opacity: 1;
   transform: none;
-}
-/* Never keep content hidden when motion is reduced or JS is unavailable. */
-@media (prefers-reduced-motion: reduce), (scripting: none) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 /* ---- Hero entrance — pure CSS so it plays without waiting for hydration ---- */
