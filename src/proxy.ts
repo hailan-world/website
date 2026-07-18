@@ -3,6 +3,28 @@ import type { NextRequest } from "next/server";
 import { defaultLocale, isLocale, locales } from "@/lib/i18n";
 
 const LOCALE_COOKIE = "NEXT_LOCALE";
+const isDevelopment = process.env.NODE_ENV === "development";
+
+function createContentSecurityPolicy(nonce: string): string {
+  return [
+    "default-src 'self'",
+    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${
+      isDevelopment ? " 'unsafe-eval'" : ""
+    }`,
+    `style-src 'self' 'nonce-${nonce}'${isDevelopment ? " 'unsafe-inline'" : ""}`,
+    // React uses style attributes for animation timing and positioning. These
+    // cannot execute JavaScript, so they are scoped separately from scripts.
+    "style-src-attr 'unsafe-inline'",
+    "img-src 'self' data: blob:",
+    "font-src 'self'",
+    "connect-src 'self'",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "frame-ancestors 'none'",
+    "upgrade-insecure-requests",
+  ].join("; ");
+}
 
 /** Pick the best supported locale from a cookie or the Accept-Language header. */
 function resolveLocale(request: NextRequest): string {
@@ -31,17 +53,27 @@ function resolveLocale(request: NextRequest): string {
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
+  const contentSecurityPolicy = createContentSecurityPolicy(nonce);
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-nonce", nonce);
+  requestHeaders.set("Content-Security-Policy", contentSecurityPolicy);
 
   const hasLocale = locales.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
-  if (hasLocale) return NextResponse.next();
+  if (hasLocale) {
+    const response = NextResponse.next({ request: { headers: requestHeaders } });
+    response.headers.set("Content-Security-Policy", contentSecurityPolicy);
+    return response;
+  }
 
   const locale = resolveLocale(request);
   const url = request.nextUrl.clone();
   url.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
 
   const response = NextResponse.redirect(url);
+  response.headers.set("Content-Security-Policy", contentSecurityPolicy);
   response.cookies.set(LOCALE_COOKIE, locale, {
     path: "/",
     maxAge: 60 * 60 * 24 * 365,
