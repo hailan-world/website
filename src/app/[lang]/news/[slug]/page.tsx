@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Link } from "@/components/i18n/Link";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/layout/CtaBand";
 import { Reveal } from "@/components/motion/Reveal";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Container } from "@/components/ui/Container";
-import { articles, getArticle } from "@/data/news";
+import { getArticle, getArticles } from "@/lib/content/news";
+import { getNewsCopy } from "@/lib/content/news-copy";
+import { defaultLocale, isLocale } from "@/lib/i18n";
 import { formatDate } from "@/lib/utils";
 
 interface ArticlePageProps {
-  params: Promise<{ slug: string }>;
-}
-
-export function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug }));
+  params: Promise<{ lang: string; slug: string }>;
 }
 
 export async function generateMetadata({
   params,
 }: ArticlePageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const article = getArticle(slug);
+  const { lang, slug } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const article = getArticle(slug, locale);
   if (!article) return {};
   return {
     title: article.title,
@@ -29,11 +29,15 @@ export async function generateMetadata({
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const { slug } = await params;
-  const article = getArticle(slug);
+  const { lang, slug } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const article = getArticle(slug, locale);
   if (!article) notFound();
 
-  const more = articles.filter((a) => a.slug !== article.slug).slice(0, 2);
+  const copy = getNewsCopy(locale);
+  const more = getArticles(locale)
+    .filter((candidate) => candidate.slug !== article.slug)
+    .slice(0, 2);
 
   return (
     <>
@@ -52,20 +56,20 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 href="/news"
                 className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400 transition-colors hover:text-white"
               >
-                ← All news
+                <span aria-hidden="true">←</span> {copy.backToNews}
               </Link>
               <span
                 className="h-1 w-1 rounded-full bg-white/25"
                 aria-hidden="true"
               />
               <span className="rounded-full border border-white/15 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.1em] text-ink-200">
-                {article.category}
+                {copy.categories[article.category]}
               </span>
               <time
                 dateTime={article.date}
                 className="font-mono text-[11px] tracking-[0.12em] text-ink-400"
               >
-                {formatDate(article.date)}
+                {formatDate(article.date, locale)}
               </time>
             </div>
             <h1 className="mt-7 max-w-3xl text-balance text-3xl font-medium leading-[1.12] tracking-[-0.025em] md:text-5xl">
@@ -74,6 +78,19 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           </Reveal>
         </Container>
       </section>
+
+      {article.coverImage && (
+        <div className="relative mx-auto mt-12 aspect-[16/7] w-[calc(100%_-_2rem)] max-w-6xl overflow-hidden rounded-2xl">
+          <Image
+            src={article.coverImage}
+            alt={article.coverImageAlt ?? ""}
+            fill
+            priority
+            sizes="(min-width: 1152px) 1152px, calc(100vw - 2rem)"
+            className="object-cover"
+          />
+        </div>
+      )}
 
       <article className="py-20 md:py-28">
         <Container>
@@ -91,7 +108,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             ))}
             <div className="mt-12 border-t border-ink-950/10 pt-8">
               <ArrowLink href="/contact">
-                Talk to us about this update
+                {copy.contactAboutArticle}
               </ArrowLink>
             </div>
           </Reveal>
@@ -103,7 +120,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <Container>
             <Reveal>
               <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                More from HAILAN
+                {copy.moreNews}
               </h2>
             </Reveal>
             <div className="mt-8 grid gap-8 md:grid-cols-2">
@@ -118,10 +135,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                         dateTime={a.date}
                         className="font-mono text-[11px] tracking-[0.12em] text-mist-500"
                       >
-                        {formatDate(a.date)}
+                        {formatDate(a.date, locale)}
                       </time>
                       <span className="rounded-full border border-ink-950/10 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.1em] text-mist-600">
-                        {a.category}
+                        {copy.categories[a.category]}
                       </span>
                     </div>
                     <h3 className="mt-4 text-lg font-medium leading-snug tracking-[-0.01em] text-ink-950 transition-colors duration-300 group-hover:text-azure-600">

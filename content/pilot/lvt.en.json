@@ -1,0 +1,21 @@
+{
+  "status": "draft",
+  "title": "LVT Flooring CMS Pilot",
+  "category": "Preview test only",
+  "headline": "A small bilingual content-workflow test.",
+  "short": "This draft verifies editing, review and Vercel Preview without changing the production product page.",
+  "description": [
+    "The content on this page is a synthetic test fixture, not a public product claim.",
+    "After the workflow is proven, verified product and quality information can replace this placeholder in a controlled follow-up."
+  ],
+  "specs": [
+    {
+      "label": "Content status",
+      "value": "Awaiting product and quality review"
+    }
+  ],
+  "formats": ["English pilot", "Preview only"],
+  "approvedBy": "",
+  "approvalReference": "",
+  "sourceNotes": "Synthetic workflow test; contains no company or product claims."
+}

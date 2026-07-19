@@ -26,7 +26,7 @@ export default async function HomePage({
       <ManufacturingBand dict={dict} />
       <WhyHailan dict={dict} />
       <GlobalMarkets dict={dict} />
-      <NewsPreview dict={dict} />
+      <NewsPreview dict={dict} locale={locale} />
       <CtaBand dict={dict} />
     </>
   );

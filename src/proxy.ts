@@ -4,6 +4,7 @@ import { defaultLocale, isLocale, locales } from "@/lib/i18n";
 
 const LOCALE_COOKIE = "NEXT_LOCALE";
 const isDevelopment = process.env.NODE_ENV === "development";
+const verifiedLocales = ["en", "zh", "ru"] as const;
 
 function createContentSecurityPolicy(nonce: string): string {
   return [
@@ -59,22 +60,35 @@ export function proxy(request: NextRequest) {
   requestHeaders.set("x-nonce", nonce);
   requestHeaders.set("Content-Security-Policy", contentSecurityPolicy);
 
-  const hasLocale = locales.some(
-    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
+  const isVerifiedRoute = verifiedLocales.some(
+    (locale) => pathname === `/verified/${locale}`,
   );
-  if (hasLocale) {
+  const isCmsPilotRoute =
+    pathname === "/en/cms-preview/lvt" ||
+    pathname === "/zh/cms-preview/lvt";
+
+  // The verified holding page is the only public surface while claims are
+  // being checked. The synthetic CMS pilot remains reachable only through its
+  // own environment gate in the page component.
+  if (isVerifiedRoute || isCmsPilotRoute) {
     const response = NextResponse.next({ request: { headers: requestHeaders } });
     response.headers.set("Content-Security-Policy", contentSecurityPolicy);
     return response;
   }
 
-  const locale = resolveLocale(request);
+  const requestedLocale = locales.find(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
+  );
+  const resolvedLocale = requestedLocale ?? resolveLocale(request);
+  const verifiedLocale =
+    resolvedLocale === "zh" || resolvedLocale === "ru" ? resolvedLocale : "en";
   const url = request.nextUrl.clone();
-  url.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
+  url.pathname = `/verified/${verifiedLocale}`;
+  url.search = "";
 
   const response = NextResponse.redirect(url);
   response.headers.set("Content-Security-Policy", contentSecurityPolicy);
-  response.cookies.set(LOCALE_COOKIE, locale, {
+  response.cookies.set(LOCALE_COOKIE, verifiedLocale, {
     path: "/",
     maxAge: 60 * 60 * 24 * 365,
     sameSite: "lax",
@@ -85,6 +99,7 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   // Run on everything except Next internals, API routes and files with an
-  // extension (favicon.ico, sitemap.xml, robots.txt, images, etc.).
-  matcher: ["/((?!_next|api|.*\\.).*)"],
+  // extension (favicon.ico, sitemap.xml, robots.txt, images, etc.). The CMS
+  // admin is a standalone static application and must not be redirected.
+  matcher: ["/((?!_next|api|admin|.*\\.).*)"],
 };

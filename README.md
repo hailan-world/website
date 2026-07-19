@@ -7,7 +7,8 @@ This public repository is the source of truth for HAILAN's external website at [
 This repository contains deployable public-facing material:
 
 - website routes, layouts, components, styles, and localization;
-- approved product, manufacturing, quality, OEM / ODM, news, and contact content;
+- the retained verified public page and quarantined marketing copy awaiting
+  claim-by-claim source review;
 - public SEO metadata and downloadable contact assets;
 - production website and namecard QR assets that point to public pages;
 - build, validation, and deployment configuration.
@@ -17,18 +18,27 @@ It must not contain internal strategy, capability maps, organization design, pro
 ## Current scope
 
 - Next.js App Router website with TypeScript and Tailwind CSS
-- nine locales: English, Simplified Chinese, French, Spanish, Russian, Arabic, Japanese, Malay, and Indonesian
-- public pages for the company, products, manufacturing, quality, OEM / ODM, news, contact, and the Linus contact profile
-- locale-aware metadata, sitemap, robots rules, and right-to-left rendering for Arabic
-- static product and news content under `src/data`
+- one temporary public information page in English, Simplified Chinese and Russian that
+  contains only retained, source-backed identity information
+- existing nine-locale marketing routes retained in source control but
+  redirected away from public access until their claims are verified
+- locale-aware metadata, sitemap and robots rules for the retained public page
+- reviewed-news workflow managed through the Git-backed headless CMS, with its
+  public route temporarily withheld
+- a bilingual LVT workflow pilot that is visible only in local development and
+  Vercel Preview deployments
 
 ## Directory map
 
 | Path | Responsibility |
 |---|---|
 | `src/app` | Routes, layouts, metadata, sitemap, robots rules, and locale dictionaries |
+| `src/app/(verified)` | Temporary English/Chinese/Russian public page containing retained verified information |
 | `src/components` | Reusable interface and page-section components |
-| `src/data` | Approved public product and news content |
+| `src/data` | Withdrawn product copy retained for evidence review; not publicly routed |
+| `content/news` | CMS-managed, locale-aware news entries with approval metadata |
+| `content/pilot` | Synthetic English/Chinese LVT workflow test content |
+| `public/admin` | Headless CMS editor and content model |
 | `src/lib` | Site configuration, localization, and shared utilities |
 | `public` | Assets served directly by the website |
 | `design-assets/namecard` | Print-ready QR source assets for the public contact profile |
@@ -54,6 +64,16 @@ npm run build
 ```
 
 Dependencies are intentionally pinned through `package-lock.json`. Do not commit `.next`, `node_modules`, environment files, or deployment credentials.
+
+## Content management
+
+The first CMS pilot covers reviewed news and one synthetic English/Chinese LVT
+entry. The LVT pilot cannot render on the production deployment. All other
+public routes currently redirect to `/verified/en`, `/verified/zh` or
+`/verified/ru` while
+their factual claims are reviewed. Production OAuth, Vercel Preview testing,
+and the pilot runbook are in
+[`docs/CMS.md`](docs/CMS.md).
 
 ## Publishing rule
 

@@ -1,0 +1,21 @@
+{
+  "status": "draft",
+  "title": "LVT 地板 CMS 试点",
+  "category": "仅供预览测试",
+  "headline": "一个小范围的中英文内容流程测试。",
+  "short": "本草稿用于验证编辑、审核和 Vercel Preview，不会修改正式产品页。",
+  "description": [
+    "本页内容是合成测试资料，不构成任何公开产品声明。",
+    "流程验证通过后，再通过单独的小步骤填写经产品与质量负责人核实的正式资料。"
+  ],
+  "specs": [
+    {
+      "label": "内容状态",
+      "value": "等待产品和质量负责人复核"
+    }
+  ],
+  "formats": ["中文试点", "仅供预览"],
+  "approvedBy": "",
+  "approvalReference": "",
+  "sourceNotes": "合成的流程测试内容，不含公司或产品事实声明。"
+}
