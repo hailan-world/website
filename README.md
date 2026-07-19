@@ -18,8 +18,8 @@ It must not contain internal strategy, capability maps, organization design, pro
 ## Current scope
 
 - Next.js App Router website with TypeScript and Tailwind CSS
-- one temporary public information page in English, Simplified Chinese and Russian that
-  contains only retained, source-backed identity information
+- temporary public company-information and business-contact pages in English,
+  Simplified Chinese and Russian containing only retained, source-backed facts
 - existing nine-locale marketing routes retained in source control but
   redirected away from public access until their claims are verified
 - locale-aware metadata, sitemap and robots rules for the retained public page
@@ -74,6 +74,10 @@ public routes currently redirect to `/verified/en`, `/verified/zh` or
 their factual claims are reviewed. Production OAuth, Vercel Preview testing,
 and the pilot runbook are in
 [`docs/CMS.md`](docs/CMS.md).
+
+The verified Linus business-contact page remains public at `/linus/en`,
+`/linus/zh` and `/linus/ru`. It uses `sales@hailanworld.com`, provides no public
+telephone number, and retains WhatsApp and WeCom as QR-only contact channels.
 
 ## Publishing rule
 

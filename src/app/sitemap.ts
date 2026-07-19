@@ -2,17 +2,23 @@ import type { MetadataRoute } from "next";
 import { verifiedSite } from "@/lib/verified-site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const languages = {
-    "x-default": `${verifiedSite.url}/verified/en`,
-    en: `${verifiedSite.url}/verified/en`,
-    "zh-Hans": `${verifiedSite.url}/verified/zh`,
-    ru: `${verifiedSite.url}/verified/ru`,
-  };
+  const locales = ["en", "zh", "ru"] as const;
+  const languageKey = { en: "en", zh: "zh-Hans", ru: "ru" } as const;
 
-  return (["en", "zh", "ru"] as const).map((locale) => ({
-    url: `${verifiedSite.url}/verified/${locale}`,
-    changeFrequency: "weekly",
-    priority: 1,
-    alternates: { languages },
-  }));
+  return (["verified", "linus"] as const).flatMap((section) => {
+    const languages: Record<string, string> = {
+      "x-default": `${verifiedSite.url}/${section}/en`,
+    };
+    for (const locale of locales) {
+      languages[languageKey[locale]] =
+        `${verifiedSite.url}/${section}/${locale}`;
+    }
+
+    return locales.map((locale) => ({
+      url: `${verifiedSite.url}/${section}/${locale}`,
+      changeFrequency: "weekly" as const,
+      priority: section === "verified" ? 1 : 0.8,
+      alternates: { languages },
+    }));
+  });
 }

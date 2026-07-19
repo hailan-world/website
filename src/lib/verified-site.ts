@@ -8,4 +8,5 @@ export const verifiedSite = {
   legalNameZh: "金华市海蓝新材料有限公司",
   url: "https://hailanworld.com",
   domain: "hailanworld.com",
+  email: "sales@hailanworld.com",
 } as const;

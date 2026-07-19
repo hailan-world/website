@@ -17,6 +17,14 @@ The public site is temporarily routed to a separate verified-information page:
 /verified/ru
 ```
 
+The verified business-contact page remains public in the same three languages:
+
+```text
+/linus/en
+/linus/zh
+/linus/ru
+```
+
 Existing product, manufacturing, quality, company and contact pages remain in
 source control for review, but are not publicly reachable while their claims
 lack traceable evidence and publication approval.

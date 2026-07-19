@@ -24,6 +24,7 @@ const copy = {
       "We are reviewing every company figure, product specification, certificate and market claim before it returns to the website.",
     statusLabel: "Publication status",
     status: "Source review in progress",
+    contact: "Business enquiries",
     confirmedTitle: "Currently retained",
     entityLabel: "Operating entity",
     domainLabel: "Official website",
@@ -50,6 +51,7 @@ const copy = {
       "公司数字、产品参数、认证和市场声明正在逐项核对来源；完成负责人确认与发布批准前，不会重新出现在官网。",
     statusLabel: "发布状态",
     status: "来源核对中",
+    contact: "商务联系",
     confirmedTitle: "当前保留",
     entityLabel: "经营主体",
     domainLabel: "官方网站",
@@ -76,6 +78,7 @@ const copy = {
       "Мы проверяем источники всех данных о компании, характеристик продукции, сертификатов и заявлений о рынках. До подтверждения ответственным лицом и разрешения на публикацию они не появятся на сайте.",
     statusLabel: "Статус публикации",
     status: "Проверка источников продолжается",
+    contact: "Деловые контакты",
     confirmedTitle: "Подтверждено",
     entityLabel: "Юридическое лицо",
     domainLabel: "Официальный сайт",
@@ -184,14 +187,22 @@ export default async function VerifiedPage({
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-200">
               {content.intro}
             </p>
-            <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-azure-300/25 bg-azure-300/[0.08] px-4 py-2.5">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-azure-300 opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-azure-300" />
-              </span>
-              <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-azure-200">
-                {content.statusLabel}: {content.status}
-              </span>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-3 rounded-full border border-azure-300/25 bg-azure-300/[0.08] px-4 py-2.5">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-azure-300 opacity-60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-azure-300" />
+                </span>
+                <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-azure-200">
+                  {content.statusLabel}: {content.status}
+                </span>
+              </div>
+              <NextLink
+                href={`/linus/${lang}`}
+                className="inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-medium text-ink-950 transition-colors hover:bg-azure-100"
+              >
+                {content.contact}
+              </NextLink>
             </div>
           </div>
 
