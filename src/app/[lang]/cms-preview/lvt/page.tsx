@@ -49,7 +49,7 @@ export default async function LvtPilotPage({
           specs: "测试字段",
           evidence: "审核记录",
           noApproval: "尚未批准",
-          productLink: "返回已核实公开信息页",
+          productLink: "返回公司首页",
         }
       : {
           eyebrow: "CMS pilot · not for publication",
@@ -57,7 +57,7 @@ export default async function LvtPilotPage({
           specs: "Test fields",
           evidence: "Review record",
           noApproval: "Not approved yet",
-          productLink: "Return to verified public information",
+          productLink: "Return to company homepage",
         };
 
   return (
@@ -124,7 +124,7 @@ export default async function LvtPilotPage({
 
           <Reveal className="mt-12 border-t border-ink-950/10 pt-8">
             <a
-              href={`/verified/${lang}`}
+              href={`/${lang}`}
               className="text-sm font-medium text-azure-600 hover:text-azure-700"
             >
               {copy.productLink} →

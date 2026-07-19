@@ -9,12 +9,20 @@ This is intentionally a small, reversible content-management pilot. It covers:
 It does not connect the rest of the website to the CMS, read Feishu, or publish
 product facts automatically.
 
-The public site is temporarily routed to a separate verified-information page:
+The source-backed public company profile is available in three languages:
 
 ```text
-/verified/en
-/verified/zh
-/verified/ru
+/en
+/zh
+/ru
+```
+
+The business-contact page remains public in the same three languages:
+
+```text
+/linus/en
+/linus/zh
+/linus/ru
 ```
 
 Existing product, manufacturing, quality, company and contact pages remain in
@@ -40,8 +48,8 @@ The routes are also marked `noindex` and excluded in `robots.txt`.
 
 News remains separately gated: an entry is not eligible for future public
 display unless it is marked `approved` and includes a reviewer, approval
-reference and public-safe source note. The temporary public verification gate
-currently keeps the news routes offline as well.
+reference and public-safe source note. The public routing gate currently keeps
+the news routes offline as well.
 
 ## Phase A: local workflow test
 
@@ -61,7 +69,7 @@ http://localhost:3000/zh/cms-preview/lvt
 ```
 
 News drafts may be used to test the editor and pull-request diff, but the public
-news route remains behind the verification gate during this pilot.
+news route remains behind the publishing gate during this pilot.
 
 ## Phase B: Vercel Preview test
 
@@ -73,7 +81,7 @@ news route remains behind the verification gate during this pilot.
 6. Close the pull request if the test should be discarded.
 
 The production product-page source remains unchanged, but its public URL is
-temporarily redirected to the verified-information page.
+temporarily redirected to the source-backed company homepage.
 
 ## Success criteria
 
@@ -83,7 +91,7 @@ The pilot is successful when marketing can:
 - save and review the content diff;
 - see the result on a Vercel Preview URL;
 - confirm that the same pilot path is 404 in production;
-- confirm that unreviewed public routes redirect to the verified page;
+- confirm that unreviewed public routes redirect to the company homepage;
 - revert the test without leaving public content behind.
 
 Only after these checks should the team decide whether to add real approved LVT
