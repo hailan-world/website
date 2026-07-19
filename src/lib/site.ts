@@ -1,6 +1,7 @@
 /**
  * QUARANTINED: these legacy marketing values are retained only so the withdrawn
- * pages can be reviewed later. Public traffic is routed to the verified page.
+ * pages can be reviewed later. Public traffic is routed to the source-backed
+ * company homepage.
  * Do not reuse a value until its evidence and publication approval are logged.
  */
 export const site = {

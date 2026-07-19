@@ -68,14 +68,13 @@ Dependencies are intentionally pinned through `package-lock.json`. Do not commit
 ## Content management
 
 The first CMS pilot covers reviewed news and one synthetic English/Chinese LVT
-entry. The LVT pilot cannot render on the production deployment. All other
-public routes currently redirect to `/verified/en`, `/verified/zh` or
-`/verified/ru` while
-their factual claims are reviewed. Production OAuth, Vercel Preview testing,
-and the pilot runbook are in
+entry. The LVT pilot cannot render on the production deployment. The public
+company profile is available at `/en`, `/zh` and `/ru`; legacy pages with
+unsupported claims redirect to the corresponding language homepage. Production
+OAuth, Vercel Preview testing, and the pilot runbook are in
 [`docs/CMS.md`](docs/CMS.md).
 
-The verified Linus business-contact page remains public at `/linus/en`,
+The Linus business-contact page remains public at `/linus/en`,
 `/linus/zh` and `/linus/ru`. It uses `sales@hailanworld.com`, provides no public
 telephone number, and retains WhatsApp and WeCom as QR-only contact channels.
 

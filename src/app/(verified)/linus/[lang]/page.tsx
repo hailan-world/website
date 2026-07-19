@@ -22,9 +22,9 @@ const languageLinks = [
 const copy = {
   en: {
     metaTitle: "Linus Lin — General Manager & Commercial Director",
-    metaDescription: "Verified business contact for Linus Lin at HAILAN.",
+    metaDescription: "Official business contact for Linus Lin at HAILAN.",
     languageLabel: "Language",
-    eyebrow: "Verified business contact",
+    eyebrow: "Business contact",
     role: "General Manager | Commercial Director",
     contact: "Business enquiries",
     emailLabel: "Email",
@@ -32,14 +32,14 @@ const copy = {
     download: "Download vCard",
     whatsapp: "Scan to contact on WhatsApp",
     wecom: "Scan to contact on WeCom",
-    verifiedPage: "Verified company information",
-    note: "Email and verified messaging channels only. No public phone contact.",
+    verifiedPage: "Company profile",
+    note: "Business enquiries via email, WhatsApp or WeCom.",
   },
   zh: {
     metaTitle: "Linus Lin — 总经理兼商务总监",
-    metaDescription: "HAILAN Linus Lin 的已核实商务联系方式。",
+    metaDescription: "HAILAN Linus Lin 的官方商务联系方式。",
     languageLabel: "语言",
-    eyebrow: "已核实商务联系方式",
+    eyebrow: "商务联系方式",
     role: "总经理｜商务总监",
     contact: "商务联系",
     emailLabel: "邮箱",
@@ -47,14 +47,14 @@ const copy = {
     download: "下载 vCard",
     whatsapp: "扫码通过 WhatsApp 联系",
     wecom: "扫码通过企业微信联系",
-    verifiedPage: "已核实公司信息",
-    note: "仅提供邮箱与已核实的即时通讯渠道，不公开电话联系方式。",
+    verifiedPage: "公司介绍",
+    note: "可通过邮箱、WhatsApp 或企业微信发起商务联系。",
   },
   ru: {
     metaTitle: "Linus Lin — Генеральный и коммерческий директор",
-    metaDescription: "Проверенные деловые контакты Linus Lin в HAILAN.",
+    metaDescription: "Официальные деловые контакты Linus Lin в HAILAN.",
     languageLabel: "Язык",
-    eyebrow: "Проверенные деловые контакты",
+    eyebrow: "Деловые контакты",
     role: "Генеральный директор | Коммерческий директор",
     contact: "Деловые контакты",
     emailLabel: "Электронная почта",
@@ -62,9 +62,8 @@ const copy = {
     download: "Скачать vCard",
     whatsapp: "Отсканируйте код для связи в WhatsApp",
     wecom: "Отсканируйте код для связи в WeCom",
-    verifiedPage: "Проверенная информация о компании",
-    note:
-      "Только электронная почта и проверенные мессенджеры. Публичный номер телефона не указан.",
+    verifiedPage: "О компании",
+    note: "Деловые запросы по электронной почте, WhatsApp или WeCom.",
   },
 } as const;
 
@@ -140,7 +139,7 @@ export default async function LinusPublicPage({
 
         <header className="relative border-b border-white/10">
           <div className="mx-auto flex h-20 w-full max-w-[76rem] items-center justify-between px-6 md:px-10">
-            <NextLink href={`/verified/${lang}`} aria-label={content.verifiedPage}>
+            <NextLink href={`/${lang}`} aria-label={content.verifiedPage}>
               <Logo on="dark" />
             </NextLink>
             <nav aria-label={content.languageLabel} className="flex items-center gap-2">
@@ -261,7 +260,7 @@ export default async function LinusPublicPage({
               ))}
             </div>
             <NextLink
-              href={`/verified/${lang}`}
+              href={`/${lang}`}
               className="mt-8 inline-flex text-sm font-medium text-azure-600 hover:text-azure-700"
             >
               {content.verifiedPage} →

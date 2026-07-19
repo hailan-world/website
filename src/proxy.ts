@@ -63,14 +63,21 @@ export function proxy(request: NextRequest) {
   const requestedLocale = locales.find(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
-  const resolvedLocale = requestedLocale ?? resolveLocale(request);
-  const verifiedLocale =
-    resolvedLocale === "zh" || resolvedLocale === "ru" ? resolvedLocale : "en";
-  const isVerifiedRoute = verifiedLocales.some(
+  const verifiedRouteLocale = verifiedLocales.find(
     (locale) => pathname === `/verified/${locale}`,
   );
-  const isLinusRoute = verifiedLocales.some(
+  const linusRouteLocale = verifiedLocales.find(
     (locale) => pathname === `/linus/${locale}`,
+  );
+  const resolvedLocale =
+    requestedLocale ??
+    verifiedRouteLocale ??
+    linusRouteLocale ??
+    resolveLocale(request);
+  const verifiedLocale =
+    resolvedLocale === "zh" || resolvedLocale === "ru" ? resolvedLocale : "en";
+  const isPublicHomepage = verifiedLocales.some(
+    (locale) => pathname === `/${locale}`,
   );
   const isLegacyLinusRoute = locales.some(
     (locale) =>
@@ -80,10 +87,26 @@ export function proxy(request: NextRequest) {
     pathname === "/en/cms-preview/lvt" ||
     pathname === "/zh/cms-preview/lvt";
 
-  // The verified holding page and verified contact card are the only public
-  // surfaces while other claims are checked. The synthetic CMS pilot remains
+  // Serve the source-backed company profile at simple language-root URLs while
+  // retaining its isolated internal route. The synthetic CMS pilot remains
   // reachable only through its own environment gate in the page component.
-  if (isVerifiedRoute || isLinusRoute || isCmsPilotRoute) {
+  if (isPublicHomepage) {
+    const destination = request.nextUrl.clone();
+    destination.pathname = `/verified/${verifiedLocale}`;
+    const response = NextResponse.rewrite(destination, {
+      request: { headers: requestHeaders },
+    });
+    response.headers.set("Content-Security-Policy", contentSecurityPolicy);
+    response.cookies.set(LOCALE_COOKIE, verifiedLocale, {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 365,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+    });
+    return response;
+  }
+
+  if (linusRouteLocale || isCmsPilotRoute) {
     const response = NextResponse.next({ request: { headers: requestHeaders } });
     response.headers.set("Content-Security-Policy", contentSecurityPolicy);
     return response;
@@ -95,7 +118,7 @@ export function proxy(request: NextRequest) {
     pathname.startsWith("/linus/") ||
     isLegacyLinusRoute
       ? `/linus/${verifiedLocale}`
-      : `/verified/${verifiedLocale}`;
+      : `/${verifiedLocale}`;
   url.search = "";
 
   const response = NextResponse.redirect(url);
