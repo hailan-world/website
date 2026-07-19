@@ -1,0 +1,237 @@
+backend:
+  name: github
+  repo: hailan-world/website
+  branch: main
+  base_url: https://hailanworld.com
+  auth_endpoint: api/cms/auth
+  use_graphql: true
+  squash_merges: true
+local_backend: true
+publish_mode: editorial_workflow
+locale: zh_Hans
+site_url: https://hailanworld.com
+display_url: https://hailanworld.com
+logo_url: https://hailanworld.com/icon.svg
+show_preview_links: true
+search: true
+media_folder: public/uploads/news
+public_folder: /uploads/news
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+i18n:
+  structure: multiple_files
+  locales:
+    - en
+    - zh
+    - fr
+    - es
+    - ru
+    - ar
+    - ja
+    - ms
+    - id
+  default_locale: en
+collections:
+  - name: lvt_pilot
+    label: LVT 中英文试点
+    description: 只用于本地和 Vercel Preview 测试，不会替换正式产品页，也不会在生产环境显示。
+    i18n:
+      structure: multiple_files
+      locales:
+        - en
+        - zh
+      default_locale: en
+    delete: false
+    editor:
+      preview: false
+    preview_path: en/cms-preview/lvt
+    files:
+      - label: LVT 试点内容
+        name: lvt
+        file: content/pilot/lvt.json
+        i18n: true
+        fields:
+          - label: 审核状态
+            name: status
+            widget: select
+            default: draft
+            i18n: duplicate
+            options:
+              - label: 草稿
+                value: draft
+              - label: 试点已审核
+                value: approved
+          - label: 产品名称
+            name: title
+            widget: string
+            i18n: true
+          - label: 分类
+            name: category
+            widget: string
+            i18n: true
+          - label: 主标题
+            name: headline
+            widget: string
+            i18n: true
+          - label: 简述
+            name: short
+            widget: text
+            i18n: true
+          - label: 介绍段落
+            name: description
+            widget: list
+            i18n: true
+            min: 1
+            field:
+              label: 段落
+              name: paragraph
+              widget: text
+              i18n: true
+          - label: 测试参数
+            name: specs
+            widget: list
+            i18n: true
+            fields:
+              - label: 参数名
+                name: label
+                widget: string
+                i18n: true
+              - label: 参数值
+                name: value
+                widget: string
+                i18n: true
+          - label: 形式标签
+            name: formats
+            widget: list
+            i18n: true
+            field:
+              label: 标签
+              name: format
+              widget: string
+              i18n: true
+          - label: 审核人
+            name: approvedBy
+            widget: string
+            i18n: duplicate
+            required: false
+          - label: 审核记录编号
+            name: approvalReference
+            widget: string
+            i18n: duplicate
+            required: false
+          - label: 依据说明
+            name: sourceNotes
+            widget: text
+            i18n: duplicate
+            required: false
+            hint: 试点阶段只写公开安全的测试说明，不要放客户、订单或内部链接。
+  - name: news
+    label: 新闻动态
+    label_singular: 新闻文章
+    description: 只有完成事实核实并标记为“已核实”的文章才会出现在网站上。
+    folder: content/news
+    extension: json
+    format: json
+    create: true
+    delete: true
+    i18n: true
+    identifier_field: title
+    slug: "{{fields.slug}}"
+    preview_path: en/news/{{fields.slug}}
+    summary: "{{date}} · {{title}} · {{status}}"
+    sortable_fields:
+      - date
+      - title
+      - status
+    view_filters:
+      - label: 待核实
+        field: status
+        pattern: draft
+      - label: 已核实
+        field: status
+        pattern: approved
+    fields:
+      - label: 发布状态
+        name: status
+        widget: select
+        default: draft
+        i18n: duplicate
+        options:
+          - label: 草稿（不会在网站显示）
+            value: draft
+          - label: 已核实（审核发布后显示）
+            value: approved
+      - label: URL 标识
+        name: slug
+        widget: string
+        i18n: duplicate
+        hint: 仅使用小写英文字母、数字和连字符，例如 new-showroom-opening。
+        pattern:
+          - ^[a-z0-9]+(?:-[a-z0-9]+)*$
+          - 仅可使用小写英文字母、数字和连字符。
+      - label: 标题
+        name: title
+        widget: string
+        i18n: true
+      - label: 发布日期
+        name: date
+        widget: datetime
+        i18n: duplicate
+        date_format: YYYY-MM-DD
+        time_format: false
+        format: YYYY-MM-DD
+        picker_utc: true
+      - label: 分类
+        name: category
+        widget: select
+        i18n: duplicate
+        options:
+          - Events
+          - Manufacturing
+          - Sustainability
+          - Company
+      - label: 摘要
+        name: excerpt
+        widget: text
+        i18n: true
+        hint: 用一至两句话说明已核实的核心信息。
+      - label: 正文段落
+        name: body
+        widget: list
+        i18n: true
+        min: 1
+        field:
+          label: 段落
+          name: paragraph
+          widget: text
+      - label: 封面图片
+        name: coverImage
+        widget: image
+        i18n: duplicate
+        required: false
+      - label: 图片替代文字
+        name: coverImageAlt
+        widget: string
+        i18n: true
+        required: false
+        hint: 简短说明图片内容，供无障碍阅读使用。
+      - label: 核实人
+        name: approvedBy
+        widget: string
+        i18n: duplicate
+        required: false
+        hint: 标记为“已核实”前必须填写获授权核实人的公开安全姓名或岗位。
+      - label: 批准记录编号
+        name: approvalReference
+        widget: string
+        i18n: duplicate
+        required: false
+        hint: 填写 Company OS 或飞书中的内部发布批准记录编号；不要复制机密正文、路径或链接。
+      - label: 事实依据
+        name: sourceNotes
+        widget: text
+        i18n: duplicate
+        required: false
+        hint: 简述合同、照片、证书或负责人确认等依据；不要粘贴机密原文。
