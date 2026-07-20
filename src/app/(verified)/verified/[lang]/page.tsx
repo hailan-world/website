@@ -83,7 +83,7 @@ const copy = {
       { label: "经营主体", value: verifiedSite.legalNameZh },
       { label: "成立时间", value: "2020 年 4 月 7 日" },
       { label: "所在地", value: "中国浙江省金华市" },
-      { label: "业务模式", value: "企业对企业（B2B）" },
+      { label: "业务模式", value: "B2B" },
     ],
     activitiesEyebrow: "产品线",
     activitiesTitle: "我们的产品线",
