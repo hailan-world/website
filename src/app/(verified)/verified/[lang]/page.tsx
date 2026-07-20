@@ -17,8 +17,8 @@ const languageLinks = [
  * The three product lines below (LVT flooring, polyester carpet, PET wall
  * materials) and their primary materials were confirmed by the company
  * owner on 2026-07-20. Do not expand these entries with specifications,
- * certifications or export
- * claims without a separate source and approval reference.
+ * certifications or export claims without a separate source and approval
+ * reference.
  */
 const copy = {
   en: {
