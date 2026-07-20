@@ -13,6 +13,12 @@ const languageLinks = [
   { locale: "ru", label: "RU", hrefLang: "ru" },
 ] as const;
 
+/**
+ * The three product lines below (LVT flooring, PET carpet, PET wall
+ * materials) were confirmed by the company owner on 2026-07-20. Do not
+ * expand these entries with specifications, certifications or export
+ * claims without a separate source and approval reference.
+ */
 const copy = {
   en: {
     metaTitle: "HAILAN — Materials manufacturing and B2B supply",
@@ -32,28 +38,25 @@ const copy = {
       { label: "Based in", value: "Jinhua, Zhejiang, China" },
       { label: "Business model", value: "B2B" },
     ],
-    activitiesEyebrow: "Business scope",
-    activitiesTitle: "How we support business customers",
+    activitiesEyebrow: "Product lines",
+    activitiesTitle: "Our product lines",
     activitiesIntro:
-      "Our registered business scope covers manufacturing, product supply and technology-related services.",
+      "HAILAN serves business customers across three core product lines.",
     activities: [
       {
         number: "01",
-        title: "Materials manufacturing",
-        description:
-          "Registered activities include the manufacture of plastic products and wood-based panels.",
+        title: "LVT Flooring",
+        description: "Supplied to business customers as LVT flooring.",
       },
       {
         number: "02",
-        title: "Product supply",
-        description:
-          "Registered activities include the sale of plastic products and industrial textile products.",
+        title: "PET Carpet",
+        description: "Supplied to business customers as PET carpet.",
       },
       {
         number: "03",
-        title: "Technical services",
-        description:
-          "Technology development, consulting, transfer and promotion are included in the company scope.",
+        title: "PET Wall Materials",
+        description: "Supplied to business customers as PET wall materials.",
       },
     ],
     ctaEyebrow: "Work with HAILAN",
@@ -62,7 +65,7 @@ const copy = {
       "Share the application, quantity, destination market and requested timeline. Our commercial team will confirm current availability, specifications and supporting documents for your enquiry.",
     emailAction: "Email our commercial team",
     contactAction: "View business contact",
-    footerText: "Materials · Supply · Technical services",
+    footerText: "LVT Flooring · PET Carpet · PET Wall Materials",
   },
   zh: {
     metaTitle: "HAILAN 海蓝 — 材料制造与 B2B 供应",
@@ -82,24 +85,24 @@ const copy = {
       { label: "所在地", value: "中国浙江省金华市" },
       { label: "业务模式", value: "企业对企业（B2B）" },
     ],
-    activitiesEyebrow: "业务范围",
-    activitiesTitle: "我们如何服务企业客户",
-    activitiesIntro: "公司登记的经营范围涵盖制造、产品销售及技术服务相关业务。",
+    activitiesEyebrow: "产品线",
+    activitiesTitle: "我们的产品线",
+    activitiesIntro: "海蓝面向企业客户，提供三条核心产品线。",
     activities: [
       {
         number: "01",
-        title: "材料制造",
-        description: "登记经营范围包括塑料制品制造及人造板制造。",
+        title: "LVT 地板",
+        description: "面向企业客户供应的 LVT 地板产品线。",
       },
       {
         number: "02",
-        title: "产品供应",
-        description: "登记经营范围包括塑料制品及产业用纺织制成品销售。",
+        title: "PET 地毯",
+        description: "面向企业客户供应的 PET 地毯产品线。",
       },
       {
         number: "03",
-        title: "技术服务",
-        description: "登记经营范围包括技术开发、咨询、交流、转让及推广服务。",
+        title: "PET 墙面",
+        description: "面向企业客户供应的 PET 墙面产品线。",
       },
     ],
     ctaEyebrow: "与海蓝合作",
@@ -108,7 +111,7 @@ const copy = {
       "请提供应用场景、需求数量、目的市场和期望时间。商务团队将根据具体询盘确认当前供应情况、产品参数及可提供的支持文件。",
     emailAction: "邮件联系商务团队",
     contactAction: "查看商务联系方式",
-    footerText: "材料制造 · 产品供应 · 技术服务",
+    footerText: "LVT 地板 · PET 地毯 · PET 墙面",
   },
   ru: {
     metaTitle: "HAILAN — Производство материалов и поставки B2B",
@@ -128,28 +131,28 @@ const copy = {
       { label: "Местонахождение", value: "Цзиньхуа, Чжэцзян, Китай" },
       { label: "Модель работы", value: "B2B" },
     ],
-    activitiesEyebrow: "Сфера деятельности",
-    activitiesTitle: "Как мы работаем с корпоративными клиентами",
+    activitiesEyebrow: "Продуктовые линейки",
+    activitiesTitle: "Наши продуктовые линейки",
     activitiesIntro:
-      "Зарегистрированная сфера деятельности компании охватывает производство, поставку продукции и технологические услуги.",
+      "HAILAN работает с корпоративными клиентами по трём основным продуктовым линейкам.",
     activities: [
       {
         number: "01",
-        title: "Производство материалов",
+        title: "Покрытия LVT",
         description:
-          "Зарегистрированные виды деятельности включают производство изделий из пластмасс и древесных плит.",
+          "Поставляются корпоративным клиентам как напольные покрытия LVT.",
       },
       {
         number: "02",
-        title: "Поставка продукции",
+        title: "Ковровые покрытия из ПЭТ",
         description:
-          "Зарегистрированные виды деятельности включают продажу изделий из пластмасс и промышленного текстиля.",
+          "Поставляются корпоративным клиентам как ковровые покрытия из ПЭТ.",
       },
       {
         number: "03",
-        title: "Технические услуги",
+        title: "Стеновые панели из ПЭТ",
         description:
-          "В сферу деятельности входят разработка технологий, консультации, передача и продвижение технологий.",
+          "Поставляются корпоративным клиентам как стеновые панели из ПЭТ.",
       },
     ],
     ctaEyebrow: "Сотрудничество с HAILAN",
@@ -158,7 +161,7 @@ const copy = {
       "Укажите область применения, объём, целевой рынок и желаемые сроки. Коммерческий отдел подтвердит актуальную доступность, характеристики и сопроводительные документы по вашему запросу.",
     emailAction: "Написать в коммерческий отдел",
     contactAction: "Открыть деловые контакты",
-    footerText: "Материалы · Поставки · Технические услуги",
+    footerText: "Покрытия LVT · Ковровые покрытия из ПЭТ · Стеновые панели из ПЭТ",
   },
 } as const;
 
