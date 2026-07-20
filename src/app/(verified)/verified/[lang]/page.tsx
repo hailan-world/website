@@ -14,9 +14,10 @@ const languageLinks = [
 ] as const;
 
 /**
- * The three product lines below (LVT flooring, PET carpet, PET wall
- * materials) were confirmed by the company owner on 2026-07-20. Do not
- * expand these entries with specifications, certifications or export
+ * The three product lines below (LVT flooring, polyester carpet, PET wall
+ * materials) and their primary materials were confirmed by the company
+ * owner on 2026-07-20. Do not expand these entries with specifications,
+ * certifications or export
  * claims without a separate source and approval reference.
  */
 const copy = {
@@ -50,8 +51,8 @@ const copy = {
       },
       {
         number: "02",
-        title: "PET Carpet",
-        description: "Supplied to business customers as PET carpet.",
+        title: "Polyester Carpet",
+        description: "Supplied to business customers as polyester carpet.",
       },
       {
         number: "03",
@@ -65,7 +66,7 @@ const copy = {
       "Share the application, quantity, destination market and requested timeline. Our commercial team will confirm current availability, specifications and supporting documents for your enquiry.",
     emailAction: "Email our commercial team",
     contactAction: "View business contact",
-    footerText: "LVT Flooring · PET Carpet · PET Wall Materials",
+    footerText: "LVT Flooring · Polyester Carpet · PET Wall Materials",
   },
   zh: {
     metaTitle: "HAILAN 海蓝 — 材料制造与 B2B 供应",
@@ -96,8 +97,8 @@ const copy = {
       },
       {
         number: "02",
-        title: "PET 地毯",
-        description: "面向企业客户供应的 PET 地毯产品线。",
+        title: "涤纶地毯",
+        description: "面向企业客户供应的涤纶地毯产品线。",
       },
       {
         number: "03",
@@ -111,7 +112,7 @@ const copy = {
       "请提供应用场景、需求数量、目的市场和期望时间。商务团队将根据具体询盘确认当前供应情况、产品参数及可提供的支持文件。",
     emailAction: "邮件联系商务团队",
     contactAction: "查看商务联系方式",
-    footerText: "LVT 地板 · PET 地毯 · PET 墙面",
+    footerText: "LVT 地板 · 涤纶地毯 · PET 墙面",
   },
   ru: {
     metaTitle: "HAILAN — Производство материалов и поставки B2B",
@@ -144,9 +145,9 @@ const copy = {
       },
       {
         number: "02",
-        title: "Ковровые покрытия из ПЭТ",
+        title: "Ковровые покрытия из полиэстера",
         description:
-          "Поставляются корпоративным клиентам как ковровые покрытия из ПЭТ.",
+          "Поставляются корпоративным клиентам как ковровые покрытия из полиэстера.",
       },
       {
         number: "03",
@@ -161,7 +162,7 @@ const copy = {
       "Укажите область применения, объём, целевой рынок и желаемые сроки. Коммерческий отдел подтвердит актуальную доступность, характеристики и сопроводительные документы по вашему запросу.",
     emailAction: "Написать в коммерческий отдел",
     contactAction: "Открыть деловые контакты",
-    footerText: "Покрытия LVT · Ковровые покрытия из ПЭТ · Стеновые панели из ПЭТ",
+    footerText: "Покрытия LVT · Ковровые покрытия из полиэстера · Стеновые панели из ПЭТ",
   },
 } as const;
 
