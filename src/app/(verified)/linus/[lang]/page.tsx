@@ -226,14 +226,9 @@ export default async function LinusPublicPage({
                 />
                 <div className="relative aspect-[1.586/1] overflow-hidden rounded-[1.4rem] border border-white/15 bg-gradient-to-br from-ink-800 to-ink-950 p-7 shadow-2xl shadow-black/40 sm:p-9">
                   <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50" aria-hidden="true" />
-                  <div className="relative flex h-full flex-col justify-between">
-                    <div className="flex items-start justify-between">
-                      <Logo on="dark" />
-                      <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-400">
-                        01 / LN
-                      </span>
-                    </div>
-                    <div>
+                  <div className="relative flex h-full flex-col">
+                    <Logo on="dark" />
+                    <div className="mt-7 sm:mt-9">
                       <p className="text-2xl font-medium tracking-[-0.035em] sm:text-3xl">
                         {content.displayName}
                       </p>
@@ -241,7 +236,7 @@ export default async function LinusPublicPage({
                         {content.role}
                       </p>
                     </div>
-                    <div className="flex items-end justify-between gap-5 border-t border-white/10 pt-4 font-mono text-[9px] leading-relaxed tracking-[0.06em] text-ink-400 sm:text-[10px]">
+                    <div className="mt-auto flex items-end justify-between gap-5 border-t border-white/10 pt-4 font-mono text-[9px] leading-relaxed tracking-[0.06em] text-ink-400 sm:text-[10px]">
                       <span>{verifiedSite.email}</span>
                       <span className="text-end">JINHUA · CHINA</span>
                     </div>
