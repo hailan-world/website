@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import NextLink from "next/link";
 import { notFound } from "next/navigation";
@@ -220,6 +221,7 @@ export default async function PublicCompanyPage({
           className="pointer-events-none absolute -bottom-56 -left-48 h-[32rem] w-[32rem] rounded-full bg-azure-400/10 blur-[120px]"
           aria-hidden="true"
         />
+        <div className="pointer-events-none absolute inset-0 bg-grain opacity-40" aria-hidden="true" />
 
         <header className="relative border-b border-white/10">
           <div className="mx-auto flex h-20 w-full max-w-[76rem] items-center justify-between px-6 md:px-10">
@@ -249,16 +251,32 @@ export default async function PublicCompanyPage({
         <main id="main" className="relative">
           <div className="mx-auto grid min-h-[720px] w-full max-w-[76rem] items-center gap-14 px-6 py-20 md:px-10 lg:grid-cols-12 lg:py-28">
             <div className="lg:col-span-8">
-              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-azure-300">
+              <p
+                className="hero-rise font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-azure-300"
+                style={{ "--delay": "0.1s", "--rise": "14px" } as CSSProperties}
+              >
                 {content.eyebrow}
               </p>
               <h1 className="mt-7 max-w-5xl text-balance text-5xl font-medium leading-[0.98] tracking-[-0.05em] sm:text-6xl md:text-7xl">
-                {content.title}
+                <span className="-mb-1 block overflow-hidden pb-1">
+                  <span
+                    className="hero-line block"
+                    style={{ "--delay": "0.18s" } as CSSProperties}
+                  >
+                    {content.title}
+                  </span>
+                </span>
               </h1>
-              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-200 md:text-xl">
+              <p
+                className="hero-rise mt-8 max-w-2xl text-lg leading-relaxed text-ink-200 md:text-xl"
+                style={{ "--delay": "0.5s", "--rise": "18px" } as CSSProperties}
+              >
                 {content.intro}
               </p>
-              <div className="mt-10 flex flex-wrap gap-3">
+              <div
+                className="hero-rise mt-10 flex flex-wrap gap-3"
+                style={{ "--delay": "0.7s", "--rise": "18px" } as CSSProperties}
+              >
                 <a
                   href={`mailto:${verifiedSite.email}`}
                   className="inline-flex h-12 items-center rounded-full bg-white px-6 text-sm font-medium text-ink-950 transition-colors hover:bg-azure-100"
@@ -274,7 +292,10 @@ export default async function PublicCompanyPage({
               </div>
             </div>
 
-            <div className="lg:col-span-4">
+            <div
+              className="hero-rise lg:col-span-4"
+              style={{ "--delay": "0.45s", "--rise": "40px" } as CSSProperties}
+            >
               <div className="rounded-[1.75rem] border border-white/12 bg-white/[0.055] p-7 backdrop-blur-sm md:p-8">
                 <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-azure-300">
                   {content.factsTitle}
