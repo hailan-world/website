@@ -1,5 +1,6 @@
 import { connection } from "next/server";
 import "../../../globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 export default async function VerifiedLayout({
   children,
@@ -30,6 +31,7 @@ export default async function VerifiedLayout({
           {skipLabel}
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
