@@ -51,8 +51,8 @@ const copy = {
       },
       {
         number: "02",
-        title: "Polyester Carpet",
-        description: "Supplied to business customers as polyester carpet.",
+        title: "PES Carpet",
+        description: "Supplied to business customers as PES (polyester) carpet.",
       },
       {
         number: "03",
@@ -66,7 +66,7 @@ const copy = {
       "Share the application, quantity, destination market and requested timeline. Our commercial team will confirm current availability, specifications and supporting documents for your enquiry.",
     emailAction: "Email our commercial team",
     contactAction: "View business contact",
-    footerText: "LVT Flooring · Polyester Carpet · PET Wall Materials",
+    footerText: "LVT Flooring · PES Carpet · PET Wall Materials",
   },
   zh: {
     metaTitle: "HAILAN 海蓝 — 材料制造与 B2B 供应",
@@ -97,8 +97,8 @@ const copy = {
       },
       {
         number: "02",
-        title: "涤纶地毯",
-        description: "面向企业客户供应的涤纶地毯产品线。",
+        title: "PES 地毯",
+        description: "面向企业客户供应的 PES（涤纶）地毯产品线。",
       },
       {
         number: "03",
@@ -112,7 +112,7 @@ const copy = {
       "请提供应用场景、需求数量、目的市场和期望时间。商务团队将根据具体询盘确认当前供应情况、产品参数及可提供的支持文件。",
     emailAction: "邮件联系商务团队",
     contactAction: "查看商务联系方式",
-    footerText: "LVT 地板 · 涤纶地毯 · PET 墙面",
+    footerText: "LVT 地板 · PES 地毯 · PET 墙面",
   },
   ru: {
     metaTitle: "HAILAN — Производство материалов и поставки B2B",
