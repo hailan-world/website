@@ -1,5 +1,6 @@
 import { connection } from "next/server";
 import "../../../globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export default async function LinusPublicLayout({
   children,
@@ -29,6 +30,7 @@ export default async function LinusPublicLayout({
           {skipLabel}
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
