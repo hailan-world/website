@@ -3,11 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import NextLink from "next/link";
 import { notFound } from "next/navigation";
-import {
-  MailIcon,
-  QrIcon,
-  WhatsAppIcon,
-} from "@/components/contact/icons";
+import { MailIcon, QrIcon } from "@/components/contact/icons";
 import { Logo } from "@/components/graphics/Logo";
 import { verifiedSite } from "@/lib/verified-site";
 
@@ -289,7 +285,7 @@ export default async function LinusPublicPage({
           <div className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
             <div className="rounded-[1.75rem] border border-ink-950/10 bg-mist-50 p-6 sm:p-7">
               <div className="flex items-center justify-center gap-3">
-                <WhatsAppIcon className="h-5 w-5 text-azure-600" />
+                <QrIcon className="h-5 w-5 text-azure-600" />
                 <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-600">
                   WhatsApp
                 </p>
