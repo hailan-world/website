@@ -1,11 +1,20 @@
 backend:
-  name: github
+  name: git-gateway
   repo: hailan-world/website
   branch: main
   base_url: https://hailanworld.com
-  auth_endpoint: api/cms/auth
-  use_graphql: true
+  auth_type: pkce
+  auth_endpoint: api/cms/dingtalk/authorize
+  auth_token_endpoint: api/cms/dingtalk/token
+  app_id: hailan-cms
+  gateway_url: https://hailanworld.com/api/cms/git/github
+  status_endpoint: https://hailanworld.com/api/cms/status
   squash_merges: true
+auth:
+  scope: openid
+  email_claim: email
+  full_name_claim: name
+  avatar_url_claim: avatar_url
 local_backend: true
 publish_mode: editorial_workflow
 locale: zh_Hans
