@@ -88,6 +88,9 @@ async function request(method, route, body = {}, bearer = token()) {
   login.search = new URLSearchParams({ client_id: 'hailan-cms', redirect_uri: 'https://hailanworld.com/admin/', response_type: 'code', state: 'test-state', code_challenge: auth.pkceChallenge(verifier), code_challenge_method: 'S256' }).toString();
   const start = authorize.GET(new NextRequest(login));
   assert.equal(start.status, 307);
+  const providerURL = new URL(start.headers.get('location'));
+  assert.equal(providerURL.searchParams.get('scope'), 'openid corpid');
+  assert.equal(providerURL.searchParams.get('corpId'), process.env.CMS_DINGTALK_CORP_ID);
   const state = new URL(start.headers.get('location')).searchParams.get('state');
   const callbackURL = `https://hailanworld.com/api/cms/dingtalk/callback?authCode=one-use-code&state=${state}`;
   assert.equal((await callback.GET(new NextRequest(callbackURL))).status, 401);
