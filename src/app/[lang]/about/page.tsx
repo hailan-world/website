@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/layout/CtaBand";
 import { PageHero } from "@/components/layout/PageHero";
-import { Counter } from "@/components/motion/Counter";
 import { Reveal } from "@/components/motion/Reveal";
 import { Chip } from "@/components/ui/Chip";
 import { Container } from "@/components/ui/Container";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { defaultLocale, isLocale } from "@/lib/i18n";
+import { placeholderContent, placeholderLabel } from "@/lib/content/placeholders";
 import { certifications, site, stats } from "@/lib/site";
 import { getDictionary } from "../dictionaries";
 
@@ -30,7 +30,8 @@ export default async function AboutPage({ params }: AboutPageProps) {
   const { lang } = await params;
   const locale = isLocale(lang) ? lang : defaultLocale;
   const dict = await getDictionary(locale);
-  const t = dict.about;
+  const t = placeholderContent(dict.about, locale);
+  const pending = placeholderLabel(locale);
 
   return (
     <>
@@ -62,21 +63,14 @@ export default async function AboutPage({ params }: AboutPageProps) {
 
           <dl className="mt-20 grid grid-cols-2 gap-x-8 gap-y-12 border-t border-ink-950/10 pt-12 lg:grid-cols-4">
             {[
-              { value: site.founded, label: t.story.stats.founded, raw: true },
-              { value: stats.facility, suffix: " m²", label: t.story.stats.facility },
-              { value: stats.lines, suffix: "", label: t.story.stats.lines },
-              { value: stats.team, suffix: "+", label: t.story.stats.team },
+              { value: `${site.founded} ${pending}`, label: t.story.stats.founded, raw: true },
+              { value: `${stats.facility} m² ${pending}`, label: t.story.stats.facility, raw: true },
+              { value: `${stats.lines} ${pending}`, label: t.story.stats.lines, raw: true },
+              { value: `${stats.team}+ ${pending}`, label: t.story.stats.team, raw: true },
             ].map((item, i) => (
               <Reveal key={item.label} delay={i * 0.08}>
                 <dd className="text-4xl font-medium tracking-[-0.02em] text-ink-950 md:text-[2.75rem]">
-                  {"raw" in item && item.raw ? (
-                    String(item.value)
-                  ) : (
-                    <>
-                      <Counter value={item.value} />
-                      <span className="text-azure-600">{item.suffix}</span>
-                    </>
-                  )}
+                  {String(item.value)}
                 </dd>
                 <dt className="mt-2.5 text-sm text-mist-500">{item.label}</dt>
               </Reveal>
@@ -168,7 +162,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
               <ul className="mt-8 flex flex-wrap gap-2.5" aria-label="Certifications">
                 {certifications.map((c) => (
                   <li key={c}>
-                    <Chip>{c}</Chip>
+                    <Chip>{c} {pending}</Chip>
                   </li>
                 ))}
               </ul>
@@ -177,7 +171,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
         </Container>
       </section>
 
-      <CtaBand title={t.cta.title} lede={t.cta.lede} cta={dict.cta.button} />
+      <CtaBand title={t.cta.title} lede={t.cta.lede} cta={placeholderContent(dict.cta.button, locale)} />
     </>
   );
 }

@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { getArticles } from "@/lib/content/news";
 import { getNewsCopy } from "@/lib/content/news-copy";
 import { defaultLocale, isLocale } from "@/lib/i18n";
+import { placeholderContent } from "@/lib/content/placeholders";
 import { formatDate } from "@/lib/utils";
 
 interface NewsPageProps {
@@ -18,7 +19,7 @@ export async function generateMetadata({
 }: NewsPageProps): Promise<Metadata> {
   const { lang } = await params;
   const locale = isLocale(lang) ? lang : defaultLocale;
-  const copy = getNewsCopy(locale);
+  const copy = placeholderContent(getNewsCopy(locale), locale);
   return { title: copy.eyebrow, description: copy.lede };
 }
 
@@ -105,7 +106,11 @@ export default async function NewsPage({ params }: NewsPageProps) {
         </Container>
       </section>
 
-      <CtaBand />
+      <CtaBand
+        title={locale === "zh" ? "想进一步了解海蓝？" : undefined}
+        lede={locale === "zh" ? "如需了解公司动态、产品或合作信息，请与商务团队联系。" : undefined}
+        cta={locale === "zh" ? "联系我们" : undefined}
+      />
     </>
   );
 }

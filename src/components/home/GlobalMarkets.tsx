@@ -12,7 +12,7 @@ const figureValues = [
   { value: 2400, suffix: "+" },
 ];
 
-export function GlobalMarkets({ dict }: { dict: Dictionary }) {
+export function GlobalMarkets({ dict, pendingFigures = false, locale = "en" }: { dict: Dictionary; pendingFigures?: boolean; locale?: string }) {
   const t = dict.markets;
 
   return (
@@ -28,7 +28,7 @@ export function GlobalMarkets({ dict }: { dict: Dictionary }) {
 
         <div className="mt-16 grid items-center gap-14 lg:grid-cols-[1.55fr_1fr]">
           <Reveal>
-            <WorldMap className="h-auto w-full" />
+            <WorldMap className="h-auto w-full" locale={locale} />
           </Reveal>
 
           <div>
@@ -49,8 +49,18 @@ export function GlobalMarkets({ dict }: { dict: Dictionary }) {
           {t.figures.map((figure, i) => (
             <Reveal key={figure.label} delay={i * 0.08}>
               <dd className="text-4xl font-medium tracking-[-0.02em]">
-                <Counter value={figureValues[i].value} />
-                <span className="text-azure-300">{figureValues[i].suffix}</span>
+                {pendingFigures ? (
+                  <>
+                    <Counter value={figureValues[i].value} />
+                    <span className="text-azure-300">{figureValues[i].suffix}</span>
+                    <span className="ml-2 align-middle text-xs text-amber-300">〔待确认〕</span>
+                  </>
+                ) : (
+                  <>
+                    <Counter value={figureValues[i].value} />
+                    <span className="text-azure-300">{figureValues[i].suffix}</span>
+                  </>
+                )}
               </dd>
               <dt className="mt-2 text-sm text-ink-300">{figure.label}</dt>
             </Reveal>

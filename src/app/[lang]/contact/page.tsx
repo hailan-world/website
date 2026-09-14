@@ -4,7 +4,9 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import { defaultLocale, isLocale } from "@/lib/i18n";
+import { placeholderContent, placeholderLabel } from "@/lib/content/placeholders";
 import { site } from "@/lib/site";
+import { verifiedSite } from "@/lib/verified-site";
 import { getDictionary } from "../dictionaries";
 
 interface ContactPageProps {
@@ -27,9 +29,10 @@ export default async function ContactPage({ params }: ContactPageProps) {
   const { lang } = await params;
   const locale = isLocale(lang) ? lang : defaultLocale;
   const dict = await getDictionary(locale);
-  const t = dict.contactPage;
+  const t = placeholderContent(dict.contactPage, locale);
+  const pending = placeholderLabel(locale);
 
-  const productNames = Object.values(dict.productLines).map((line) => line.name);
+  const productNames = Object.values(dict.productLines).map((line) => placeholderContent(line.name, locale));
 
   return (
     <>
@@ -57,17 +60,17 @@ export default async function ContactPage({ params }: ContactPageProps) {
                 href={`tel:${site.phone.replace(/\s/g, "")}`}
                 className="mt-2 block text-lg text-mist-600 transition-colors hover:text-ink-950"
               >
-                {site.phone}
+                {site.phone} {pending}
               </a>
 
               <h2 className="mt-12 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
                 {t.hq}
               </h2>
               <address className="mt-5 text-[15px] not-italic leading-relaxed text-mist-600">
-                {site.legalName}
+                {locale === "zh" ? verifiedSite.legalNameZh : `${site.legalName} ${pending}`}
                 {dict.footer.address.map((line) => (
                   <span key={line} className="block">
-                    {line}
+                    {line} {locale === "zh" ? "" : pending}
                   </span>
                 ))}
               </address>

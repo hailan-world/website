@@ -11,7 +11,7 @@ publish_mode: editorial_workflow
 locale: zh_Hans
 site_url: https://hailanworld.com
 display_url: https://hailanworld.com
-logo_url: https://hailanworld.com/icon.svg
+logo_url: /hailan-wordmark.svg
 show_preview_links: true
 search: true
 media_folder: public/uploads/news
@@ -20,117 +20,1252 @@ slug:
   encoding: ascii
   clean_accents: true
   sanitize_replacement: "-"
-i18n:
-  structure: multiple_files
-  locales:
-    - en
-    - zh
-    - fr
-    - es
-    - ru
-    - ar
-    - ja
-    - ms
-    - id
-  default_locale: en
+
 collections:
-  - name: lvt_pilot
-    label: LVT 中英文试点
-    description: 只用于本地和 Vercel Preview 测试，不会替换正式产品页，也不会在生产环境显示。
-    i18n:
-      structure: multiple_files
-      locales:
-        - en
-        - zh
-      default_locale: en
+  - name: site_copy
+    label: 网站文案
+    description: 编辑九种语言的页面文案。发布后由 GitHub 审核流程合并并自动部署。
+    extension: json
+    format: json
     delete: false
     editor:
       preview: false
-    preview_path: en/cms-preview/lvt
     files:
-      - label: LVT 试点内容
-        name: lvt
-        file: content/pilot/lvt.json
-        i18n: true
-        fields:
-          - label: 审核状态
-            name: status
-            widget: select
-            default: draft
-            i18n: duplicate
-            options:
-              - label: 草稿
-                value: draft
-              - label: 试点已审核
-                value: approved
-          - label: 产品名称
-            name: title
-            widget: string
-            i18n: true
-          - label: 分类
-            name: category
-            widget: string
-            i18n: true
-          - label: 主标题
-            name: headline
-            widget: string
-            i18n: true
-          - label: 简述
-            name: short
-            widget: text
-            i18n: true
-          - label: 介绍段落
+      - label: "English"
+        name: "site_en"
+        file: "src/app/[lang]/dictionaries/en.json"
+        preview_path: "en"
+        fields: &site_copy_fields
+          - label: "网站 SEO"
+            name: "siteMeta"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "标题"
+                name: "title"
+                widget: string
+              - label: "描述"
+                name: "description"
+                widget: text
+          - label: "导航"
+            name: "nav"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "关于我们页"
+                name: "about"
+                widget: string
+              - label: "products"
+                name: "products"
+                widget: string
+              - label: "manufacturing"
+                name: "manufacturing"
+                widget: string
+              - label: "quality"
+                name: "quality"
+                widget: string
+              - label: "oemOdm"
+                name: "oemOdm"
+                widget: string
+              - label: "news"
+                name: "news"
+                widget: string
+              - label: "contact"
+                name: "contact"
+                widget: string
+          - label: "通用按钮与文字"
+            name: "common"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "skipToContent"
+                name: "skipToContent"
+                widget: string
+              - label: "allProducts"
+                name: "allProducts"
+                widget: string
+              - label: "allNews"
+                name: "allNews"
+                widget: string
+              - label: "readArticle"
+                name: "readArticle"
+                widget: string
+              - label: "requestSamples"
+                name: "requestSamples"
+                widget: string
+              - label: "moreAboutHailan"
+                name: "moreAboutHailan"
+                widget: string
+              - label: "exploreProducts"
+                name: "exploreProducts"
+                widget: string
+              - label: "ourManufacturing"
+                name: "ourManufacturing"
+                widget: string
+              - label: "languageLabel"
+                name: "languageLabel"
+                widget: string
+          - label: "产品线摘要"
+            name: "productLines"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "lvt-flooring"
+                name: "lvt-flooring"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "名称"
+                    name: "name"
+                    widget: string
+                  - label: "category"
+                    name: "category"
+                    widget: string
+                  - label: "摘要"
+                    name: "short"
+                    widget: text
+                  - label: "chips"
+                    name: "chips"
+                    widget: list
+                    collapsed: true
+                    field:
+                      label: "项目"
+                      name: "item"
+                      widget: text
+              - label: "pet-wall-coverings"
+                name: "pet-wall-coverings"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "名称"
+                    name: "name"
+                    widget: string
+                  - label: "category"
+                    name: "category"
+                    widget: string
+                  - label: "摘要"
+                    name: "short"
+                    widget: text
+                  - label: "chips"
+                    name: "chips"
+                    widget: list
+                    collapsed: true
+                    field:
+                      label: "项目"
+                      name: "item"
+                      widget: text
+              - label: "pet-carpet-coverings"
+                name: "pet-carpet-coverings"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "名称"
+                    name: "name"
+                    widget: string
+                  - label: "category"
+                    name: "category"
+                    widget: string
+                  - label: "摘要"
+                    name: "short"
+                    widget: text
+                  - label: "chips"
+                    name: "chips"
+                    widget: list
+                    collapsed: true
+                    field:
+                      label: "项目"
+                      name: "item"
+                      widget: text
+          - label: "首页首屏"
+            name: "hero"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "kicker"
+                name: "kicker"
+                widget: string
+              - label: "headlineLine1"
+                name: "headlineLine1"
+                widget: string
+              - label: "headlineLine2"
+                name: "headlineLine2"
+                widget: string
+              - label: "导语"
+                name: "lede"
+                widget: text
+              - label: "badge"
+                name: "badge"
+                widget: string
+              - label: "scroll"
+                name: "scroll"
+                widget: string
+          - label: "首页公司介绍"
+            name: "intro"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "栏目眉题"
+                name: "eyebrow"
+                widget: string
+              - label: "标题"
+                name: "title"
+                widget: string
+              - label: "para1"
+                name: "para1"
+                widget: text
+              - label: "para2"
+                name: "para2"
+                widget: text
+              - label: "stats"
+                name: "stats"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "countries"
+                    name: "countries"
+                    widget: string
+                  - label: "facility"
+                    name: "facility"
+                    widget: string
+                  - label: "facilityUnit"
+                    name: "facilityUnit"
+                    widget: string
+                  - label: "capacity"
+                    name: "capacity"
+                    widget: string
+                  - label: "team"
+                    name: "team"
+                    widget: string
+          - label: "首页产品区"
+            name: "productsHome"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "栏目眉题"
+                name: "eyebrow"
+                widget: string
+              - label: "标题"
+                name: "title"
+                widget: string
+              - label: "导语"
+                name: "lede"
+                widget: text
+          - label: "首页制造区"
+            name: "manufacturingHome"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "栏目眉题"
+                name: "eyebrow"
+                widget: string
+              - label: "标题"
+                name: "title"
+                widget: string
+              - label: "导语"
+                name: "lede"
+                widget: text
+              - label: "link"
+                name: "link"
+                widget: string
+              - label: "pillars"
+                name: "pillars"
+                widget: list
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "正文"
+                    name: "text"
+                    widget: text
+              - label: "process"
+                name: "process"
+                widget: list
+                collapsed: true
+                field:
+                  label: "项目"
+                  name: "item"
+                  widget: text
+          - label: "首页优势区"
+            name: "why"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "栏目眉题"
+                name: "eyebrow"
+                widget: string
+              - label: "标题"
+                name: "title"
+                widget: string
+              - label: "导语"
+                name: "lede"
+                widget: text
+              - label: "reasons"
+                name: "reasons"
+                widget: list
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "正文"
+                    name: "text"
+                    widget: text
+                  - label: "proof"
+                    name: "proof"
+                    widget: string
+          - label: "首页市场区"
+            name: "markets"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "栏目眉题"
+                name: "eyebrow"
+                widget: string
+              - label: "标题"
+                name: "title"
+                widget: string
+              - label: "导语"
+                name: "lede"
+                widget: text
+              - label: "regions"
+                name: "regions"
+                widget: list
+                collapsed: true
+                fields:
+                  - label: "名称"
+                    name: "name"
+                    widget: string
+                  - label: "首页市场区"
+                    name: "markets"
+                    widget: string
+              - label: "figures"
+                name: "figures"
+                widget: list
+                collapsed: true
+                fields:
+                  - label: "标签"
+                    name: "label"
+                    widget: string
+          - label: "首页新闻区"
+            name: "newsHome"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "栏目眉题"
+                name: "eyebrow"
+                widget: string
+              - label: "标题"
+                name: "title"
+                widget: string
+          - label: "行动号召"
+            name: "cta"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "标题"
+                name: "title"
+                widget: string
+              - label: "导语"
+                name: "lede"
+                widget: text
+              - label: "button"
+                name: "button"
+                widget: string
+          - label: "页脚"
+            name: "footer"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "tagline"
+                name: "tagline"
+                widget: text
+              - label: "products"
+                name: "products"
+                widget: string
+              - label: "company"
+                name: "company"
+                widget: string
+              - label: "headquarters"
+                name: "headquarters"
+                widget: string
+              - label: "address"
+                name: "address"
+                widget: list
+                collapsed: true
+                field:
+                  label: "项目"
+                  name: "item"
+                  widget: text
+              - label: "rights"
+                name: "rights"
+                widget: string
+              - label: "signoff"
+                name: "signoff"
+                widget: string
+              - label: "globalInquiries"
+                name: "globalInquiries"
+                widget: string
+          - label: "关于我们页"
+            name: "about"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "SEO 信息"
+                name: "meta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "描述"
+                    name: "description"
+                    widget: text
+              - label: "首页首屏"
+                name: "hero"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+              - label: "story"
+                name: "story"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "para1"
+                    name: "para1"
+                    widget: text
+                  - label: "para2"
+                    name: "para2"
+                    widget: text
+                  - label: "para3"
+                    name: "para3"
+                    widget: text
+                  - label: "stats"
+                    name: "stats"
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "founded"
+                        name: "founded"
+                        widget: string
+                      - label: "facility"
+                        name: "facility"
+                        widget: string
+                      - label: "lines"
+                        name: "lines"
+                        widget: string
+                      - label: "team"
+                        name: "team"
+                        widget: string
+              - label: "values"
+                name: "values"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+                  - label: "条目"
+                    name: "items"
+                    widget: list
+                    collapsed: true
+                    fields:
+                      - label: "标题"
+                        name: "title"
+                        widget: string
+                      - label: "正文"
+                        name: "text"
+                        widget: text
+              - label: "timeline"
+                name: "timeline"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "条目"
+                    name: "items"
+                    widget: list
+                    collapsed: true
+                    fields:
+                      - label: "year"
+                        name: "year"
+                        widget: string
+                      - label: "标题"
+                        name: "title"
+                        widget: string
+                      - label: "正文"
+                        name: "text"
+                        widget: text
+              - label: "compliance"
+                name: "compliance"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "正文"
+                    name: "text"
+                    widget: text
+              - label: "行动号召"
+                name: "cta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+          - label: "产品列表页"
+            name: "productsPage"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "SEO 信息"
+                name: "meta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "描述"
+                    name: "description"
+                    widget: text
+              - label: "首页首屏"
+                name: "hero"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+              - label: "explore"
+                name: "explore"
+                widget: string
+              - label: "roadmap"
+                name: "roadmap"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "正文"
+                    name: "text"
+                    widget: text
+                  - label: "link"
+                    name: "link"
+                    widget: string
+              - label: "行动号召"
+                name: "cta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+                  - label: "button"
+                    name: "button"
+                    widget: string
+          - label: "联系我们页"
+            name: "contactPage"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "SEO 信息"
+                name: "meta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "描述"
+                    name: "description"
+                    widget: text
+              - label: "首页首屏"
+                name: "hero"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+              - label: "inquiries"
+                name: "inquiries"
+                widget: string
+              - label: "hq"
+                name: "hq"
+                widget: string
+              - label: "hours"
+                name: "hours"
+                widget: string
+              - label: "visits"
+                name: "visits"
+                widget: string
+              - label: "nextTitle"
+                name: "nextTitle"
+                widget: string
+              - label: "expectations"
+                name: "expectations"
+                widget: list
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "正文"
+                    name: "text"
+                    widget: text
+              - label: "form"
+                name: "form"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "heading"
+                    name: "heading"
+                    widget: string
+                  - label: "首页公司介绍"
+                    name: "intro"
+                    widget: text
+                  - label: "名称"
+                    name: "name"
+                    widget: string
+                  - label: "namePlaceholder"
+                    name: "namePlaceholder"
+                    widget: string
+                  - label: "company"
+                    name: "company"
+                    widget: string
+                  - label: "companyPlaceholder"
+                    name: "companyPlaceholder"
+                    widget: string
+                  - label: "email"
+                    name: "email"
+                    widget: string
+                  - label: "emailPlaceholder"
+                    name: "emailPlaceholder"
+                    widget: string
+                  - label: "country"
+                    name: "country"
+                    widget: string
+                  - label: "countryPlaceholder"
+                    name: "countryPlaceholder"
+                    widget: string
+                  - label: "inquiry"
+                    name: "inquiry"
+                    widget: string
+                  - label: "inquiryTypes"
+                    name: "inquiryTypes"
+                    widget: list
+                    collapsed: true
+                    field:
+                      label: "项目"
+                      name: "item"
+                      widget: text
+                  - label: "productsInterest"
+                    name: "productsInterest"
+                    widget: string
+                  - label: "message"
+                    name: "message"
+                    widget: string
+                  - label: "messagePlaceholder"
+                    name: "messagePlaceholder"
+                    widget: string
+                  - label: "submit"
+                    name: "submit"
+                    widget: string
+                  - label: "note"
+                    name: "note"
+                    widget: text
+                  - label: "status"
+                    name: "status"
+                    widget: string
+          - label: "生产制造页"
+            name: "manufacturingPage"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "SEO 信息"
+                name: "meta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "描述"
+                    name: "description"
+                    widget: text
+              - label: "首页首屏"
+                name: "hero"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+              - label: "capabilities"
+                name: "capabilities"
+                widget: list
+                collapsed: true
+                field:
+                  label: "项目"
+                  name: "item"
+                  widget: text
+              - label: "process"
+                name: "process"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+                  - label: "steps"
+                    name: "steps"
+                    widget: list
+                    collapsed: true
+                    fields:
+                      - label: "标题"
+                        name: "title"
+                        widget: string
+                      - label: "正文"
+                        name: "text"
+                        widget: text
+              - label: "automation"
+                name: "automation"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+                  - label: "link"
+                    name: "link"
+                    widget: string
+                  - label: "条目"
+                    name: "items"
+                    widget: list
+                    collapsed: true
+                    fields:
+                      - label: "标题"
+                        name: "title"
+                        widget: string
+                      - label: "正文"
+                        name: "text"
+                        widget: text
+              - label: "logistics"
+                name: "logistics"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "正文"
+                    name: "text"
+                    widget: text
+                  - label: "points"
+                    name: "points"
+                    widget: list
+                    collapsed: true
+                    field:
+                      label: "项目"
+                      name: "item"
+                      widget: text
+              - label: "行动号召"
+                name: "cta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+                  - label: "button"
+                    name: "button"
+                    widget: string
+          - label: "OEM / ODM 页"
+            name: "oemOdmPage"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "SEO 信息"
+                name: "meta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "描述"
+                    name: "description"
+                    widget: text
+              - label: "首页首屏"
+                name: "hero"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+              - label: "process"
+                name: "process"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+                  - label: "steps"
+                    name: "steps"
+                    widget: list
+                    collapsed: true
+                    fields:
+                      - label: "标题"
+                        name: "title"
+                        widget: string
+                      - label: "SEO 信息"
+                        name: "meta"
+                        widget: string
+                      - label: "正文"
+                        name: "text"
+                        widget: text
+              - label: "services"
+                name: "services"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "条目"
+                    name: "items"
+                    widget: list
+                    collapsed: true
+                    fields:
+                      - label: "标题"
+                        name: "title"
+                        widget: string
+                      - label: "正文"
+                        name: "text"
+                        widget: text
+              - label: "assurances"
+                name: "assurances"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "首页公司介绍"
+                    name: "intro"
+                    widget: text
+                  - label: "points"
+                    name: "points"
+                    widget: list
+                    collapsed: true
+                    field:
+                      label: "项目"
+                      name: "item"
+                      widget: text
+              - label: "行动号召"
+                name: "cta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+                  - label: "button"
+                    name: "button"
+                    widget: string
+          - label: "质量页"
+            name: "qualityPage"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "SEO 信息"
+                name: "meta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "描述"
+                    name: "description"
+                    widget: text
+              - label: "首页首屏"
+                name: "hero"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+              - label: "gates"
+                name: "gates"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+                  - label: "gateLabel"
+                    name: "gateLabel"
+                    widget: string
+                  - label: "条目"
+                    name: "items"
+                    widget: list
+                    collapsed: true
+                    fields:
+                      - label: "标题"
+                        name: "title"
+                        widget: string
+                      - label: "正文"
+                        name: "text"
+                        widget: text
+              - label: "lab"
+                name: "lab"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+                  - label: "caption"
+                    name: "caption"
+                    widget: string
+                  - label: "colTest"
+                    name: "colTest"
+                    widget: string
+                  - label: "colMethod"
+                    name: "colMethod"
+                    widget: string
+                  - label: "tests"
+                    name: "tests"
+                    widget: list
+                    collapsed: true
+                    field:
+                      label: "项目"
+                      name: "item"
+                      widget: text
+              - label: "trace"
+                name: "trace"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "para1"
+                    name: "para1"
+                    widget: text
+                  - label: "para2"
+                    name: "para2"
+                    widget: text
+              - label: "certs"
+                name: "certs"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "栏目眉题"
+                    name: "eyebrow"
+                    widget: string
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+              - label: "行动号召"
+                name: "cta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "导语"
+                    name: "lede"
+                    widget: text
+                  - label: "button"
+                    name: "button"
+                    widget: string
+          - label: "商务名片页"
+            name: "linusPage"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "SEO 信息"
+                name: "meta"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "标题"
+                    name: "title"
+                    widget: string
+                  - label: "描述"
+                    name: "description"
+                    widget: text
+              - label: "首页首屏"
+                name: "hero"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "role"
+                    name: "role"
+                    widget: string
+              - label: "getInTouch"
+                name: "getInTouch"
+                widget: string
+              - label: "labels"
+                name: "labels"
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "email"
+                    name: "email"
+                    widget: string
+              - label: "wecomValue"
+                name: "wecomValue"
+                widget: string
+              - label: "wecomNote"
+                name: "wecomNote"
+                widget: string
+              - label: "linkedinValue"
+                name: "linkedinValue"
+                widget: string
+              - label: "companyTagline"
+                name: "companyTagline"
+                widget: string
+              - label: "wecomHeading"
+                name: "wecomHeading"
+                widget: string
+              - label: "wecomScan"
+                name: "wecomScan"
+                widget: string
+      - label: "简体中文"
+        name: "site_zh"
+        file: "src/app/[lang]/dictionaries/zh.json"
+        preview_path: "zh"
+        fields: *site_copy_fields
+      - label: "Français"
+        name: "site_fr"
+        file: "src/app/[lang]/dictionaries/fr.json"
+        preview_path: "fr"
+        fields: *site_copy_fields
+      - label: "Español"
+        name: "site_es"
+        file: "src/app/[lang]/dictionaries/es.json"
+        preview_path: "es"
+        fields: *site_copy_fields
+      - label: "Русский"
+        name: "site_ru"
+        file: "src/app/[lang]/dictionaries/ru.json"
+        preview_path: "ru"
+        fields: *site_copy_fields
+      - label: "العربية"
+        name: "site_ar"
+        file: "src/app/[lang]/dictionaries/ar.json"
+        preview_path: "ar"
+        fields: *site_copy_fields
+      - label: "日本語"
+        name: "site_ja"
+        file: "src/app/[lang]/dictionaries/ja.json"
+        preview_path: "ja"
+        fields: *site_copy_fields
+      - label: "Bahasa Melayu"
+        name: "site_ms"
+        file: "src/app/[lang]/dictionaries/ms.json"
+        preview_path: "ms"
+        fields: *site_copy_fields
+      - label: "Bahasa Indonesia"
+        name: "site_id"
+        file: "src/app/[lang]/dictionaries/id.json"
+        preview_path: "id"
+        fields: *site_copy_fields
+
+  - name: products
+    label: 产品资料
+    description: 编辑产品介绍、参数、特点、应用、形式和认证信息。
+    extension: json
+    format: json
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: LVT Flooring
+        name: lvt_flooring
+        file: content/products/lvt-flooring.json
+        preview_path: en/products/lvt-flooring
+        fields: &product_fields
+          - { label: "URL 标识", name: slug, widget: hidden }
+          - { label: "产品名称", name: name, widget: string }
+          - { label: "产品分类", name: category, widget: string }
+          - { label: "主标题", name: headline, widget: string }
+          - { label: "摘要", name: short, widget: text }
+          - label: "产品介绍"
             name: description
             widget: list
-            i18n: true
-            min: 1
-            field:
-              label: 段落
-              name: paragraph
-              widget: text
-              i18n: true
-          - label: 测试参数
+            field: { label: "段落", name: paragraph, widget: text }
+          - label: "技术参数"
             name: specs
             widget: list
-            i18n: true
             fields:
-              - label: 参数名
-                name: label
-                widget: string
-                i18n: true
-              - label: 参数值
-                name: value
-                widget: string
-                i18n: true
-          - label: 形式标签
+              - { label: "参数名", name: label, widget: string }
+              - { label: "参数值", name: value, widget: string }
+          - label: "产品特点"
+            name: features
+            widget: list
+            fields:
+              - { label: "标题", name: title, widget: string }
+              - { label: "正文", name: text, widget: text }
+          - label: "应用场景"
+            name: applications
+            widget: list
+            field: { label: "场景", name: application, widget: string }
+          - label: "产品形式"
             name: formats
             widget: list
-            i18n: true
-            field:
-              label: 标签
-              name: format
-              widget: string
-              i18n: true
-          - label: 审核人
-            name: approvedBy
-            widget: string
-            i18n: duplicate
-            required: false
-          - label: 审核记录编号
-            name: approvalReference
-            widget: string
-            i18n: duplicate
-            required: false
-          - label: 依据说明
-            name: sourceNotes
-            widget: text
-            i18n: duplicate
-            required: false
-            hint: 试点阶段只写公开安全的测试说明，不要放客户、订单或内部链接。
+            field: { label: "形式", name: format, widget: string }
+          - label: "认证与标准"
+            name: compliance
+            widget: list
+            field: { label: "认证或标准", name: item, widget: string }
+          - { label: "视觉纹理", name: texture, widget: hidden }
+      - label: PET Wall Coverings
+        name: pet_wall_coverings
+        file: content/products/pet-wall-coverings.json
+        preview_path: en/products/pet-wall-coverings
+        fields: *product_fields
+      - label: PET Carpet Coverings
+        name: pet_carpet_coverings
+        file: content/products/pet-carpet-coverings.json
+        preview_path: en/products/pet-carpet-coverings
+        fields: *product_fields
+
   - name: news
     label: 新闻动态
     label_singular: 新闻文章
-    description: 只有完成事实核实并标记为“已核实”的文章才会出现在网站上。
+    description: 业务员可创建草稿；只有完成审核并标记为“已核实”的文章才会显示。
     folder: content/news
     extension: json
     format: json
@@ -141,17 +1276,10 @@ collections:
     slug: "{{fields.slug}}"
     preview_path: en/news/{{fields.slug}}
     summary: "{{date}} · {{title}} · {{status}}"
-    sortable_fields:
-      - date
-      - title
-      - status
+    sortable_fields: [date, title, status]
     view_filters:
-      - label: 待核实
-        field: status
-        pattern: draft
-      - label: 已核实
-        field: status
-        pattern: approved
+      - { label: "待核实", field: status, pattern: draft }
+      - { label: "已核实", field: status, pattern: approved }
     fields:
       - label: 发布状态
         name: status
@@ -159,79 +1287,30 @@ collections:
         default: draft
         i18n: duplicate
         options:
-          - label: 草稿（不会在网站显示）
-            value: draft
-          - label: 已核实（审核发布后显示）
-            value: approved
+          - { label: "草稿（不会在网站显示）", value: draft }
+          - { label: "已核实（审核发布后显示）", value: approved }
       - label: URL 标识
         name: slug
         widget: string
         i18n: duplicate
         hint: 仅使用小写英文字母、数字和连字符，例如 new-showroom-opening。
-        pattern:
-          - ^[a-z0-9]+(?:-[a-z0-9]+)*$
-          - 仅可使用小写英文字母、数字和连字符。
-      - label: 标题
-        name: title
-        widget: string
-        i18n: true
-      - label: 发布日期
-        name: date
-        widget: datetime
-        i18n: duplicate
-        date_format: YYYY-MM-DD
-        time_format: false
-        format: YYYY-MM-DD
-        picker_utc: true
+        pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 仅可使用小写英文字母、数字和连字符。]
+      - { label: 标题, name: title, widget: string, i18n: true }
+      - { label: 发布日期, name: date, widget: datetime, i18n: duplicate, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD, picker_utc: true }
       - label: 分类
         name: category
         widget: select
         i18n: duplicate
-        options:
-          - Events
-          - Manufacturing
-          - Sustainability
-          - Company
-      - label: 摘要
-        name: excerpt
-        widget: text
-        i18n: true
-        hint: 用一至两句话说明已核实的核心信息。
+        options: [Events, Manufacturing, Sustainability, Company]
+      - { label: 摘要, name: excerpt, widget: text, i18n: true }
       - label: 正文段落
         name: body
         widget: list
         i18n: true
         min: 1
-        field:
-          label: 段落
-          name: paragraph
-          widget: text
-      - label: 封面图片
-        name: coverImage
-        widget: image
-        i18n: duplicate
-        required: false
-      - label: 图片替代文字
-        name: coverImageAlt
-        widget: string
-        i18n: true
-        required: false
-        hint: 简短说明图片内容，供无障碍阅读使用。
-      - label: 核实人
-        name: approvedBy
-        widget: string
-        i18n: duplicate
-        required: false
-        hint: 标记为“已核实”前必须填写获授权核实人的公开安全姓名或岗位。
-      - label: 批准记录编号
-        name: approvalReference
-        widget: string
-        i18n: duplicate
-        required: false
-        hint: 填写 Company OS 或飞书中的内部发布批准记录编号；不要复制机密正文、路径或链接。
-      - label: 事实依据
-        name: sourceNotes
-        widget: text
-        i18n: duplicate
-        required: false
-        hint: 简述合同、照片、证书或负责人确认等依据；不要粘贴机密原文。
+        field: { label: 段落, name: paragraph, widget: text }
+      - { label: 封面图片, name: coverImage, widget: image, i18n: duplicate, required: false }
+      - { label: 图片替代文字, name: coverImageAlt, widget: string, i18n: true, required: false }
+      - { label: 核实人, name: approvedBy, widget: string, i18n: duplicate, required: false }
+      - { label: 批准记录编号, name: approvalReference, widget: string, i18n: duplicate, required: false }
+      - { label: 事实依据, name: sourceNotes, widget: text, i18n: duplicate, required: false }

@@ -1,0 +1,80 @@
+{
+  "slug": "pet-wall-coverings",
+  "name": "PET Wall Coverings",
+  "category": "Decorative Wall Materials",
+  "headline": "PET wall materials for decorative interior applications.",
+  "short": "PET wall materials for decorative interior applications; available structures and compositions require confirmation.",
+  "description": [
+    "The original description of this PET wall material is being reviewed. Material structure, composition and available finishing methods require confirmation before publication.",
+    "Available formats, colours and project-specific processing options require confirmation with the product and production teams."
+  ],
+  "specs": [
+    {
+      "label": "Material",
+      "value": "100% polyester fibre (PET)"
+    },
+    {
+      "label": "Recycled content",
+      "value": "Up to 60% post-consumer"
+    },
+    {
+      "label": "Thickness",
+      "value": "9 / 12 / 24 mm"
+    },
+    {
+      "label": "Sheet size",
+      "value": "1220 × 2440 mm · custom cut"
+    },
+    {
+      "label": "Density",
+      "value": "≈ 1950 g/m² (9 mm)"
+    },
+    {
+      "label": "Fire rating",
+      "value": "EN 13501-1 B-s1,d0 · ASTM E84 Class A"
+    },
+    {
+      "label": "Colours",
+      "value": "36 standard · custom on request"
+    }
+  ],
+  "features": [
+    {
+      "title": "Material construction",
+      "text": "Material construction and verified performance characteristics require confirmation before publication."
+    },
+    {
+      "title": "Colour-through material",
+      "text": "Dyed fibre — not surface print — means edges, cuts and routed details show the same colour as the face."
+    },
+    {
+      "title": "CNC fabrication",
+      "text": "In-house routing produces slats, perforations, bevels and project-specific geometries with clean, sealed edges."
+    },
+    {
+      "title": "Circular material",
+      "text": "Each square metre of 12 mm panel diverts roughly 62 plastic bottles from landfill, documented in our sustainability reporting."
+    }
+  ],
+  "applications": [
+    "Open-plan offices",
+    "Education",
+    "Hospitality",
+    "Media & broadcast rooms",
+    "Public buildings",
+    "Retail interiors"
+  ],
+  "formats": [
+    "Flat sheets",
+    "Slat wall systems",
+    "CNC-cut shapes",
+    "Tiles & baffles"
+  ],
+  "compliance": [
+    "ASTM E84 Class A",
+    "EN 13501-1 B-s1,d0",
+    "REACH",
+    "ISO 354 tested"
+  ],
+  "texture": "wall"
+}

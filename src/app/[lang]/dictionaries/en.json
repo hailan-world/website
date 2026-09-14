@@ -8,7 +8,7 @@
     "products": "Products",
     "manufacturing": "Factory",
     "quality": "Quality",
-    "oemOdm": "OEM / ODM",
+    "oemOdm": "Partnership",
     "news": "Resources",
     "contact": "Contact"
   },
@@ -32,9 +32,9 @@
     },
     "pet-wall-coverings": {
       "name": "PET Wall Coverings",
-      "category": "Acoustic Wall Systems",
-      "short": "Polyester acoustic felt panels — flat sheets, slat systems and CNC-cut shapes — with up to 60% recycled content.",
-      "chips": ["NRC up to 0.85", "60% recycled PET"]
+      "category": "Decorative Wall Materials",
+      "short": "PET wall materials for decorative interior applications; structures, compositions and processing options require confirmation.",
+      "chips": ["Structure to be confirmed", "Composition to be confirmed"]
     },
     "pet-carpet-coverings": {
       "name": "PET Carpet Coverings",
@@ -54,7 +54,7 @@
   "intro": {
     "eyebrow": "01 — Who we are",
     "title": "A manufacturing partner built for global brands.",
-    "para1": "HAILAN is a global decorative building materials manufacturer headquartered in Jinhua, China. From an integrated production campus in Zhejiang, we develop, produce and export LVT flooring, PET acoustic wall coverings and PET carpet coverings.",
+    "para1": "HAILAN is a decorative building materials manufacturer based in Jinhua, China. The exact scope of its LVT flooring, PET wall material and PET carpet material activities requires confirmation.",
     "para2": "Our products carry other people’s names as often as our own. For importers, retail chains and home-improvement brands on every continent, HAILAN is the quiet capability behind the label: stable quality, honest lead times and a team that treats your program like its own.",
     "stats": {
       "countries": "Export countries",
@@ -184,7 +184,7 @@
       "eyebrow": "Our story",
       "title": "Built from a Zhejiang manufacturing base.",
       "para1": "HAILAN was founded in 2020 in Jindong District, Jinhua, Zhejiang. Growing from a dedicated manufacturing base shaped how we work: close to suppliers, tooling partners and testing resources, with export standards setting the bar for every production program.",
-      "para2": "From the beginning we chose a narrower, deeper path than most: fewer product categories, engineered properly, produced on our own lines and documented to the standards of the strictest destination market. First LVT flooring, then PET acoustic wall coverings, then PET carpet coverings — three surfaces, one quality system.",
+      "para2": "The company’s product and business development history requires management and departmental confirmation.",
       "para3": "Today our products are installed in offices, hotels, schools and homes in more than 20 countries — usually under our partners’ brands. That is by design. HAILAN’s ambition is to be the most dependable manufacturer behind the world’s decorative building material brands, and increasingly, a brand worth asking for by name.",
       "stats": {
         "founded": "Founded",
@@ -241,7 +241,7 @@
   "productsPage": {
     "meta": {
       "title": "Products",
-      "description": "LVT flooring, PET acoustic wall coverings and PET carpet coverings — three product lines engineered under one quality system for importers, distributors and brands worldwide."
+      "description": "The exact product scope, production model and served markets for LVT flooring, PET wall materials and PET carpet materials require confirmation."
     },
     "hero": {
       "eyebrow": "Products",
@@ -252,7 +252,7 @@
     "roadmap": {
       "eyebrow": "Looking ahead",
       "title": "One category at a time, engineered properly.",
-      "text": "HAILAN’s roadmap extends beyond flooring and acoustic surfaces into the broader world of decorative building materials. New categories join the portfolio the same way the current three did: developed on our own lines, validated against international standards, and offered to partners only when we can guarantee them at scale.",
+      "text": "HAILAN’s future product roadmap requires confirmation by management, product and production teams.",
       "link": "Develop a product with us"
     },
     "cta": {
@@ -399,7 +399,7 @@
   "oemOdmPage": {
     "meta": {
       "title": "OEM / ODM",
-      "description": "Private-label and custom development programs for flooring and acoustic surfaces: in-house decor development, 7–10 day sampling, retail-ready packaging and full compliance packs."
+      "description": "The scope of private-label, custom-development and own-brand programs requires confirmation."
     },
     "hero": {
       "eyebrow": "OEM / ODM",
@@ -453,7 +453,7 @@
         },
         {
           "title": "Custom product development",
-          "text": "New constructions, thicknesses, formats and acoustic targets engineered to your market's price point — with our tooling, film library and fibre suppliers behind it."
+          "text": "Available construction, thickness, format and development support require product and production confirmation."
         },
         {
           "title": "Decor & colour studio",
@@ -516,7 +516,7 @@
         },
         {
           "title": "Laboratory verification",
-          "text": "Our on-site laboratory runs wear, dimensional stability, curl, peel strength, acoustic and colourfastness tests on every production batch — to the same ISO, EN and ASTM methods third-party labs use."
+          "text": "Current test items, equipment, frequency and methods require confirmation by the quality team."
         },
         {
           "title": "Pre-shipment inspection",

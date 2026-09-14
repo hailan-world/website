@@ -4,7 +4,15 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 
-export function Hero({ dict }: { dict: Dictionary }) {
+export function Hero({
+  dict,
+  pendingArt = false,
+  locale = "en",
+}: {
+  dict: Dictionary;
+  pendingArt?: boolean;
+  locale?: string;
+}) {
   const lines = [
     <span key="l1">{dict.hero.headlineLine1}</span>,
     <span key="l2">
@@ -85,7 +93,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
             className="hero-rise hidden lg:block"
             style={{ "--delay": "0.5s", "--rise": "40px" } as CSSProperties}
           >
-            <HeroArt className="ml-auto w-full max-w-[34rem]" />
+            <HeroArt className="ml-auto w-full max-w-[34rem]" pending={pendingArt} locale={locale} />
           </div>
         </div>
       </Container>

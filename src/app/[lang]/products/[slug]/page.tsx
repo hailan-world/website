@@ -10,9 +10,12 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { getProduct, products } from "@/data/products";
+import { defaultLocale, isLocale } from "@/lib/i18n";
+import { placeholderLabel } from "@/lib/content/placeholders";
+import { getDictionary } from "../../dictionaries";
 
 interface ProductPageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ lang: string; slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -32,9 +35,40 @@ export async function generateMetadata({
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const { slug } = await params;
-  const product = getProduct(slug);
-  if (!product) notFound();
+  const { lang, slug } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const dict = await getDictionary(locale);
+  const isZh = locale === "zh";
+  const pending = placeholderLabel(locale);
+  const sourceProduct = getProduct(slug);
+  if (!sourceProduct) notFound();
+  const localizedLine = dict.productLines[sourceProduct.slug];
+  const product = {
+    ...sourceProduct,
+    name: localizedLine.name,
+    category: localizedLine.category,
+    short: localizedLine.short,
+    headline: isZh ? localizedLine.short : sourceProduct.headline,
+    formats: isZh ? localizedLine.chips : sourceProduct.formats,
+  };
+
+  const ui = isZh
+    ? {
+        products: "产品中心", overview: "产品概览", overviewTitle: "面向项目需求的产品方案。",
+        applications: "典型应用", snapshot: "技术参数概览",
+        snapshotNote: "以下为原稿结构，正式规格与检测资料须经确认后发布。",
+        why: "产品表现", whyTitle: "产品结构与性能说明。", compliance: "合规与认证",
+        related: "相关产品", relatedTitle: "浏览其他产品系列。", allProducts: "全部产品",
+        ctaTitle: "就该产品系列发起询盘。", ctaLede: "请提供市场、数量和目标结构，具体规格、价格和打样安排以商务确认结果为准。", cta: "索取样品",
+      }
+    : {
+        products: "Products", overview: "Overview", overviewTitle: "Engineered for programs, not one-off orders.",
+        applications: "Typical applications", snapshot: "Technical snapshot",
+        snapshotNote: "Indicative program range — constructions are configured to order. Full technical data sheets and test reports are available on request.",
+        why: "Why it performs", whyTitle: "Construction details that survive the spec sheet.", compliance: "Compliance",
+        related: "Complete the program", relatedTitle: "Pairs with the rest of the portfolio.", allProducts: "All products",
+        ctaTitle: `Start a ${sourceProduct.name.toLowerCase()} program.`, ctaLede: "Tell us your market, volumes and target constructions — we respond with specifications, pricing and a sampling plan within one business day.", cta: "Request samples",
+      };
 
   const related = products.filter((p) => p.slug !== product.slug);
 
@@ -55,7 +89,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <ol className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400">
                 <li>
                   <Link href="/products" className="transition-colors hover:text-white">
-                    Products
+                    {ui.products} {pending}
                   </Link>
                 </li>
                 <li aria-hidden="true">/</li>
@@ -97,9 +131,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <Container>
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
             <Reveal className="lg:col-span-6">
-              <Eyebrow>Overview</Eyebrow>
+              <Eyebrow>{ui.overview} {pending}</Eyebrow>
               <h2 className="mt-5 text-balance text-[1.9rem] font-medium leading-[1.14] tracking-[-0.02em] text-ink-950 md:text-[2.4rem]">
-                Engineered for programs, not one-off orders.
+                {ui.overviewTitle} {pending}
               </h2>
               {product.description.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)} className="mt-6 text-lg leading-relaxed text-mist-600">
@@ -109,7 +143,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
               <div className="mt-10">
                 <h3 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                  Typical applications
+                  {ui.applications} {pending}
                 </h3>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {product.applications.map((application) => (
@@ -124,7 +158,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <Reveal delay={0.12} className="lg:col-span-6">
               <div className="rounded-2xl border border-ink-950/10 bg-mist-50 p-8 md:p-10">
                 <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-mist-500">
-                  Technical snapshot
+                  {ui.snapshot} {pending}
                 </h2>
                 <dl className="mt-6 divide-y divide-ink-950/8">
                   {product.specs.map((spec) => (
@@ -140,9 +174,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   ))}
                 </dl>
                 <p className="mt-6 text-[13px] leading-relaxed text-mist-500">
-                  Indicative program range — constructions are configured to
-                  order. Full technical data sheets and test reports are
-                  available on request.
+                  {ui.snapshotNote} {pending}
                 </p>
               </div>
             </Reveal>
@@ -160,8 +192,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <Container className="relative">
           <SectionHead
             on="dark"
-            eyebrow="Why it performs"
-            title="Construction details that survive the spec sheet."
+            eyebrow={`${ui.why} ${pending}`}
+            title={`${ui.whyTitle} ${pending}`}
           />
           <div className="mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2">
             {product.features.map((feature, i) => (
@@ -184,7 +216,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <Reveal className="mt-16 border-t border-white/10 pt-8">
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
               <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-400">
-                Compliance
+                {ui.compliance} {pending}
               </span>
               <ul className="flex flex-wrap gap-2">
                 {product.compliance.map((c) => (
@@ -203,11 +235,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-8">
             <SectionHead
-              eyebrow="Complete the program"
-              title="Pairs with the rest of the portfolio."
+              eyebrow={`${ui.related} ${pending}`}
+              title={`${ui.relatedTitle} ${pending}`}
             />
             <Reveal delay={0.15} className="hidden pb-2 md:block">
-              <ArrowLink href="/products">All products</ArrowLink>
+              <ArrowLink href="/products">{ui.allProducts} {pending}</ArrowLink>
             </Reveal>
           </div>
 
@@ -222,14 +254,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   </div>
                   <div className="mt-5 flex items-center justify-between gap-4">
                     <h3 className="text-xl font-medium tracking-[-0.01em] text-ink-950 transition-colors group-hover:text-azure-600">
-                      {p.name}
+                      {isZh ? dict.productLines[p.slug].name : p.name} {pending}
                     </h3>
                     <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-mist-500">
-                      {p.category}
+                      {isZh ? dict.productLines[p.slug].category : p.category} {pending}
                     </span>
                   </div>
                   <p className="mt-2 text-[15px] leading-relaxed text-mist-600">
-                    {p.short}
+                    {isZh ? dict.productLines[p.slug].short : p.short} {pending}
                   </p>
                 </Link>
               </Reveal>
@@ -239,9 +271,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </section>
 
       <CtaBand
-        title={`Start a ${product.name.toLowerCase()} program.`}
-        lede="Tell us your market, volumes and target constructions — we respond with specifications, pricing and a sampling plan within one business day."
-        cta="Request samples"
+        title={`${ui.ctaTitle} ${pending}`}
+        lede={`${ui.ctaLede} ${pending}`}
+        cta={`${ui.cta} ${pending}`}
       />
     </>
   );

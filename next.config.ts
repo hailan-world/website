@@ -24,11 +24,11 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' https://unpkg.com",
+              "script-src 'self' https://unpkg.com 'unsafe-eval'",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
               "font-src 'self' data:",
-              "connect-src 'self' https://api.github.com https://github.com https://raw.githubusercontent.com",
+              "connect-src 'self' http://localhost:8081 https://api.github.com https://github.com https://raw.githubusercontent.com",
               "worker-src 'self' blob:",
               "object-src 'none'",
               "base-uri 'self'",

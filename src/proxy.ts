@@ -4,7 +4,6 @@ import { defaultLocale, isLocale, locales } from "@/lib/i18n";
 
 const LOCALE_COOKIE = "NEXT_LOCALE";
 const isDevelopment = process.env.NODE_ENV === "development";
-const verifiedLocales = ["en", "zh", "ru"] as const;
 
 function createContentSecurityPolicy(nonce: string): string {
   return [
@@ -63,41 +62,13 @@ export function proxy(request: NextRequest) {
   const requestedLocale = locales.find(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
-  const verifiedRouteLocale = verifiedLocales.find(
-    (locale) => pathname === `/verified/${locale}`,
-  );
-  const linusRouteLocale = verifiedLocales.find(
-    (locale) => pathname === `/linus/${locale}`,
-  );
-  const resolvedLocale =
-    requestedLocale ??
-    verifiedRouteLocale ??
-    linusRouteLocale ??
-    resolveLocale(request);
-  const verifiedLocale =
-    resolvedLocale === "zh" || resolvedLocale === "ru" ? resolvedLocale : "en";
-  const isPublicHomepage = verifiedLocales.some(
-    (locale) => pathname === `/${locale}`,
-  );
-  const isLegacyLinusRoute = locales.some(
-    (locale) =>
-      pathname === `/${locale}/linus` || pathname === `/${locale}/linus/`,
-  );
-  const isCmsPilotRoute =
-    pathname === "/en/cms-preview/lvt" ||
-    pathname === "/zh/cms-preview/lvt";
 
-  // Serve the source-backed company profile at simple language-root URLs while
-  // retaining its isolated internal route. The synthetic CMS pilot remains
-  // reachable only through its own environment gate in the page component.
-  if (isPublicHomepage) {
-    const destination = request.nextUrl.clone();
-    destination.pathname = `/verified/${verifiedLocale}`;
-    const response = NextResponse.rewrite(destination, {
-      request: { headers: requestHeaders },
-    });
+  // Every localized website route is public. The CMS workflow controls when
+  // edits reach main; Proxy only handles locale selection and security headers.
+  if (requestedLocale) {
+    const response = NextResponse.next({ request: { headers: requestHeaders } });
     response.headers.set("Content-Security-Policy", contentSecurityPolicy);
-    response.cookies.set(LOCALE_COOKIE, verifiedLocale, {
+    response.cookies.set(LOCALE_COOKIE, requestedLocale, {
       path: "/",
       maxAge: 60 * 60 * 24 * 365,
       sameSite: "lax",
@@ -106,24 +77,14 @@ export function proxy(request: NextRequest) {
     return response;
   }
 
-  if (linusRouteLocale || isCmsPilotRoute) {
-    const response = NextResponse.next({ request: { headers: requestHeaders } });
-    response.headers.set("Content-Security-Policy", contentSecurityPolicy);
-    return response;
-  }
-
   const url = request.nextUrl.clone();
-  url.pathname =
-    pathname === "/linus" ||
-    pathname.startsWith("/linus/") ||
-    isLegacyLinusRoute
-      ? `/linus/${verifiedLocale}`
-      : `/${verifiedLocale}`;
+  const locale = resolveLocale(request);
+  url.pathname = `/${locale}`;
   url.search = "";
 
   const response = NextResponse.redirect(url);
   response.headers.set("Content-Security-Policy", contentSecurityPolicy);
-  response.cookies.set(LOCALE_COOKIE, verifiedLocale, {
+  response.cookies.set(LOCALE_COOKIE, locale, {
     path: "/",
     maxAge: 60 * 60 * 24 * 365,
     sameSite: "lax",

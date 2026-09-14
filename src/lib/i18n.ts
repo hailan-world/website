@@ -1,5 +1,8 @@
 export const locales = ["en", "zh", "fr", "es", "ru", "ar", "ja", "ms", "id"] as const;
 
+/** Localized public pages are currently maintained only in these languages. */
+export const publicLocales = ["en", "zh", "ru"] as const;
+
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = "en";
