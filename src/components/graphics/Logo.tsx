@@ -6,31 +6,24 @@ interface LogoProps {
   className?: string;
 }
 
-/** HAILAN wordmark with the layered-material monogram. */
+/** Official HAILAN wordmark, traced from the provided final artwork. */
 export function Logo({ on = "dark", className }: LogoProps) {
-  const bar = on === "dark" ? "fill-white" : "fill-ink-950";
   return (
-    <span className={cn("inline-flex items-center gap-3", className)}>
-      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="2" y="3.5" width="20" height="3.2" rx="1.6" className={bar} />
-        <rect
-          x="2"
-          y="10.4"
-          width="13.5"
-          height="3.2"
-          rx="1.6"
-          className={on === "dark" ? "fill-azure-400" : "fill-azure-600"}
-        />
-        <rect x="2" y="17.3" width="20" height="3.2" rx="1.6" className={bar} />
-      </svg>
-      <span
-        className={cn(
-          "text-[15px] font-semibold tracking-[0.34em]",
-          on === "dark" ? "text-white" : "text-ink-950",
-        )}
-      >
-        HAILAN
-      </span>
-    </span>
+    <svg
+      viewBox="176.98 255.66 487.92 83.96"
+      aria-hidden="true"
+      className={cn(
+        "h-5 w-auto shrink-0",
+        on === "dark" ? "fill-white" : "fill-ink-950",
+        className,
+      )}
+    >
+      <path d="M176.98,339.62v-83.96h13.15v83.96h-13.15ZM189.06,303.87v-11.2h52.03v11.2h-52.03ZM234.13,339.62v-83.96h13.15v83.96h-13.15Z" />
+      <path d="M268.35,339.62l34.56-83.96h11.22l34.56,83.96h-14.19l-25.98-67.73-25.98,67.73h-14.18Z" />
+      <path d="M384.18,255.66v83.96h-13.15v-83.96h13.15Z" />
+      <path d="M415.56,339.62v-83.96h13.15v83.96h-13.15ZM422.14,339.62v-11.2h53.64v11.2h-53.64Z" />
+      <path d="M491.68,339.62l34.56-83.96h11.22l34.56,83.96h-14.18l-25.98-67.73-25.98,67.73h-14.18Z" />
+      <path d="M595.66,339.56v-83.9h13.23l43.24,63.6-.25-63.6h13.02v83.9h-12.06l-44.41-63.92.25,63.92h-13.02Z" />
+    </svg>
   );
 }

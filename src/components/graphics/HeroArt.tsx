@@ -4,14 +4,29 @@
  * disabled under prefers-reduced-motion).
  */
 
-const layers = [
+const defaultLayers = [
   { y: 150, h: 26, label: "UV WEAR LAYER", grad: "hero-l1", stroke: "rgba(143,173,253,0.5)" },
   { y: 240, h: 34, label: "HD DECOR FILM", grad: "hero-l2", stroke: "rgba(255,255,255,0.25)" },
   { y: 330, h: 74, label: "RIGID MINERAL CORE", grad: "hero-l3", stroke: "rgba(255,255,255,0.14)" },
-  { y: 462, h: 44, label: "ACOUSTIC BACKING", grad: "hero-l4", stroke: "rgba(255,255,255,0.1)" },
+  { y: 462, h: 44, label: "BACKING LAYER", grad: "hero-l4", stroke: "rgba(255,255,255,0.1)" },
 ];
 
-export function HeroArt({ className }: { className?: string }) {
+export function HeroArt({
+  className,
+  pending = false,
+  locale = "en",
+}: {
+  className?: string;
+  pending?: boolean;
+  locale?: string;
+}) {
+  const zhLabels = ["UV 耐磨层", "高清装饰膜", "刚性矿物芯层", "背层"];
+  const layers = pending
+    ? defaultLayers.map((layer, index) => ({
+        ...layer,
+        label: `${locale === "zh" ? zhLabels[index] : layer.label} · ${locale === "zh" ? "待确认" : "REQUIRES VERIFICATION"}`,
+      }))
+    : defaultLayers;
   return (
     <svg viewBox="0 0 640 620" className={className} aria-hidden="true" focusable="false">
       <defs>
@@ -55,7 +70,11 @@ export function HeroArt({ className }: { className?: string }) {
         textAnchor="middle"
         className="font-mono"
       >
-        TOTAL BUILD 8.0 MM
+        {pending
+          ? locale === "zh"
+            ? "总厚度 8.0 MM · 待确认"
+            : "TOTAL BUILD 8.0 MM · REQUIRES VERIFICATION"
+          : "TOTAL BUILD 8.0 MM"}
       </text>
 
       {layers.map((l, i) => {

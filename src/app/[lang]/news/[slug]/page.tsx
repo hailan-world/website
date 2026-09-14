@@ -152,7 +152,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         </section>
       )}
 
-      <CtaBand />
+      <CtaBand
+        title={locale === "zh" ? "想进一步了解这条动态？" : undefined}
+        lede={locale === "zh" ? "如需了解相关公司、产品或合作信息，请与商务团队联系。" : undefined}
+        cta={locale === "zh" ? "联系我们" : undefined}
+      />
     </>
   );
 }

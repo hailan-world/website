@@ -6,7 +6,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { stats } from "@/lib/site";
 
-export function Intro({ dict }: { dict: Dictionary }) {
+export function Intro({ dict, pendingStats = false }: { dict: Dictionary; pendingStats?: boolean }) {
   const statItems = [
     { value: stats.countries, suffix: "+", label: dict.intro.stats.countries },
     {
@@ -45,8 +45,18 @@ export function Intro({ dict }: { dict: Dictionary }) {
           {statItems.map((item, i) => (
             <Reveal key={item.label} delay={i * 0.08}>
               <dd className="text-4xl font-medium tracking-[-0.02em] text-ink-950 md:text-[2.75rem]">
-                <Counter value={item.value} />
-                <span className="text-azure-600">{item.suffix}</span>
+                {pendingStats ? (
+                  <>
+                    <Counter value={item.value} />
+                    <span className="text-azure-600">{item.suffix}</span>
+                    <span className="ml-2 align-middle text-xs text-amber-600">〔待确认〕</span>
+                  </>
+                ) : (
+                  <>
+                    <Counter value={item.value} />
+                    <span className="text-azure-600">{item.suffix}</span>
+                  </>
+                )}
               </dd>
               <dt className="mt-2.5 text-sm text-mist-500">{item.label}</dt>
             </Reveal>

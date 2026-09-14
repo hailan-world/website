@@ -26,13 +26,13 @@ const arcs = [
   "M862,208 Q832,278 790,308",
 ];
 
-export function WorldMap({ className }: { className?: string }) {
+export function WorldMap({ className, locale = "en" }: { className?: string; locale?: string }) {
   return (
     <svg
       viewBox="0 0 1000 520"
       className={className}
       role="img"
-      aria-label="World map showing HAILAN export destinations across six continents"
+      aria-label={locale === "zh" ? "海蓝市场示意图（内容待确认）" : "World map showing HAILAN export destinations across six continents"}
     >
       <defs>
         <pattern id="wm-dots" width="9" height="9" patternUnits="userSpaceOnUse">
@@ -105,7 +105,7 @@ export function WorldMap({ className }: { className?: string }) {
               letterSpacing="0.18em"
               className="font-mono"
             >
-              {label}
+              {locale === "zh" ? "金华总部" : label}
             </text>
           )}
         </g>

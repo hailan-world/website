@@ -1,57 +1,16 @@
-# HAILAN CMS pilot
+# HAILAN content management
 
-This is intentionally a small, reversible content-management pilot. It covers:
+The complete nine-language website is public. Decap CMS manages:
 
-- a reviewed-news content model for the existing nine website locales;
-- one synthetic LVT entry in English and Simplified Chinese;
-- local editing and Vercel Preview verification.
+- all website interface and page copy in every locale;
+- the three product records, including specifications and compliance copy;
+- multilingual news drafts and approved articles.
 
-It does not connect the rest of the website to the CMS, read Feishu, or publish
-product facts automatically.
+The CMS writes to GitHub through an editorial workflow. Business users create
+and edit drafts; publishing merges the approved change to `main`, after which
+Vercel deploys the website.
 
-The source-backed public company profile is available in three languages:
-
-```text
-/en
-/zh
-/ru
-```
-
-The business-contact page remains public in the same three languages:
-
-```text
-/linus/en
-/linus/zh
-/linus/ru
-```
-
-Existing product, manufacturing, quality, company and contact pages remain in
-source control for review, but are not publicly reachable while their claims
-lack traceable evidence and publication approval.
-
-## Safety boundary
-
-The LVT seed content is synthetic and contains no company or product claims.
-Its route is available only when:
-
-- the site runs in local development; or
-- Vercel sets `VERCEL_ENV=preview` for a Preview deployment.
-
-Production deployments return 404 for both pilot URLs:
-
-```text
-/en/cms-preview/lvt
-/zh/cms-preview/lvt
-```
-
-The routes are also marked `noindex` and excluded in `robots.txt`.
-
-News remains separately gated: an entry is not eligible for future public
-display unless it is marked `approved` and includes a reviewer, approval
-reference and public-safe source note. The public routing gate currently keeps
-the news routes offline as well.
-
-## Phase A: local workflow test
+## Local editing
 
 Run the website and Decap local proxy in separate terminals:
 
@@ -60,58 +19,35 @@ npm run dev
 npx decap-server
 ```
 
-Open `http://localhost:3000/admin/` and choose **LVT 中英文试点**. Edit English
-and Chinese, save, and inspect:
+Open `http://localhost:3000/admin/`. Run `npm run cms:config` after changing the
+dictionary structure so the CMS field schema stays in sync.
 
-```text
-http://localhost:3000/en/cms-preview/lvt
-http://localhost:3000/zh/cms-preview/lvt
-```
+## Production login
 
-News drafts may be used to test the editor and pull-request diff, but the public
-news route remains behind the publishing gate during this pilot.
-
-## Phase B: Vercel Preview test
-
-1. Commit the pilot to a temporary branch and push it to GitHub.
-2. Open a pull request without merging it.
-3. Wait for Vercel to create the Preview deployment.
-4. Open the English and Chinese pilot paths on that Preview domain.
-5. Verify layout, translation switching, draft status and rollback.
-6. Close the pull request if the test should be discarded.
-
-The production product-page source remains unchanged, but its public URL is
-temporarily redirected to the source-backed company homepage.
-
-## Success criteria
-
-The pilot is successful when marketing can:
-
-- edit both languages without touching code;
-- save and review the content diff;
-- see the result on a Vercel Preview URL;
-- confirm that the same pilot path is 404 in production;
-- confirm that unreviewed public routes redirect to the company homepage;
-- revert the test without leaving public content behind.
-
-Only after these checks should the team decide whether to add real approved LVT
-facts, GitHub OAuth login, Feishu read-only synchronization, or another page.
-
-## Optional production CMS login
-
-Do not configure this until the local and Preview tests are accepted. When the
-team is ready, create the GitHub OAuth app with:
+Create a GitHub OAuth app with:
 
 ```text
 Homepage URL: https://hailanworld.com
 Callback URL: https://hailanworld.com/api/cms/callback
 ```
 
-Then add these values to the Vercel **Production** environment and redeploy:
+Add these values to the Vercel Production, Preview and Development environments,
+then redeploy:
 
 ```text
 CMS_GITHUB_CLIENT_ID
 CMS_GITHUB_CLIENT_SECRET
 ```
 
-Never commit or send the client secret in chat.
+The GitHub account used by each business user must have write access to
+`hailan-world/website`. Never commit or send the client secret in chat.
+
+## Publishing rules
+
+- Website copy and product edits use the editorial workflow and should be
+  reviewed in Preview before publishing.
+- News stays invisible while `status` is `draft`.
+- News marked `approved` must include a reviewer, approval reference and public-
+  safe source note or the build will reject it.
+- The old synthetic `/[lang]/cms-preview/lvt` pilot remains excluded from search
+  and unavailable in production; it is not part of the business CMS.

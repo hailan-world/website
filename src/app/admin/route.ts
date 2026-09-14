@@ -4,6 +4,7 @@ const adminHtml = `<!doctype html>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,nofollow,noarchive" />
+    <link rel="cms-config-url" type="text/yaml" href="/admin/config.yml" />
     <title>HAILAN 内容管理</title>
   </head>
   <body>

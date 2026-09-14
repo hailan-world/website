@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import NextLink from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
-  locales,
+  publicLocales,
   localeNames,
   localeShortNames,
   isLocale,
@@ -95,7 +95,7 @@ export function LanguageSwitcher({
           {label}
         </p>
         <div className="mt-3 flex flex-wrap gap-2.5">
-          {locales.map((locale) => {
+          {publicLocales.map((locale) => {
             const isActive = locale === active;
             return (
               <NextLink
@@ -146,7 +146,7 @@ export function LanguageSwitcher({
 
       {open && (
         <div className="absolute end-0 top-12 z-50 min-w-40 overflow-hidden rounded-2xl border border-white/10 bg-ink-900/95 py-2 shadow-2xl shadow-black/40 backdrop-blur-xl">
-          {locales.map((locale) => {
+          {publicLocales.map((locale) => {
             const isActive = locale === active;
             return (
               <NextLink

@@ -1,0 +1,37 @@
+{
+  "homepage": {
+    "zh": {
+      "status": "approved",
+      "approvedOn": "2026-07-22",
+      "approvedBy": "site owner",
+      "fields": {
+        "kicker": "建筑装饰材料制造商",
+        "headlineLine1": "为更好的空间",
+        "headlineLine2": "制造每一面",
+        "lede": "海蓝立足中国金华，面向企业客户开展材料制造、产品供应及相关技术服务。",
+        "primaryCta": "索取样品",
+        "secondaryCta": "浏览产品"
+      }
+    }
+  },
+  "contact": {
+    "zh": {
+      "status": "approved",
+      "approvedOn": "2026-07-22",
+      "approvedBy": "site owner",
+      "fields": {
+        "legalName": "金华市海蓝新材料有限公司",
+        "addressLine1": "浙江省金华市金东区孝顺镇",
+        "addressLine2": "后田街777号3号楼4楼401号",
+        "postalCode": "321000",
+        "country": "中国"
+      }
+    }
+  },
+  "stillPending": [
+    "首页产品结构层数",
+    "首页产品结构层名称",
+    "首页产品总厚度",
+    "首页认证、市场与制造信息"
+  ]
+}

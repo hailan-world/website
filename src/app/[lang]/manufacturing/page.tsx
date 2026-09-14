@@ -7,6 +7,7 @@ import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Container } from "@/components/ui/Container";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { defaultLocale, isLocale } from "@/lib/i18n";
+import { placeholderContent } from "@/lib/content/placeholders";
 import { stats } from "@/lib/site";
 import { getDictionary } from "../dictionaries";
 
@@ -32,7 +33,7 @@ export default async function ManufacturingPage({
   const { lang } = await params;
   const locale = isLocale(lang) ? lang : defaultLocale;
   const dict = await getDictionary(locale);
-  const t = dict.manufacturingPage;
+  const t = placeholderContent(dict.manufacturingPage, locale);
 
   const capabilities = [
     { value: stats.facility, suffix: " m²", label: t.capabilities[0] },

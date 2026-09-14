@@ -1,0 +1,83 @@
+{
+  "slug": "pet-carpet-coverings",
+  "name": "PET Carpet Coverings",
+  "category": "Modular Textile Flooring",
+  "headline": "Solution-dyed carpet surfaces built for heavy traffic.",
+  "short": "Modular carpet tiles and planks tufted from solution-dyed PET yarn — inherently stain-resistant, colourfast and specification-ready.",
+  "description": [
+    "HAILAN carpet coverings are tufted from solution-dyed polyester yarn: colour is locked into the fibre itself, so tiles shrug off bleach, UV exposure and aggressive cleaning regimes that would fade conventional carpet. It is the construction global workplace brands specify when floors must look consistent for a decade.",
+    "Modular formats — squares, planks and large-format tiles — install fast, replace selectively and ship efficiently. Backing options run from standard bitumen to our lighter PET-composite backing, which keeps a full container within road-weight limits in most markets."
+  ],
+  "specs": [
+    {
+      "label": "Yarn",
+      "value": "Solution-dyed PET · 100% polyester"
+    },
+    {
+      "label": "Construction",
+      "value": "Tufted loop · cut pile · cut-loop"
+    },
+    {
+      "label": "Pile weight",
+      "value": "500 – 1000 g/m²"
+    },
+    {
+      "label": "Tile size",
+      "value": "500 × 500 mm"
+    },
+    {
+      "label": "Plank size",
+      "value": "250 × 1000 mm"
+    },
+    {
+      "label": "Backing",
+      "value": "Bitumen · PET-composite · cushion"
+    },
+    {
+      "label": "Fire rating",
+      "value": "EN 13501-1 Bfl-s1 · ASTM E648 Class 1"
+    },
+    {
+      "label": "Static",
+      "value": "≤ 2.0 kV (AATCC 134)"
+    }
+  ],
+  "features": [
+    {
+      "title": "Inherent stain resistance",
+      "text": "Solution-dyed fibre carries no dye sites for stains to bond to — spills clean with water and standard maintenance."
+    },
+    {
+      "title": "Colourfast for a decade",
+      "text": "Xenon-arc tested beyond 400 hours with negligible shift, keeping large floors uniform through years of partial replacement."
+    },
+    {
+      "title": "Modular efficiency",
+      "text": "Tiles and planks cut installation waste below 4% and allow single-tile replacement in high-wear zones."
+    },
+    {
+      "title": "Recycled yarn program",
+      "text": "Yarn lines with certified recycled PET content support project LEED and BREEAM documentation."
+    }
+  ],
+  "applications": [
+    "Corporate offices",
+    "Co-working",
+    "Hospitality",
+    "Transport hubs",
+    "Education",
+    "Public administration"
+  ],
+  "formats": [
+    "Carpet tiles",
+    "Carpet planks",
+    "Custom tufted programs"
+  ],
+  "compliance": [
+    "EN 13501-1 Bfl-s1",
+    "ASTM E648 Class 1",
+    "FloorScore®",
+    "REACH"
+  ],
+  "texture": "carpet"
+}

@@ -46,7 +46,7 @@ export async function generateMetadata({
       "LVT flooring manufacturer",
       "PET wall coverings",
       "PET carpet tiles",
-      "acoustic panels",
+      "PET wall materials",
       "OEM flooring",
       "decorative building materials",
     ],
@@ -56,10 +56,10 @@ export async function generateMetadata({
     },
     icons: {
       icon: [
-        { url: "/icon.svg?v=2", type: "image/svg+xml" },
-        { url: "/favicon.ico?v=2", sizes: "any" },
+        { url: "/icon.svg?v=3", type: "image/svg+xml" },
+        { url: "/favicon.ico?v=3", sizes: "any" },
       ],
-      shortcut: "/favicon.ico?v=2",
+      shortcut: "/favicon.ico?v=3",
     },
     openGraph: {
       type: "website",

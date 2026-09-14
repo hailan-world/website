@@ -1,25 +1,56 @@
 import type { MetadataRoute } from "next";
-import { verifiedSite } from "@/lib/verified-site";
+import { products } from "@/data/products";
+import { getArticles } from "@/lib/content/news";
+import { locales, localeHtmlLang } from "@/lib/i18n";
+import { site } from "@/lib/site";
+
+const sections = [
+  "",
+  "/products",
+  "/oem-odm",
+  "/manufacturing",
+  "/about",
+  "/quality",
+  "/news",
+  "/contact",
+  "/linus",
+] as const;
+
+function localizedEntries(
+  path: string,
+  priority: number,
+  changeFrequency: "weekly" | "monthly",
+): MetadataRoute.Sitemap {
+  const languages: Record<string, string> = {
+    "x-default": `${site.url}/en${path}`,
+  };
+  for (const locale of locales) {
+    languages[localeHtmlLang[locale]] = `${site.url}/${locale}${path}`;
+  }
+
+  return locales.map((locale) => ({
+    url: `${site.url}/${locale}${path}`,
+    changeFrequency,
+    priority,
+    alternates: { languages },
+  }));
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const locales = ["en", "zh", "ru"] as const;
-  const languageKey = { en: "en", zh: "zh-Hans", ru: "ru" } as const;
+  const pages = sections.flatMap((path) =>
+    localizedEntries(path, path === "" ? 1 : 0.8, "weekly"),
+  );
+  const productPages = products.flatMap((product) =>
+    localizedEntries(`/products/${product.slug}`, 0.8, "monthly"),
+  );
+  const articleSlugs = new Set(
+    locales.flatMap((locale) =>
+      getArticles(locale).map((article) => article.slug),
+    ),
+  );
+  const newsPages = [...articleSlugs].flatMap((slug) =>
+    localizedEntries(`/news/${slug}`, 0.7, "monthly"),
+  );
 
-  return (["home", "linus"] as const).flatMap((section) => {
-    const path = section === "home" ? "" : "/linus";
-    const languages: Record<string, string> = {
-      "x-default": `${verifiedSite.url}${path}/en`,
-    };
-    for (const locale of locales) {
-      languages[languageKey[locale]] =
-        `${verifiedSite.url}${path}/${locale}`;
-    }
-
-    return locales.map((locale) => ({
-      url: `${verifiedSite.url}${path}/${locale}`,
-      changeFrequency: "weekly" as const,
-      priority: section === "home" ? 1 : 0.8,
-      alternates: { languages },
-    }));
-  });
+  return [...pages, ...productPages, ...newsPages];
 }

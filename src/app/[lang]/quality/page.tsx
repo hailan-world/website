@@ -6,26 +6,13 @@ import { Chip } from "@/components/ui/Chip";
 import { Container } from "@/components/ui/Container";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { defaultLocale, isLocale } from "@/lib/i18n";
+import { placeholderContent, placeholderLabel } from "@/lib/content/placeholders";
 import { certifications } from "@/lib/site";
 import { getDictionary } from "../dictionaries";
 
 interface QualityPageProps {
   params: Promise<{ lang: string }>;
 }
-
-// Reference standards are universal codes — not localized.
-const labStandards = [
-  "EN 660 · ASTM F510",
-  "ISO 23999 · EN 434",
-  "ISO 24343-1",
-  "ISO 105-B02 (xenon-arc)",
-  "EN 13501-1 · ASTM E648 / E84",
-  "ISO 354 · ASTM C423",
-  "ISO 10140-3",
-  "FloorScore® · ISO 16000",
-  "DIN 51130 · EN 13893",
-  "EN 431 · ISO 24345",
-];
 
 export async function generateMetadata({
   params,
@@ -43,7 +30,8 @@ export default async function QualityPage({ params }: QualityPageProps) {
   const { lang } = await params;
   const locale = isLocale(lang) ? lang : defaultLocale;
   const dict = await getDictionary(locale);
-  const t = dict.qualityPage;
+  const t = placeholderContent(dict.qualityPage, locale);
+  const pending = placeholderLabel(locale);
 
   const gates = t.gates.items.map((gate, i) => ({
     step: `${t.gates.gateLabel} ${String(i + 1).padStart(2, "0")}`,
@@ -51,9 +39,15 @@ export default async function QualityPage({ params }: QualityPageProps) {
     text: gate.text,
   }));
 
-  const labTests = t.lab.tests.map((test, i) => ({
+  const labStandards = [
+    "EN 660 · ASTM F510", "ISO 23999 · EN 434", "ISO 24343-1",
+    "ISO 105-B02 (xenon-arc)", "EN 13501-1 · ASTM E648 / E84",
+    "ISO 354 · ASTM C423", "ISO 10140-3", "FloorScore® · ISO 16000",
+    "DIN 51130 · EN 13893", "EN 431 · ISO 24345",
+  ];
+  const labTests = t.lab.tests.map((test, index) => ({
     test,
-    standard: labStandards[i],
+    standard: `${labStandards[index]} ${pending}`,
   }));
 
   return (
@@ -179,7 +173,7 @@ export default async function QualityPage({ params }: QualityPageProps) {
             >
               {certifications.map((c) => (
                 <li key={c}>
-                  <Chip className="px-5 py-2.5 text-[13px]">{c}</Chip>
+                  <Chip className="px-5 py-2.5 text-[13px]">{c} {pending}</Chip>
                 </li>
               ))}
             </ul>

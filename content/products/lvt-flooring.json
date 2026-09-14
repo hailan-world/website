@@ -1,0 +1,88 @@
+{
+  "slug": "lvt-flooring",
+  "name": "LVT Flooring",
+  "category": "Resilient Flooring",
+  "headline": "Commercial-grade resilient flooring, engineered plank by plank.",
+  "short": "Luxury vinyl tile and plank with high-definition decors, register embossing and wear layers built for demanding commercial traffic.",
+  "description": [
+    "HAILAN LVT combines a dimensionally stable core, high-definition decor films and UV-cured wear layers into a floor that performs consistently — batch after batch, container after container. Every construction is calibrated on our own extrusion and lamination lines, giving partners full control over thickness, wear class and surface texture.",
+    "Programs range from project-specific dry back ranges to click systems with optional backing constructions. Decor development is handled in-house: our design studio tracks European and North American interior trends and translates them into wood, stone and abstract visuals with matched embossing plates."
+  ],
+  "specs": [
+    {
+      "label": "Total thickness",
+      "value": "2.0 – 8.0 mm"
+    },
+    {
+      "label": "Wear layer",
+      "value": "0.3 / 0.5 / 0.7 mm"
+    },
+    {
+      "label": "Plank sizes",
+      "value": "152 × 914 · 178 × 1219 · 229 × 1524 mm"
+    },
+    {
+      "label": "Tile sizes",
+      "value": "305 × 610 · 457 × 914 mm"
+    },
+    {
+      "label": "Surface",
+      "value": "EIR · deep embossed · smooth matte"
+    },
+    {
+      "label": "Bevel",
+      "value": "Micro · painted · pressed"
+    },
+    {
+      "label": "Installation",
+      "value": "Dry back · click · loose lay"
+    },
+    {
+      "label": "Fire rating",
+      "value": "EN 13501-1 Bfl-s1 · ASTM E648 Class 1"
+    },
+    {
+      "label": "Slip resistance",
+      "value": "DIN 51130 R9 – R10"
+    }
+  ],
+  "features": [
+    {
+      "title": "Dimensional stability",
+      "text": "Annealed cores and controlled cooling keep planks flat through climate swings — verified against ISO 23999 on every production lot."
+    },
+    {
+      "title": "Register embossing",
+      "text": "Embossing plates aligned to the decor film give surfaces the tactile depth of sawn oak, travertine and woven textile."
+    },
+    {
+      "title": "Backing constructions",
+      "text": "Optional backing constructions are configured to project requirements; available structures and performance data require confirmation."
+    },
+    {
+      "title": "Waterproof core",
+      "text": "SPC and dry back constructions are 100% waterproof, suited to wet rooms, entrances and coastal climates."
+    }
+  ],
+  "applications": [
+    "Retail chains",
+    "Hospitality",
+    "Healthcare",
+    "Corporate offices",
+    "Education",
+    "Multi-family residential"
+  ],
+  "formats": [
+    "Dry back",
+    "SPC click",
+    "Loose lay",
+    "Click with backing"
+  ],
+  "compliance": [
+    "CE · EN 14041",
+    "FloorScore®",
+    "REACH",
+    "EN 13501-1 Bfl-s1"
+  ],
+  "texture": "lvt"
+}
