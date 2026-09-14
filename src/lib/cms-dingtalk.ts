@@ -81,6 +81,8 @@ export function dingTalkAuthorizeUrl(callbackUrl: string, state: string): URL {
 
   const corpId = process.env.CMS_DINGTALK_CORP_ID;
   if (corpId) {
+    // DingTalk requires the corpid scope whenever corpId is supplied.
+    url.searchParams.set("scope", "openid corpid");
     url.searchParams.set("corpId", corpId);
   }
   return url;
