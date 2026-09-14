@@ -9,7 +9,7 @@ const adminHtml = `<!doctype html>
   </head>
   <body>
     <noscript>内容管理后台需要启用 JavaScript。</noscript>
-    <script defer src="https://unpkg.com/decap-cms@3.12.2/dist/decap-cms.js"></script>
+    <script defer src="https://unpkg.com/decap-cms@3.16.2/dist/decap-cms.js"></script>
   </body>
 </html>`;
 
@@ -18,6 +18,7 @@ export function GET() {
     headers: {
       "Content-Type": "text/html; charset=utf-8",
       "Cache-Control": "public, max-age=0, must-revalidate",
+      "Referrer-Policy": "no-referrer",
     },
   });
 }
