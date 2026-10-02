@@ -58,7 +58,7 @@ async function editorMayWrite(
     if (!permissions.publish) return false;
     const pr = await githubRead(`pulls/${path[1]}`);
     if (!isCmsPull(pr) || body.sha !== pr.head.sha || body.merge_method !== "squash") return false;
-    return await contentCommit(pr.head.sha);
+    return await contentCommit(pr.head.sha, true);
   }
   if (/^issues\/\d+\/labels$/.test(joined) && ["POST", "PUT"].includes(request.method)) {
     return isCmsPull(await githubRead(`pulls/${path[1]}`)) && Array.isArray(body.labels) && body.labels.length > 0 && body.labels.every(label =>
@@ -138,14 +138,42 @@ function isCmsPull(pr: { base?: { ref?: string }; head?: { ref?: string; repo?: 
   return pr.base?.ref === "main" && pr.head?.repo?.full_name === repository && pr.head?.ref?.startsWith("cms/") === true;
 }
 
-async function contentCommit(sha: string): Promise<boolean> {
+async function contentCommit(sha: string, allowDivergedMerge = false): Promise<boolean> {
   if (!/^[a-f0-9]{40}$/.test(sha)) return false;
   const comparison = await githubRead(`compare/main...${sha}`);
-  if (!["ahead", "identical"].includes(comparison.status) || !Array.isArray(comparison.files) || comparison.files.length >= 300) return false;
+  // Compare reports changes from the merge base to this immutable head. A
+  // squash merge can apply content-only changes after main advances;
+  // draft ref writes retain the stricter ancestry check. GitHub atomically
+  // enforces the submitted head SHA and rejects merge conflicts at merge time.
+  // It does not accept a base-SHA precondition (see docs/CMS.md).
+  const statuses = allowDivergedMerge ? ["ahead", "identical", "diverged"] : ["ahead", "identical"];
+  if (!statuses.includes(comparison.status) || !Array.isArray(comparison.files) || comparison.files.length >= 300) return false;
   if (!comparison.files.every((file: { filename: string; previous_filename?: string }) => contentPath(file.filename) && (!file.previous_filename || contentPath(file.previous_filename)))) return false;
+  const baseSha = comparison.base_commit?.sha;
+  if (allowDivergedMerge && (typeof baseSha !== "string" || !/^[a-f0-9]{40}$/.test(baseSha))) return false;
+  if (comparison.status === "diverged") {
+    // A main-side rename can redirect a clean merge into a protected source
+    // path; mode changes can also survive the merge. Fail closed on *any*
+    // content-area change, rename or deletion on main since the common
+    // ancestor (also covers directory-rename inference). Source-only
+    // advances are safe to consider; overlapping content needs a fresh draft.
+    const mainChanges = await githubRead(`compare/${sha}...${baseSha}`);
+    if (mainChanges.status !== "diverged" || !Array.isArray(mainChanges.files) || mainChanges.files.length >= 300) return false;
+    const contentRoots = ["content/products", "content/news", "public/uploads/news", "src/app/[lang]/dictionaries"];
+    if (!mainChanges.files.every((file: { filename: string; previous_filename?: string; status?: string }) =>
+      typeof file.filename === "string" && !file.previous_filename && !["renamed", "removed"].includes(file.status ?? "") &&
+      !contentRoots.some(root => file.filename === root || file.filename.startsWith(`${root}/`) || root.startsWith(`${file.filename}/`)))) return false;
+  }
   const tree = await githubRead(`git/trees/${sha}?recursive=1`);
-  if (tree.truncated || !Array.isArray(tree.tree)) return false;
-  return tree.tree.every((entry: { path: string; mode: string; type: string }) => !contentPath(entry.path) || (entry.mode === "100644" && entry.type === "blob"));
+  if (tree.truncated !== false || !Array.isArray(tree.tree)) return false;
+  if (!tree.tree.every((entry: { path: string; mode: string; type: string }) => !contentPath(entry.path) || (entry.mode === "100644" && entry.type === "blob"))) return false;
+  // Catch observed base movement during validation. A later base movement is
+  // still subject to GitHub merge semantics and repository protections.
+  if (allowDivergedMerge) {
+    const base = await githubRead("git/ref/heads/main");
+    if (base.object?.sha !== baseSha) return false;
+  }
+  return true;
 }
 
 function forwardedHeaders(response: Response): Headers {

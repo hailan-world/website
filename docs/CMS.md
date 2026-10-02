@@ -72,3 +72,34 @@ permissions; finish acceptance testing with an authorized user's login and draft
   safe source note or the build will reject it.
 - The old synthetic `/[lang]/cms-preview/lvt` pilot remains excluded from search
   and unavailable in production; it is not part of the business CMS.
+
+## Gateway regression checks and operational limits
+
+Run `node scripts/test-cms-status.cjs` alongside the security tests above.
+Both suites use mocked provider responses; they do not publish content.
+
+A publisher can squash a content-only draft after unrelated source changes
+advance `main`. Ref writes still require the original ancestry check. Diverged
+publishing fails closed if main's side of the comparison touches any CMS content
+area, renames or deletes a file, or exceeds the comparison limit. Refresh/rebase
+and review such drafts before publishing. The gateway checks content paths,
+rename origins, complete trees and regular-file modes, and rechecks the captured
+main SHA before forwarding the merge.
+
+GitHub atomically enforces the supplied head SHA and rejects merge conflicts.
+Its merge endpoint has no base-SHA precondition: main can still advance between
+the final validation read and the merge. Repository protections and trusted main
+writers remain required; the gateway is not an atomic guard against concurrent
+privileged main rewrites. Do not force-push main during CMS publication.
+
+The anonymous status endpoint coalesces concurrent GitHub probes and caches both
+successes and failures for 60 seconds after each probe finishes. Missing server
+configuration fails closed immediately, and a changed GitHub token triggers a
+fresh probe. Only the coarse operational/outage result is returned, never
+provider errors or credentials; browser responses remain `no-store`.
+
+This cache is per warm server instance (up to about 60 probes per hour per
+instance), not a global quota or denial-of-service control. Cold starts and
+multiple instances each probe independently. Status can lag upstream changes by
+up to a minute; gateway authorization itself is never cached by this status
+endpoint. Use platform rate limiting if a deployment needs a global abuse bound.
