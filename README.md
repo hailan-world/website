@@ -18,10 +18,10 @@ It must not contain internal strategy, capability maps, organization design, pro
 ## Current scope
 
 - Next.js App Router website with TypeScript and Tailwind CSS
-- temporary public company-information and business-contact pages in English,
-  Simplified Chinese and Russian containing only retained, source-backed facts
-- existing nine-locale marketing routes retained in source control but
-  redirected away from public access until their claims are verified
+- public company-information and business-contact pages in English and
+  Simplified Chinese containing only retained, source-backed facts
+- legacy translations retained in source control but excluded from public
+  routes, search metadata and the CMS until a customer need justifies them
 - locale-aware metadata, sitemap and robots rules for the retained public page
 - page copy, products, media and reviewed news managed through Payload CMS
 - a bilingual LVT workflow pilot that is visible only in local development and
@@ -32,7 +32,7 @@ It must not contain internal strategy, capability maps, organization design, pro
 | Path | Responsibility |
 |---|---|
 | `src/app` | Routes, layouts, metadata, sitemap, robots rules, and locale dictionaries |
-| `src/app/(verified)` | Temporary English/Chinese/Russian public page containing retained verified information |
+| `src/app/(verified)` | English/Chinese public pages containing retained verified information |
 | `src/components` | Reusable interface and page-section components |
 | `src/data` | Withdrawn product copy retained for evidence review; not publicly routed |
 | `content/news` | read-only migration fallback for legacy news entries |
@@ -66,14 +66,14 @@ Dependencies are intentionally pinned through `package-lock.json`. Do not commit
 
 ## Content management
 
-Payload manages the nine-language website copy, the three product records,
-media and reviewed news. The public company profile is available at `/en`,
-`/zh` and `/ru`; legacy pages with unsupported claims redirect to the
-corresponding language homepage. Database setup, migration and permissions are in
+Payload manages the English and Chinese website copy, the three product records,
+media and reviewed news. The public company profile is available at `/en` and
+`/zh`; unsupported locale paths redirect to the default English homepage.
+Database setup, migration and permissions are in
 [`docs/CMS.md`](docs/CMS.md).
 
-The Linus business-contact page remains public at `/linus/en`,
-`/linus/zh` and `/linus/ru`. It uses `sales@hailanworld.com`, provides no public
+The Linus business-contact page remains public at `/linus/en` and `/linus/zh`.
+It uses `sales@hailanworld.com`, provides no public
 telephone number, and retains WhatsApp and WeCom as QR-only contact channels.
 
 ## Publishing rule

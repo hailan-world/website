@@ -102,7 +102,7 @@ async function seedNews(payload: Awaited<ReturnType<typeof getPayload>>) {
   const filenames = (await readdir(directory)).filter((name) => name.endsWith(".json"));
 
   for (const filename of filenames) {
-    const match = filename.match(/^(.+)\.(en|zh|fr|es|ru|ar|ja|ms|id)\.json$/);
+    const match = filename.match(/^(.+)\.(en|zh)\.json$/);
     if (!match) continue;
     const [, filenameSlug, localeValue] = match;
     const locale = localeValue as Locale;

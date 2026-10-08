@@ -15,7 +15,9 @@ interface NewsCopy {
   categories: Record<ArticleCategory, string>;
 }
 
-const copy: Record<Locale, NewsCopy> = {
+// Keep inactive translations in source control so they can be reviewed and
+// re-enabled if a real customer need arises.
+const copy = {
   en: {
     eyebrow: "News",
     title: "Verified updates from HAILAN.",
@@ -178,7 +180,7 @@ const copy: Record<Locale, NewsCopy> = {
       Company: "Perusahaan",
     },
   },
-};
+} satisfies Record<string, NewsCopy>;
 
 export function getNewsCopy(locale: Locale): NewsCopy {
   return copy[locale];

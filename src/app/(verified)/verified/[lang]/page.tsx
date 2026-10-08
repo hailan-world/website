@@ -5,12 +5,11 @@ import { notFound } from "next/navigation";
 import { Logo } from "@/components/graphics/Logo";
 import { verifiedSite } from "@/lib/verified-site";
 
-type PublicLocale = "en" | "zh" | "ru";
+type PublicLocale = "en" | "zh";
 
 const languageLinks = [
   { locale: "en", label: "EN", hrefLang: "en" },
   { locale: "zh", label: "中文", hrefLang: "zh-CN" },
-  { locale: "ru", label: "RU", hrefLang: "ru" },
 ] as const;
 
 /**
@@ -167,7 +166,7 @@ const copy = {
 } as const;
 
 function isPublicLocale(lang: string): lang is PublicLocale {
-  return lang === "en" || lang === "zh" || lang === "ru";
+  return lang === "en" || lang === "zh";
 }
 
 export async function generateMetadata({
@@ -189,7 +188,6 @@ export async function generateMetadata({
         "x-default": "/en",
         en: "/en",
         "zh-Hans": "/zh",
-        ru: "/ru",
       },
     },
     openGraph: {

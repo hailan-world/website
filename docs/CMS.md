@@ -2,7 +2,7 @@
 
 HAILAN uses Payload CMS at `/admin`. The CMS manages:
 
-- all interface and page copy in nine locales;
+- all interface and page copy in English and Simplified Chinese;
 - the three fixed product records, with localized specifications and copy;
 - multilingual news drafts and approved articles;
 - website images in a shared media library.
@@ -17,6 +17,11 @@ saved drafts in the preview.
 
 The checked-in JSON files remain a read-only migration and outage fallback.
 They are not the editing source of truth after Payload has been seeded.
+Legacy translations and the original database enum values are retained so that
+past work is not destroyed. They are excluded from the editor, public routes,
+metadata and sitemap. Re-enabling a language should follow a real customer need
+and include a named reviewer; it does not require translating every market in
+advance.
 
 ## Required services and environment variables
 
