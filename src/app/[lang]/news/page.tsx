@@ -27,7 +27,7 @@ export default async function NewsPage({ params }: NewsPageProps) {
   const { lang } = await params;
   const locale = isLocale(lang) ? lang : defaultLocale;
   const copy = getNewsCopy(locale);
-  const articles = getArticles(locale);
+  const articles = await getArticles(locale);
 
   return (
     <>

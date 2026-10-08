@@ -8,7 +8,7 @@ import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Chip } from "@/components/ui/Chip";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { products } from "@/data/products";
+import { getProducts } from "@/data/products";
 import { defaultLocale, isLocale } from "@/lib/i18n";
 import { placeholderContent } from "@/lib/content/placeholders";
 import { cn } from "@/lib/utils";
@@ -34,6 +34,7 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
   const { lang } = await params;
   const locale = isLocale(lang) ? lang : defaultLocale;
   const dict = await getDictionary(locale);
+  const products = await getProducts(locale);
   const t = placeholderContent(dict.productsPage, locale);
   const zhSpecs = {
     "lvt-flooring": [

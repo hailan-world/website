@@ -23,8 +23,7 @@ It must not contain internal strategy, capability maps, organization design, pro
 - existing nine-locale marketing routes retained in source control but
   redirected away from public access until their claims are verified
 - locale-aware metadata, sitemap and robots rules for the retained public page
-- reviewed-news workflow managed through the Git-backed headless CMS, with its
-  public route temporarily withheld
+- page copy, products, media and reviewed news managed through Payload CMS
 - a bilingual LVT workflow pilot that is visible only in local development and
   Vercel Preview deployments
 
@@ -36,9 +35,9 @@ It must not contain internal strategy, capability maps, organization design, pro
 | `src/app/(verified)` | Temporary English/Chinese/Russian public page containing retained verified information |
 | `src/components` | Reusable interface and page-section components |
 | `src/data` | Withdrawn product copy retained for evidence review; not publicly routed |
-| `content/news` | CMS-managed, locale-aware news entries with approval metadata |
+| `content/news` | read-only migration fallback for legacy news entries |
 | `content/pilot` | Synthetic English/Chinese LVT workflow test content |
-| `public/admin` | Headless CMS editor and content model |
+| `src/cms` | Payload collections, globals, permissions and content model |
 | `src/lib` | Site configuration, localization, and shared utilities |
 | `public` | Assets served directly by the website |
 | `design-assets/namecard` | Print-ready QR source assets for the public contact profile |
@@ -67,11 +66,10 @@ Dependencies are intentionally pinned through `package-lock.json`. Do not commit
 
 ## Content management
 
-The first CMS pilot covers reviewed news and one synthetic English/Chinese LVT
-entry. The LVT pilot cannot render on the production deployment. The public
-company profile is available at `/en`, `/zh` and `/ru`; legacy pages with
-unsupported claims redirect to the corresponding language homepage. Production
-OAuth, Vercel Preview testing, and the pilot runbook are in
+Payload manages the nine-language website copy, the three product records,
+media and reviewed news. The public company profile is available at `/en`,
+`/zh` and `/ru`; legacy pages with unsupported claims redirect to the
+corresponding language homepage. Database setup, migration and permissions are in
 [`docs/CMS.md`](docs/CMS.md).
 
 The Linus business-contact page remains public at `/linus/en`,

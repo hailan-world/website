@@ -20,7 +20,7 @@ export async function generateMetadata({
 }: ArticlePageProps): Promise<Metadata> {
   const { lang, slug } = await params;
   const locale = isLocale(lang) ? lang : defaultLocale;
-  const article = getArticle(slug, locale);
+  const article = await getArticle(slug, locale);
   if (!article) return {};
   return {
     title: article.title,
@@ -31,11 +31,11 @@ export async function generateMetadata({
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { lang, slug } = await params;
   const locale = isLocale(lang) ? lang : defaultLocale;
-  const article = getArticle(slug, locale);
+  const article = await getArticle(slug, locale);
   if (!article) notFound();
 
   const copy = getNewsCopy(locale);
-  const more = getArticles(locale)
+  const more = (await getArticles(locale))
     .filter((candidate) => candidate.slug !== article.slug)
     .slice(0, 2);
 

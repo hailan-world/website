@@ -15,13 +15,15 @@ function createContentSecurityPolicy(nonce: string): string {
     // React uses style attributes for animation timing and positioning. These
     // cannot execute JavaScript, so they are scoped separately from scripts.
     "style-src-attr 'unsafe-inline'",
-    "img-src 'self' data: blob:",
+    "img-src 'self' data: blob: https://*.public.blob.vercel-storage.com",
     "font-src 'self'",
-    "connect-src 'self'",
+    "connect-src 'self' https://*.public.blob.vercel-storage.com",
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",
-    "frame-ancestors 'none'",
+    // Payload Live Preview embeds localized website routes from the same
+    // origin. Other origins remain blocked.
+    "frame-ancestors 'self'",
     "upgrade-insecure-requests",
   ].join("; ");
 }
@@ -62,18 +64,21 @@ export function proxy(request: NextRequest) {
   const requestedLocale = locales.find(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
+  const isPayloadAdmin = pathname === "/admin" || pathname.startsWith("/admin/");
 
-  // Every localized website route is public. The CMS workflow controls when
-  // edits reach main; Proxy only handles locale selection and security headers.
-  if (requestedLocale) {
+  // Payload's App Router admin also needs the request nonce so Next can attach
+  // it to bootstrap scripts. Localized routes use the same strict CSP.
+  if (requestedLocale || isPayloadAdmin) {
     const response = NextResponse.next({ request: { headers: requestHeaders } });
     response.headers.set("Content-Security-Policy", contentSecurityPolicy);
-    response.cookies.set(LOCALE_COOKIE, requestedLocale, {
-      path: "/",
-      maxAge: 60 * 60 * 24 * 365,
-      sameSite: "lax",
-      secure: process.env.NODE_ENV === "production",
-    });
+    if (requestedLocale) {
+      response.cookies.set(LOCALE_COOKIE, requestedLocale, {
+        path: "/",
+        maxAge: 60 * 60 * 24 * 365,
+        sameSite: "lax",
+        secure: process.env.NODE_ENV === "production",
+      });
+    }
     return response;
   }
 
@@ -95,7 +100,7 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   // Run on everything except Next internals, API routes and files with an
-  // extension (favicon.ico, sitemap.xml, robots.txt, images, etc.). The CMS
-  // admin is a standalone static application and must not be redirected.
-  matcher: ["/((?!_next|api|admin|.*\\.).*)"],
+  // extension (favicon.ico, sitemap.xml, robots.txt, images, etc.). Payload API
+  // routes stay excluded; the admin is included so Next receives a CSP nonce.
+  matcher: ["/((?!_next|api|.*\\.).*)"],
 };

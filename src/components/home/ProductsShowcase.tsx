@@ -5,9 +5,11 @@ import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Container } from "@/components/ui/Container";
 import { SectionHead } from "@/components/ui/SectionHead";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
-import { products } from "@/data/products";
+import { getProducts } from "@/data/products";
+import type { Locale } from "@/lib/i18n";
 
-export function ProductsShowcase({ dict }: { dict: Dictionary }) {
+export async function ProductsShowcase({ dict, locale }: { dict: Dictionary; locale: Locale }) {
+  const products = await getProducts(locale);
   return (
     <section className="bg-mist-50 py-24 md:py-36">
       <Container>

@@ -9,7 +9,7 @@ import { Chip } from "@/components/ui/Chip";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SectionHead } from "@/components/ui/SectionHead";
-import { getProduct, products } from "@/data/products";
+import { getProduct, getProducts, productSlugs } from "@/data/products";
 import { defaultLocale, isLocale } from "@/lib/i18n";
 import { placeholderLabel } from "@/lib/content/placeholders";
 import { getDictionary } from "../../dictionaries";
@@ -19,14 +19,15 @@ interface ProductPageProps {
 }
 
 export function generateStaticParams() {
-  return products.map((product) => ({ slug: product.slug }));
+  return productSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const product = getProduct(slug);
+  const { lang, slug } = await params;
+  const locale = isLocale(lang) ? lang : defaultLocale;
+  const product = await getProduct(slug, locale);
   if (!product) return {};
   return {
     title: product.name,
@@ -40,7 +41,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const dict = await getDictionary(locale);
   const isZh = locale === "zh";
   const pending = placeholderLabel(locale);
-  const sourceProduct = getProduct(slug);
+  const products = await getProducts(locale);
+  const sourceProduct = await getProduct(slug, locale);
   if (!sourceProduct) notFound();
   const localizedLine = dict.productLines[sourceProduct.slug];
   const product = {
