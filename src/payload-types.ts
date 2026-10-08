@@ -149,6 +149,11 @@ export interface User {
   id: number;
   name: string;
   role: 'editor' | 'publisher' | 'admin';
+  authSource: 'local' | 'dingtalk';
+  dingtalkUserId?: string | null;
+  dingtalkRole?: string | null;
+  contactEmail?: string | null;
+  lastDingTalkSyncAt?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -212,7 +217,7 @@ export interface Media {
   };
 }
 /**
- * 每个产品只维护一条记录；使用右上角语言选择器编辑九种语言。
+ * 每个产品只维护一条记录；使用右上角语言选择器编辑中文或英文。
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "products".
@@ -364,6 +369,11 @@ export interface PayloadMigration {
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
   role?: T;
+  authSource?: T;
+  dingtalkUserId?: T;
+  dingtalkRole?: T;
+  contactEmail?: T;
+  lastDingTalkSyncAt?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;

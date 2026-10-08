@@ -65,6 +65,37 @@ Open `http://localhost:3000/admin`. Payload shows its protected first-user
 screen when no user exists. The first account must be given the `admin` role.
 Additional users are created by an administrator.
 
+The first local account is the company-held emergency administrator. Daily
+operators sign in through DingTalk and do not create or remember a Payload
+password. The server creates or updates their Payload account after verifying
+that they are an active member of HAILAN and hold the DingTalk role `官网运营`.
+That role maps to Payload's publisher role, so its members can edit and publish.
+Removing the person from the DingTalk role or organization revokes access on
+the next authorization check; successful checks are cached for at most five
+minutes. Local administrators remain independent of DingTalk for recovery.
+
+Configure the existing HAILAN DingTalk internal application with this callback:
+
+```text
+https://hailanworld.com/api/cms/dingtalk/callback
+```
+
+Add these production-only variables; never commit their values:
+
+```text
+CMS_DINGTALK_APP_KEY
+CMS_DINGTALK_APP_SECRET
+CMS_DINGTALK_CORP_ID
+CMS_DINGTALK_PUBLISHER_ROLE=官网运营
+```
+
+The application needs personal identity read access and organization member
+read access. Authentication is based on the immutable organization user ID and
+live role membership, never a display name. A DingTalk user receives a random,
+server-only Payload password on each successful login so the normal Payload
+session and logout controls continue to work; the employee never sees or uses
+that password.
+
 The seed command is idempotent: it updates site copy and the three products by
 their stable identifiers, and imports any legacy news JSON files. Run it once
 per environment during migration, not on every deployment.
