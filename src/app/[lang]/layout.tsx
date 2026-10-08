@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { connection } from "next/server";
 import { Analytics } from "@vercel/analytics/next";
+import { RefreshRouteOnSave } from "@/components/cms/RefreshRouteOnSave";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import {
@@ -112,6 +113,7 @@ export default async function LocaleLayout({
         <Header dict={dict} lang={locale} />
         <main id="main">{children}</main>
         <Footer dict={dict} />
+        <RefreshRouteOnSave />
         <Analytics />
       </body>
     </html>

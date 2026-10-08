@@ -2,6 +2,8 @@ import "server-only";
 
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
+import { cache } from "react";
+import { getCmsPayload, getCmsViewer } from "@/lib/cms";
 import type { Locale } from "@/lib/i18n";
 import { defaultLocale, locales } from "@/lib/i18n";
 
@@ -150,7 +152,7 @@ function readAllApprovedArticles(): ApprovedArticle[] {
  * Return approved news for one locale. Missing translations fall back to the
  * English source entry so every locale keeps a working route after publishing.
  */
-export function getArticles(locale: Locale = defaultLocale): Article[] {
+function getStaticArticles(locale: Locale = defaultLocale): Article[] {
   const approved = readAllApprovedArticles();
   const slugs = new Set(approved.map((article) => article.slug));
   const articles: Article[] = [];
@@ -173,9 +175,69 @@ export function getArticles(locale: Locale = defaultLocale): Article[] {
   return articles.sort((a, b) => b.date.localeCompare(a.date));
 }
 
-export function getArticle(
+function mediaValue(value: unknown): { url?: string; alt?: string } {
+  if (!value || typeof value !== "object") return {};
+  const media = value as { url?: unknown; alt?: unknown };
+  return {
+    url: typeof media.url === "string" ? media.url : undefined,
+    alt: typeof media.alt === "string" ? media.alt : undefined,
+  };
+}
+
+function mapPayloadArticle(document: Record<string, unknown>): Article | null {
+  if (
+    typeof document.slug !== "string" ||
+    typeof document.title !== "string" ||
+    typeof document.excerpt !== "string" ||
+    !isCategory(document.category)
+  ) {
+    return null;
+  }
+
+  const media = mediaValue(document.coverImage);
+  return {
+    slug: document.slug,
+    title: document.title,
+    date: typeof document.publishedAt === "string" ? document.publishedAt.slice(0, 10) : "",
+    category: document.category,
+    excerpt: document.excerpt,
+    body: Array.isArray(document.body) ? document.body.map(String) : [],
+    coverImage: media.url,
+    coverImageAlt: media.alt,
+  };
+}
+
+export const getArticles = cache(async (
+  locale: Locale = defaultLocale,
+): Promise<Article[]> => {
+  const payload = await getCmsPayload();
+  if (!payload) return getStaticArticles(locale);
+
+  try {
+    const viewer = await getCmsViewer(payload);
+    const result = await payload.find({
+      collection: "news",
+      locale,
+      fallbackLocale: "en",
+      draft: viewer.draft,
+      user: viewer.user ?? undefined,
+      overrideAccess: false,
+      depth: 1,
+      limit: 100,
+      sort: "-publishedAt",
+    });
+    return result.docs
+      .map((document) => mapPayloadArticle(document as unknown as Record<string, unknown>))
+      .filter((article): article is Article => article !== null);
+  } catch (error) {
+    console.error(`Unable to read Payload news for ${locale}.`, error);
+    return getStaticArticles(locale);
+  }
+});
+
+export async function getArticle(
   slug: string,
   locale: Locale = defaultLocale,
-): Article | undefined {
-  return getArticles(locale).find((article) => article.slug === slug);
+): Promise<Article | undefined> {
+  return (await getArticles(locale)).find((article) => article.slug === slug);
 }

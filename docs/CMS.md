@@ -1,74 +1,108 @@
 # HAILAN content management
 
-The complete nine-language website is public. Decap CMS manages:
+HAILAN uses Payload CMS at `/admin`. The CMS manages:
 
-- all website interface and page copy in every locale;
-- the three product records, including specifications and compliance copy;
-- multilingual news drafts and approved articles.
+- all interface and page copy in nine locales;
+- the three fixed product records, with localized specifications and copy;
+- multilingual news drafts and approved articles;
+- website images in a shared media library.
 
-The CMS writes to GitHub through an editorial workflow. Business users create
-and edit drafts; publishing merges the approved change to `main`, after which
-Vercel deploys the website.
+Editors work in Chinese, select the content locale from the language control,
+and edit content by page instead of by code structure. The sidebar separates
+common navigation/footer copy, the homepage, and each secondary page, so an
+editor never has to search through one all-site form. Payload provides
+autosaved drafts, version history, scheduled publishing and same-origin Live
+Preview. Website visitors only receive published content. Logged-in editors see
+saved drafts in the preview.
 
-## Local editing
+The checked-in JSON files remain a read-only migration and outage fallback.
+They are not the editing source of truth after Payload has been seeded.
 
-Run the website and Decap local proxy in separate terminals:
+## Required services and environment variables
+
+Payload runs inside the existing Next.js application. Local development uses an
+ignored SQLite database in `.payload/local.db`. Production requires a Postgres
+database and Vercel Blob storage. Configure these server-side values:
+
+```text
+DATABASE_URI (or the DATABASE_URL / POSTGRES_URL injected by Vercel)
+PAYLOAD_SECRET
+BLOB_READ_WRITE_TOKEN
+NEXT_PUBLIC_SERVER_URL=https://hailanworld.com
+```
+
+`PAYLOAD_SECRET` must be a random value of at least 32 characters. Do not commit
+or send any production value in chat. Vercel normally creates
+`BLOB_READ_WRITE_TOKEN` when a Blob store is connected to the project.
+
+## Initial setup
+
+For local development, no database setup is needed. Initialize the ignored
+SQLite database and start the site:
+
+```bash
+npm run cms:types
+npm run cms:seed
+npm run dev
+```
+
+Before the first production deployment, connect the Postgres database, set the
+production environment variables, then generate and commit the Postgres schema
+migration from an environment using that `DATABASE_URI`:
+
+```bash
+npx payload migrate:create initial_payload_schema
+npm run cms:migrate
+npm run cms:seed
+```
+
+Open `http://localhost:3000/admin`. Payload shows its protected first-user
+screen when no user exists. The first account must be given the `admin` role.
+Additional users are created by an administrator.
+
+The seed command is idempotent: it updates site copy and the three products by
+their stable identifiers, and imports any legacy news JSON files. Run it once
+per environment during migration, not on every deployment.
+
+## Ownership and future handoff
+
+During the transition, Payload and its managed services remain attached to the
+existing Vercel project. The website is still portable: application code lives
+in GitHub, structured content lives in Postgres, and uploaded files live in
+Blob storage. None of the content depends on an editor's personal computer.
+
+A future operator should receive control of these four assets together:
+
+1. the GitHub repository and its deployment integration;
+2. the Vercel project, production domain and environment variables;
+3. the Postgres database and its backups;
+4. the Blob store containing uploaded media.
+
+Do not hand over a personal password. Invite the new operator to the relevant
+organizations, create an individual Payload administrator for them, verify a
+database backup and successful deployment, then remove the departing operator.
+Moving the project between organizations or reconnecting equivalent Postgres
+and object-storage services does not require rebuilding the website.
+
+## Publishing roles
+
+- **Editor** can change content and save drafts.
+- **Publisher** can review and publish drafts.
+- **Administrator** can publish and manage users and product records.
+
+News cannot be published until the reviewer, approval reference and public-safe
+source note are present. These governance fields are not rendered publicly.
+
+## Development and validation
 
 ```bash
 npm run dev
-npx decap-server
+npm run lint
+npx tsc --noEmit
+npm run build
 ```
 
-Open `http://localhost:3000/admin/`. Run `npm run cms:config` after changing the
-dictionary structure so the CMS field schema stays in sync.
-
-## Production login
-
-Production editors authenticate with their company DingTalk account. The CMS
-uses a same-origin Git gateway, so the GitHub credential never reaches the
-editor's browser. Configure the DingTalk internal application callback URL as:
-
-```text
-https://hailanworld.com/api/cms/dingtalk/callback
-```
-
-Add these server-only values to Vercel Production,
-then redeploy. Generate `CMS_AUTH_SECRET` from at least 32 random characters.
-
-```text
-CMS_AUTH_SECRET
-CMS_DINGTALK_APP_KEY
-CMS_DINGTALK_APP_SECRET
-CMS_DINGTALK_CORP_ID
-CMS_GITHUB_TOKEN
-```
-
-The GitHub token should belong to a dedicated service account and needs access only to
-`hailan-world/website`. It stays on the server. Never commit or send any secret
-in chat.
-
-Access is defined by verified organization userIds in `src/lib/cms-access.ts`.
-OAuth unionId is resolved through the application's company directory on login
-and every gateway request; names are never used for authorization. Remove users
-from this allowlist to revoke access; rotating CMS_AUTH_SECRET revokes all sessions.
-Sessions expire after 30 minutes. Login uses browser-bound state and S256 PKCE,
-and exchanges the provider's one-use authorization code only at the token endpoint.
-
-The DingTalk application needs `Contact.User.Read` and `qyapi_get_member` and a
-published version. The GitHub fine-grained token needs Contents, Pull requests,
-and Issues read/write for this repository only. Application visibility does not
-replace the server-side allowlist. See `docs/CMS-ACCESS.md` for assigned roles.
-
-Run `node scripts/test-cms-security.cjs`, `npm run lint`, and `npm run build`
-before rollout. Mocked tests do not verify real DingTalk login or GitHub token
-permissions; finish acceptance testing with an authorized user's login and draft.
-
-## Publishing rules
-
-- Website copy and product edits use the editorial workflow and should be
-  reviewed in Preview before publishing.
-- News stays invisible while `status` is `draft`.
-- News marked `approved` must include a reviewer, approval reference and public-
-  safe source note or the build will reject it.
-- The old synthetic `/[lang]/cms-preview/lvt` pilot remains excluded from search
-  and unavailable in production; it is not part of the business CMS.
+Local media is written to `public/media` and ignored by Git. Production media
+uses Vercel Blob. The public frontend falls back to the checked-in JSON when
+Payload has not been configured, so a missing development database does not
+blank the website.

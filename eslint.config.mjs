@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     ".claude/worktrees/**",
+    // Payload migrations are generated code and intentionally keep the
+    // standard migration callback signature even when arguments are unused.
+    "src/migrations/**",
     "next-env.d.ts",
   ]),
 ]);

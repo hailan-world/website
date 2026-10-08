@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { products } from "@/data/products";
+import { getProducts } from "@/data/products";
 import { getArticles } from "@/lib/content/news";
 import { locales, localeHtmlLang } from "@/lib/i18n";
 import { site } from "@/lib/site";
@@ -36,18 +36,16 @@ function localizedEntries(
   }));
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const pages = sections.flatMap((path) =>
     localizedEntries(path, path === "" ? 1 : 0.8, "weekly"),
   );
+  const products = await getProducts("en");
   const productPages = products.flatMap((product) =>
     localizedEntries(`/products/${product.slug}`, 0.8, "monthly"),
   );
-  const articleSlugs = new Set(
-    locales.flatMap((locale) =>
-      getArticles(locale).map((article) => article.slug),
-    ),
-  );
+  const localizedArticles = await Promise.all(locales.map((locale) => getArticles(locale)));
+  const articleSlugs = new Set(localizedArticles.flatMap((articles) => articles.map((article) => article.slug)));
   const newsPages = [...articleSlugs].flatMap((slug) =>
     localizedEntries(`/news/${slug}`, 0.7, "monthly"),
   );

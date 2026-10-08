@@ -17,7 +17,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <>
       <Hero dict={dict} locale={locale} />
       <Intro dict={dict} />
-      <ProductsShowcase dict={dict} />
+      <ProductsShowcase dict={dict} locale={locale} />
       <ManufacturingBand dict={dict} />
       <WhyHailan dict={dict} />
       <GlobalMarkets dict={dict} locale={locale} />

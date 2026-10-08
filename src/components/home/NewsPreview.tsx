@@ -9,14 +9,14 @@ import { getNewsCopy } from "@/lib/content/news-copy";
 import type { Locale } from "@/lib/i18n";
 import { formatDate } from "@/lib/utils";
 
-export function NewsPreview({
+export async function NewsPreview({
   dict,
   locale,
 }: {
   dict: Dictionary;
   locale: Locale;
 }) {
-  const articles = getArticles(locale);
+  const articles = await getArticles(locale);
   const copy = getNewsCopy(locale);
 
   return (

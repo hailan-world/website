@@ -21,7 +21,9 @@ function createContentSecurityPolicy(nonce: string): string {
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",
-    "frame-ancestors 'none'",
+    // Payload Live Preview embeds localized website routes from the same
+    // origin. Other origins remain blocked.
+    "frame-ancestors 'self'",
     "upgrade-insecure-requests",
   ].join("; ");
 }
@@ -63,8 +65,8 @@ export function proxy(request: NextRequest) {
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
 
-  // Every localized website route is public. The CMS workflow controls when
-  // edits reach main; Proxy only handles locale selection and security headers.
+  // Every localized website route is public. Payload controls whether the
+  // published version or an authenticated draft is returned.
   if (requestedLocale) {
     const response = NextResponse.next({ request: { headers: requestHeaders } });
     response.headers.set("Content-Security-Policy", contentSecurityPolicy);
@@ -95,7 +97,7 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   // Run on everything except Next internals, API routes and files with an
-  // extension (favicon.ico, sitemap.xml, robots.txt, images, etc.). The CMS
-  // admin is a standalone static application and must not be redirected.
+  // extension (favicon.ico, sitemap.xml, robots.txt, images, etc.). Payload
+  // owns the admin and API routes and they must not be redirected.
   matcher: ["/((?!_next|api|admin|.*\\.).*)"],
 };

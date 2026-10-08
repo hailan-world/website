@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withPayload } from "@payloadcms/next/withPayload";
 
 const nextConfig: NextConfig = {
   // The in-app browser reaches the local dev server through 127.0.0.1.
@@ -10,8 +11,8 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
-  // Locale layouts render per request to receive a CSP nonce. Ensure the
-  // Git-backed CMS content is present in server traces as well as at build.
+  // Keep the legacy JSON content available as a safe fallback until the
+  // Payload database has been seeded in each environment.
   outputFileTracingIncludes: {
     "/*": ["./content/news/**/*.json", "./content/pilot/**/*.json"],
   },
@@ -24,16 +25,17 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' https://unpkg.com 'unsafe-eval'",
+              "script-src 'self' 'unsafe-eval'",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
               "font-src 'self' data:",
-              "connect-src 'self' http://localhost:8081 https://api.github.com https://github.com https://raw.githubusercontent.com",
+              "connect-src 'self'",
+              "frame-src 'self'",
               "worker-src 'self' blob:",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self' https://github.com",
-              "frame-ancestors 'none'",
+              "frame-ancestors 'self'",
             ].join("; "),
           },
           {
@@ -48,7 +50,7 @@ const nextConfig: NextConfig = {
         headers: [
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
@@ -63,4 +65,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withPayload(nextConfig);
