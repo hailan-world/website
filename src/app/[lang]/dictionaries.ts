@@ -10,13 +10,6 @@ export type Dictionary = typeof en;
 const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   en: () => import("./dictionaries/en.json").then((m) => m.default),
   zh: () => import("./dictionaries/zh.json").then((m) => m.default as Dictionary),
-  fr: () => import("./dictionaries/fr.json").then((m) => m.default as Dictionary),
-  es: () => import("./dictionaries/es.json").then((m) => m.default as Dictionary),
-  ru: () => import("./dictionaries/ru.json").then((m) => m.default as Dictionary),
-  ar: () => import("./dictionaries/ar.json").then((m) => m.default as Dictionary),
-  ja: () => import("./dictionaries/ja.json").then((m) => m.default as Dictionary),
-  ms: () => import("./dictionaries/ms.json").then((m) => m.default as Dictionary),
-  id: () => import("./dictionaries/id.json").then((m) => m.default as Dictionary),
 };
 
 const getStaticDictionary = async (locale: Locale): Promise<Dictionary> =>

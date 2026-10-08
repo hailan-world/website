@@ -1,7 +1,10 @@
-export const locales = ["en", "zh", "fr", "es", "ru", "ar", "ja", "ms", "id"] as const;
+export const locales = ["en", "zh"] as const;
+
+/** Previously configured locales retained only to redirect old public URLs. */
+export const retiredLocales = ["fr", "es", "ru", "ar", "ja", "ms", "id"] as const;
 
 /** Localized public pages are currently maintained only in these languages. */
-export const publicLocales = ["en", "zh", "ru"] as const;
+export const publicLocales = locales;
 
 export type Locale = (typeof locales)[number];
 
@@ -11,65 +14,30 @@ export const defaultLocale: Locale = "en";
 export const localeNames: Record<Locale, string> = {
   en: "English",
   zh: "中文",
-  fr: "Français",
-  es: "Español",
-  ru: "Русский",
-  ar: "العربية",
-  ja: "日本語",
-  ms: "Bahasa Melayu",
-  id: "Bahasa Indonesia",
 };
 
 /** Short label for the collapsed language switcher button. */
 export const localeShortNames: Record<Locale, string> = {
   en: "EN",
   zh: "中文",
-  fr: "FR",
-  es: "ES",
-  ru: "RU",
-  ar: "ع",
-  ja: "日本語",
-  ms: "MS",
-  id: "ID",
 };
 
 /** BCP-47 tags for the html lang attribute and hreflang. */
 export const localeHtmlLang: Record<Locale, string> = {
   en: "en",
   zh: "zh-Hans",
-  fr: "fr",
-  es: "es",
-  ru: "ru",
-  ar: "ar",
-  ja: "ja",
-  ms: "ms",
-  id: "id",
 };
 
-/** Text direction — Arabic renders right-to-left. */
+/** Text direction for each active locale. */
 export const localeDir: Record<Locale, "ltr" | "rtl"> = {
   en: "ltr",
   zh: "ltr",
-  fr: "ltr",
-  es: "ltr",
-  ru: "ltr",
-  ar: "rtl",
-  ja: "ltr",
-  ms: "ltr",
-  id: "ltr",
 };
 
 /** OpenGraph locale identifiers. */
 export const localeOg: Record<Locale, string> = {
   en: "en_US",
   zh: "zh_CN",
-  fr: "fr_FR",
-  es: "es_ES",
-  ru: "ru_RU",
-  ar: "ar_AR",
-  ja: "ja_JP",
-  ms: "ms_MY",
-  id: "id_ID",
 };
 
 export function isLocale(value: string): value is Locale {

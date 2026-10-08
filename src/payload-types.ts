@@ -90,12 +90,7 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  fallbackLocale:
-    | ('false' | 'none' | 'null')
-    | false
-    | null
-    | ('en' | 'zh' | 'fr' | 'es' | 'ru' | 'ar' | 'ja' | 'ms' | 'id')
-    | ('en' | 'zh' | 'fr' | 'es' | 'ru' | 'ar' | 'ja' | 'ms' | 'id')[];
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'zh') | ('en' | 'zh')[];
   globals: {
     'common-content': CommonContent;
     'home-content': HomeContent;
@@ -118,7 +113,7 @@ export interface Config {
     'contact-content': ContactContentSelect<false> | ContactContentSelect<true>;
     'business-card-content': BusinessCardContentSelect<false> | BusinessCardContentSelect<true>;
   };
-  locale: 'en' | 'zh' | 'fr' | 'es' | 'ru' | 'ar' | 'ja' | 'ms' | 'id';
+  locale: 'en' | 'zh';
   widgets: {
     collections: CollectionsWidget;
   };

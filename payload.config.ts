@@ -93,13 +93,6 @@ export default buildConfig({
     locales: [
       { code: "en", label: "English" },
       { code: "zh", label: "简体中文" },
-      { code: "fr", label: "Français" },
-      { code: "es", label: "Español" },
-      { code: "ru", label: "Русский" },
-      { code: "ar", label: "العربية", rtl: true },
-      { code: "ja", label: "日本語" },
-      { code: "ms", label: "Bahasa Melayu" },
-      { code: "id", label: "Bahasa Indonesia" },
     ],
   },
   secret: payloadSecret,
