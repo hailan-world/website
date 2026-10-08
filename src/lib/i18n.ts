@@ -1,5 +1,8 @@
 export const locales = ["en", "zh"] as const;
 
+/** Previously configured locales retained only to redirect old public URLs. */
+export const retiredLocales = ["fr", "es", "ru", "ar", "ja", "ms", "id"] as const;
+
 /** Localized public pages are currently maintained only in these languages. */
 export const publicLocales = locales;
 

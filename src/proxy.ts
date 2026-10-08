@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { defaultLocale, isLocale, locales } from "@/lib/i18n";
+import { defaultLocale, isLocale, locales, retiredLocales } from "@/lib/i18n";
 
 const LOCALE_COOKIE = "NEXT_LOCALE";
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -64,6 +64,9 @@ export function proxy(request: NextRequest) {
   const requestedLocale = locales.find(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
+  const requestedRetiredLocale = retiredLocales.find(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
+  );
   const isPayloadAdmin = pathname === "/admin" || pathname.startsWith("/admin/");
 
   // Payload's App Router admin also needs the request nonce so Next can attach
@@ -83,7 +86,7 @@ export function proxy(request: NextRequest) {
   }
 
   const url = request.nextUrl.clone();
-  const locale = resolveLocale(request);
+  const locale = requestedRetiredLocale ? defaultLocale : resolveLocale(request);
   url.pathname = `/${locale}`;
   url.search = "";
 
