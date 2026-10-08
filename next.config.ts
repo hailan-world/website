@@ -16,28 +16,20 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/*": ["./content/news/**/*.json", "./content/pilot/**/*.json"],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.public.blob.vercel-storage.com",
+        pathname: "/website/**",
+      },
+    ],
+  },
   async headers() {
     return [
       {
         source: "/admin/:path*",
         headers: [
-          {
-            key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-eval'",
-              "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: blob: https:",
-              "font-src 'self' data:",
-              "connect-src 'self'",
-              "frame-src 'self'",
-              "worker-src 'self' blob:",
-              "object-src 'none'",
-              "base-uri 'self'",
-              "form-action 'self' https://github.com",
-              "frame-ancestors 'self'",
-            ].join("; "),
-          },
           {
             key: "Cross-Origin-Opener-Policy",
             value: "same-origin-allow-popups",

@@ -11,8 +11,8 @@ Editors work in Chinese, select the content locale from the language control,
 and edit content by page instead of by code structure. The sidebar separates
 common navigation/footer copy, the homepage, and each secondary page, so an
 editor never has to search through one all-site form. Payload provides
-autosaved drafts, version history, scheduled publishing and same-origin Live
-Preview. Website visitors only receive published content. Logged-in editors see
+autosaved drafts, version history and same-origin Live Preview. Website visitors
+only receive published content. Logged-in editors see
 saved drafts in the preview.
 
 The checked-in JSON files remain a read-only migration and outage fallback.

@@ -18,7 +18,7 @@ export const SiteContentGlobals: GlobalConfig[] = siteContentAreas.map((area) =>
     beforeChange: [requirePublisherForPublish],
   },
   versions: {
-    drafts: { autosave: { interval: 800 }, schedulePublish: true },
+    drafts: { autosave: { interval: 800 } },
     max: 50,
   },
   fields: dictionaryFields([...area.keys]),

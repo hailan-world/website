@@ -46,7 +46,7 @@ export const News: CollectionConfig = {
     ],
   },
   versions: {
-    drafts: { autosave: { interval: 800 }, schedulePublish: true },
+    drafts: { autosave: { interval: 800 } },
     maxPerDoc: 50,
   },
   fields: [

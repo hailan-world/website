@@ -28,7 +28,7 @@ export const Products: CollectionConfig = {
     beforeChange: [requirePublisherForPublish],
   },
   versions: {
-    drafts: { autosave: { interval: 800 }, schedulePublish: true },
+    drafts: { autosave: { interval: 800 } },
     maxPerDoc: 50,
   },
   fields: [
