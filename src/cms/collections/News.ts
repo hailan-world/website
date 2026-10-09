@@ -27,10 +27,12 @@ export const News: CollectionConfig = {
   hooks: {
     beforeChange: [
       requirePublisherForPublish,
-      ({ data, req }) => {
+      async ({ data, req }) => {
         if (req.context?.seed === true) return data;
         if (data?._status === "published") {
-          if (!canPublish(req.user)) throw new Error("只有发布者或管理员可以发布新闻。");
+          if (!(await canPublish(req.user))) {
+            throw new Error("只有发布者或管理员可以发布新闻。");
+          }
           for (const [field, label] of [
             ["approvedBy", "核实人"],
             ["approvalReference", "批准记录编号"],

@@ -45,6 +45,9 @@ export default buildConfig({
   admin: {
     user: Users.slug,
     autoRefresh: true,
+    components: {
+      afterLogin: ["/cms/components/DingTalkLogin"],
+    },
     meta: {
       titleSuffix: " — HAILAN 内容管理",
       icons: [{ rel: "icon", type: "image/svg+xml", url: "/icon.svg" }],

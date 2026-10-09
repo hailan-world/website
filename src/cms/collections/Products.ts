@@ -16,7 +16,7 @@ export const Products: CollectionConfig = {
     livePreview: {
       url: ({ data, locale }) => `/${locale?.code ?? "en"}/products/${data.slug ?? ""}`,
     },
-    description: "每个产品只维护一条记录；使用右上角语言选择器编辑九种语言。",
+    description: "每个产品只维护一条记录；使用右上角语言选择器编辑中文或英文。",
   },
   access: {
     create: isAdmin,
