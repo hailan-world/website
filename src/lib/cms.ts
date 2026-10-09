@@ -2,6 +2,7 @@ import "server-only";
 
 import { headers } from "next/headers";
 import type { Payload, TypedUser } from "payload";
+import { hasActiveCmsAccess } from "@/cms/access";
 
 let payloadPromise: Promise<Payload> | null = null;
 
@@ -43,7 +44,8 @@ export async function getCmsViewer(
   try {
     const requestHeaders = new Headers(await headers());
     const { user } = await payload.auth({ headers: requestHeaders });
-    return { draft: Boolean(user), user };
+    const active = await hasActiveCmsAccess(user);
+    return { draft: active, user: active ? user : null };
   } catch {
     return { draft: false, user: null };
   }
