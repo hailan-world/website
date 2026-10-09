@@ -48,6 +48,16 @@ export async function GET(request: NextRequest) {
 
     const identity = await authenticateDingTalkCode(code);
     const payload = await getPayload({ config });
+    const administrators = await payload.find({
+      collection: "users",
+      where: { role: { equals: "admin" } },
+      limit: 1,
+      depth: 0,
+      overrideAccess: true,
+    });
+    if (administrators.docs.length === 0) {
+      return errorPage("请先创建本地应急管理员，再使用钉钉登录。", 403);
+    }
     const email = identityEmail(identity.userId);
     const temporaryPassword = randomBytes(32).toString("base64url");
     const existing = await payload.find({
