@@ -26,16 +26,20 @@ export const canPublish = async (user: unknown): Promise<boolean> => {
   return (role === "admin" || role === "publisher") && (await hasActiveCmsAccess(user));
 };
 
-export const isAdmin: Access = ({ req }) =>
-  (req.user as CmsUser | null)?.role === "admin";
+export const isAdmin: Access = async ({ req }) =>
+  (req.user as CmsUser | null)?.role === "admin" &&
+  (await hasActiveCmsAccess(req.user));
 
-export const isAdminField: FieldAccess = ({ req }) =>
-  (req.user as CmsUser | null)?.role === "admin";
+export const isAdminField: FieldAccess = async ({ req }) =>
+  (req.user as CmsUser | null)?.role === "admin" &&
+  (await hasActiveCmsAccess(req.user));
 
 // Payload's protected first-register endpoint has no authenticated user. The
 // collection-level create rule still blocks every other anonymous create.
-export const isAdminOrFirstUserField: FieldAccess = ({ req }) =>
-  !req.user || (req.user as CmsUser).role === "admin";
+export const isAdminOrFirstUserField: FieldAccess = async ({ req }) =>
+  !req.user ||
+  ((req.user as CmsUser).role === "admin" &&
+    (await hasActiveCmsAccess(req.user)));
 
 export const publicOrAuthenticated: Access = async ({ req }) => {
   if (await hasActiveCmsAccess(req.user)) return true;

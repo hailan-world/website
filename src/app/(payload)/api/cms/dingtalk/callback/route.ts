@@ -50,7 +50,12 @@ export async function GET(request: NextRequest) {
     const payload = await getPayload({ config });
     const administrators = await payload.find({
       collection: "users",
-      where: { role: { equals: "admin" } },
+      where: {
+        and: [
+          { role: { equals: "admin" } },
+          { authSource: { equals: "local" } },
+        ],
+      },
       limit: 1,
       depth: 0,
       overrideAccess: true,
