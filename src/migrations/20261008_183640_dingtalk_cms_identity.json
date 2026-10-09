@@ -113,38 +113,6 @@
           "primaryKey": false,
           "notNull": true
         },
-        "auth_source": {
-          "name": "auth_source",
-          "type": "enum_users_auth_source",
-          "typeSchema": "public",
-          "primaryKey": false,
-          "notNull": true,
-          "default": "'local'"
-        },
-        "dingtalk_user_id": {
-          "name": "dingtalk_user_id",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "dingtalk_role": {
-          "name": "dingtalk_role",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "contact_email": {
-          "name": "contact_email",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "last_ding_talk_sync_at": {
-          "name": "last_ding_talk_sync_at",
-          "type": "timestamp(3) with time zone",
-          "primaryKey": false,
-          "notNull": false
-        },
         "updated_at": {
           "name": "updated_at",
           "type": "timestamp(3) with time zone",
@@ -207,24 +175,41 @@
           "type": "timestamp(3) with time zone",
           "primaryKey": false,
           "notNull": false
+        },
+        "auth_source": {
+          "name": "auth_source",
+          "type": "enum_users_auth_source",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'local'"
+        },
+        "dingtalk_user_id": {
+          "name": "dingtalk_user_id",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "dingtalk_role": {
+          "name": "dingtalk_role",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "contact_email": {
+          "name": "contact_email",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "last_ding_talk_sync_at": {
+          "name": "last_ding_talk_sync_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
         }
       },
       "indexes": {
-        "users_dingtalk_user_id_idx": {
-          "name": "users_dingtalk_user_id_idx",
-          "columns": [
-            {
-              "expression": "dingtalk_user_id",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            }
-          ],
-          "isUnique": true,
-          "concurrently": false,
-          "method": "btree",
-          "with": {}
-        },
         "users_updated_at_idx": {
           "name": "users_updated_at_idx",
           "columns": [
@@ -260,6 +245,21 @@
           "columns": [
             {
               "expression": "email",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "users_dingtalk_user_id_idx": {
+          "name": "users_dingtalk_user_id_idx",
+          "columns": [
+            {
+              "expression": "dingtalk_user_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -2762,6 +2762,360 @@
             }
           ],
           "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.payload_jobs_log": {
+      "name": "payload_jobs_log",
+      "schema": "",
+      "columns": {
+        "_order": {
+          "name": "_order",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "_parent_id": {
+          "name": "_parent_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "id": {
+          "name": "id",
+          "type": "varchar",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "executed_at": {
+          "name": "executed_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "completed_at": {
+          "name": "completed_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "task_slug": {
+          "name": "task_slug",
+          "type": "enum_payload_jobs_log_task_slug",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "task_i_d": {
+          "name": "task_i_d",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "input": {
+          "name": "input",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "output": {
+          "name": "output",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "state": {
+          "name": "state",
+          "type": "enum_payload_jobs_log_state",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "error": {
+          "name": "error",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "payload_jobs_log_order_idx": {
+          "name": "payload_jobs_log_order_idx",
+          "columns": [
+            {
+              "expression": "_order",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "payload_jobs_log_parent_id_idx": {
+          "name": "payload_jobs_log_parent_id_idx",
+          "columns": [
+            {
+              "expression": "_parent_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "payload_jobs_log_parent_id_fk": {
+          "name": "payload_jobs_log_parent_id_fk",
+          "tableFrom": "payload_jobs_log",
+          "tableTo": "payload_jobs",
+          "columnsFrom": [
+            "_parent_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.payload_jobs": {
+      "name": "payload_jobs",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "input": {
+          "name": "input",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "completed_at": {
+          "name": "completed_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_tried": {
+          "name": "total_tried",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false,
+          "default": 0
+        },
+        "has_error": {
+          "name": "has_error",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": false
+        },
+        "error": {
+          "name": "error",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "task_slug": {
+          "name": "task_slug",
+          "type": "enum_payload_jobs_task_slug",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "queue": {
+          "name": "queue",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'default'"
+        },
+        "wait_until": {
+          "name": "wait_until",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "processing": {
+          "name": "processing",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": false
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "payload_jobs_completed_at_idx": {
+          "name": "payload_jobs_completed_at_idx",
+          "columns": [
+            {
+              "expression": "completed_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "payload_jobs_total_tried_idx": {
+          "name": "payload_jobs_total_tried_idx",
+          "columns": [
+            {
+              "expression": "total_tried",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "payload_jobs_has_error_idx": {
+          "name": "payload_jobs_has_error_idx",
+          "columns": [
+            {
+              "expression": "has_error",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "payload_jobs_task_slug_idx": {
+          "name": "payload_jobs_task_slug_idx",
+          "columns": [
+            {
+              "expression": "task_slug",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "payload_jobs_queue_idx": {
+          "name": "payload_jobs_queue_idx",
+          "columns": [
+            {
+              "expression": "queue",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "payload_jobs_wait_until_idx": {
+          "name": "payload_jobs_wait_until_idx",
+          "columns": [
+            {
+              "expression": "wait_until",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "payload_jobs_processing_idx": {
+          "name": "payload_jobs_processing_idx",
+          "columns": [
+            {
+              "expression": "processing",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "payload_jobs_updated_at_idx": {
+          "name": "payload_jobs_updated_at_idx",
+          "columns": [
+            {
+              "expression": "updated_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "payload_jobs_created_at_idx": {
+          "name": "payload_jobs_created_at_idx",
+          "columns": [
+            {
+              "expression": "created_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
           "concurrently": false,
           "method": "btree",
           "with": {}
@@ -13204,7 +13558,14 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
       ]
     },
     "public.enum_users_role": {
@@ -13214,14 +13575,6 @@
         "editor",
         "publisher",
         "admin"
-      ]
-    },
-    "public.enum_users_auth_source": {
-      "name": "enum_users_auth_source",
-      "schema": "public",
-      "values": [
-        "local",
-        "dingtalk"
       ]
     },
     "public.enum_products_slug": {
@@ -13281,7 +13634,14 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
       ]
     },
     "public.enum_news_category": {
@@ -13325,7 +13685,38 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
+      ]
+    },
+    "public.enum_payload_jobs_log_task_slug": {
+      "name": "enum_payload_jobs_log_task_slug",
+      "schema": "public",
+      "values": [
+        "inline",
+        "schedulePublish"
+      ]
+    },
+    "public.enum_payload_jobs_log_state": {
+      "name": "enum_payload_jobs_log_state",
+      "schema": "public",
+      "values": [
+        "failed",
+        "succeeded"
+      ]
+    },
+    "public.enum_payload_jobs_task_slug": {
+      "name": "enum_payload_jobs_task_slug",
+      "schema": "public",
+      "values": [
+        "inline",
+        "schedulePublish"
       ]
     },
     "public.enum_site_common_status": {
@@ -13349,7 +13740,14 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
       ]
     },
     "public.enum_site_home_status": {
@@ -13373,7 +13771,14 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
       ]
     },
     "public.enum_site_about_status": {
@@ -13397,7 +13802,14 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
       ]
     },
     "public.enum_site_products_status": {
@@ -13421,7 +13833,14 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
       ]
     },
     "public.enum_site_mfg_status": {
@@ -13445,7 +13864,14 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
       ]
     },
     "public.enum_site_oem_status": {
@@ -13469,7 +13895,14 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
       ]
     },
     "public.enum_site_quality_status": {
@@ -13493,7 +13926,14 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
       ]
     },
     "public.enum_site_contact_status": {
@@ -13517,7 +13957,14 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
       ]
     },
     "public.enum_site_card_status": {
@@ -13541,7 +13988,22 @@
       "schema": "public",
       "values": [
         "en",
-        "zh"
+        "zh",
+        "fr",
+        "es",
+        "ru",
+        "ar",
+        "ja",
+        "ms",
+        "id"
+      ]
+    },
+    "public.enum_users_auth_source": {
+      "name": "enum_users_auth_source",
+      "schema": "public",
+      "values": [
+        "local",
+        "dingtalk"
       ]
     }
   },
